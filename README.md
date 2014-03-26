@@ -32,7 +32,7 @@ The themes we provide using this build are intended to be consumed by any techno
 
 ## Copyright
 
-Copyright © 2014 Infrabel and contributors
+Copyright © 2014 Infrabel and contributors.
 
 ## License
 
