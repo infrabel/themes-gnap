@@ -20,6 +20,7 @@ module.exports = function (grunt) {
     };
 
     merge(config, loadConfig('./tasks/options/', '.js'));
+    merge(config, loadConfig('./custom/', '-grunt.js'));
 
     //console.log(config);
 

@@ -1,6 +1,8 @@
 bin/
 obj/
 node_modules/
+build/
+deploy/
 
 *.suo
 *.user
