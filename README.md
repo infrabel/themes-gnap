@@ -28,7 +28,7 @@ The themes we provide using this build are intended to be consumed by any techno
 
  * Clone the repository.
  * Run ```npm install``` to install all required packages.
- * Run ```grunt``` to build all themes.
+ * Run ```bake:gnap``` to build an example theme.
 
 ## Copyright
 

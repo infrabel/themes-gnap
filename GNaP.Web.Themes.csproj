@@ -33,7 +33,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="custom\bootstrap\less\variables.less.replace-grunt.js" />
+    <Content Include="custom\flatly\variables.less.replace-grunt.js" />
+    <Content Include="custom\flatly\index.html" />
+    <Content Include="custom\flatly\bootswatch.less.replace-grunt.js" />
     <Content Include="Gruntfile.js" />
     <Content Include="raw\angular\.gitignore" />
     <Content Include="raw\angular\angularFiles.js" />
@@ -825,18 +827,25 @@
     <Content Include="raw\bootstrap\js\tooltip.js" />
     <Content Include="raw\bootstrap\js\transition.js" />
     <Content Include="raw\bootstrap\test-infra\requirements.txt" />
+    <Content Include="raw\flatly\index.html" />
     <Content Include="raw\jquery\jquery-1.11.0.js" />
     <Content Include="raw\jquery\jquery-1.11.0.min.js" />
+    <Content Include="tasks\flatly.js" />
     <Content Include="tasks\bootstrap.js" />
-    <Content Include="tasks\default.js" />
+    <Content Include="tasks\bake.js" />
     <Content Include="tasks\jquery.js" />
+    <Content Include="tasks\options\gnap.rename.js" />
+    <Content Include="tasks\options\gnap.copy.js" />
+    <Content Include="tasks\options\flatly.copy.js" />
     <Content Include="tasks\options\bootstrap.copy.js" />
     <Content Include="tasks\options\bootstrap.exec.js" />
     <Content Include="tasks\options\clean.js" />
     <Content Include="tasks\options\jquery.copy.js" />
+    <Content Include="tasks\themes\gnap.js" />
     <Content Include="tasks\util.js" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="custom\flatly\bootstrap.less" />
     <None Include="LICENSE" />
     <None Include="package.json" />
     <None Include="raw\angular\.bowerrc" />
@@ -1118,6 +1127,9 @@
     <None Include="raw\bootstrap\test-infra\sauce_browsers.yml" />
     <None Include="raw\bootstrap\test-infra\uncached-npm-install.sh" />
     <None Include="raw\bootstrap\_config.yml" />
+    <None Include="raw\flatly\bootswatch.less" />
+    <None Include="raw\flatly\LICENSE" />
+    <None Include="raw\flatly\variables.less" />
     <None Include="raw\jquery\jquery-1.11.0.min.map" />
     <None Include="README.md" />
   </ItemGroup>
