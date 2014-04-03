@@ -3,6 +3,7 @@
     [
         'init-bootstrap',
         'prepare-build-bootstrap',
+        'customize-bootstrap',
         'compile-bootstrap',
         'deploy-bootstrap'
     ]);
@@ -15,7 +16,11 @@
 
     grunt.registerTask('prepare-build-bootstrap',
     [
-        'copy:raw_bootstrap_to_build',
+        'copy:raw_bootstrap_to_build'
+    ]);
+
+    grunt.registerTask('customize-bootstrap',
+    [
         'task-wildcard-target:replace:bootstrap'
     ]);
 

@@ -17,6 +17,9 @@ module.exports = function (grunt) {
 
     var config = { 
         pkg: grunt.file.readJSON('package.json'),
+        bake: {
+            gnap: {}
+        }
     };
 
     merge(config, loadConfig('./tasks/options/', '.js'));
@@ -28,7 +31,8 @@ module.exports = function (grunt) {
     
     require('load-grunt-tasks')(grunt);
 
-    grunt.loadTasks('tasks');
+    grunt.loadTasks('./tasks/');
+    grunt.loadTasks('./tasks/themes/');
 };
 
 function loadConfig(path, extension) {
