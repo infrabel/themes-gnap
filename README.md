@@ -15,6 +15,10 @@ To maintain these packages, we've setup a [Grunt.js](http://gruntjs.com/) build 
 
 The themes we provide using this build are intended to be consumed by any technology and are not geared towards .NET specifically.
 
+## Architecture
+
+![GNaP.Web.Themes Architecture](https://raw.githubusercontent.com/infrabel/GNaP.Web.Themes/master/docs/ArchitectureSmall.png)
+
 ## Prerequisites
 
  * [Node Packaged Modules](https://www.npmjs.org/)
@@ -29,6 +33,7 @@ The themes we provide using this build are intended to be consumed by any techno
  * Clone the repository.
  * Run ```npm install``` to install all required packages.
  * Run ```bake:gnap``` to build an example theme.
+ * [Read the documentation](https://github.com/infrabel/GNaP.Web.Themes/wiki) to learn more about the ```taste``` and ```produce``` commands.
 
 ## Copyright
 
