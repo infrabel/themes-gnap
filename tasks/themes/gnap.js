@@ -17,4 +17,12 @@
                         'copy:gnap_deploy_jquery',
                         'clean:gnap_deploy']);
     });
+
+    grunt.registerTask('package-test-gnap', 'Builds GNaP theme test NuGet package', function () {
+        grunt.task.run(['semver:gnap:bump:prerelease']);
+    });
+
+    grunt.registerTask('package-release-gnap', 'Builds GNaP theme NuGet package', function () {
+        grunt.task.run(['semver:gnap:bump:minor']);
+    });
 };

@@ -3,7 +3,6 @@
         var t = this.target;
 
         grunt.task.run('bake:' + t);
-
-        // TODO: Build nuget with incrementing version
+        grunt.task.run('package-release-' + t);
     });
 };
