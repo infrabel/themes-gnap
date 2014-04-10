@@ -14,5 +14,5 @@
                 dest: './deploy/flatly/LICENSE-Flatly'
             }
         ]
-    },
+    }
 };
