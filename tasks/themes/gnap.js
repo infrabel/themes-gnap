@@ -14,6 +14,7 @@
                         'build-jquery',
                         'copy:gnap_deploy_flatly',
                         'copy:gnap_deploy_bootstrap',
-                        'copy:gnap_deploy_jquery']);
+                        'copy:gnap_deploy_jquery',
+                        'clean:gnap_deploy']);
     });
 };
