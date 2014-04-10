@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>GNaP.Themes.Web.GNaP</id>
+    <version>0.0.0</version>
+    <title>GNaP.Themes.Web.GNaP</title>
+
+    <authors>NDCC</authors>
+    <owners>NDCC</owners>
+    <summary>Standard layout for applications intended for NDCC</summary>
+    <description>Standard layout for applications intended for NDCC. This package can be used by all technologies.</description>
+    <projectUrl>https://github.com/infrabel/GNaP.Web.Themes</projectUrl>
+    <copyright>BSD (3-Clause) - Infrabel</copyright>
+    <licenseUrl>https://github.com/infrabel/GNaP.Web.Themes/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+    <tags>gnap ui theme</tags>
+  </metadata>
+  <files>
+    <file src="css\**\*.css" target="content\css" />
+    <file src="fonts\**\*.*" target="content\fonts" />
+    <file src="js\**\*.*" target="content\js" />
+    <file src="index.html" target="content" />
+  </files>
+</package>

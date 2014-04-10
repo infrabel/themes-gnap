@@ -19,10 +19,20 @@
     });
 
     grunt.registerTask('package-test-gnap', 'Builds GNaP theme test NuGet package', function () {
-        grunt.task.run(['semver:gnap:bump:prerelease']);
+        grunt.task.run(['semver:gnap:bump:patch',
+                        'package-gnap']);
     });
 
     grunt.registerTask('package-release-gnap', 'Builds GNaP theme NuGet package', function () {
-        grunt.task.run(['semver:gnap:bump:minor']);
+        grunt.task.run(['semver:gnap:bump:minor',
+                        'package-gnap']);
+    });
+
+    grunt.registerTask('package-gnap', 'Builds GNaP theme NuGet package', function () {
+        var version = grunt.file.readJSON('./versions/gnap.json').version;
+        grunt.config.set('nugetpack.gnap.options.version', version);
+
+        grunt.task.run(['mkdir:gnap_nuget',
+                        'nugetpack:gnap']);
     });
 };

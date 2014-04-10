@@ -830,6 +830,8 @@
     <Content Include="raw\flatly\index.html" />
     <Content Include="raw\jquery\jquery-1.11.0.js" />
     <Content Include="raw\jquery\jquery-1.11.0.min.js" />
+    <Content Include="tasks\options\gnap.mkdir.js" />
+    <Content Include="tasks\options\gnap.nugetpack.js" />
     <Content Include="tasks\options\gnap.semver.js" />
     <Content Include="tasks\produce.js" />
     <Content Include="tasks\taste.js" />
@@ -851,6 +853,7 @@
   <ItemGroup>
     <None Include="custom\flatly\bootstrap.less" />
     <None Include="LICENSE" />
+    <None Include="nuget\definitions\GNaP.Web.Themes.GNaP.nuspec" />
     <None Include="package.json" />
     <None Include="raw\angular\.bowerrc" />
     <None Include="raw\angular\.jscs.json" />
@@ -1141,7 +1144,6 @@
   <ItemGroup>
     <Folder Include="build\" />
     <Folder Include="deploy\" />
-    <Folder Include="nuget\definitions\" />
     <Folder Include="nuget\packages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
