@@ -8,4 +8,4 @@
         cwd: './build/bootstrap',
         cmd: 'grunt dist'
     }
-}
+};

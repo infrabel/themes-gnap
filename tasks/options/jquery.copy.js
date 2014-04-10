@@ -5,4 +5,4 @@
         src: ['*.*', '**/*.*'],
         dest: './deploy/jquery/'
     }
-}
+};

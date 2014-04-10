@@ -17,4 +17,4 @@
         src: ['LICENSE', '*.html'],
         dest: './deploy/flatly/'
     },
-}
+};
