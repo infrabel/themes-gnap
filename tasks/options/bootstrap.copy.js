@@ -12,4 +12,4 @@
         src: ['*.min.*', '**/*.min.*', 'fonts/*'],
         dest: './deploy/bootstrap/'
     },
-}
+};
