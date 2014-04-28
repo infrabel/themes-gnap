@@ -31,13 +31,14 @@ The themes we provide using this build are intended to be consumed by any techno
 ## Usage
 
  * Clone the repository.
+ * Open a prompt and navigate to the directory you cloned to.
  * Run ```npm install``` to install all required packages.
- * Run ```bake:gnap``` to build an example theme.
+ * Run ```grunt bake:gnap``` to build an example theme.
  * [Read the documentation](https://github.com/infrabel/GNaP.Web.Themes/wiki) to learn more about the ```taste``` and ```produce``` commands.
 
 ## Copyright
 
-Copyright © 2014 Infrabel and contributors.
+Copyright ï¿½ 2014 Infrabel and contributors.
 
 ## License
 
