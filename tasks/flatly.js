@@ -2,7 +2,8 @@
     grunt.registerTask('build-flatly',
     [
         'prepare-build-flatly',
-        'customize-flatly'
+        'customize-flatly',
+        'deploy-flatly'
     ]);
 
     grunt.registerTask('prepare-build-flatly',
