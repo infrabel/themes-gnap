@@ -7,6 +7,7 @@
                         'copy:gnap_jquery_to_build_ace',
                         'copy:gnap_custom_css_to_build_ace',
                         'copy:gnap_custom_images_to_build_ace',
+                        'copy:gnap_custom_html_to_build_ace',
                         'compile-ace',
                         'rename:gnap_ace_jquery',
                         'deploy-ace',
