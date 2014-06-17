@@ -13,6 +13,13 @@
         dest: './build/ace/css/less/theme/'
     },
 
+    gnap_custom_html_to_build_ace: {
+        expand: true,
+        cwd: './custom/gnap/html/',
+        src: ['*.*', '**/*.*'],
+        dest: './build/ace/html/'
+    },
+
     gnap_deploy_ace: {
         expand: true,
         cwd: './deploy/ace/',
