@@ -1,21 +1,18 @@
 ﻿module.exports = function (grunt) {
     grunt.registerTask('build-gnap', 'Builds GNaP theme', function () {
-        grunt.task.run(['init-bootstrap',
-                        'prepare-build-bootstrap',
-                        'prepare-build-flatly',
-                        'customize-flatly',
-                        'rename:gnap_bootstrap_less',
-                        'copy:gnap_build_flatly_to_build_bootstrap',
-                        'copy:gnap_build_bootstrap_flatly_to_build_bootstrap',
-                        'compile-bootstrap',
-                        'deploy-bootstrap',
-                        'deploy-flatly',
-                        'rename:gnap_flatly_license',
-                        'build-jquery',
-                        'copy:gnap_deploy_flatly',
-                        'copy:gnap_deploy_bootstrap',
-                        'copy:gnap_deploy_jquery',
-                        'clean:gnap_deploy']);
+        grunt.task.run(['build-jquery',
+                        'prepare-build-ace',
+                        'rename:gnap_ace_less',
+                        'customize-ace',
+                        'copy:gnap_jquery_to_build_ace',
+                        'copy:gnap_custom_css_to_build_ace',
+                        'copy:gnap_custom_images_to_build_ace',
+                        'compile-ace',
+                        'rename:gnap_ace_jquery',
+                        'deploy-ace',
+                        'copy:gnap_deploy_ace',
+                        'clean:gnap_deploy'
+        ]);
     });
 
     grunt.registerTask('package-test-gnap', 'Builds GNaP theme test NuGet package', function () {

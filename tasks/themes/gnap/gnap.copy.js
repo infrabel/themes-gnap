@@ -1,36 +1,29 @@
 ﻿module.exports = {
-    gnap_build_flatly_to_build_bootstrap: {
+    gnap_custom_images_to_build_ace: {
         expand: true,
-        cwd: './build/flatly/',
+        cwd: './custom/gnap/images/',
         src: ['*.*', '**/*.*'],
-        dest: './build/bootstrap/less/flatly/'
+        dest: './build/ace/images/'
     },
 
-    gnap_build_bootstrap_flatly_to_build_bootstrap: {
+    gnap_custom_css_to_build_ace: {
         expand: true,
-        cwd: './build/bootstrap/less/flatly/',
-        src: ['bootstrap.less'],
-        dest: './build/bootstrap/less/'
+        cwd: './custom/gnap/css/',
+        src: ['*.*', '**/*.*'],
+        dest: './build/ace/css/less/theme/'
     },
 
-    gnap_deploy_flatly: {
+    gnap_deploy_ace: {
         expand: true,
-        cwd: './deploy/flatly/',
-        src: ['LICENSE-Flatly', '*.*', '**/*.*'],
-        dest: './deploy/gnap/'
-    },
-
-    gnap_deploy_bootstrap: {
-        expand: true,
-        cwd: './deploy/bootstrap/',
+        cwd: './deploy/ace/',
         src: ['*.*', '**/*.*'],
         dest: './deploy/gnap/'
     },
 
-    gnap_deploy_jquery: {
+    gnap_jquery_to_build_ace: {
         expand: true,
         cwd: './deploy/jquery/',
-        src: ['*.*', '**/*.*'],
-        dest: './deploy/gnap/js/'
+        src: ['*.js', '!*.min.js', '!*.min.map'],
+        dest: './build/ace/js/develop/'
     }
 };
