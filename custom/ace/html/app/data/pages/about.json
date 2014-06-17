@@ -1,0 +1,9 @@
+{
+ "title" : "About"
+ ,
+ "description" : "Graphical charter for Infrabel"
+ ,
+ "scripts" : ["prettify"]
+ ,
+ "styles" : ["prettify"]
+}
