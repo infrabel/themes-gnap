@@ -97,6 +97,13 @@
         dest: './build/ace/js/'
     },
 
+    custom_ace_license_to_build: {
+        expand: true,
+        cwd: './custom/ace/',
+        src: ['LICENSE-Ace'],
+        dest: './build/ace/'
+    },
+
     build_ace_html_to_deploy: {
         expand: true,
         cwd: './build/ace/html/js/output_folder/',
@@ -131,4 +138,11 @@
         src: ['*.*', '**/*.*'],
         dest: './deploy/ace/js/'
     },
+
+    build_ace_license_to_deploy: {
+        expand: true,
+        cwd: './build/ace/',
+        src: ['LICENSE-Ace'],
+        dest: './deploy/ace/'
+    }
 };

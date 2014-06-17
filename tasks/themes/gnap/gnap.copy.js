@@ -16,7 +16,7 @@
     gnap_deploy_ace: {
         expand: true,
         cwd: './deploy/ace/',
-        src: ['*.*', '**/*.*'],
+        src: ['*.*', '**/*.*', 'LICENSE-Ace'],
         dest: './deploy/gnap/'
     },
 
