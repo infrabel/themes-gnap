@@ -1709,7 +1709,7 @@
     <None Include="custom\ace\css\less\theme\custom.less" />
     <None Include="custom\ace\html\app\data\layouts\internal.json" />
     <None Include="custom\ace\html\app\data\layouts\partials\internal\sidenav_navList.json" />
-    <None Include="custom\ace\html\app\data\pages\about.json" />
+    <None Include="custom\gnap\html\app\data\pages\about.json" />
     <None Include="custom\ace\html\app\data\pages\examples.json" />
     <None Include="custom\ace\html\app\views\layouts\internal.mustache" />
     <None Include="custom\ace\html\app\views\layouts\partials\internal\breadcrumbs.mustache" />
@@ -1718,7 +1718,7 @@
     <None Include="custom\ace\html\app\views\layouts\partials\_shared\sidenav.mustache" />
     <None Include="custom\ace\html\app\views\layouts\partials\_shared\topbar.mustache" />
     <None Include="custom\ace\html\app\views\layouts\partials\_shared\_template\jquery.mustache" />
-    <None Include="custom\ace\html\app\views\pages\about.mustache" />
+    <None Include="custom\gnap\html\app\views\pages\about.mustache" />
     <None Include="custom\ace\html\app\views\pages\examples.mustache" />
     <None Include="custom\ace\html\app\views\pages\login.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\login\login_box.mustache" />
