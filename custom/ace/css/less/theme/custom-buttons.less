@@ -1,0 +1,29 @@
+﻿//set no-border property for all buttons instead of adding the class everywhere
+.btn {
+    border: none;
+    margin: 0 0 1px 0; //adding space bottom for mobile
+
+    &:focus {
+        outline: none;
+    }
+}
+
+//adding space bottom for mobile
+.btn-group {
+    margin: 0 0 1px 0;
+}
+
+.btn-color(@color1, @color2) {
+    &.disabled, &[disabled], fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: darken(mix(@color1, @color2),15%) !important;
+            border-color: darken(mix(@color1, @color2),15%);
+            cursor: not-allowed !important;
+            pointer-events: all;
+            color: #cacaca!important;
+        }
+    }
+}

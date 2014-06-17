@@ -15,26 +15,23 @@ module.exports = function (grunt) {
 
     grunt.util.linefeed = '\r\n';
 
-    var config = { 
-        pkg: grunt.file.readJSON('package.json'),
-        bake: {
-            gnap: {}
-        },
-        taste: {
-            gnap: {}
-        },
-        produce: {
-            gnap: {}
-        }
+    var config = {
+        pkg: grunt.file.readJSON('package.json')
     };
 
+    merge(config, require('./themes.js'));
     merge(config, loadConfig('./tasks/options/', '.js'));
+
+    grunt.file.expand('./tasks/themes/*').forEach(function (dir) {
+        merge(config, loadConfig(dir + '/', '.js'));
+    });
+
     merge(config, loadConfig('./custom/', '-grunt.js'));
 
     //console.log(config);
 
     grunt.initConfig(config);
-    
+
     require('load-grunt-tasks')(grunt);
 
     grunt.loadTasks('./tasks/');
@@ -49,7 +46,7 @@ function loadConfig(path, extension) {
     glob.sync('**/*' + extension, { cwd: path }).forEach(function (option) {
         key = option.replace(extension, '');
         key = key.split('.').slice(-1);
-        
+
         if (key in object) {
             object[key] = merge(object[key], require(path + option));
         } else {
