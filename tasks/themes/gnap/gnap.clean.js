@@ -1,3 +1,15 @@
 ﻿module.exports = {
-    gnap_deploy: ['./deploy/*', '!./deploy/gnap/**']
+    gnap_deploy: [
+        './deploy/*',
+        '!./deploy/gnap/**',
+
+        './deploy/gnap/*.html',
+        '!./deploy/gnap/blank.html',
+        '!./deploy/gnap/examples.html',
+        '!./deploy/gnap/typography.html',
+        '!./deploy/gnap/error-404.html',
+        '!./deploy/gnap/error-500.html',
+        '!./deploy/gnap/login.html',
+        '!./deploy/gnap/about.html'
+    ]
 };

@@ -17,9 +17,10 @@
     <tags>gnap ui theme</tags>
   </metadata>
   <files>
-    <file src="css\**\*.css" target="content\css" />
-    <file src="fonts\**\*.*" target="content\fonts" />
-    <file src="js\**\*.*" target="content\js" />
-    <file src="index.html" target="content" />
+    <file src="css\**\*.css" target="content\themes\infrabel\css" />
+    <file src="fonts\**\*.*" target="content\themes\infrabel\fonts" />
+    <file src="js\**\*.*" target="content\themes\infrabel\js" />
+    <file src="images\**\*.*" target="content\themes\infrabel\images" />
+    <file src="*.html" target="content\themes\infrabel" />
   </files>
 </package>
