@@ -34,6 +34,7 @@ The themes we provide using this build are intended to be consumed by any techno
  * Open a prompt and navigate to the directory you cloned to.
  * Run ```npm install``` to install all required packages.
  * Run ```grunt bake:gnap``` to build an example theme.
+ * Have a look in the ```deploy``` folder to see the result.
  * [Read the documentation](https://github.com/infrabel/GNaP.Web.Themes/wiki) to learn more about the ```taste``` and ```produce``` commands.
 
 ## Copyright
