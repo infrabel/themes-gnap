@@ -21,7 +21,6 @@
     <file src="fonts\**\*.*" target="content\themes\gnap\fonts" />
     <file src="js\**\*.*" target="content\themes\gnap\js" />
     <file src="images\**\*.*" target="content\themes\gnap\images" />
-    <file src="*.html" target="content\themes\gnap" />
-    <file src="LICENSE-Ace" target="content\themes\gnap" />
+    <file src="*" target="content\themes\gnap" />
   </files>
 </package>
