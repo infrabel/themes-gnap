@@ -35,6 +35,7 @@
         'copy:custom_ace_html_to_build',
         'copy:custom_ace_css_to_build',
         'copy:custom_ace_js_to_build',
+        'copy:custom_ace_license_to_build',
         'task-wildcard-target:replace:ace'
     ]);
 
@@ -54,6 +55,7 @@
         'copy:build_ace_css_to_deploy',
         'copy:build_ace_fonts_to_deploy',
         'copy:build_ace_images_to_deploy',
-        'copy:build_ace_js_to_deploy'
+        'copy:build_ace_js_to_deploy',
+        'copy:build_ace_license_to_deploy'
     ]);
 };

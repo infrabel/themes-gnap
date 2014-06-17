@@ -10,6 +10,7 @@
         '!./deploy/gnap/error-404.html',
         '!./deploy/gnap/error-500.html',
         '!./deploy/gnap/login.html',
-        '!./deploy/gnap/about.html'
+        '!./deploy/gnap/about.html',
+        '!./deploy/gnap/LICENSE-Ace'
     ]
 };
