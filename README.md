@@ -43,6 +43,6 @@ Copyright © 2014 Infrabel and contributors.
 
 ## License
 
-GNaP.Web.Themes is licensed under [BSD (3-Clause)](http://choosealicense.com/licenses/bsd-3-clause/ "Read more about the BSD (3-Clause) License"). Refer to LICENSE for more information.
+GNaP.Web.Themes is licensed under [BSD (3-Clause)](http://choosealicense.com/licenses/bsd-3-clause/ "Read more about the BSD (3-Clause) License"). Refer to [LICENSE](https://github.com/infrabel/GNaP.Web.Themes/blob/master/LICENSE) for more information.
 
 The GNaP theme uses ```Ace - Responsive Admin Template``` as it's base theme, which is licensed under [Extended License](https://github.com/infrabel/GNaP.Web.Themes/blob/master/custom/ace/LICENSE-Ace), our license covers redistribution and usage by you. However, if you would like to show your support to the original author, you can [buy a Single application license here](https://wrapbootstrap.com/theme/ace-responsive-admin-template-WB0B30DGR?ref=cc), it's quite cheap after all.
