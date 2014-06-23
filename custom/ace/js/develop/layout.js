@@ -60,7 +60,7 @@ jQuery(function($) {
 
     //Used for tooltip
     if (jQuery().tooltip) {
-        $('[data-rel=tooltip]').tooltip();
+        $('[data-rel=tooltip]').tooltip({container:'body'});
     }
 
     //Date / time picker 
