@@ -38,6 +38,7 @@
     <Content Include="custom\ace\css\develop\bootstrap-editable.css.replace-grunt.js" />
     <Content Include="custom\ace\css\develop\colorbox.css.replace-grunt.js" />
     <Content Include="custom\ace\css\develop\colorpicker.css.replace-grunt.js" />
+    <Content Include="custom\ace\css\develop\print.css" />
     <Content Include="custom\ace\css\develop\custom.css" />
     <Content Include="custom\ace\css\develop\dropzone.css.replace-grunt.js" />
     <Content Include="custom\ace\css\develop\font-awesome.css.replace-grunt.js" />
