@@ -1,0 +1,7 @@
+﻿#sidebar, #nav-search, #btn-scroll-up{
+    display : none;
+}
+
+.main-content{
+    margin-left : 0px !important;
+}
