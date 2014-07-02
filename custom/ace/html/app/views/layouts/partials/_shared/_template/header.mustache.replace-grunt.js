@@ -21,6 +21,10 @@
                 to: '\t<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />\n</head>'
             },
             {
+                from: '<link rel="stylesheet" href="{{{path.assets}}}/css/ace-skins.min.css" />',
+                to: '<link rel="stylesheet" href="{{{path.assets}}}/css/ace-skins.min.css" />\n\t<link rel="stylesheet" href="{{{path.assets}}}/css/print.min.css" media="print" />'
+            },
+            {
                 from: '<link rel="stylesheet" href="{{{path.assets}}}/css/ace-ie.min.css" />',
                 to: '<link rel="stylesheet" href="{{{path.assets}}}/css/ace-ie.min.css" />\n\t<link rel="stylesheet" href="{{{path.assets}}}/css/ie8.min.css" />'
             },
