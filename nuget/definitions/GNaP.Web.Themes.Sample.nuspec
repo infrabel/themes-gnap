@@ -17,9 +17,9 @@
     <tags>gnap ui theme sample</tags>
   </metadata>
   <files>
-    <file src="css\**\*.css" target="content\css" />
-    <file src="fonts\**\*.*" target="content\fonts" />
-    <file src="js\**\*.*" target="content\js" />
-    <file src="index.html" target="content" />
+    <file src="css\**\*.css" target="content\vendor\gnap-theme-sample\css" />
+    <file src="fonts\**\*.*" target="content\vendor\gnap-theme-sample\fonts" />
+    <file src="js\**\*.*" target="content\vendor\gnap-theme-sample\js" />
+    <file src="index.html" target="content\vendor\gnap-theme-sample" />
   </files>
 </package>
