@@ -94,8 +94,12 @@ jQuery(function($) {
         $(this).first('.submenu').toggle();
     });
 
-    $('.form-search .input-icon').on('click', function (e) {
-        $('.nav-search-input').focus();
+    $('.form-search .icon-search').on('click', function () {
+        if ($('#nav-search-input').val() == '') {
+            $('#nav-search-input').focus();
+        } else {
+            $('#nav-search-input').parents('.form-search').submit();
+        }
     });
 
     // Confirmation Event  //////////////////////////////////////////////////////////
