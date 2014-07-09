@@ -58,7 +58,7 @@ function loadConfig(path, extension) {
 }
 
 function merge(to, from) {
-    for (n in from) {
+    for (var n in from) {
         if (typeof to[n] != 'object') {
             to[n] = from[n];
         } else if (typeof from[n] == 'object') {

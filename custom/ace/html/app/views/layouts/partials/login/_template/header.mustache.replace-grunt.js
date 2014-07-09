@@ -5,6 +5,10 @@
         replacements:
         [
             {
+                from: '<link rel="stylesheet" href="{{{path.assets}}}/css/ace-rtl.min.css" />',
+                to: ''
+            },
+            {
                 from: /{{{path.assets}}}\//g,
                 to: ''
             }
