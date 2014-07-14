@@ -1,11 +1,26 @@
-﻿@menu-hover-indicator:@custom-base-primary-color;
-@menu-active-color:@custom-base-primary-color;
-@submenu-item-hover:@custom-base-primary-color;
+﻿@menu-hover-indicator: @custom-base-primary-color;
+@menu-active-color: @custom-base-primary-color;
+@submenu-item-hover: @custom-base-primary-color;
 
-.nav-list > li.active > a, .nav-list > li.active > a:active, .nav-list > li.active > a:focus, .nav-list > li > a:hover, .nav-list > li > a:hover, .menu-min .nav-list > li:hover > a {
-    color: @custom-base-primary-color;
-}
 
 .sidebar-shortcuts-mini > .btn[class*="btn-"] {
-    border-radius: 5px !important;
+  border-radius: 5px !important;
 }
+
+.sidebar:before {
+  background-color: @custom-sidebar-breadcrumb-color;
+}
+
+.sidebar-collapse, .sidebar-shortcuts {
+  background-color: @custom-sidebar-breadcrumb-color;
+}
+
+.nav-list > li > a {
+  background-color: @custom-sidebar-breadcrumb-color;
+}
+
+.nav-list > li {
+  border-top: @custum-sidebar-item-top-border;
+  border-bottom: @custum-sidebar-item-bottom-border;
+}
+

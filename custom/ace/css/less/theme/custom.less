@@ -1,4 +1,5 @@
 ﻿@import "custom-bootstrap.less";
+@import "custom-breadcrumbs.less";
 @import "custom-buttons.less";
 @import "custom-sidebar.less";
 @import "custom-sidebar-min.less";
@@ -195,7 +196,10 @@ input[type=week]:focus, textarea:focus, .ace-file-input .file-label:focus {
 }
 
 .page-header h1 {
-    color: @text-color;
+    color: @custom-titles-color;
+}
+h1,h2,h3,h4,h5,h6{
+  color: @custom-titles-color;
 }
 
 .ace-nav > li.light-blue > a:focus, .ace-nav > li.light-blue > a:hover,
@@ -275,7 +279,7 @@ textarea.form-control.limited {
 }
 
 .nav-list > li.active > a, .nav-list > li.active > a:active, .nav-list > li.active > a:focus, .nav-list > li.active > a:hover {
-    color: @custom-base-primary-color2;
+    color: @custom-sidebar-selected-color;
 }
 
 .form-control {
