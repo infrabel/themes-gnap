@@ -1,4 +1,5 @@
 ﻿@import "custom-bootstrap.less";
+@import "custom-breadcrumbs.less";
 @import "custom-buttons.less";
 @import "custom-sidebar.less";
 @import "custom-sidebar-min.less";
@@ -90,7 +91,7 @@ html input[disabled] {
     }
 
     &.table-hover tbody tr:hover td div.inline ul.dropdown-menu.dropdown-only-icon {
-        background-color: darken(@custom-base-primary-color,5%) !important;
+        background-color: darken(@custom-base-primary-color, 5%) !important;
         color: white;
     }
 }
@@ -190,12 +191,16 @@ input[type=week]:focus, textarea:focus, .ace-file-input .file-label:focus {
 
 @media only screen and (max-width: 480px) {
     .nav-search .nav-search-input:focus + .nav-search-icon, .nav-search .nav-search-input:hover + .nav-search-icon {
-        background-color: rgba(0,0,0,0);
+        background-color: rgba(0, 0, 0, 0);
     }
 }
 
 .page-header h1 {
-    color: @text-color;
+    color: @custom-title-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: @custom-title-color;
 }
 
 .ace-nav > li.light-blue > a:focus, .ace-nav > li.light-blue > a:hover,
@@ -220,7 +225,6 @@ a {
         color: @custom-base-primary-color;
     }
 }
-
 
 .pagination > li > a:hover, .pager > li > a:hover,
 .pagination > li > a:focus, .pager > li > a:focus {
@@ -275,7 +279,7 @@ textarea.form-control.limited {
 }
 
 .nav-list > li.active > a, .nav-list > li.active > a:active, .nav-list > li.active > a:focus, .nav-list > li.active > a:hover {
-    color: @custom-base-primary-color2;
+    color: @custom-sidebar-selected-color;
 }
 
 .form-control {
