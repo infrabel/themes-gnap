@@ -1695,6 +1695,7 @@
     <None Include="custom\ace\css\less\theme\custom-ace-nav.less" />
     <None Include="custom\ace\css\less\theme\custom-basic.less" />
     <None Include="custom\ace\css\less\theme\custom-bootstrap.less" />
+    <None Include="custom\ace\css\less\theme\custom-breadcrumbs.less" />
     <None Include="custom\ace\css\less\theme\custom-buttons.less" />
     <None Include="custom\ace\css\less\theme\custom-form-checkbox.less" />
     <None Include="custom\ace\css\less\theme\custom-general.less" />
