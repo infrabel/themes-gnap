@@ -1,9 +1,9 @@
 ﻿.nav-list li.active > a:after {
-    border-right-color: @custom-base-primary-color2;
+    border-right-color: @custom-sidebar-selected-color;
 }
 
 .nav-list>li.active:after {
-    border: 1px solid @custom-base-primary-color2;
+    border: 1px solid @custom-sidebar-selected-color;
 }
 
 .menu-min .nav-list>li:hover>a, .nav-list>li.active>a, .nav-list>li.active>a:active, .nav-list>li.active>a:focus, .nav-list>li>a:hover,
@@ -13,7 +13,7 @@
 .nav-list>li>.submenu li>.submenu>li a:hover,
 .nav-list>li a:hover>.arrow, .nav-list>li.active>a>.arrow, .nav-list>li.open>a>.arrow,
 .nav-list>li>.submenu li>.submenu>li a:hover [class*=icon-] {
-    color: @custom-base-primary-color2;
+    color:@custom-sidebar-selected-color;
 }
 
 .nav-list>li>.submenu li>.submenu>li a:hover {
@@ -22,6 +22,10 @@
 
 .nav-list>li>a:hover:before {
     background-color: @custom-base-primary-color2;
+}
+
+.navbar{
+  min-height : @custom-navbar-min-height;
 }
 
 .navbar-brand {
