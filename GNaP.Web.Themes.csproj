@@ -1672,6 +1672,7 @@
     <Content Include="tasks\options\bootstrap.exec.js" />
     <Content Include="tasks\options\clean.js" />
     <Content Include="tasks\options\jquery.copy.js" />
+    <Content Include="tasks\themes\gnap\gnap.imagemin.js" />
     <Content Include="tasks\themes\gnap\gnap.clean.js" />
     <Content Include="tasks\themes\gnap\gnap.copy.js" />
     <Content Include="tasks\themes\gnap\gnap.mkdir.js" />
