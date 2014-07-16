@@ -1,5 +1,72 @@
 jQuery(function ($) {
-    //Used for notifications
+    // User for dialogs
+    $('#bootbox-alert').on(ace.click_event, function () {
+        bootbox.alert('Hello World!', function () {
+        });
+    });
+
+    $('#bootbox-confirm').on(ace.click_event, function () {
+        bootbox.confirm('Are you sure?', function (result) {
+            if (result) {
+                alert('You were sure!');
+            } else {
+                alert('You weren\'t sure!');
+            }
+        });
+    });
+
+    $('#bootbox-prompt').on(ace.click_event, function () {
+        bootbox.prompt('What is your name?', function (result) {
+            if (result === null) {
+                alert('Prompt dismissed');
+            } else {
+                alert('Hi ' + result + '!');
+            }
+        });
+    });
+
+
+    $('#bootbox-options').on(ace.click_event, function () {
+        bootbox.dialog({
+            message: '<span class="bigger-110">I am a custom dialog with smaller buttons</span>',
+            title: 'Custom Dialog',
+            onEscape: function() {},
+            buttons:
+            {
+                'success':
+                 {
+                     'label': '<i class="icon-ok"></i> Success!',
+                     'className': 'btn-sm btn-success',
+                     'callback': function () {
+                         alert('Great Success!');
+                     }
+                 },
+                'danger':
+                {
+                    'label': 'Danger!',
+                    'className': 'btn-sm btn-danger',
+                    'callback': function () {
+                        alert('Uh Oh, Look Out!');
+                    }
+                },
+                'click':
+                {
+                    'label': 'Something!',
+                    'className': 'btn-sm btn-primary',
+                    'callback': function () {
+                        alert('Boo!');
+                    }
+                },
+                'button':
+                {
+                    'label': 'Just a button...',
+                    'className': 'btn-sm'
+                }
+            }
+        });
+    });
+
+    // Used for notifications
     $('#gritter-default').on(ace.click_event, function () {
         $.gritter.add({
             // (string | mandatory) the heading of the notification
