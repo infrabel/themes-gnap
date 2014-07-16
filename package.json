@@ -23,6 +23,7 @@
     "grunt-shell": "^0.6.4",
     "grunt-contrib-rename": "0.0.3",
     "grunt-semver": "^0.1.6",
-    "grunt-mkdir": "^0.1.1"
+    "grunt-mkdir": "^0.1.1",
+    "grunt-contrib-imagemin": "^0.7.1"
   }
 }
