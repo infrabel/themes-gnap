@@ -95,10 +95,10 @@ jQuery(function($) {
     });
 
     $('.form-search .icon-search').on('click', function () {
-        if ($('#nav-search-input').val() == '') {
-            $('#nav-search-input').focus();
+        if ($('.nav-search-input').val() == '') {
+            $('.nav-search-input').focus();
         } else {
-            $('#nav-search-input').parents('.form-search').submit();
+            $('.nav-search-input').parents('.form-search').submit();
         }
     });
 
