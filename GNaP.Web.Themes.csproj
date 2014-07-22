@@ -65,6 +65,7 @@
     <Content Include="custom\ace\html\js\classes\Page.replace-grunt.js" />
     <Content Include="custom\ace\html\js\index.js.replace-grunt.js" />
     <Content Include="custom\ace\js\develop\ace.js.replace-grunt.js" />
+    <Content Include="custom\ace\js\develop\bootbox.js" />
     <Content Include="custom\ace\js\develop\layout.js" />
     <Content Include="custom\ace\js\develop\modernizr.js" />
     <Content Include="custom\ace\js\develop\moment.js" />
