@@ -22,7 +22,11 @@
             },
             {
                 from: '<link rel="stylesheet" href="{{{path.assets}}}/css/ace-skins.min.css" />',
-                to: '<link rel="stylesheet" href="{{{path.assets}}}/css/ace-skins.min.css" />\n\t<link rel="stylesheet" href="{{{path.assets}}}/css/print.min.css" media="print" />'
+                to: '<link rel="stylesheet" href="{{{path.assets}}}/css/ace-skins.min.css" />\n\t<link rel="stylesheet" href="{{{path.assets}}}/css/highlight/github.min.css" />'
+            },
+            {
+                from: '<link rel="stylesheet" href="{{{path.assets}}}/css/highlight/github.min.css" />',
+                to: '<link rel="stylesheet" href="{{{path.assets}}}/css/highlight/github.min.css" />\n\t<link rel="stylesheet" href="{{{path.assets}}}/css/print.min.css" media="print" />'
             },
             {
                 from: '<link rel="stylesheet" href="{{{path.assets}}}/css/ace-ie.min.css" />',

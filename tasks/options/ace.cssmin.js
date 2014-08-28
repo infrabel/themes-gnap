@@ -12,9 +12,24 @@
 
             return dest + folder + filename + '.min.css';
         }
+    },
+
+    build_ace_css_highlight: {
+        expand: true,
+        cwd: './build/ace/css/develop/highlight/',
+        src: ['*.css', '!*.min.css'],
+        dest: './build/ace/css/highlight/',
+        rename: function (dest, src) {
+            var folder = src.substring(0, src.lastIndexOf('/'));
+            var filename = src.substring(src.lastIndexOf('/'), src.length);
+
+            filename = filename.substring(0, filename.lastIndexOf('.'));
+
+            return dest + folder + filename + '.min.css';
+        }
     }
 
-    //combine_vender_css: {
+    //combine_vendor_css: {
     //    files: {
     //        './build/ace/css/vendor.css': [
     //            './build/ace/css/develop/*.css',

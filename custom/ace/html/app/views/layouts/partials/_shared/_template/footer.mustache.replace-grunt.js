@@ -6,6 +6,10 @@
         [
             {
                 from: '<script src="{{{path.assets}}}/js/ace.min.js"></script>',
+                to: '<script src="{{{path.assets}}}/js/ace.min.js"></script>\n\t<script src="{{{path.assets}}}/js/highlight.pack.min.js"></script>'
+            },
+            {
+                from: '<script src="{{{path.assets}}}/js/ace.min.js"></script>',
                 to: '<script src="{{{path.assets}}}/js/ace.min.js"></script>\n<script src="{{{path.assets}}}/js/layout.min.js"></script>'
             },
             {
