@@ -32,5 +32,19 @@
         cwd: './deploy/jquery/',
         src: ['*.js', '!*.min.js', '!*.min.map'],
         dest: './build/ace/js/develop/'
+    },
+
+    gnap_highlightjs_to_build_ace: {
+        expand: true,
+        cwd: './deploy/highlight/',
+        src: ['*.js', '!*.min.js', '!*.min.map'],
+        dest: './build/ace/js/develop/'
+    },
+
+    gnap_highlightcss_to_build_ace: {
+        expand: true,
+        cwd: './deploy/highlight/styles/',
+        src: ['*.css', '**/*.css'],
+        dest: './build/ace/css/develop/highlight/'
     }
 };
