@@ -44,6 +44,7 @@
         'exec:build_node_ace',
         'less:build_ace_css',
         'cssmin:build_ace_css',
+        'cssmin:build_ace_css_highlight',
         'uglify:build_ace_js',
         'replace:ace_map',
         'clean:build_ace'
