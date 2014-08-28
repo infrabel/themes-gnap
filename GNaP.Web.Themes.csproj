@@ -62,6 +62,7 @@
     <Content Include="custom\ace\html\app\views\layouts\partials\_shared\_template\jquery.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-404.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-500.mustache.replace-grunt.js" />
+    <Content Include="custom\ace\html\js\classes\Indent.js" />
     <Content Include="custom\ace\html\js\classes\Page.replace-grunt.js" />
     <Content Include="custom\ace\html\js\index.js.replace-grunt.js" />
     <Content Include="custom\ace\js\develop\ace.js.replace-grunt.js" />

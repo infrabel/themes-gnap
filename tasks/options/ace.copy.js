@@ -83,6 +83,13 @@
         dest: './build/ace/html/app/'
     },
 
+    custom_ace_mustache_to_build: {
+        expand: true,
+        cwd: './custom/ace/html/js/',
+        src: ['*.*', '**/*.*'],
+        dest: './build/ace/html/js/'
+    },
+
     custom_ace_css_to_build: {
         expand: true,
         cwd: './custom/ace/css/',
