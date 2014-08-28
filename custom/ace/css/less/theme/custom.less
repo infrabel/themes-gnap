@@ -226,6 +226,14 @@ a {
     }
 }
 
+.pagination > li {
+    text-align: center;
+}
+
+.pager > li > a, .pagination > li > a {
+    min-width: 40px;
+}
+
 .pagination > li > a:hover, .pager > li > a:hover,
 .pagination > li > a:focus, .pager > li > a:focus {
     color: @custom-base-primary-color2;
@@ -260,7 +268,7 @@ html {
 }
 
 textarea.form-control.limited {
-    padding: 5px 25px 5px 5px;
+    padding: 5px 30px 5px 5px;
 }
 
 .wysiwyg-toolbar {
@@ -337,6 +345,10 @@ div.bootstrap-timepicker-widget.dropdown-menu.open table tbody tr td {
 
 .widget-header > .widget-caption , .widget-header > :first-child {
     float: left;
+}
+
+.tab-pane h3.header:first-child {
+    margin-top: 0px;
 }
 
 .example {
