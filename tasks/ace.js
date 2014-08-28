@@ -33,6 +33,7 @@
     grunt.registerTask('customize-ace',
     [
         'copy:custom_ace_html_to_build',
+        'copy:custom_ace_mustache_to_build',
         'copy:custom_ace_css_to_build',
         'copy:custom_ace_js_to_build',
         'copy:custom_ace_license_to_build',
