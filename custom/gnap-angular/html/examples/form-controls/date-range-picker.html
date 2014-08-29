@@ -1,0 +1,22 @@
+<div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code class="html">&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-date-range-picker&quot;&gt;
+  &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Date Range&lt;/label&gt;
+  &lt;div class=&quot;col-sm-9&quot;&gt;
+    &lt;div gnap-date-range date-begin=&quot;range.dateStart&quot; date-end=&quot;range.dateEnd&quot; icon-position=&quot;{{iconPosition}}&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavasSript" class="tab-pane">
+<pre><code class="javascript">angular
+  .module('gnap-app')
+  .controller('gnap-date-range-picker', ['$scope', function($scope) {
+    $scope.range = {
+      dateStart: new Date(2014, 0, 7),
+      dateEnd: new Date(2014, 7, 14)
+    };
+    
+    $scope.iconPosition = "left";
+  }]);</code></pre>
+  </div>
+</div>
