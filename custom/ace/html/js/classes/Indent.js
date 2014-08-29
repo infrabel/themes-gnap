@@ -219,8 +219,5 @@ function pretty_print(dom, level) {
         }
     }
     
-    output = output.replace(/<pre class="example">[\s\S]*?<code/, '<pre class="example"><code');
-    output = output.replace(/<\/code>[\s\S]*?<\/pre>/, '</code></pre>');
-
     return output;
 }
