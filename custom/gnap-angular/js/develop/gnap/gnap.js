@@ -24,16 +24,6 @@ angular
         template: '<div pagination max-size="0" boundary-links="true" previous-text="&lsaquo;" ng-model="currentPage" total-items="totalItems" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></div>'
       };
     })
-    .directive('gnapPaginationFull', function () {
-      return {
-        restrict: 'AE',
-        scope: {
-          totalItems: '=',
-          currentPage: '='
-        },
-        template: '<div pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></div>'
-      };
-    })
     .directive('gnapPaginationConcise', function () {
       return {
         restrict: 'AE',
@@ -413,6 +403,81 @@ angular
             $event.stopPropagation();
             scope.status.isopen = !scope.status.isopen;
           };
+        }
+      };
+    })
+    .directive('sidebar', ['sidebarService', function (sidebarService) {
+      return {
+        restrict: 'A',
+        templateUrl: 'gnap/sidebar.html',
+        link: function(scope, element, attrs) {
+          scope.shortcuts = sidebarService.getShortcuts();
+          scope.items = sidebarService.getItems();
+          ace.handle_side_menu(jQuery);
+        }
+      };
+    }])
+    .factory('sidebarService', function(){
+
+      var shortcuts = [];
+      var items = [];
+
+      return {
+
+        setShortcuts: function(value) {
+          shortcuts = value;
+        },
+
+        getShortcuts: function() {
+          return shortcuts;
+        },
+
+        setItems: function(value) {
+          items = value;
+        },
+        
+        getItems: function() {
+          return items;
+        },
+
+        setActive: function(path) {
+
+        }
+      }
+    })
+    .directive('breadcrumbs', ['breadcrumbService', function (breadcrumbService) {
+      return {
+        restrict: 'A',
+        templateUrl: 'gnap/breadcrumbs.html',
+        link: function(scope, element, attrs) {
+          scope.breadcrumbs = breadcrumbService.getBreadcrumbs();
+        }
+      };
+    }])
+    .factory('breadcrumbService', function(){
+
+      var breadcrumbs = [];
+
+      return {
+
+        setBreadcrumbs: function(value) {
+          breadcrumbs = value;
+        },
+
+        getBreadcrumbs: function() {
+          return breadcrumbs;
+        },
+      }
+    })
+    .directive('search', function () {
+      return {
+        restrict: 'A',
+        scope: {
+          handler: '&'
+        },
+        templateUrl: 'gnap/search.html',
+        controller: function($scope) {
+          $scope.keywords = '';
         }
       };
     });

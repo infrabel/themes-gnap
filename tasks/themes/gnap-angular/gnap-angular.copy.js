@@ -11,7 +11,8 @@
     'gnap-angular_angular_css_to_build': {
         expand: true,
         cwd: './deploy/angular/',
-        src: ['localytics-chosen/*.css'],
+        src: ['localytics-chosen/*.css',
+              'angular-datatables/*.css'],
         dest: './build/gnap-angular/css/develop/'
     },
 

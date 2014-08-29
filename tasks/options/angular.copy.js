@@ -25,5 +25,12 @@
         cwd: './raw/ui-bootstrap/',
         src: ['*.*', '**/*.*'],
         dest: './deploy/angular/ui-bootstrap/'
+    },
+
+    raw_angular_datatables_to_deploy: {
+        expand: true,
+        cwd: './raw/angular-datatables/',
+        src: ['*.*', '**/*.*', '!*.zip'],
+        dest: './deploy/angular/angular-datatables/'
     }
 };
