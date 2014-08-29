@@ -5,6 +5,7 @@
 
     'gnap-angular_deploy': [
         './deploy/*',
-        '!./deploy/gnap-angular/**'
+        '!./deploy/gnap-angular/**',
+        './deploy/gnap-angular/html'
     ]
 };
