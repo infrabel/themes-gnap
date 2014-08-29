@@ -1,14 +1,17 @@
 ﻿module.exports = {
     bake: {
-        sample: {},
-        gnap: {}
+        'sample': {},
+        'gnap': {},
+        'gnap-angular': {}
     },
     taste: {
-        sample: {},
-        gnap: {}
+        'sample': {},
+        'gnap': {},
+        'gnap-angular': {}
     },
     produce: {
-        sample: {},
-        gnap: {}
+        'sample': {},
+        'gnap': {},
+        'gnap-angular': {}
     }
 };
