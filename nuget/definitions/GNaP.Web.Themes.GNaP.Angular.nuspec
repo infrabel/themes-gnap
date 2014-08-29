@@ -14,10 +14,6 @@
     <licenseUrl>https://github.com/infrabel/GNaP.Web.Themes/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
-    <dependencies>
-      <dependency id="GNaP.Themes.Web.GNaP" version="1.0.0" />
-    </dependencies>
-
     <tags>gnap ui theme angular</tags>
   </metadata>
   <files>

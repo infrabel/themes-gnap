@@ -1,0 +1,20 @@
+<div tabset class="example">
+  <div tab heading="HTML" class="tab-pane in active">
+<pre><code class="html">&lt;div ng-controller=&quot;gnap-progressbar&quot;&gt;                        
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;control-label&quot;&gt;Progress&lt;/label&gt;
+    &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;progress&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div progressbar class=&quot;progress-small progress-striped active&quot; value=&quot;progress&quot;&gt;&lt;/div&gt;
+  &lt;div progressbar class=&quot;progress-small progress-striped&quot; value=&quot;workLeft&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code class="javascript">angular
+.module(&#39;gnap-app&#39;)
+  .controller(&#39;gnap-progressbar&#39;, function($scope) {
+    $scope.progress = 40;
+    $scope.$watch(&#39;progress&#39;, function(progress) { $scope.workLeft = 100 - progress; });
+  });</code></pre>
+  </div>
+</div>
