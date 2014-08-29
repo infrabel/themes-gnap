@@ -42,5 +42,12 @@
         cwd: './build/gnap-angular/',
         src: ['*.*', '**/*.*'],
         dest: './deploy/gnap-angular/'
+    },
+
+    'gnap-angular_deploy_gnap_directives': {
+        expand: true,
+        cwd: './deploy/gnap-angular/js/develop/gnap',
+        src: ['*.*', '**/*.*', '!*.js', '!**/*.js'],
+        dest: './deploy/gnap-angular/js/gnap'
     }
 };

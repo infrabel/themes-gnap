@@ -409,7 +409,7 @@ angular
     .directive('sidebar', ['sidebarService', function (sidebarService) {
       return {
         restrict: 'A',
-        templateUrl: 'gnap/sidebar.html',
+        templateUrl: 'js/gnap/sidebar.html',
         link: function(scope, element, attrs) {
           scope.shortcuts = sidebarService.getShortcuts();
           scope.items = sidebarService.getItems();
@@ -448,7 +448,7 @@ angular
     .directive('breadcrumbs', ['breadcrumbService', function (breadcrumbService) {
       return {
         restrict: 'A',
-        templateUrl: 'gnap/breadcrumbs.html',
+        templateUrl: 'js/gnap/breadcrumbs.html',
         link: function(scope, element, attrs) {
           scope.breadcrumbs = breadcrumbService.getBreadcrumbs();
         }
@@ -475,7 +475,7 @@ angular
         scope: {
           handler: '&'
         },
-        templateUrl: 'gnap/search.html',
+        templateUrl: 'js/gnap/search.html',
         controller: function($scope) {
           $scope.keywords = '';
         }
