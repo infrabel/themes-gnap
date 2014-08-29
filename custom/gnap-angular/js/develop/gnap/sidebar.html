@@ -1,0 +1,63 @@
+
+
+<a class="menu-toggler" id="menu-toggler" href="#">
+  <span class="menu-text"></span>
+</a>
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+
+      <button ng-repeat="shortcut in shortcuts" ng-click="shortcut.click()" class="{{ shortcut.buttonClass }}" title="{{ shortcut.title }}" data-rel="tooltip" data-placement="bottom">
+        <i class="{{ shortcut.icon }}"></i>
+      </button>
+
+      
+    </div>
+
+    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+      <span class="btn btn-success"></span>
+
+      <span class="btn btn-info"></span>
+
+      <span class="btn btn-warning"></span>
+
+      <span class="btn btn-danger"></span>
+    </div>
+  </div>
+
+  <!-- #sidebar-shortcuts -->
+
+  <ul class="nav nav-list">
+
+    <li ng-repeat='levelOneItem in items' ng-class="{'active': levelOneItem.active}">
+      <a href='#' ng-click='levelOneItem.click()' ng-class="{'dropdown-toggle': levelOneItem.items}">
+        <i class="{{ levelOneItem.icon }}"></i>
+        <span class="menu-text">{{ levelOneItem.title }}</span>
+        <b class="arrow icon-angle-down" ng-show="levelOneItem.items"></b>
+      </a>
+      <ul class="submenu">
+        <li ng-repeat='levelTwoItem in levelOneItem.items'>
+          <a href='#' ng-click='levelTwoItem.click()' ng-class="{'dropdown-toggle': levelTwoItem.items}">
+            <i class="{{ levelTwoItem.icon }}"></i>
+            <span class="menu-text">{{ levelTwoItem.title }}</span>
+            <b class="arrow icon-angle-down" ng-show="levelTwoItem.items"></b>
+          </a>
+          <ul class="submenu">
+            <li ng-repeat='levelThreeItem in levelTwoItem.items'>
+              <a href='#' ng-click='levelThreeItem.click()'>
+                <i class="{{ levelThreeItem.icon }}"></i>
+                <span class="menu-text">{{ levelThreeItem.title }}</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <div class="sidebar-collapse" id="sidebar-collapse">
+    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+  </div>
+</div>
