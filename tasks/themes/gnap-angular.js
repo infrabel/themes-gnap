@@ -16,6 +16,7 @@
                         'imagemin:gnap_images_gif',
                         'copy:gnap-angular_deploy_gnap',
                         'copy:gnap-angular_deploy',
+                        'copy:gnap-angular_deploy_gnap_directives',
                         'clean:gnap-angular_deploy'
         ]);
     });
