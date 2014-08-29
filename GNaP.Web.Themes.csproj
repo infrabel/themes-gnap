@@ -2640,6 +2640,7 @@
     <Content Include="raw\jquery\jquery-1.11.0.min.js" />
     <Content Include="tasks\ace.js" />
     <Content Include="tasks\highlight.js" />
+    <Content Include="tasks\angular.js" />
     <Content Include="tasks\options\ace.clean.js" />
     <Content Include="tasks\options\ace.copy.js" />
     <Content Include="tasks\options\ace.cssmin.js" />
@@ -2650,6 +2651,7 @@
     <Content Include="tasks\options\ace.replace.js" />
     <Content Include="tasks\options\ace.uglify.js" />
     <Content Include="tasks\options\highlight.copy.js" />
+    <Content Include="tasks\options\angular.copy.js" />
     <Content Include="tasks\produce.js" />
     <Content Include="tasks\taste.js" />
     <Content Include="tasks\flatly.js" />
@@ -2661,6 +2663,12 @@
     <Content Include="tasks\options\bootstrap.exec.js" />
     <Content Include="tasks\options\clean.js" />
     <Content Include="tasks\options\jquery.copy.js" />
+    <Content Include="tasks\themes\gnap-angular.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.cssmin.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.replace.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.uglify.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.copy.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.clean.js" />
     <Content Include="tasks\themes\gnap\gnap.imagemin.js" />
     <Content Include="tasks\themes\gnap\gnap.clean.js" />
     <Content Include="tasks\themes\gnap\gnap.copy.js" />
@@ -2719,6 +2727,7 @@
     <None Include="custom\flatly\bootstrap.less" />
     <None Include="custom\gnap\css\custom-variables.less" />
     <None Include="LICENSE" />
+    <None Include="nuget\definitions\GNaP.Web.Themes.GNaP.Angular.nuspec" />
     <None Include="nuget\definitions\GNaP.Web.Themes.Sample.nuspec" />
     <None Include="nuget\definitions\GNaP.Web.Themes.GNaP.nuspec" />
     <None Include="package.json" />
@@ -3457,11 +3466,13 @@
     <None Include="raw\highlight\README.ru.md" />
     <None Include="raw\jquery\jquery-1.11.0.min.map" />
     <None Include="README.md" />
+    <None Include="versions\gnap-angular.json" />
     <None Include="versions\sample.json" />
     <None Include="versions\gnap.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="build\" />
+    <Folder Include="custom\gnap-angular\" />
     <Folder Include="deploy\" />
     <Folder Include="nuget\packages\" />
     <Folder Include="raw\ace\mustache\app\views\pages\partials\_shared\" />
