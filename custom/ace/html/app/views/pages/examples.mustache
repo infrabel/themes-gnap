@@ -50,7 +50,7 @@
                 <i class="icon-cog"></i>
                 Primary
             </button>
-            {{> page.buttons_basic_buttons}}
+            {{> page.buttons_basic-buttons}}
 
             <h3 class="header smaller">
                 Form Example
@@ -58,6 +58,7 @@
 
             <button class="btn btn-primary">Save</button>
             <button class="btn btn-default">Cancel</button>
+            {{> page.buttons_form-example}}
 
             <h3 class="header smaller">
                 Tooltips (hover over these)
@@ -68,16 +69,18 @@
             <button class="btn btn-primary" data-rel="tooltip" data-placement="right" title="This is a tooltip on the right!">Right tooltip</button>
             <button class="btn btn-primary" data-rel="tooltip" data-placement="top" title="This is a tooltip on top!">Top tooltip</button>
             <button class="btn btn-primary" data-rel="tooltip" data-placement="bottom" title="This is a tooltip at the bottom!">Bottom tooltip</button>
+            {{> page.buttons_tooltips}}
 
             <h3 class="header smaller">
                 Various Sizes
             </h3>
 
-            <button class="btn btn-minier btn-primary ">Tiny</button>
-            <button class="btn btn-xs btn-primary ">Mini</button>
-            <button class="btn btn-sm btn-primary ">Small</button>
-            <button class="btn btn-primary ">Default</button>
-            <button class="btn btn-lg btn-primary ">Large</button>
+            <button class="btn btn-primary btn-minier">Tiny</button>
+            <button class="btn btn-primary btn-xs">Mini</button>
+            <button class="btn btn-primary btn-sm">Small</button>
+            <button class="btn btn-primary">Default</button>
+            <button class="btn btn-primary btn-lg">Large</button>
+            {{> page.buttons_various-sizes}}
 
             <h3 class="header smaller">
                 Disabled Buttons
@@ -85,6 +88,7 @@
 
             <button class="btn btn-primary disabled">Disabled Primary</button>
             <button class="btn btn-default disabled">Disabled Default</button>
+            {{> page.buttons_disabled-buttons}}
 
             <h3 class="header smaller">
                 Dropdown Button
@@ -110,6 +114,7 @@
                     </li>
                 </ul>
             </div>
+            {{> page.buttons_dropdown-buttons}}
 
             <h3 class="header smaller">
                 Grouped Buttons
@@ -124,6 +129,7 @@
                 <button class="btn btn-primary">Ok</button>
                 <button class="btn btn-default">Cancel</button>
             </div>
+            {{> page.buttons_grouped-buttons}}
         </div>
 
         <div id="progressbar" class="tab-pane">
@@ -138,6 +144,18 @@
             <div class="progress progress-small progress-striped active">
                 <div class="progress-bar" style="width: 25%;"></div>
             </div>
+            {{> page.progress-bar_progress-bar}}
+
+            <h3 class="header smaller">
+                Stacked
+            </h3>
+
+            <div class="progress progress-small">
+                <div class="progress-bar progress-bar-striped progress-bar-success" style="width: 35%"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-warning" style="width: 20%"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-danger" style="width: 10%"></div>
+            </div>
+            {{> page.progress-bar_stacked}}
         </div>
 
         <div id="dialogs" class="tab-pane">
@@ -249,6 +267,7 @@
                     </a>
                 </li>
             </ul>
+            {{> page.pagination_previous-next-pagination}}
 
             <h3 class="header smaller">
                 Full Pagination
@@ -299,6 +318,7 @@
                     </a>
                 </li>
             </ul>
+            {{> page.pagination_few-pages}}
         </div>
 
         <div id="icons" class="tab-pane">
@@ -306,7 +326,8 @@
                 Loading Icon
             </h3>
 
-            <img src="images/loading.gif" alt="" />
+            <img src="images/loading.gif" alt="Loading..." />
+            {{> page.icons_loading-icon}}
 
             <h3 class="header smaller">
                 361 Scalable FontAwesome Icons
@@ -714,6 +735,8 @@
                     </ul>
                 </div>
             </div>
+
+            {{> page.icons_icon-example}}
         </div>
 
         <div id="labels" class="tab-pane">
@@ -723,6 +746,7 @@
 
             <span class="label label-primary">Default</span>
             <span class="label label-success arrowed">Success</span>
+            {{> page.labels_standard-labels}}
 
             <h3 class="header smaller">
                 Indicators
@@ -733,6 +757,7 @@
             <span class="badge badge-warning">4</span>
             <span class="badge badge-danger">6</span>
             <span class="badge badge-info">8</span>
+            {{> page.labels_indicators}}
 
             <h3 class="header smaller">
                 Variations
@@ -745,6 +770,7 @@
 
             <span class="label label-lg label-pink arrowed-right">Large</span>
             <span class="label label-lg label-purple arrowed">Purple</span>
+            {{> page.labels_variations}}
         </div>
 
         <div id="tables" class="tab-pane">
@@ -1166,6 +1192,7 @@
                     </div>
                 </div>
             </div>
+            {{> page.sections_tabs}}
 
             <h3 class="header smaller">
                 Container
@@ -1189,6 +1216,7 @@
                     </div>
                 </div>
             </div>
+            {{> page.sections_container}}
 
             <h3 class="header smaller">
                 Collapsable Container
@@ -1225,13 +1253,14 @@
                     </div>
                 </div>
             </div>
+            {{> page.sections_collapsable-container}}
 
             <h3 class="header smaller">
                 Collapsable Container With Buttons
             </h3>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-6 widget-container-span">
+                <div class="col-xs-12 col-sm-8 widget-container-span">
                     <div class="widget-box">
                         <div class="widget-header widget-header-flat">
                             <h5>Some Group</h5>
@@ -1266,6 +1295,7 @@
                     </div>
                 </div>
             </div>
+            {{> page.sections_collapsable-container-with-buttons}}
         </div>
 
         <div id="notifications" class="tab-pane">
