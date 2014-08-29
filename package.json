@@ -24,6 +24,7 @@
     "grunt-contrib-rename": "0.0.3",
     "grunt-semver": "^0.1.6",
     "grunt-mkdir": "^0.1.1",
-    "grunt-contrib-imagemin": "^0.7.1"
+    "grunt-contrib-imagemin": "^0.7.1",
+    "grunt-include-replace": "^2.0.0"
   }
 }
