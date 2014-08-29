@@ -22,6 +22,20 @@
         dest: './build/gnap-angular/images/'
     },
 
+    'gnap-angular_custom_to_build': {
+        expand: true,
+        cwd: './custom/gnap-angular/',
+        src: ['*.*', '**/*.*'],
+        dest: './build/gnap-angular/'
+    },
+
+    'gnap-angular_deploy_gnap': {
+        expand: true,
+        cwd: './deploy/gnap/',
+        src: ['*.*', '**/*.*'],
+        dest: './deploy/gnap-angular/'
+    },
+
     'gnap-angular_deploy': {
         expand: true,
         cwd: './build/gnap-angular/',
