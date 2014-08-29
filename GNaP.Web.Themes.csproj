@@ -132,6 +132,7 @@
     <Content Include="custom\gnap-angular\app\sidebar.js" />
     <Content Include="custom\gnap-angular\css\develop\app.css" />
     <Content Include="custom\gnap-angular\examples.html" />
+    <Content Include="custom\gnap-angular\html\examples\buttons\basic_buttons.html" />
     <Content Include="custom\gnap-angular\js\develop\gnap\gnap-tooltip-info.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\gnap.js" />
     <Content Include="custom\gnap\html\site.json.replace-grunt.js" />
@@ -2725,6 +2726,7 @@
     <Content Include="tasks\options\clean.js" />
     <Content Include="tasks\options\jquery.copy.js" />
     <Content Include="tasks\themes\gnap-angular.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.includereplace.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.cssmin.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.replace.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.uglify.js" />
