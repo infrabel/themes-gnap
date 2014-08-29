@@ -1,0 +1,22 @@
+<div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code class="html">&lt;div ng-controller=&quot;gnap-choice-toggle&quot;&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Choice toggle directive&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+      &lt;div gnap-choice-toggle choice=&quot;value&quot;&gt;&lt;/div&gt;
+      &lt;div gnap-choice-toggle lang=&quot;fr&quot; choice=&quot;value&quot;&gt;&lt;/div&gt;
+      &lt;div gnap-choice-toggle lang=&quot;en&quot; choice=&quot;value&quot;&gt;&lt;/div&gt;
+      &lt;div gnap-choice-toggle lang=&quot;nl&quot; choice=&quot;value&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavasSript" class="tab-pane">
+<pre><code class="javascript">angular
+  .module('gnap-app')
+  .controller('gnap-choice-toggle', function($scope) {
+    $scope.value = true;
+});</code></pre>
+  </div>
+</div>
