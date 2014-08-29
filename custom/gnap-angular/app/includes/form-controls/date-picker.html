@@ -1,0 +1,19 @@
+<div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code class="html">&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-date-picker&quot;&gt;
+  &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Date Picker&lt;/label&gt;
+  &lt;div class=&quot;col-sm-9&quot;&gt;
+    &lt;div class=&quot;input-group col-xs-10 col-sm-5 no-padding-left no-padding-right&quot;&gt;
+      &lt;div gnap-datepicker date=&quot;date&quot; icon-position=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavasSript" class="tab-pane">
+<pre><code class="javascript">angular
+  .module('gnap-app')
+  .controller('gnap-date-picker', function($scope) {
+    $scope.date = new Date();
+  });</code></pre>
+  </div>
+</div>   

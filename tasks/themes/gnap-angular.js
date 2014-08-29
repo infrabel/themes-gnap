@@ -6,14 +6,16 @@
                         'copy:gnap-angular_angular_js_to_build',
                         'copy:gnap-angular_angular_css_to_build',
                         'copy:gnap-angular_angular_images_to_build',
+                        'copy:gnap-angular_custom_to_build',
                         'cssmin:build_gnap_angular_css',
                         'uglify:gnap-angular',
                         'replace:gnap-angular_map',
                         'imagemin:gnap_images_png',
                         'imagemin:gnap_images_jpg',
                         'imagemin:gnap_images_gif',
-                        'copy:gnap-angular_deploy'/*,
-                        'clean:gnap-angular_deploy'*/
+                        'copy:gnap-angular_deploy_gnap',
+                        'copy:gnap-angular_deploy',
+                        'clean:gnap-angular_deploy'
         ]);
     });
 
