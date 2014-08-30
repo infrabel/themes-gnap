@@ -1,0 +1,40 @@
+<div class="tabbable example">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+            <a data-toggle="tab" href="#html-error-notification">
+                <i></i>
+                HTML
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#javascript-error-notification">
+                JavaScript
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="html-error-notification" class="tab-pane in active">
+            <pre><code class="html">
+&lt;button class=&quot;btn btn-primary&quot; id=&quot;gritter-error&quot;&gt;Click Me!&lt;/button&gt;
+&lt;button class=&quot;btn btn-default gritter-remove&quot;&gt;Remove Notification&lt;/button&gt;
+</code></pre>
+        </div>
+        <div id="javascript-error-notification" class="tab-pane">
+            <pre><code class="javascript">
+$(&#39;#gritter-error&#39;).on(ace.click_event, function () {
+    $.gritter.add({
+        title: &#39;This is a warning notification&#39;,
+        text: &#39;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis neque id leo tincidunt, vel interdum tortor egestas. Quisque at massa sit amet nisl placerat euismod sit amet non leo. Suspendisse egestas, leo id scelerisque euismod, massa sapien feugiat mi, at pulvinar lorem est sit amet est.&#39;,
+        class_name: &#39;gritter-error&#39; 
+    });
+    return false;
+});
+
+$(&quot;.gritter-remove&quot;).on(ace.click_event, function () {
+    $.gritter.removeAll();
+    return false;
+});
+</code></pre>
+        </div>
+    </div>
+</div>

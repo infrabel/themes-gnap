@@ -1,0 +1,40 @@
+<div class="tabbable example">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+            <a data-toggle="tab" href="#html-default-notification">
+                <i></i>
+                HTML
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#javascript-default-notification">
+                JavaScript
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="html-default-notification" class="tab-pane in active">
+            <pre><code class="html">
+&lt;button class=&quot;btn btn-primary&quot; id=&quot;gritter-default&quot;&gt;Click Me!&lt;/button&gt;
+&lt;button class=&quot;btn btn-default gritter-remove&quot;&gt;Remove Notification&lt;/button&gt;
+</code></pre>
+        </div>
+        <div id="javascript-default-notification" class="tab-pane">
+            <pre><code class="javascript">
+$(&#39;#gritter-default&#39;).on(ace.click_event, function () {
+    $.gritter.add({
+        title: &#39;This is a default notification&#39;,
+        text: &#39;This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.&#39;,
+        class_name: &#39;gritter-default&#39;
+    });
+    return false;
+});
+
+$(&quot;.gritter-remove&quot;).on(ace.click_event, function () {
+    $.gritter.removeAll();
+    return false;
+});
+</code></pre>
+        </div>
+    </div>
+</div>
