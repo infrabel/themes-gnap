@@ -58,7 +58,7 @@ module.exports = {
             },
             {
                 from: /@tab-active-border:.*;/g,
-                to: '@tab-active-border: @custom-base-primary-color2;'
+                to: '@tab-active-border: @custom-base-primary-color;'
             },
             {
                 from: /@tab-hover-color:.*;/g,
