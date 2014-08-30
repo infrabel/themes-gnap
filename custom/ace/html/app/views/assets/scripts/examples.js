@@ -119,16 +119,6 @@ jQuery(function ($) {
         remText: '%n',
         limitTextShow: false
     });
-    
-    $('#timepicker1').timepicker({
-        minuteStep: 1,
-        showSeconds: false,
-        showMeridian: false,
-        defaultTime: false
-    }).next().on(ace.click_event, function(){
-        $(this).prev().focus();
-    });
-
    
     //file input
     $('#id-input-file-2').ace_file_input({
