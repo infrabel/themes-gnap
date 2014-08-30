@@ -1,0 +1,129 @@
+<div class="tabbable example">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+            <a data-toggle="tab" href="#html-full-table">
+                <i></i>
+                HTML
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#javascript-full-table">
+                JavaScript
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="html-full-table" class="tab-pane in active">
+            <pre><code class="html">
+&lt;div class=&quot;table-header&quot;&gt;
+    A Table Title
+&lt;/div&gt;
+
+&lt;div class=&quot;table-responsive&quot;&gt;
+    &lt;table id=&quot;sample-table-2&quot; class=&quot;table table-striped table-bordered table-hover&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th class=&quot;center&quot;&gt;
+                    &lt;label&gt;
+                        &lt;input type=&quot;checkbox&quot; class=&quot;ace&quot; /&gt;
+                        &lt;span class=&quot;lbl&quot;&gt;&lt;/span&gt;
+                    &lt;/label&gt;
+                &lt;/th&gt;
+                &lt;th&gt;Domain&lt;/th&gt;
+                &lt;th&gt;Price&lt;/th&gt;
+                &lt;th class=&quot;hidden-480&quot;&gt;Clicks&lt;/th&gt;
+                &lt;th&gt;
+                    &lt;i class=&quot;icon-time bigger-110 hidden-480&quot;&gt;&lt;/i&gt;
+                    Update
+                &lt;/th&gt;
+                &lt;th class=&quot;hidden-480&quot;&gt;Status&lt;/th&gt;
+                &lt;th&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td class=&quot;center&quot;&gt;
+                    &lt;label&gt;
+                        &lt;input type=&quot;checkbox&quot; class=&quot;ace&quot; /&gt;
+                        &lt;span class=&quot;lbl&quot;&gt;&lt;/span&gt;
+                    &lt;/label&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;a href=&quot;#&quot;&gt;app.com&lt;/a&gt;
+                &lt;/td&gt;
+                &lt;td&gt;$45&lt;/td&gt;
+                &lt;td class=&quot;hidden-480&quot;&gt;3,330&lt;/td&gt;
+                &lt;td&gt;Feb 12&lt;/td&gt;
+                &lt;td class=&quot;hidden-480&quot;&gt;
+                    Expiring
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class=&quot;visible-md visible-lg hidden-sm hidden-xs action-buttons&quot;&gt;
+                        &lt;a class=&quot;blue&quot; href=&quot;#&quot;&gt;
+                            &lt;i class=&quot;icon-zoom-in bigger-130&quot;&gt;&lt;/i&gt;
+                        &lt;/a&gt;
+                        &lt;a class=&quot;green&quot; href=&quot;#&quot;&gt;
+                            &lt;i class=&quot;icon-pencil bigger-130&quot;&gt;&lt;/i&gt;
+                        &lt;/a&gt;
+                        &lt;a class=&quot;red confirm-delete&quot; confirm-message=&quot;Can I delete it ?&quot; href=&quot;#&quot;&gt;
+                            &lt;i class=&quot;icon-trash bigger-130&quot;&gt;&lt;/i&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;visible-xs visible-sm hidden-md hidden-lg&quot;&gt;
+                        &lt;div class=&quot;inline position-relative&quot;&gt;
+                            &lt;button class=&quot;btn btn-minier btn-primary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                                &lt;i class=&quot;icon-caret-down icon-only bigger-120&quot;&gt;&lt;/i&gt;
+                            &lt;/button&gt;
+                            &lt;ul class=&quot;dropdown-menu dropdown-only-icon pull-right dropdown-caret dropdown-close&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;#&quot; class=&quot;tooltip-info&quot; data-rel=&quot;tooltip&quot; title=&quot;View&quot;&gt;
+                                        &lt;span&gt;
+                                            &lt;i class=&quot;icon-zoom-in bigger-120&quot;&gt;&lt;/i&gt;
+                                        &lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;#&quot; class=&quot;tooltip-success&quot; data-rel=&quot;tooltip&quot; title=&quot;Edit&quot;&gt;
+                                        &lt;span&gt;
+                                            &lt;i class=&quot;icon-edit bigger-120&quot;&gt;&lt;/i&gt;
+                                        &lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;#&quot; class=&quot;tooltip-error confirm-delete&quot; data-rel=&quot;tooltip&quot; title=&quot;Delete&quot; confirm-message=&quot;Can I delete it ?&quot;&gt;
+                                        &lt;span&gt;
+                                            &lt;i class=&quot;icon-trash bigger-120&quot;&gt;&lt;/i&gt;
+                                        &lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+
+            ...
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+        </div>
+        <div id="javascript-full-table" class="tab-pane">
+            <pre><code class="javascript">
+var oTable1 = $(&#39;#sample-table-2&#39;).dataTable({
+    &quot;aoColumns&quot;: [
+        { &quot;bSortable&quot;: false }, null, null, null, null, null, { &quot;bSortable&quot;: false }
+    ]
+});
+$(&#39;table th input:checkbox&#39;).on(&#39;click&#39;, function() {
+    var that = this;
+    $(this).closest(&#39;table&#39;).find(&#39;tr &gt; td:first-child input:checkbox&#39;)
+        .each(function() {
+            this.checked = that.checked;
+            $(this).closest(&#39;tr&#39;).toggleClass(&#39;selected&#39;);
+        });
+});
+</code></pre>
+        </div>
+    </div>
+</div>
