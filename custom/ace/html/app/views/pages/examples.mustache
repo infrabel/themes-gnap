@@ -164,27 +164,27 @@
             </h3>
 
             <button class="btn btn-primary" id="bootbox-alert">Click Me!</button>
-            {{> page.alerts_alert-dialog}}
+            {{> page.dialogs_alert-dialog}}
 
             <h3 class="header smaller">
                 Confirm Dialog
             </h3>
 
             <button class="btn btn-primary" id="bootbox-confirm">Click Me!</button>
-            {{> page.alerts_confirm-dialog}}
+            {{> page.dialogs_confirm-dialog}}
 
             <h3 class="header smaller">
                 Prompt Dialog
             </h3>
 
             <button class="btn btn-primary" id="bootbox-prompt">Click Me!</button>
-            {{> page.alerts_prompt-dialog}}
+            {{> page.dialogs_prompt-dialog}}
 
             <h3 class="header smaller">
                 Custom Dialog
             </h3>
             <button class="btn btn-primary" id="bootbox-options">Click Me!</button>
-            {{> page.alerts_custom-dialog}}
+            {{> page.dialogs_custom-dialog}}
         </div>
 
         <div id="alerts" class="tab-pane">
@@ -203,6 +203,7 @@
 
                 Change a few things up and try submitting again.
             </div>
+            {{> page.alerts_alert-danger}}
 
             <div class="alert alert-warning">
                 <button type="button" class="close" data-dismiss="alert">
@@ -215,6 +216,7 @@
 
                 Best check your self, you're not looking too good.
             </div>
+            {{> page.alerts_alert-warning}}
 
             <div class="alert alert-block alert-success">
                 <button type="button" class="close" data-dismiss="alert">
@@ -227,6 +229,7 @@
 
                 You successfully read this important alert message.
             </div>
+            {{> page.alerts_alert-success}}
 
             <div class="alert alert-info">
                 <button type="button" class="close" data-dismiss="alert">
@@ -239,6 +242,7 @@
 
                 This alert needs your attention, but it's not super important.
             </div>
+            {{> page.alerts_alert-info}}
         </div>
 
         <div id="pagination" class="tab-pane">
