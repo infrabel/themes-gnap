@@ -1247,7 +1247,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label no-padding-right" for="form-input-readonly">Readonly field</label>
                                             <div class="col-sm-9">
-                                                <input readonly="" type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" />
+                                                <input type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" readonly="readonly" />
                                             </div>
                                         </div>
                                          @@include('html/examples/form-controls/readonly-field.html')
@@ -1255,7 +1255,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label no-padding-right" for="form-input-disabled">Disabled field</label>
                                             <div class="col-sm-9">
-                                                <input disabled="disabled" type="text" class="col-xs-10 col-sm-5" id="form-input-disabled" value="This text field is disabled!" />
+                                                <input type="text" class="col-xs-10 col-sm-5" id="form-input-disabled" value="This text field is disabled!" disabled="disabled" />
                                             </div>
                                         </div>
                                          @@include('html/examples/form-controls/disabled-field.html')
@@ -1343,7 +1343,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label no-padding-right" for="form-field-select-4">Multiple</label>
                                             <div class="col-sm-9">
-                                                <select multiple="" class="width-80 chosen-select" id="form-field-select-4" data-placeholder="Choose a Country...">
+                                                <select multiple="multiple" class="width-80 chosen-select" id="form-field-select-4" data-placeholder="Choose a Country...">
                                                     <option value="">&nbsp;</option>
                                                     <option value="AL">Alabama</option>
                                                     <option value="AK">Alaska</option>
