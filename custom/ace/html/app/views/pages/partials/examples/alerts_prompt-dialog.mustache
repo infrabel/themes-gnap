@@ -1,0 +1,35 @@
+<div class="tabbable example">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+            <a data-toggle="tab" href="#html-prompt-dialog">
+                <i></i>
+                HTML
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#javascript-prompt-dialog">
+                JavaScript
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="html-prompt-dialog" class="tab-pane in active">
+            <pre><code class="html">
+&lt;button class=&quot;btn btn-primary&quot; id=&quot;bootbox-prompt&quot;&gt;Click Me!&lt;/button&gt;
+</code></pre>
+        </div>
+        <div id="javascript-prompt-dialog" class="tab-pane">
+            <pre><code class="javascript">
+$(&#39;#bootbox-prompt&#39;).on(ace.click_event, function () {
+    bootbox.prompt(&#39;What is your name?&#39;, function (result) {
+        if (result === null) {
+            alert(&#39;Prompt dismissed&#39;);
+        } else {
+            alert(&#39;Hi &#39; + result + &#39;!&#39;);
+        }
+    });
+});
+</code></pre>
+        </div>
+    </div>
+</div>
