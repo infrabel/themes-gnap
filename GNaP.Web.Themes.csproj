@@ -66,6 +66,9 @@
     <None Include="custom\ace\html\app\views\pages\partials\examples\alerts_alert-success.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\alerts_alert-warning.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\alerts_alert-danger.mustache" />
+    <None Include="custom\ace\html\app\views\pages\partials\examples\notifications_error-notification.mustache" />
+    <None Include="custom\ace\html\app\views\pages\partials\examples\notifications_success-notification.mustache" />
+    <None Include="custom\ace\html\app\views\pages\partials\examples\notifications_default-notification.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\dialogs_prompt-dialog.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\dialogs_custom-dialog.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\dialogs_confirm-dialog.mustache" />
