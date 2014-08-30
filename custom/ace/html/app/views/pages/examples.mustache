@@ -849,6 +849,7 @@
                     </tbody>
                 </table>
             </div>
+            {{> page.tables_standard-table}}
 
             <h3 class="header smaller">
                 Full Table
@@ -941,7 +942,7 @@
                                             </li>
 
                                             <li>
-                                                <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                <a href="#" class="tooltip-error confirm-delete" data-rel="tooltip" title="Delete" confirm-message="Can I delete it ?">
                                                     <span>
                                                         <i class="icon-trash bigger-120"></i>
                                                     </span>
@@ -982,7 +983,7 @@
                                         <i class="icon-pencil bigger-130"></i>
                                     </a>
 
-                                    <a class="red" href="#">
+                                    <a class="red confirm-delete" confirm-message="Can I delete it ?" href="#">
                                         <i class="icon-trash bigger-130"></i>
                                     </a>
                                 </div>
@@ -1011,7 +1012,7 @@
                                             </li>
 
                                             <li>
-                                                <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                <a href="#" class="tooltip-error confirm-delete" data-rel="tooltip" title="Delete" confirm-message="Can I delete it ?">
                                                     <span class="red">
                                                         <i class="icon-trash bigger-120"></i>
                                                     </span>
@@ -1052,7 +1053,7 @@
                                         <i class="icon-pencil bigger-130"></i>
                                     </a>
 
-                                    <a class="red" href="#">
+                                    <a class="red confirm-delete" confirm-message="Can I delete it ?" href="#">
                                         <i class="icon-trash bigger-130"></i>
                                     </a>
                                 </div>
@@ -1081,7 +1082,7 @@
                                             </li>
 
                                             <li>
-                                                <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                <a href="#" class="tooltip-error confirm-delete" data-rel="tooltip" title="Delete" confirm-message="Can I delete it ?">
                                                     <span class="red">
                                                         <i class="icon-trash bigger-120"></i>
                                                     </span>
@@ -1122,7 +1123,7 @@
                                         <i class="icon-pencil bigger-130"></i>
                                     </a>
 
-                                    <a class="red" href="#">
+                                    <a class="red confirm-delete" confirm-message="Can I delete it ?" href="#">
                                         <i class="icon-trash bigger-130"></i>
                                     </a>
                                 </div>
@@ -1151,7 +1152,7 @@
                                             </li>
 
                                             <li>
-                                                <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                <a href="#" class="tooltip-error confirm-delete" data-rel="tooltip" title="Delete" confirm-message="Can I delete it ?">
                                                     <span class="red">
                                                         <i class="icon-trash bigger-120"></i>
                                                     </span>
@@ -1165,6 +1166,7 @@
                     </tbody>
                 </table>
             </div>
+            {{> page.tables_full-table}}
         </div>
 
         <div id="sections" class="tab-pane">
@@ -1379,7 +1381,7 @@
                 {{> page.form-controls_disabled-field}}
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">Input with Icon</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-icon-1">Input with Icon</label>
 
                     <div class="col-sm-9">
                         <span class="input-icon col-xs-10 col-sm-5">
@@ -1390,13 +1392,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right"></label>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-icon-2"></label>
 
                     <div class="col-sm-9">
-                    <span class="input-icon input-icon-right col-xs-10 col-sm-5">
-                        <input type="text" id="form-field-icon-2" />
-                        <i class="icon-lock theme_color"></i>
-                    </span>
+                        <span class="input-icon input-icon-right col-xs-10 col-sm-5">
+                            <input type="text" id="form-field-icon-2" />
+                            <i class="icon-lock theme_color"></i>
+                        </span>
                     </div>
                 </div>
                 {{> page.form-controls_input-with-icon}}
@@ -1579,7 +1581,7 @@
                 {{> page.form-controls_radio}}
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">Default textarea</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-8">Default textarea</label>
 
                     <div class="col-sm-9">
                         <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
@@ -1594,7 +1596,7 @@
                 </h3>
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">Date Picker</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="id-date-picker-1">Date Picker</label>
 
                     <div class="col-sm-9">
                         <div class="input-group col-xs-10 col-sm-5 no-padding-left no-padding-right">
@@ -1605,31 +1607,34 @@
                         </div>
                     </div>
                 </div>
+                {{> page.form-controls_date-picker}}
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">Date Range</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="id-date-range-picker-1">Date Range</label>
 
                     <div class="col-sm-9">
                         <div class="input-group col-xs-10 col-sm-5 no-padding-left no-padding-right">
                             <span class="input-group-addon">
                                 <i class="icon-calendar bigger-110"></i>
                             </span>
-                            <input class="form-control" type="text" name="date-range-picker" id="id-date-range-picker-1" />
+                            <input class="form-control date-range-picker" type="text" id="id-date-range-picker-1" />
                         </div>
                     </div>
                 </div>
+                {{> page.form-controls_date-range-picker}}
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">Time Picker</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="timepicker1">Time Picker</label>
                     <div class="col-sm-9">
                         <div class="input-group bootstrap-timepicker col-xs-10 col-sm-5 no-padding-left no-padding-right">
-                            <input id="timepicker1" type="text" class="form-control input-mask-time" />
+                            <input id="timepicker1" type="text" class="form-control time-picker input-mask-time" />
                             <span class="input-group-addon">
                                 <i class="icon-time bigger-110"></i>
                             </span>
                         </div>
                     </div>
                 </div>
+                {{> page.form-controls_time-picker}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right">Choice toggle</label>
@@ -1656,9 +1661,10 @@
                         </label>
                     </div>
                 </div>
+                {{> page.form-controls_choice-toggle}}
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">File input</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="id-input-file-2">File input</label>
 
                     <div class="col-sm-9">
                         <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
@@ -1666,9 +1672,10 @@
                         </div>
                     </div>
                 </div>
+                {{> page.form-controls_file-input}}
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">Multiple File input</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="id-input-file-3">Multiple File input</label>
 
                     <div class="col-sm-9">
                         <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
@@ -1681,9 +1688,10 @@
                         </div>
                     </div>
                 </div>
+                {{> page.form-controls_multiple-file-input}}
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">Masked field</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-mask-3">Masked field</label>
 
                     <div class="col-sm-9">
                         <input class="col-xs-10 col-sm-5 input-mask-product" type="text" id="form-field-mask-3" />
@@ -1692,9 +1700,10 @@
                         </span>
                     </div>
                 </div>
+                {{> page.form-controls_masked-field}}
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">Textarea with character limit</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-9">Textarea with character limit</label>
 
                     <div class="col-sm-9">
                         <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
@@ -1703,14 +1712,16 @@
                         </div>
                     </div>
                 </div>
+                {{> page.form-controls_textarea-with-character-limit}}
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">WYSIWYG</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="editor1">WYSIWYG</label>
 
                     <div class="col-sm-9">
                         <div class="wysiwyg-editor" id="editor1"></div>
                     </div>
                 </div>
+                {{> page.form-controls_wysiwyg}}
 
                 <h3 class="header smaller">
                     Sizing Examples
@@ -1764,11 +1775,12 @@
                         <input class="form-control input-xxlarge" type="text" placeholder=".input-xxlarge" />
                     </div>
                 </div>
+                {{> page.form-controls_sizing-examples}}
             </form>
         </div>
     </div>
 </div>
- 
+
 <script type="text/javascript">
     var $path_assets = "{{{path.assets}}}";//this will be used in gritter alerts containing images
 </script>

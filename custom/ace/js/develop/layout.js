@@ -72,13 +72,24 @@ jQuery(function($) {
 
     var today = new Date();
     if (jQuery().daterangepicker) {
-        $('input[name=date-range-picker]').daterangepicker(
+        $('.date-range-picker').daterangepicker(
         {
             format: 'DD-MM-YYYY',
             startDate: '' + today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear(),
             endDate: '' + (today.getDate() + 5) + '-' + (today.getMonth() + 1) + '-' + today.getFullYear(),
         }).prev().on(ace.click_event, function() {
             $(this).next().focus();
+        });
+    }
+
+    if (jQuery().timepicker) {
+        $('.time-picker').timepicker({
+            minuteStep: 1,
+            showSeconds: false,
+            showMeridian: false,
+            defaultTime: false
+        }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
         });
     }
 
