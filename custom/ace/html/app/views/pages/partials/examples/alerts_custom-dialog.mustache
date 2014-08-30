@@ -1,0 +1,65 @@
+<div class="tabbable example">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+            <a data-toggle="tab" href="#html-custom-dialog">
+                <i></i>
+                HTML
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#javascript-custom-dialog">
+                JavaScript
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="html-custom-dialog" class="tab-pane in active">
+            <pre><code class="html">
+&lt;button class=&quot;btn btn-primary&quot; id=&quot;bootbox-options&quot;&gt;Click Me!&lt;/button&gt;
+</code></pre>
+        </div>
+        <div id="javascript-custom-dialog" class="tab-pane">
+            <pre><code class="javascript">
+$(&#39;#bootbox-options&#39;).on(ace.click_event, function () {
+    bootbox.dialog({
+        message: &#39;&lt;span class=&quot;bigger-110&quot;&gt;I am a custom dialog with smaller buttons&lt;/span&gt;&#39;,
+        title: &#39;Custom Dialog&#39;,
+        onEscape: function() {},
+        buttons:
+        {
+            &#39;success&#39;:
+                {
+                    &#39;label&#39;: &#39;&lt;i class=&quot;icon-ok&quot;&gt;&lt;/i&gt; Success!&#39;,
+                    &#39;className&#39;: &#39;btn-sm btn-success&#39;,
+                    &#39;callback&#39;: function () {
+                        alert(&#39;Great Success!&#39;);
+                    }
+                },
+            &#39;danger&#39;:
+            {
+                &#39;label&#39;: &#39;Danger!&#39;,
+                &#39;className&#39;: &#39;btn-sm btn-danger&#39;,
+                &#39;callback&#39;: function () {
+                    alert(&#39;Uh Oh, Look Out!&#39;);
+                }
+            },
+            &#39;click&#39;:
+            {
+                &#39;label&#39;: &#39;Something!&#39;,
+                &#39;className&#39;: &#39;btn-sm btn-primary&#39;,
+                &#39;callback&#39;: function () {
+                    alert(&#39;Boo!&#39;);
+                }
+            },
+            &#39;button&#39;:
+            {
+                &#39;label&#39;: &#39;Just a button...&#39;,
+                &#39;className&#39;: &#39;btn-sm&#39;
+            }
+        }
+    });
+});
+</code></pre>
+        </div>
+    </div>
+</div>

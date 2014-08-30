@@ -1,0 +1,35 @@
+<div class="tabbable example">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+            <a data-toggle="tab" href="#html-confirm-dialog">
+                <i></i>
+                HTML
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#javascript-confirm-dialog">
+                JavaScript
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="html-confirm-dialog" class="tab-pane in active">
+            <pre><code class="html">
+&lt;button class=&quot;btn btn-primary&quot; id=&quot;bootbox-confirm&quot;&gt;Click Me!&lt;/button&gt;
+</code></pre>
+        </div>
+        <div id="javascript-confirm-dialog" class="tab-pane">
+            <pre><code class="javascript">
+$(&#39;#bootbox-confirm&#39;).on(ace.click_event, function () {
+    bootbox.confirm(&#39;Are you sure?&#39;, function (result) {
+        if (result) {
+            alert(&#39;You were sure!&#39;);
+        } else {
+            alert(&#39;You weren\&#39;t sure!&#39;);
+        }
+    });
+});
+</code></pre>
+        </div>
+    </div>
+</div>
