@@ -1345,6 +1345,7 @@
                         <input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-5" />
                     </div>
                 </div>
+                {{> page.form-controls_text-field}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-2">Password Field</label>
@@ -1357,14 +1358,16 @@
                         </span>
                     </div>
                 </div>
+                {{> page.form-controls_password-field}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-input-readonly">Readonly field</label>
 
                     <div class="col-sm-9">
-                        <input readonly="" type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" />
+                        <input type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" readonly="readonly" />
                     </div>
                 </div>
+                {{> page.form-controls_readonly-field}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-input-disabled">Disabled field</label>
@@ -1373,6 +1376,7 @@
                         <input disabled="disabled" type="text" class="col-xs-10 col-sm-5" id="form-input-disabled" value="This text field is disabled!" />
                     </div>
                 </div>
+                {{> page.form-controls_disabled-field}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right">Input with Icon</label>
@@ -1389,12 +1393,13 @@
                     <label class="col-sm-3 control-label no-padding-right"></label>
 
                     <div class="col-sm-9">
-                        <span class="input-icon input-icon-right col-xs-10 col-sm-5">
-                            <input type="text" id="form-field-icon-2" />
-                            <i class="icon-lock theme_color"></i>
-                        </span>
+                    <span class="input-icon input-icon-right col-xs-10 col-sm-5">
+                        <input type="text" id="form-field-icon-2" />
+                        <i class="icon-lock theme_color"></i>
+                    </span>
                     </div>
                 </div>
+                {{> page.form-controls_input-with-icon}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-select-3">Dropdown</label>
@@ -1455,12 +1460,13 @@
                         </select>
                     </div>
                 </div>
+                {{> page.form-controls_dropdown}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-select-4">Multiple</label>
 
                     <div class="col-sm-9">
-                        <select multiple="" class="width-80 chosen-select" id="form-field-select-4" data-placeholder="Choose a Country...">
+                        <select multiple="multiple" class="width-80 chosen-select" id="form-field-select-4" data-placeholder="Choose a Country...">
                             <option value="">&nbsp;</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -1515,6 +1521,7 @@
                         </select>
                     </div>
                 </div>
+                {{> page.form-controls_multiple-dropdown}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right">Checkbox</label>
@@ -1542,6 +1549,7 @@
                         </div>
                     </div>
                 </div>
+                {{> page.form-controls_checkbox}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right">Radio</label>
@@ -1568,6 +1576,7 @@
                         </div>
                     </div>
                 </div>
+                {{> page.form-controls_radio}}
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right">Default textarea</label>
@@ -1578,6 +1587,7 @@
                         </div>
                     </div>
                 </div>
+                {{> page.form-controls_default-textarea}}
 
                 <h3 class="header smaller">
                     Specialized Input Controls
