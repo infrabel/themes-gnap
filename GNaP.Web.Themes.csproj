@@ -62,6 +62,9 @@
     <Content Include="custom\ace\html\app\views\layouts\partials\_shared\_template\jquery.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-404.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-500.mustache.replace-grunt.js" />
+    <None Include="custom\ace\html\app\views\pages\partials\examples\alerts_prompt-dialog.mustache" />
+    <None Include="custom\ace\html\app\views\pages\partials\examples\alerts_custom-dialog.mustache" />
+    <None Include="custom\ace\html\app\views\pages\partials\examples\alerts_confirm-dialog.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\buttons_disabled-buttons.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\buttons_dropdown-buttons.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\buttons_form-example.mustache" />
@@ -81,6 +84,7 @@
     <None Include="custom\ace\html\app\views\pages\partials\examples\sections_tabs.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\sections_container.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\sections_collapsable-container.mustache" />
+    <None Include="custom\ace\html\app\views\pages\partials\examples\alerts_alert-dialog.mustache" />
     <Content Include="custom\ace\html\js\classes\Indent.js" />
     <Content Include="custom\ace\html\js\classes\Page.replace-grunt.js" />
     <Content Include="custom\ace\html\js\index.js.replace-grunt.js" />

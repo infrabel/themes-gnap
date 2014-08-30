@@ -14,7 +14,7 @@
             },
             {
                 from: 'var output_file = \'output_folder/\'+page_name+\'.html\';',
-                to: 'result = result.replace(/<pre class="example">[\\s\\S]*?<code/g, \'<pre class="example"><code\');\n\t\t\tresult = result.replace(/<\\/code>[\\s\\S]*?<\\/pre>/g, \'</code></pre>\');\n\n\t\t\tvar output_file = \'output_folder/\'+page_name+\'.html\';',
+                to: 'result = result.replace(/<pre>[\\s\\S]*?<code/g, \'<pre><code\');\n\t\t\tresult = result.replace(/<pre class="example">[\\s\\S]*?<code/g, \'<pre class="example"><code\');\n\t\t\tresult = result.replace(/<\\/code>[\\s\\S]*?<\\/pre>/g, \'</code></pre>\');\n\n\t\t\tvar output_file = \'output_folder/\'+page_name+\'.html\';',
             }
         ]
     }
