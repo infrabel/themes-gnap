@@ -1,0 +1,102 @@
+<div class="tabbable example">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+            <a data-toggle="tab" href="#html-file-input">
+                <i></i>
+                HTML
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#javascript-file-input">
+                JavaScript
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="html-file-input" class="tab-pane in active">
+            <pre><code class="html">
+&lt;div class=&quot;col-xs-10 col-sm-5 no-padding-left no-padding-right&quot;&gt;
+    &lt;input multiple=&quot;&quot; type=&quot;file&quot; id=&quot;id-input-file-3&quot; /&gt;
+
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;file-format&quot; id=&quot;id-file-format&quot; class=&quot;ace&quot; /&gt;
+        &lt;span class=&quot;lbl&quot;&gt; Allow only images&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+</code></pre>
+        </div>
+        <div id="javascript-file-input" class="tab-pane">
+            <pre><code class="javascript">
+$(&#39;#id-input-file-3&#39;).ace_file_input({
+    style: &#39;well&#39;,
+    btn_choose: &#39;Drop files here or click to choose&#39;,
+    btn_change: null,
+    no_icon: &#39;icon-cloud-upload&#39;,
+    droppable: true,
+    thumbnail: &#39;small&#39;//large | fit
+    //,icon_remove:null//set null, to hide remove/reset button
+    /**,before_change:function(files, dropped) {
+        //Check an example below
+        //or examples/file-upload.html
+        return true;
+    }*/
+    /**,before_remove : function() {
+        return true;
+    }*/
+                ,
+    preview_error: function (filename, error_code) {
+        //name of the file that failed
+        //error_code values
+        //1 = &#39;FILE_LOAD_FAILED&#39;,
+        //2 = &#39;IMAGE_LOAD_FAILED&#39;,
+        //3 = &#39;THUMBNAIL_FAILED&#39;
+        //alert(error_code);
+    }
+}).on(&#39;change&#39;, function () {
+    //console.log($(this).data(&#39;ace_input_files&#39;));
+    //console.log($(this).data(&#39;ace_input_method&#39;));
+});
+
+//dynamically change allowed formats by changing before_change callback function
+$(&#39;#id-file-format&#39;).removeAttr(&#39;checked&#39;).on(&#39;change&#39;, function () {
+    var before_change
+    var btn_choose
+    var no_icon
+    if (this.checked) {
+        btn_choose = &quot;Drop images here or click to choose&quot;;
+        no_icon = &quot;icon-picture&quot;;
+        before_change = function (files, dropped) {
+            var allowed_files = [];
+            for (var i = 0 ; i &lt; files.length; i++) {
+                var file = files[i];
+                if (typeof file === &quot;string&quot;) {
+                    //IE8 and browsers that don&#39;t support File Object
+                    if (!(/\.(jpe?g|png|gif|bmp)$/i).test(file)) return false;
+                }
+                else {
+                    var type = $.trim(file.type);
+                    if ((type.length &gt; 0 &amp;&amp; !(/^image\/(jpe?g|png|gif|bmp)$/i).test(type))
+                            || (type.length == 0 &amp;&amp; !(/\.(jpe?g|png|gif|bmp)$/i).test(file.name))//for android&#39;s default browser which gives an empty string for file.type
+                        ) continue;//not an image so don&#39;t keep this file
+                }
+                allowed_files.push(file);
+            }
+            if (allowed_files.length == 0) return false;
+            return allowed_files;
+        }
+    }
+    else {
+        btn_choose = &quot;Drop files here or click to choose&quot;;
+        no_icon = &quot;icon-cloud-upload&quot;;
+        before_change = function (files, dropped) {
+            return files;
+        }
+    }
+    var file_input = $(&#39;#id-input-file-3&#39;);
+    file_input.ace_file_input(&#39;update_settings&#39;, { &#39;before_change&#39;: before_change, &#39;btn_choose&#39;: btn_choose, &#39;no_icon&#39;: no_icon })
+    file_input.ace_file_input(&#39;reset_input&#39;);
+});
+</code></pre>
+        </div>
+    </div>
+</div>
