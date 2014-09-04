@@ -8,14 +8,14 @@ angular
         }
     ])
     .controller('main', [
-        '$scope', 'sidebarService', 'breadcrumbService', function ($scope, sidebarService, breadcrumbService) {
+        '$scope', 'sidebarService', 'breadcrumbsService', function ($scope, sidebarService, breadcrumbsService) {
 
-            $scope.search = function (keywords) {
-                alert('Searching for ' + keywords);
+            $scope.search = function () {
+                alert('Searching for ' + $scope.keywords);
             }
 
             // configure breadcrumbs
-            breadcrumbService.setBreadcrumbs([
+            breadcrumbsService.setBreadcrumbs([
                 {
                     title: 'Home',
                     click: function () {
@@ -74,6 +74,7 @@ angular
                     icon: 'icon-lightbulb',
                     click: function () {
                         alert('Going to the about page ...');
+                        sidebarService.setActive('about');
                     }
                 },
                 {
@@ -83,6 +84,7 @@ angular
                     active: true,
                     click: function () {
                         alert('Going to the examples page ...');
+                        sidebarService.setActive('examples');
                     }
                 },
                 {
@@ -91,6 +93,7 @@ angular
                     icon: 'icon-text-width',
                     click: function () {
                         alert('Going to the typography page ...');
+                        sidebarService.setActive('typography');
                     }
                 },
                 {
@@ -99,6 +102,7 @@ angular
                     icon: 'icon-circle',
                     click: function () {
                         alert('Going to the error 404 page ...');
+                        sidebarService.setActive('error-404');
                     }
                 },
                 {
@@ -107,6 +111,7 @@ angular
                     icon: 'icon-circle-blank',
                     click: function () {
                         alert('Going to the error 500 page ...');
+                        sidebarService.setActive('error-500');
                     }
                 },
                 {
@@ -115,6 +120,7 @@ angular
                     icon: 'icon-user',
                     click: function () {
                         alert('Going to the Login page ...');
+                        sidebarService.setActive('login');
                     }
                 },
                 {
@@ -123,11 +129,12 @@ angular
                     icon: 'icon-globe',
                     items: [
                         {
-                            key: 'level2',
+                            key: 'level-2',
                             title: 'Level 2',
                             icon: 'icon-leaf',
                             click: function () {
                                 alert('Going to the level2 page ...');
+                                sidebarService.setActive('multi-level-menu/level-2');
                             }
                         },
                         {
@@ -141,6 +148,7 @@ angular
                                     icon: 'icon-plus',
                                     click: function () {
                                         alert('Going to the Level 3 page ...');
+                                        sidebarService.setActive('multi-level-menu/level-2-with-sub/level-3');
                                     }
                                 },
                                 {
@@ -149,6 +157,7 @@ angular
                                     icon: 'icon-eye-open',
                                     click: function () {
                                         alert('Going to the Next Level 3 page ...');
+                                        sidebarService.setActive('multi-level-menu/level-2-with-sub/next-level-3');
                                     }
                                 }
                             ]
@@ -156,18 +165,20 @@ angular
                     ]
                 }
             ]);
-            sidebarService.setActive('about/child1');
+
+            sidebarService.setActive('multi-level-menu/level-2-with-sub/next-level-3');
         }
     ])
-    .controller('gnap-default-notification', function ($scope, gritter) {
+    .controller('gnap-default-notification', function ($scope, notification) {
         $scope.notify = function () {
-            gritter.show({
+            notification.show({
                 title: 'This is a default notification',
                 text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.'
             });
         };
+
         $scope.remove = function () {
-            gritter.removeAll();
+            notification.removeAll();
         };
     })
     .controller('gnap-progressbar', function ($scope) {
@@ -176,14 +187,17 @@ angular
     })
     .controller('gnap-stacked-progressbar', function ($scope) {
         $scope.collection = [];
+
         $scope.collection.push({
             value: 20,
             type: 'success'
         });
+
         $scope.collection.push({
             value: 15,
             type: 'warning'
         });
+
         $scope.collection.push({
             value: 25,
             type: 'error'
@@ -193,6 +207,7 @@ angular
         $scope.confirm = function () {
             alert('You were sure!');
         };
+
         $scope.cancel = function () {
             alert('You weren\'t sure!');
         };
@@ -201,6 +216,7 @@ angular
         $scope.accept = function (name) {
             alert('Hello ' + name);
         };
+
         $scope.cancel = function () {
             alert('You cancelled!');
         };
@@ -228,8 +244,8 @@ angular
 
     })
     .controller('gnap-custom-dialog-instance', function ($scope, $modalInstance, items) {
-
         $scope.items = items;
+
         $scope.selected = {
             item: $scope.items[0]
         };
@@ -261,39 +277,42 @@ angular
     .controller('gnap-collapse', function ($scope) {
         $scope.isCollapsed = false;
     })
-    .controller('gnap-default-notification', function ($scope, gritter) {
+    .controller('gnap-default-notification', function ($scope, notification) {
         $scope.notify = function () {
-            gritter.show({
+            notification.show({
                 title: 'This is a default notification',
                 text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.'
             });
         };
+
         $scope.remove = function () {
-            gritter.removeAll();
+            notification.removeAll();
         };
     })
-    .controller('gnap-success-notification', function ($scope, gritter) {
+    .controller('gnap-success-notification', function ($scope, notification) {
         $scope.notify = function () {
-            gritter.show({
+            notification.show({
                 type: 'success',
                 title: 'This is a success notification',
                 text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.'
             });
         };
+
         $scope.remove = function () {
-            gritter.removeAll();
+            notification.removeAll();
         };
     })
-    .controller('gnap-error-notification', function ($scope, gritter) {
+    .controller('gnap-error-notification', function ($scope, notification) {
         $scope.notify = function () {
-            gritter.show({
+            notification.show({
                 type: 'error',
                 title: 'This is an error notification',
                 text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.'
             });
         };
+
         $scope.remove = function () {
-            gritter.removeAll();
+            notification.removeAll();
         };
     })
     .controller('gnap-date-picker', function ($scope) {
@@ -314,4 +333,42 @@ angular
     })
     .controller('gnap-choice-toggle', function ($scope) {
         $scope.value = true;
+    })
+    .directive('exampleLink', function () {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                element.addClass("label");
+                element.addClass("label-default");
+                element.attr('target', '_blank');
+                element.prepend('<i class="icon-external-link"></i>&nbsp; View on ' + attrs['source']);
+
+                if (!attrs['href']) {
+                    var url = '#';
+                    switch (attrs['source']) {
+                        case 'ui-bootstrap':
+                            {
+                                url = 'http://angular-ui.github.io/bootstrap';
+                                break;
+                            }
+                        case 'ngBootbox':
+                            {
+                                url = 'https://github.com/eriktufvesson/ngbootbox';
+                                break;
+                            }
+                        case 'gnap-theme':
+                            {
+                                url = 'https://github.com/infrabel/GNaP.Web.Themes';
+                                break;
+                            }
+                        case 'gnap-theme-angular':
+                            {
+                                url = 'https://github.com/infrabel/GNaP.Web.Themes';
+                                break;
+                            }
+                    }
+                    element.attr('href', url);
+                }
+            }
+        };
     });

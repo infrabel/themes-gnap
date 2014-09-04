@@ -1,7 +1,6 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
 <pre><code class="html">&lt;div ng-controller=&quot;gnap-custom-dialog&quot;&gt;
-  
   &lt;script type=&quot;text/ng-template&quot; id=&quot;myModalContent.html&quot;&gt;
     &lt;div class=&quot;modal-header&quot;&gt;
       &lt;h3 class=&quot;modal-title&quot;&gt;I am a modal!&lt;/h3&gt;
@@ -49,8 +48,9 @@
     };
   })
   .controller(&#39;gnap-custom-dialog-instance&#39;, function($scope, $modalInstance, items) {
-    
-    $scope.items = items;$scope.selected = {
+    $scope.items = items;
+
+    $scope.selected = {
       item: $scope.items[0]
     };
 
@@ -64,3 +64,5 @@
   });</code></pre>
   </div>
 </div>
+
+<a example-link source="ngBootbox"></a>
