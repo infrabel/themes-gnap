@@ -1,3 +1,2 @@
 angular
-  .module('gnap', []);
-
+    .module('gnap', []);

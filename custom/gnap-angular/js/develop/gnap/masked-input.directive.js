@@ -3,23 +3,20 @@
  * @file masked-input.directive.js
  * @example <input type="text" gnap-masked-input="a*-999-a999" />
  */
-(function () {
-  angular
-    .module('gnap')
-    .directive('gnapMaskedInput', gnapMaskedInput);
+(function() {
+    angular
+        .module('gnap')
+        .directive('gnapMaskedInput', gnapMaskedInput);
 
+    function gnapMaskedInput() {
 
-  function gnapMaskedInput () {
+        function link(scope, element, attrs) {
+            element.mask(attrs['gnapMaskedInput']);
+        };
 
-    function link(scope, element, attrs) {
-      element.mask(attrs['gnapMaskedInput']);
-    };
-
-    return {
-      restrict: 'A',
-      link: link
-    };
-  }
-
-
+        return {
+            restrict: 'A',
+            link: link
+        };
+    }
 })();
