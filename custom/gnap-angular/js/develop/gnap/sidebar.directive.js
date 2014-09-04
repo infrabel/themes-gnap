@@ -16,13 +16,10 @@
                 scope.shortcuts = sidebarService.getShortcuts();
                 scope.items = sidebarService.getItems();
                 //ace.handle_side_menu(jQuery);
-            },
-            controller: function ($scope) {
                 $scope.select = function (item) {
                     if (item.items) {
                         item.open = !item.open;
                     }
-
                     if (item.click) {
                         item.click();
                     }
