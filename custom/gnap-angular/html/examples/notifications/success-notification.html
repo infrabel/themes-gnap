@@ -8,12 +8,14 @@
   <div tab heading="JavaScript" class="tab-pane">
 <pre><code class="javascript">angular
   .module(&#39;gnap-app&#39;)
-  .controller(&#39;gnap-success-notification&#39;, function($scope, gritter) {
+  .controller(&#39;gnap-success-notification&#39;, function($scope, notification) {
     $scope.notify = function() {
-      gritter.show({
+      notification.show({
         type: &#39;success&#39;,
         title: &#39;This is a success notification&#39;,
         text: &#39;This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.&#39;
       });</code></pre>
   </div>
 </div>
+
+<a example-link source="gnap-theme-angular"></a>

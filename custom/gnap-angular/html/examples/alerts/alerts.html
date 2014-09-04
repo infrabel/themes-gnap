@@ -1,8 +1,10 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code class="html">&lt;div ng-controller=&quot;gnap-alerts&quot;&gt;
-  &lt;alert ng-repeat=&quot;alert in alerts&quot; type=&quot;{{alert.type}}&quot; close=&quot;closeAlert($index)&quot;&gt;{{alert.msg}}&lt;/alert&gt;
+    <div ng-non-bindable>
+<pre><code class="html" >&lt;div ng-controller=&quot;gnap-alerts&quot;&gt;
+  &lt;div alert ng-repeat=&quot;alert in alerts&quot; type=&quot;{{alert.type}}&quot; close=&quot;closeAlert($index)&quot;&gt;{{alert.msg}}&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+    </div>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
 <pre><code class="javascript">angular
@@ -21,3 +23,5 @@
   });</code></pre>
   </div>
 </div>
+
+<a example-link source="ui-bootstrap"></a>
