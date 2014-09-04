@@ -1,1 +1,15 @@
-<pre class="example"><code class="html">&lt;pagination max-size=&quot;0&quot; boundary-links=&quot;true&quot; total-items=&quot;totalItems&quot; ng-model=&quot;currentPage&quot; previous-text=&quot;&amp;lsaquo;&quot; next-text=&quot;&amp;rsaquo;&quot; first-text=&quot;&amp;laquo;&quot; last-text=&quot;&amp;raquo;&quot;&gt;&lt;/pagination&gt;</code></pre>
+<div tabset class="example">
+    <div tab heading="HTML" class="tab-pane active">
+<pre><code class="html">&lt;div gnap-pager max-size=&quot;5&quot; total-items=&quot;totalItems&quot; current-page=&quot;currentPage&quot;&gt;&lt;/div&gt;</code></pre>
+    </div>
+    <div tab heading="JavaScript" class="tab-pane">
+        <pre><code class="javascript">angular
+    .module('gnap-app')
+    .controller('gnap-pagination', function($scope) {
+        $scope.totalItems = 164;
+        $scope.currentPage = 4;
+    });</code></pre>
+    </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
