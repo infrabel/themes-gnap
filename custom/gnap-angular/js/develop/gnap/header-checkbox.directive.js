@@ -4,74 +4,69 @@
  * @example <th><td><input type="checkbox" gnap-header-checkbox /></td></th>
  */
 (function () {
-  angular
-    .module('gnap')
-    .directive('gnapHeaderCheckbox', gnapHeaderCheckbox);
+    angular
+        .module('gnap')
+        .directive('gnapHeaderCheckbox', gnapHeaderCheckbox);
 
+    function gnapHeaderCheckbox() {
 
-  function gnapHeaderCheckbox () {
+        return {
+            restrict: 'AE',
+            link: link
+        };
 
-    return {
-        restrict: 'AE',
-        link: link
-      };
+        function link(scope, element, attrs) {
 
-    function link(scope, element, attrs) {
+            var columnIndex = getCheckboxColumnIndex(element);
 
-      var columnIndex = getCheckboxColumnIndex(element);
+            // when the user clicks the header checkbox then the checkboxes
+            // in the rows should be checked/unchecked based on the checked
+            // state of the header checkbox
+            handleHeaderCheckboxClicks(element, columnIndex);
 
-      // when the user clicks the header checkbox then the checkboxes
-      // in the rows should be checked/unchecked based on the checked
-      // state of the header checkbox
-      handleHeaderCheckboxClicks(element, columnIndex);
+            // when all checkboxes in a row have the same checked state
+            // the header checkbox should be updated to those checked states
+            handleRowCheckboxClicks(element, columnIndex);
+        }
 
-      // when all checkboxes in a row have the same checked state
-      // the header checkbox should be updated to those checked states
-      handleRowCheckboxClicks(element, columnIndex);
-    }
+        function handleHeaderCheckboxClicks(element, columnIndex) {
 
+            element.click(function () {
 
-    function handleHeaderCheckboxClicks(element, columnIndex) {
+                // update the checked property of all checkboxes
+                element.closest('table')
+                    .find('tr input[type=checkbox]')
+                    //.find('tr td:eq(' + columnIndex + ') input[type=checkbox]')
+                    .prop('checked', element.is(':checked'));
+            });
 
-      element.click(function() {
+        };
 
-        // update the checked property of all checkboxes
-        element.closest('table')
-               .find('tr input[type=checkbox]')
-               //.find('tr td:eq(' + columnIndex + ') input[type=checkbox]')
-               .prop('checked', element.is(':checked'));
-      });
+        function handleRowCheckboxClicks(element, columnIndex) {
 
-    };
+            // find all checkboxes (only in td)
+            var rowCheckboxes = element
+                .closest('table')
+                .find('tr td input[type=checkbox]');
 
+            // when one of the checkboxes is clicked the header checkbox
+            // must be updated
+            rowCheckboxes.click(function () {
 
-    function handleRowCheckboxClicks(element, columnIndex) {
+                // are all checkboxes checked?
+                var allChecked = rowCheckboxes
+                    .not(':checked')
+                    .length == 0;
 
-      // find all checkboxes (only in td)
-      var rowCheckboxes = element
-                            .closest('table')
-                            .find('tr td input[type=checkbox]');
+                element.prop('checked', allChecked);
+            });
+        };
 
-      // when one of the checkboxes is clicked the header checkbox
-      // must be updated
-      rowCheckboxes.click(function() {
-
-        // are all checkboxes checked?
-        var allChecked = rowCheckboxes
-                            .not(':checked')
-                            .length == 0;
-        
-        element.prop('checked', allChecked);
-      });
-
-    };
-
-
-    function getCheckboxColumnIndex(element) {
-      return element
+        function getCheckboxColumnIndex(element) {
+            return element
                 .closest('th')
                 .prevAll()
                 .length;
+        }
     }
-  }
 })();

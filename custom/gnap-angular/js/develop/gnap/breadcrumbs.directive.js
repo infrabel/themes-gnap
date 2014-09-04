@@ -4,23 +4,21 @@
  * @example <div gnap-breadcrumbs />
  */
 (function () {
-  angular
-    .module('gnap')
-    .directive('gnapBreadcrumbs', ['breadcrumbsService', gnapBreadcrumbs]);
+    angular
+        .module('gnap')
+        .directive('gnapBreadcrumbs', ['breadcrumbsService', gnapBreadcrumbs]);
 
-  function gnapBreadcrumbs (breadcrumbsService) {
+    function gnapBreadcrumbs(breadcrumbsService) {
 
-    return {
-      restrict: 'A',
-      templateUrl: 'js/gnap/breadcrumbs.html',
-      link: link
-    };
+        return {
+            restrict: 'A',
+            templateUrl: 'js/gnap/breadcrumbs.html',
+            link: link
+        };
 
-    function link(scope, element, attrs) {
-      // get the current breadcrumbs and link them to the scope
-      scope.breadcrumbs = breadcrumbsService.getBreadcrumbs();
-    };
-
-  }
-
+        function link(scope, element, attrs) {
+            // get the current breadcrumbs and link them to the scope
+            scope.breadcrumbs = breadcrumbsService.getBreadcrumbs();
+        };
+    }
 })();
