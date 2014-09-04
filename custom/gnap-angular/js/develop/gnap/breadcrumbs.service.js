@@ -3,26 +3,24 @@
  * @file breadcrumbs.service.js
  */
 (function () {
-  angular
-    .module('gnap')
-    .factory('breadcrumbsService', breadcrumbsService);
+    angular
+        .module('gnap')
+        .factory('breadcrumbsService', breadcrumbsService);
 
+    function breadcrumbsService() {
+        var breadcrumbs = [];
 
-  function breadcrumbsService () {
-    var breadcrumbs = [];
+        return {
+            setBreadcrumbs: setBreadcrumbs,
+            getBreadcrumbs: getBreadcrumbs
+        };
 
-    return {
-      setBreadcrumbs: setBreadcrumbs,
-      getBreadcrumbs: getBreadcrumbs
+        function setBreadcrumbs(value) {
+            breadcrumbs = value;
+        };
+
+        function getBreadcrumbs() {
+            return breadcrumbs;
+        };
     };
-
-    function setBreadcrumbs(value) {
-      breadcrumbs = value;
-    };
-
-    function getBreadcrumbs() {
-      return breadcrumbs;
-    };
-  };
-
 })();
