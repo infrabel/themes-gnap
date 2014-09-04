@@ -3,29 +3,27 @@
  * @file notification.service.js
  */
 (function () {
-  angular
-    .module('gnap')
-    .factory('notification', notification);
+    angular
+        .module('gnap')
+        .factory('notification', notification);
 
-  function notification () {
+    function notification() {
 
-    return {
-      show: show,
-      removeAll: removeAll
+        return {
+            show: show,
+            removeAll: removeAll
+        }
+
+        function show(options) {
+            $.gritter.add({
+                title: options.title,
+                text: options.text,
+                class_name: 'gritter-' + (options.type || 'default')
+            });
+        };
+
+        function removeAll() {
+            $.gritter.removeAll();
+        };
     }
-
-    function show(options){
-      $.gritter.add({
-        title: options.title,
-        text: options.text,
-        class_name: 'gritter-' + (options.type || 'default')
-        });
-    };
-
-    function removeAll() {
-      $.gritter.removeAll();
-    };
-  }
-
-
 })();
