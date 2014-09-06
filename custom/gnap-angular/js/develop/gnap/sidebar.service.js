@@ -8,31 +8,28 @@
         .factory('sidebarService', sidebarService);
 
     function sidebarService() {
-        var shortcuts = [];
-        var items = [];
-
-        function setShortcuts(value) {
-            shortcuts = value;
+        var settings = {
+            items: [],
+            shortcuts: [],
+            visible: false,
+            collapsed: localStorage.sidebarCollapsed === 'true'
+        };
+        
+        function toggleMenu() {
+            settings.visible = !settings.visible;
         };
 
-        function getShortcuts() {
-            return shortcuts;
-        };
-
-        function setItems(value) {
-            items = value;
-        };
-
-        function getItems() {
-            return items;
-        };
+        function toggleCollapsed() {
+          settings.collapsed = !settings.collapsed;
+          localStorage.sidebarCollapsed = settings.collapsed;
+        }
 
         function setActive(path) {
             // parse the path into an array
             var parsedPath = (path instanceof Array) ? path : path.split('/');
 
             // find the item to set as active
-            updateActiveState(items, parsedPath);
+            updateActiveState(settings. items, parsedPath);
 
             function updateActiveState(itemList, path) {
 
@@ -63,11 +60,10 @@
         };
 
         return {
-            setShortcuts: setShortcuts,
-            getShortcuts: getShortcuts,
-            setItems: setItems,
-            getItems: getItems,
-            setActive: setActive
+            settings: settings,
+            setActive: setActive,
+            toggleMenu: toggleMenu,
+            toggleCollapsed: toggleCollapsed
         }
     }
 })();
