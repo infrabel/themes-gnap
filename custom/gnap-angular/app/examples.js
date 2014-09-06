@@ -31,7 +31,7 @@ angular
             ]);
 
             // configure shortcuts
-            sidebarService.setShortcuts([
+            sidebarService.settings.shortcuts = [
                 {
                     title: 'Statistics',
                     buttonClass: 'btn btn-success',
@@ -64,10 +64,10 @@ angular
                         alert('Going to the administration page ...');
                     }
                 }
-            ]);
+            ];
 
             // configure menu items
-            sidebarService.setItems([
+            sidebarService.settings.items = [
                 {
                     key: 'about',
                     title: 'About',
@@ -164,7 +164,7 @@ angular
                         }
                     ]
                 }
-            ]);
+            ];
 
             sidebarService.setActive('multi-level-menu/level-2-with-sub/next-level-3');
         }

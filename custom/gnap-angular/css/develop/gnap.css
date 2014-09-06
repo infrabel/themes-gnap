@@ -1,0 +1,9 @@
+.sidebar-shortcuts-large>.btn {
+    margin-left: 3px;
+}
+.sidebar-shortcuts-large>.btn:first-child  {
+    margin-left: 0px;
+}
+.nav-list>li .submenu, .nav-list>li>.submenu li>.submenu {
+    display: block;
+}
