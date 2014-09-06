@@ -2869,6 +2869,7 @@
     <Content Include="tasks\options\ace.mkdir.js" />
     <Content Include="tasks\options\ace.rename.js" />
     <Content Include="tasks\options\ace.replace.js" />
+    <Content Include="tasks\options\ace.htmlmin.js" />
     <Content Include="tasks\options\ace.uglify.js" />
     <Content Include="tasks\options\highlight.copy.js" />
     <Content Include="tasks\options\angular.copy.js" />
