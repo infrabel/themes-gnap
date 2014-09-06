@@ -47,6 +47,7 @@
         'cssmin:build_ace_css',
         'cssmin:build_ace_css_highlight',
         'uglify:build_ace_js',
+        //'htmlmin:build_ace_html',
         'replace:ace_map',
         'clean:build_ace'
     ]);
