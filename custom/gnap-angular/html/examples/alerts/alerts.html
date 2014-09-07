@@ -2,25 +2,25 @@
   <div tab heading="HTML" class="tab-pane active">
     <div ng-non-bindable>
 <pre><code class="html" >&lt;div ng-controller=&quot;gnap-alerts&quot;&gt;
-  &lt;div alert ng-repeat=&quot;alert in alerts&quot; type=&quot;{{alert.type}}&quot; close=&quot;closeAlert($index)&quot;&gt;{{alert.msg}}&lt;/div&gt;
+    &lt;div alert ng-repeat=&quot;alert in alerts&quot; type=&quot;{{alert.type}}&quot; close=&quot;closeAlert($index)&quot;&gt;{{alert.msg}}&lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
 <pre><code class="javascript">angular
-  .module('gnap-app')
-  .controller('gnap-alerts', function($scope) {
-    $scope.alerts = [
-      { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
-      { type: 'success', msg: 'Well done! You successfully read this important alert message.' },
-      { type: 'warning', msg: 'Warning! Best check your self, you\'re not looking too good.' },
-      { type: 'info', msg: 'Heads up! This alert needs your attention, but it\'s not super important.' }
-    ];
+    .module(&#39;gnap-app&#39;)
+    .controller(&#39;gnap-alerts&#39;, function($scope) {
+        $scope.alerts = [
+            { type: &#39;danger&#39;, msg: &#39;Oh snap! Change a few things up and try submitting again.&#39; },
+            { type: &#39;success&#39;, msg: &#39;Well done! You successfully read this important alert message.&#39; },
+            { type: &#39;warning&#39;, msg: &#39;Warning! Best check your self, you\&#39;re not looking too good.&#39; },
+            { type: &#39;info&#39;, msg: &#39;Heads up! This alert needs your attention, but it\&#39;s not super important.&#39; }
+        ];
 
-    $scope.closeAlert = function(index) {
-      $scope.alerts.splice(index, 1);
-    };
-  });</code></pre>
+        $scope.closeAlert = function(index) {
+            $scope.alerts.splice(index, 1);
+        };
+    });</code></pre>
   </div>
 </div>
 

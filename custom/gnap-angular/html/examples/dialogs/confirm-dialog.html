@@ -1,25 +1,26 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
 <pre><code class="html">&lt;div ng-controller=&quot;gnap-confirm-dialog&quot;&gt;
-  &lt;button class=&quot;btn btn-primary&quot;
-          ng-bootbox-confirm=&quot;Are you sure you want to confirm this?&quot;
-          ng-bootbox-confirm-action=&quot;confirm()&quot;
-          ng-bootbox-confirm-action-cancel=&quot;cancel()&quot;&gt;
-      Click Me!
-  &lt;/button&gt;
+    &lt;button class=&quot;btn btn-primary&quot;
+            ng-bootbox-confirm=&quot;Are you sure you want to confirm this?&quot;
+            ng-bootbox-confirm-action=&quot;confirm()&quot;
+            ng-bootbox-confirm-action-cancel=&quot;cancel()&quot;&gt;
+        Click Me!
+    &lt;/button&gt;
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
 <pre><code class="javascript">angular
-  .module(&#39;gnap-app&#39;)
-  .controller(&#39;gnap-confirm-dialog&#39;, function($scope) {
-    $scope.confirm = function() {
-      alert(&#39;You were sure!&#39;);
-    };
-    $scope.cancel = function() {
-      alert(&#39;You weren\&#39;t sure!&#39;);
-    };
-  });</code></pre>
+    .module(&#39;gnap-app&#39;)
+    .controller(&#39;gnap-confirm-dialog&#39;, function($scope) {
+        $scope.confirm = function() {
+            alert(&#39;You were sure!&#39;);
+        };
+
+        $scope.cancel = function() {
+            alert(&#39;You weren\&#39;t sure!&#39;);
+        };
+    });</code></pre>
   </div>
 </div>
 
