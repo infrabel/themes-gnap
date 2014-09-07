@@ -1,67 +1,66 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
 <pre><code class="html">&lt;div ng-controller=&quot;gnap-custom-dialog&quot;&gt;
-  &lt;script type=&quot;text/ng-template&quot; id=&quot;myModalContent.html&quot;&gt;
-    &lt;div class=&quot;modal-header&quot;&gt;
-      &lt;h3 class=&quot;modal-title&quot;&gt;I am a modal!&lt;/h3&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;modal-body&quot;&gt;
-      &lt;ul&gt;
-        &lt;li ng-repeat=&quot;item in items&quot;&gt;
-          &lt;a ng-click=&quot;selected.item = item&quot;&gt;{{ item }}&lt;/a&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-      Selected: &lt;b&gt;{{ selected.item }}&lt;/b&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;modal-footer&quot;&gt;
-      &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;ok()&quot;&gt;OK&lt;/button&gt;
-      &lt;button class=&quot;btn btn-warning&quot; ng-click=&quot;cancel()&quot;&gt;Cancel&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/script&gt;
+    &lt;script type=&quot;text/ng-template&quot; id=&quot;myModalContent.html&quot;&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;
+            &lt;h3 class=&quot;modal-title&quot;&gt;I am a modal!&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+            &lt;ul&gt;
+                &lt;li ng-repeat=&quot;item in items&quot;&gt;
+                    &lt;a ng-click=&quot;selected.item = item&quot;&gt;{{ item }}&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+           Selected: &lt;b&gt;{{ selected.item }}&lt;/b&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-footer&quot;&gt;
+            &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;ok()&quot;&gt;OK&lt;/button&gt;
+            &lt;button class=&quot;btn btn-warning&quot; ng-click=&quot;cancel()&quot;&gt;Cancel&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/script&gt;
 
-  &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;open()&quot;&gt;click Me!&lt;/button&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;open()&quot;&gt;click Me!&lt;/button&gt;
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
 <pre><code class="javascript">angular
-  .module(&#39;gnap-app&#39;)
-  .controller(&#39;gnap-custom-dialog&#39;, function($scope, $modal) {
-
-    $scope.items = [&#39;item1&#39;, &#39;item2&#39;, &#39;item3&#39;];
+    .module(&#39;gnap-app&#39;)
+    .controller(&#39;gnap-custom-dialog&#39;, function($scope, $modal) {
+        $scope.items = [&#39;item1&#39;, &#39;item2&#39;, &#39;item3&#39;];
   
-    $scope.open = function (size) {
-      var modalInstance = $modal.open({
-        templateUrl: &#39;myModalContent.html&#39;,
-        controller: &#39;gnap-custom-dialog-instance&#39;,
-        resolve: {
-          items: function () {
-            return $scope.items;
-          }
-        }
-      });
+        $scope.open = function (size) {
+            var modalInstance = $modal.open({
+                templateUrl: &#39;myModalContent.html&#39;,
+                controller: &#39;gnap-custom-dialog-instance&#39;,
+                resolve: {
+                    items: function () {
+                        return $scope.items;
+                    }
+                }
+            });
 
-      modalInstance.result.then(function (result) {
-          alert(&#39;You selected: &#39; + result);
-        }, function () {
-          alert(&#39;You dismissed the dialog!&#39;);
-        });
-    };
-  })
-  .controller(&#39;gnap-custom-dialog-instance&#39;, function($scope, $modalInstance, items) {
-    $scope.items = items;
+            modalInstance.result.then(function (result) {
+                alert(&#39;You selected: &#39; + result);
+            }, function () {
+                alert(&#39;You dismissed the dialog!&#39;);
+            });
+        };
+    })
+    .controller(&#39;gnap-custom-dialog-instance&#39;, function($scope, $modalInstance, items) {
+        $scope.items = items;
 
-    $scope.selected = {
-      item: $scope.items[0]
-    };
+        $scope.selected = {
+            item: $scope.items[0]
+        };
 
-    $scope.ok = function () {
-      $modalInstance.close($scope.selected.item);
-    };
+        $scope.ok = function () {
+            $modalInstance.close($scope.selected.item);
+        };
 
-    $scope.cancel = function () {
-      $modalInstance.dismiss(&#39;cancel&#39;);
-    };
-  });</code></pre>
+        $scope.cancel = function () {
+            $modalInstance.dismiss(&#39;cancel&#39;);
+        };
+    });</code></pre>
   </div>
 </div>
 
