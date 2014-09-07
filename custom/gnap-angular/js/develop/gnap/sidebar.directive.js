@@ -8,22 +8,27 @@
         .module('gnap')
         .directive('gnapSidebar', ['sidebarService', gnapSidebar]);
 
+    angular
+        .module('gnap')
+        .animation('.submenu', gnapSidebarSlideUpSlideDown);
+
     function gnapSidebar(sidebarService) {
         function link(scope, element, attrs) {
             scope.settings = sidebarService.settings;
-            
+
             // handles sidebar item selection
             scope.select = function (item) {
                 if (item.items) {
                     item.open = !item.open;
                 }
+
                 if (item.click) {
                     item.click();
                 }
             };
 
             // handles collapsed state of the sidebar
-            scope.toggleCollapsed = function() {
+            scope.toggleCollapsed = function () {
                 sidebarService.toggleCollapsed();
             };
         };
@@ -37,12 +42,13 @@
     };
 
     // custom animation for ng-hide (slide-up/slide-down)
-    angular.module('gnap').animation('.submenu', function() {
+    function gnapSidebarSlideUpSlideDown() {
         return {
-            beforeAddClass: function(element, className, done) {
+            beforeAddClass: function (element, className, done) {
                 if (className === 'ng-hide') {
                     element.slideUp(done);
-                    return function(cancel) {
+
+                    return function (cancel) {
                         if (cancel) {
                             return element.stop();
                         }
@@ -51,11 +57,12 @@
                     return done();
                 }
             },
-            removeClass: function(element, className, done) {
+            removeClass: function (element, className, done) {
                 if (className === 'ng-hide') {
                     element.hide();
                     element.slideDown(done);
-                    return function(cancel) {
+
+                    return function (cancel) {
                         if (cancel) {
                             return element.stop();
                         }
@@ -64,8 +71,6 @@
                     return done();
                 }
             }
-        }
-    });
-
-
+        };
+    };
 })();
