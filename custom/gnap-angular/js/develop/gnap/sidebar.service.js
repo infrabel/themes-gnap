@@ -14,22 +14,22 @@
             visible: false,
             collapsed: localStorage.sidebarCollapsed === 'true'
         };
-        
+
         function toggleMenu() {
             settings.visible = !settings.visible;
         };
 
         function toggleCollapsed() {
-          settings.collapsed = !settings.collapsed;
-          localStorage.sidebarCollapsed = settings.collapsed;
-        }
+            settings.collapsed = !settings.collapsed;
+            localStorage.sidebarCollapsed = settings.collapsed;
+        };
 
         function setActive(path) {
             // parse the path into an array
             var parsedPath = (path instanceof Array) ? path : path.split('/');
 
             // find the item to set as active
-            updateActiveState(settings. items, parsedPath);
+            updateActiveState(settings.items, parsedPath);
 
             function updateActiveState(itemList, path) {
 
@@ -64,6 +64,6 @@
             setActive: setActive,
             toggleMenu: toggleMenu,
             toggleCollapsed: toggleCollapsed
-        }
-    }
+        };
+    };
 })();
