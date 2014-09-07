@@ -35,7 +35,7 @@ angular
                 {
                     title: 'Statistics',
                     buttonClass: 'btn btn-success',
-                    icon: 'icon-lightbulb',
+                    icon: 'icon-signal',
                     click: function () {
                         alert('Going to the statistics page ...');
                     }
@@ -166,7 +166,7 @@ angular
                 }
             ];
 
-            sidebarService.setActive('multi-level-menu/level-2-with-sub/next-level-3');
+            //sidebarService.setActive('multi-level-menu/level-2-with-sub/next-level-3');
         }
     ])
     .controller('gnap-default-notification', function ($scope, notification) {

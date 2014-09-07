@@ -13,14 +13,14 @@
             scope.settings = sidebarService.settings;
 
             // handles the toggling of the menu visibility (responsive)
-            scope.toggleMenu = function() {
+            scope.toggleMenu = function () {
                 sidebarService.toggleMenu();
             };
         };
 
         return {
             restrict: 'A',
-            templateUrl: 'gnap/sidebar-toggler.html',
+            templateUrl: 'js/gnap/sidebar-toggler.html',
             link: link
         };
     }
