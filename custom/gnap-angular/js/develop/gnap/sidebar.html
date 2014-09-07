@@ -18,29 +18,29 @@
 
     <ul class="nav nav-list">
         <li ng-repeat='levelOneItem in settings.items'
-                ng-class="{open: levelOneItem.open, active: levelOneItem.active}">
+            ng-class="{open: levelOneItem.open, active: levelOneItem.active}">
             <a href='#'
-                 ng-click='select(levelOneItem)'
-                 ng-class="{'dropdown-toggle': levelOneItem.items}">
+               ng-click='select(levelOneItem)'
+               ng-class="{'dropdown-toggle': levelOneItem.items}">
                 <i class="{{ levelOneItem.icon }}"></i>
                 <span class="menu-text">{{ levelOneItem.title }}</span>
                 <b class="arrow icon-angle-down" ng-show="levelOneItem.items"></b>
             </a>
             <ul class="submenu" ng-show="levelOneItem.open">
                 <li ng-repeat='levelTwoItem in levelOneItem.items'
-                        ng-class='{open: levelTwoItem.open, active: levelTwoItem.active}'>
+                    ng-class='{open: levelTwoItem.open, active: levelTwoItem.active}'>
                     <a href='#'
-                        ng-click='select(levelTwoItem)'
-                        ng-class="{'dropdown-toggle': levelTwoItem.items}">
+                       ng-click='select(levelTwoItem)'
+                       ng-class="{'dropdown-toggle': levelTwoItem.items}">
                         <i class="{{ levelTwoItem.icon }}"></i>
                         <span class="menu-text">{{ levelTwoItem.title }}</span>
                         <b class="arrow icon-angle-down" ng-show="levelTwoItem.items"></b>
                     </a>
                     <ul class="submenu" ng-show="levelTwoItem.open">
                         <li ng-repeat='levelThreeItem in levelTwoItem.items'
-                                ng-class="{active: levelThreeItem.active}">
+                            ng-class="{active: levelThreeItem.active}">
                             <a href='#'
-                                ng-click='select(levelThreeItem)'>
+                               ng-click='select(levelThreeItem)'>
                                 <i class="{{ levelThreeItem.icon }}"></i>
                                 <span class="menu-text">{{ levelThreeItem.title }}</span>
                             </a>
