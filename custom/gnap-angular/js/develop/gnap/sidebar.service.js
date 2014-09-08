@@ -5,14 +5,14 @@
 (function () {
     angular
         .module('gnap')
-        .factory('sidebarService', sidebarService);
+        .factory('sidebarService', ['localStorageService', sidebarService]);
 
-    function sidebarService() {
+    function sidebarService(localStorageService) {
         var settings = {
             items: [],
             shortcuts: [],
             visible: false,
-            collapsed: localStorage.sidebarCollapsed === 'true'
+            collapsed: localStorageService.get('sidebar-collapsed') === 'true'
         };
 
         function toggleMenu() {
@@ -21,7 +21,7 @@
 
         function toggleCollapsed() {
             settings.collapsed = !settings.collapsed;
-            localStorage.sidebarCollapsed = settings.collapsed;
+            localStorageService.set('sidebar-collapsed', settings.collapsed);
         };
 
         function setActive(path) {
