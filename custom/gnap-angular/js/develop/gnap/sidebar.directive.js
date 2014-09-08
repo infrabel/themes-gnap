@@ -50,11 +50,9 @@
 
                     return function (cancel) {
                         if (cancel) {
-                            return element.stop();
+                            element.stop();
                         }
                     };
-                } else {
-                    return done();
                 }
             },
             removeClass: function (element, className, done) {
@@ -67,8 +65,6 @@
                             return element.stop();
                         }
                     };
-                } else {
-                    return done();
                 }
             }
         };
