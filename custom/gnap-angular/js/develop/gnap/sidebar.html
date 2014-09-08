@@ -1,89 +1,54 @@
-<a class="menu-toggler" id="menu-toggler" href="#">
-  <span class="menu-text"></span>
-</a>
+<div id="sidebar" class="sidebar" ng-class="{'menu-min': settings.collapsed, display: settings.visible}">
 
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-      <span ng-repeat="shortcut in shortcuts">
-        <button 
-                ng-click="shortcut.click()" 
-                class="{{ shortcut.buttonClass }}" 
-                title="{{ shortcut.title }}" 
-                data-rel="tooltip" 
-                data-placement="bottom">
-          <i class="{{ shortcut.icon }}"></i>
-        </button>
-      </span>      
-    </div>
+    <div id="sidebar-shortcuts" class="sidebar-shortcuts">
+        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+            <button ng-repeat="shortcut in settings.shortcuts"
+                    ng-click="shortcut.click()" 
+                    class="{{ shortcut.buttonClass }}" 
+                    tooltip="{{ shortcut.title }}" 
+                    tooltip-placement="bottom">
+                <i class="{{ shortcut.icon }}"></i>
+            </button>
+        </div>
 
-    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-      <span class="btn btn-success"></span>
+        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+            <span ng-repeat="shortcut in settings.shortcuts" class="{{ shortcut.buttonClass }}"></span>
+        </div>
+    </div> <!-- #sidebar-shortcuts -->
 
-      <span class="btn btn-info"></span>
-
-      <span class="btn btn-warning"></span>
-
-      <span class="btn btn-danger"></span>
-    </div>
-  </div>
-
-  <!-- #sidebar-shortcuts -->
-
-  <ul class="nav nav-list">
-
-    <li ng-repeat='levelOneItem in items'
-        ng-class="{open: levelOneItem.open, active: levelOneItem.active}">
-
-      <a href='#'
-         ng-click='select(levelOneItem)'
-         ng-class="{'dropdown-toggle': levelOneItem.items}">
-
-        <i class="{{ levelOneItem.icon }}"></i>
-        <span class="menu-text">{{ levelOneItem.title }}</span>
-        <b class="arrow icon-angle-down" ng-show="levelOneItem.items"></b>
-
-      </a>
-
-      <ul class="submenu"
-          ng-style="{display: levelOneItem.open ? 'block' : 'none'}">
-      
-        <li ng-repeat='levelTwoItem in levelOneItem.items'
-            ng-class='{open: levelTwoItem.open, active: levelTwoItem.active}'>
-      
-          <a href='#'
-             ng-click='select(levelTwoItem)'
-             ng-class="{'dropdown-toggle': levelTwoItem.items}">
-
-            <i class="{{ levelTwoItem.icon }}"></i>
-            <span class="menu-text">{{ levelTwoItem.title }}</span>
-            <b class="arrow icon-angle-down" ng-show="levelTwoItem.items"></b>
-
-          </a>
-      
-          <ul class="submenu"
-              ng-style="{display: levelTwoItem.open ? 'block' : 'none'}">
-            <li ng-repeat='levelThreeItem in levelTwoItem.items'
-                ng-class="{active: levelThreeItem.active}">
-
-              <a href='#'
-                 ng-click='select(levelThreeItem)'>
-
-                <i class="{{ levelThreeItem.icon }}"></i>
-                <span class="menu-text">{{ levelThreeItem.title }}</span>
-
-              </a>
-
-            </li>
-          </ul>
-      
+    <ul class="nav nav-list">
+        <li ng-repeat='levelOneItem in settings.items'
+            ng-class="{open: levelOneItem.open, active: levelOneItem.active}">
+            <a ng-click='select(levelOneItem)'
+               ng-class="{'dropdown-toggle': levelOneItem.items}">
+                <i class="{{ levelOneItem.icon }}"></i>
+                <span class="menu-text">{{ levelOneItem.title }}</span>
+                <b class="arrow icon-angle-down" ng-show="levelOneItem.items"></b>
+            </a>
+            <ul class="submenu" ng-show="levelOneItem.open">
+                <li ng-repeat='levelTwoItem in levelOneItem.items'
+                    ng-class='{open: levelTwoItem.open, active: levelTwoItem.active}'>
+                    <a ng-click='select(levelTwoItem)'
+                       ng-class="{'dropdown-toggle': levelTwoItem.items}">
+                        <i class="{{ levelTwoItem.icon }}"></i>
+                        <span class="menu-text">{{ levelTwoItem.title }}</span>
+                        <b class="arrow icon-angle-down" ng-show="levelTwoItem.items"></b>
+                    </a>
+                    <ul class="submenu" ng-show="levelTwoItem.open">
+                        <li ng-repeat='levelThreeItem in levelTwoItem.items'
+                            ng-class="{active: levelThreeItem.active}">
+                            <a ng-click='select(levelThreeItem)'>
+                                <i class="{{ levelThreeItem.icon }}"></i>
+                                <span class="menu-text">{{ levelThreeItem.title }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </li>
-      </ul>
-    </li>
+    </ul> <!-- .nav .nav-list -->
 
-  </ul>
-
-  <div class="sidebar-collapse" id="sidebar-collapse">
-    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
-  </div>
+    <div class="sidebar-collapse" id="sidebar-collapse" ng-click="toggleCollapsed()">
+        <i ng-class="{'icon-double-angle-left': !settings.collapsed, 'icon-double-angle-right': settings.collapsed}"></i>
+    </div>
 </div>
