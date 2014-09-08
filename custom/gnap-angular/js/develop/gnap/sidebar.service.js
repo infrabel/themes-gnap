@@ -31,7 +31,7 @@
             // find the item to set as active
             updateActiveState(settings.items, parsedPath);
 
-            function updateActiveState(itemList, path) {
+            function updateActiveState(itemList, pathSegments) {
 
                 for (var itemIndex = 0; itemIndex < itemList.length; itemIndex++) {
 
@@ -39,10 +39,10 @@
 
                     item.active = false;
 
-                    if (item.key == path[0]) {
+                    if (item.key == pathSegments[0]) {
 
-                        if (path.length == 1) {
-                            // last item in the path
+                        if (pathSegments.length == 1) {
+                            // last item in the path segments
                             item.active = true;
                         } else {
                             if (item.items) {
@@ -53,7 +53,7 @@
 
                     if (item.items) {
                         // item has subitems
-                        updateActiveState(item.items, path.splice(1));
+                        updateActiveState(item.items, pathSegments.splice(1));
                     }
                 }
             }
