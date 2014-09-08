@@ -263,7 +263,7 @@
                                         Alerts
                                     </h3>
                                     <div ng-controller="gnap-alerts">
-                                        <div alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</div>
+                                        <div alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" ng-bind-html="alert.msg"></div>
                                     </div>
                                      @@include('html/examples/alerts/alerts.html')
                                 </div> <!-- alerts tab -->
@@ -1624,25 +1624,30 @@
         if ("ontouchend" in document) document.write("<script src='js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
     </script>
     <script src="js/jquery.gritter.min.js"></script>
-    <script src="js/chosen.jquery.min.js"></script>
     <script src="js/jquery.inputlimiter.1.3.1.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/jquery.hotkeys.min.js"></script>
-    <script src="js/bootbox.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.dataTables.bootstrap.min.js"></script>
+    <script src="js/chosen.jquery.min.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-wysiwyg.min.js"></script>
-    <script src="js/ace-elements.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
+    <script src="js/highlight.pack.min.js"></script>
+
     <script src="js/ace.min.js"></script>
     <script src="js/ace-extra.min.js"></script>
+    <script src="js/ace-elements.min.js"></script>
     <script src="js/layout.min.js"></script>
-    <script src="js/highlight.pack.min.js"></script>
+
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
     <script src="js/angular-animate.min.js"></script>
+
     <script src="js/ui-bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
     <script src="js/localytics-chosen/chosen.min.js"></script>
     <script src="js/ng-bootbox/ng-bootbox.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/jquery.dataTables.bootstrap.min.js"></script>
     <script src="js/angular-datatables/angular-datatables.min.js"></script>
 
     <script type="text/javascript">
