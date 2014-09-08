@@ -1,0 +1,15 @@
+.sidebar-shortcuts-large>.btn {
+    margin-left: 3px;
+}
+
+.sidebar-shortcuts-large>.btn:first-child  {
+    margin-left: 0px;
+}
+
+ul.breadcrumb>li {
+    margin-left: 3px;
+}
+
+ul.breadcrumb>li:first-child  {
+    margin-left: 0px;
+}
