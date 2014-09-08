@@ -11,10 +11,10 @@
     .module(&#39;gnap-app&#39;)
     .controller(&#39;gnap-alerts&#39;, function($scope) {
         $scope.alerts = [
-            { type: &#39;danger&#39;, msg: &#39;Oh snap! Change a few things up and try submitting again.&#39; },
-            { type: &#39;success&#39;, msg: &#39;Well done! You successfully read this important alert message.&#39; },
-            { type: &#39;warning&#39;, msg: &#39;Warning! Best check your self, you\&#39;re not looking too good.&#39; },
-            { type: &#39;info&#39;, msg: &#39;Heads up! This alert needs your attention, but it\&#39;s not super important.&#39; }
+            { type: &#39;danger&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Oh snap!&lt;/b&gt; Change a few things up and try submitting again.&#39;) },
+            { type: &#39;success&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Well done!&lt;/b&gt; You successfully read this important alert message.&#39;) },
+            { type: &#39;warning&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Warning!&lt;/b&gt; Best check your self, you\&#39;re not looking too good.&#39;) },
+            { type: &#39;info&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Heads up!&lt;/b&gt; This alert needs your attention, but it\&#39;s not super important.&#39;) }
         ];
 
         $scope.closeAlert = function(index) {
