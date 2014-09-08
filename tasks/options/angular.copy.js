@@ -32,5 +32,12 @@
         cwd: './raw/angular-datatables/',
         src: ['*.*', '**/*.*', '!*.zip'],
         dest: './deploy/angular/angular-datatables/'
+    },
+
+    raw_angular_local_storage_to_deploy: {
+        expand: true,
+        cwd: './raw/angular-local-storage/',
+        src: ['*.*', '**/*.*', '!*.zip'],
+        dest: './deploy/angular/angular-local-storage/'
     }
 };
