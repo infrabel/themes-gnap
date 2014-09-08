@@ -1,5 +1,11 @@
 angular
-    .module('gnap-app', ['gnap', 'ui.bootstrap', 'ngBootbox', 'localytics.directives', 'datatables'])
+    .module('gnap-app', ['gnap',
+                         'ui.bootstrap',
+                         'ngBootbox',
+                         'localytics.directives',
+                         'datatables',
+                         'ngSanitize'])
+
     .config([
         '$tooltipProvider', function ($tooltipProvider) {
             $tooltipProvider.options({
@@ -7,8 +13,11 @@ angular
             });
         }
     ])
-    .controller('main', [
-        '$scope', 'sidebarService', 'breadcrumbsService', function ($scope, sidebarService, breadcrumbsService) {
+
+    .controller('main', ['$scope',
+                         'sidebarService',
+                         'breadcrumbsService',
+                         function ($scope, sidebarService, breadcrumbsService) {
 
             $scope.search = function () {
                 alert('Searching for ' + $scope.keywords);
@@ -166,7 +175,7 @@ angular
                 }
             ];
 
-            //sidebarService.setActive('multi-level-menu/level-2-with-sub/next-level-3');
+            sidebarService.setActive('multi-level-menu/level-2-with-sub/next-level-3');
         }
     ])
     .controller('gnap-default-notification', function ($scope, notification) {
@@ -258,12 +267,12 @@ angular
             $modalInstance.dismiss('cancel');
         };
     })
-    .controller('gnap-alerts', function ($scope) {
+    .controller('gnap-alerts', function ($scope, $sce) {
         $scope.alerts = [
-            { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
-            { type: 'success', msg: 'Well done! You successfully read this important alert message.' },
-            { type: 'warning', msg: 'Warning! Best check your self, you\'re not looking too good.' },
-            { type: 'info', msg: 'Heads up! This alert needs your attention, but it\'s not super important.' }
+            { type: 'danger', msg: $sce.trustAsHtml('<b>Oh snap!</b> Change a few things up and try submitting again.') },
+            { type: 'success', msg: $sce.trustAsHtml('<b>Well done!</b> You successfully read this important alert message.') },
+            { type: 'warning', msg: $sce.trustAsHtml('<b>Warning!</b> Best check your self, you\'re not looking too good.') },
+            { type: 'info', msg: $sce.trustAsHtml('<b>Heads up!</b> This alert needs your attention, but it\'s not super important.') }
         ];
 
         $scope.closeAlert = function (index) {
