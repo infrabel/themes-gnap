@@ -25,11 +25,13 @@
         };
 
         function toggleSubmenu(parent) {
+            var currentOpenState = parent.open;
+
             if (isFirstLevel(parent)) {
                 collapseFirstLevelSubmenus();
             }
 
-            parent.open = !parent.open;
+            parent.open = !currentOpenState;
         };
 
         function isFirstLevel(item) {

@@ -22,7 +22,7 @@
             <a ng-click='select(levelOneItem)'
                ng-class="{'dropdown-toggle': levelOneItem.items}">
                 <i class="{{ levelOneItem.icon }}"></i>
-                <span class="menu-text">{{ levelOneItem.title }} {{levelOneItem.open}}</span>
+                <span class="menu-text">{{ levelOneItem.title }}</span>
                 <b class="arrow icon-angle-down" ng-show="levelOneItem.items"></b>
             </a>
             <ul class="submenu" ng-show="levelOneItem.open">
@@ -31,7 +31,7 @@
                     <a ng-click='select(levelTwoItem)'
                        ng-class="{'dropdown-toggle': levelTwoItem.items}">
                         <i class="{{ levelTwoItem.icon }}"></i>
-                        <span class="menu-text">{{ levelTwoItem.title }} {{levelTwoItem.open}}</span>
+                        <span class="menu-text">{{ levelTwoItem.title }}</span>
                         <b class="arrow icon-angle-down" ng-show="levelTwoItem.items"></b>
                     </a>
                     <ul class="submenu" ng-show="levelTwoItem.open">
@@ -39,7 +39,7 @@
                             ng-class="{active: levelThreeItem.active}">
                             <a ng-click='select(levelThreeItem)'>
                                 <i class="{{ levelThreeItem.icon }}"></i>
-                                <span class="menu-text">{{ levelThreeItem.title }} {{levelThreeItem.open}}</span>
+                                <span class="menu-text">{{ levelThreeItem.title }}</span>
                             </a>
                         </li>
                     </ul>
