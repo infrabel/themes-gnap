@@ -1000,6 +1000,7 @@
     <Content Include="raw\ace\wysiwyg.html" />
     <Content Include="raw\angular-datatables\angular-datatables.js" />
     <Content Include="raw\angular-datatables\datatables.bootstrap.css" />
+    <Content Include="raw\angular-local-storage\angular-local-storage.js" />
     <Content Include="raw\angular\angular-animate.js" />
     <Content Include="raw\angular\angular-animate.min.js" />
     <Content Include="raw\angular\angular-cookies.js" />
