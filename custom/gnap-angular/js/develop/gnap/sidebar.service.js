@@ -25,9 +25,7 @@
         };
 
         function toggleSubmenu(parent) {
-
             if (isFirstLevel(parent)) {
-                console.log('isFirstLevel');
                 collapseFirstLevelSubmenus();
             }
 
@@ -37,8 +35,8 @@
         function isFirstLevel(item) {
 
             for (var itemIndex = 0; itemIndex < settings.items.length; itemIndex++) {
-
-                if (item.key == parent.key) {
+                current = settings.items[itemIndex];
+                if (current.key == item.key) {
                     return true;
                 }
             }
@@ -48,6 +46,7 @@
 
         function collapseFirstLevelSubmenus() {
             for (var itemIndex = 0; itemIndex < settings.items.length; itemIndex++) {
+                item = settings.items[itemIndex];
 
                 item.open = false;
             }
