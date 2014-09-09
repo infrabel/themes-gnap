@@ -36,24 +36,20 @@
             var siblings = findSiblings(item);
 
             for (var siblingIndex = 0; siblingIndex < siblings.length; siblingIndex++) {
-                sibling = siblings[siblingIndex];
-
-                sibling.open = false;
+                siblings[siblingIndex].open = false;
             }
         };
 
-        function findSiblings(sibling) {
+        function findSiblings(item) {
 
-            if (isRootMenuItem(sibling)) {
+            if (isRootMenuItem(item)) {
                 return settings.items;
             }
 
+            // discover the parent of an item, since we have no .parent link
             var parent = (function findParent(parents, child) {
                 for (var parentIndex=0; parentIndex<parents.length; parentIndex++) {
-
                     var candidateParent = parents[parentIndex];
-
-                    debugger;
 
                     if (hasChild(candidateParent, child)) {
                         return candidateParent;
@@ -69,7 +65,7 @@
                 }
 
                 return null;
-            }(settings.items, sibling));
+            }(settings.items, item));
 
             if (parent) {
                 return parent.items;
