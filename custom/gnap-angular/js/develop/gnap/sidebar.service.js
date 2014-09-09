@@ -35,7 +35,6 @@
         };
 
         function isFirstLevel(item) {
-
             for (var itemIndex = 0; itemIndex < settings.items.length; itemIndex++) {
                 current = settings.items[itemIndex];
                 if (current.key == item.key) {
