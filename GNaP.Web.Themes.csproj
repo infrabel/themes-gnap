@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
     <Content Include="custom\ace\css\develop\ace-fonts.css.replace-grunt.js" />
     <Content Include="custom\ace\css\develop\ace-ie.css.replace-grunt.js" />
