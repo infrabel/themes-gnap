@@ -24,6 +24,35 @@
             localStorageService.set('sidebar-collapsed', settings.collapsed);
         };
 
+        function toggleSubmenu(parent) {
+
+            if (isFirstLevel(parent)) {
+                console.log('isFirstLevel');
+                collapseFirstLevelSubmenus();
+            }
+
+            parent.open = !parent.open;
+        };
+
+        function isFirstLevel(item) {
+
+            for (var itemIndex = 0; itemIndex < settings.items.length; itemIndex++) {
+
+                if (item.key == parent.key) {
+                    return true;
+                }
+            }
+
+            return false;
+        };
+
+        function collapseFirstLevelSubmenus() {
+            for (var itemIndex = 0; itemIndex < settings.items.length; itemIndex++) {
+
+                item.open = false;
+            }
+        };
+
         function setActive(path) {
             // parse the path into an array
             var parsedPath = (path instanceof Array) ? path : path.split('/');
@@ -38,16 +67,15 @@
                     var item = itemList[itemIndex];
 
                     item.active = false;
+                    item.open = false;
 
                     if (item.key == pathSegments[0]) {
 
                         if (pathSegments.length == 1) {
                             // last item in the path segments
                             item.active = true;
-                        } else {
-                            if (item.items) {
-                                item.open = true;
-                            }
+                        } else if (item.items) {
+                            item.open = true;
                         }
                     }
 
@@ -63,7 +91,8 @@
             settings: settings,
             setActive: setActive,
             toggleMenu: toggleMenu,
-            toggleCollapsed: toggleCollapsed
+            toggleCollapsed: toggleCollapsed,
+            toggleSubmenu: toggleSubmenu
         };
     };
 })();
