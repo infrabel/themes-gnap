@@ -48,7 +48,7 @@
 
             // discover the parent of an item, since we have no .parent link
             var parent = (function findParent(parents, child) {
-                for (var parentIndex=0; parentIndex<parents.length; parentIndex++) {
+                for (var parentIndex = 0; parentIndex < parents.length; parentIndex++) {
                     var candidateParent = parents[parentIndex];
 
                     if (hasChild(candidateParent, child)) {
@@ -72,28 +72,28 @@
             }
 
             return [];
-        }
+        };
 
         function hasChild(parent, child) {
             if (!parent.items)
                 return false;
 
-            for (var childIndex=0; childIndex<parent.items.length; childIndex++) {
+            for (var childIndex = 0; childIndex < parent.items.length; childIndex++) {
                 if (parent.items[childIndex].key == child.key) {
                     return true;
                 }
             }
             return false;
-        }
+        };
 
         function isRootMenuItem(item) {
-            for (var rootItemIndex=0; rootItemIndex<settings.items.length; rootItemIndex++) {
+            for (var rootItemIndex = 0; rootItemIndex < settings.items.length; rootItemIndex++) {
                 if (settings.items[rootItemIndex].key == item.key) {
                     return true;
                 }
             }
             return false;
-        }
+        };
 
         function setActive(path) {
             // parse the path into an array
@@ -105,7 +105,6 @@
             function updateActiveState(itemList, pathSegments) {
 
                 for (var itemIndex = 0; itemIndex < itemList.length; itemIndex++) {
-
                     var item = itemList[itemIndex];
 
                     item.active = false;
