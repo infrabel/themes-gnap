@@ -172,22 +172,6 @@ angular
                             ]
                         }
                     ]
-                },
-                {
-                    key: 'my-settings',
-                    title: 'My Settings',
-                    icon: 'icon-globe',
-                    items: [
-                        {
-                            key: 'my-name',
-                            title: 'My Name',
-                            icon: 'icon-leaf',
-                            click: function () {
-                                alert('Going to the level2 page ...');
-                                sidebarService.setActive('multi-level-menu/level-2');
-                            }
-                        }
-                    ]
                 }
             ];
 
