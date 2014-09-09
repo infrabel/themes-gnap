@@ -27,31 +27,77 @@
         function toggleSubmenu(parent) {
             var currentOpenState = parent.open;
 
-            if (isFirstLevel(parent)) {
-                collapseFirstLevelSubmenus();
-            }
+            collapseSameLevelSubmenus(parent);
 
             parent.open = !currentOpenState;
         };
 
-        function isFirstLevel(item) {
-            for (var itemIndex = 0; itemIndex < settings.items.length; itemIndex++) {
-                current = settings.items[itemIndex];
-                if (current.key == item.key) {
+        function collapseSameLevelSubmenus(item) {
+            var siblings = findSiblings(item);
+
+            for (var siblingIndex = 0; siblingIndex < siblings.length; siblingIndex++) {
+                sibling = siblings[siblingIndex];
+
+                sibling.open = false;
+            }
+        };
+
+        function findSiblings(sibling) {
+
+            if (isRootMenuItem(sibling)) {
+                return settings.items;
+            }
+
+            var parent = (function findParent(parents, child) {
+                for (var parentIndex=0; parentIndex<parents.length; parentIndex++) {
+
+                    var candidateParent = parents[parentIndex];
+
+                    debugger;
+
+                    if (hasChild(candidateParent, child)) {
+                        return candidateParent;
+                    }
+
+                    if (candidateParent.items) {
+                        candidateParent = findParent(candidateParent.items, child);
+
+                        if (candidateParent) {
+                            return candidateParent;
+                        }
+                    }
+                }
+
+                return null;
+            }(settings.items, sibling));
+
+            if (parent) {
+                return parent.items;
+            }
+
+            return [];
+        }
+
+        function hasChild(parent, child) {
+            if (!parent.items)
+                return false;
+
+            for (var childIndex=0; childIndex<parent.items.length; childIndex++) {
+                if (parent.items[childIndex].key == child.key) {
                     return true;
                 }
             }
-
             return false;
-        };
+        }
 
-        function collapseFirstLevelSubmenus() {
-            for (var itemIndex = 0; itemIndex < settings.items.length; itemIndex++) {
-                item = settings.items[itemIndex];
-
-                item.open = false;
+        function isRootMenuItem(item) {
+            for (var rootItemIndex=0; rootItemIndex<settings.items.length; rootItemIndex++) {
+                if (settings.items[rootItemIndex].key == item.key) {
+                    return true;
+                }
             }
-        };
+            return false;
+        }
 
         function setActive(path) {
             // parse the path into an array

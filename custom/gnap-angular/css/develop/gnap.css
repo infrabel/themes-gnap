@@ -14,10 +14,6 @@ ul.breadcrumb>li:first-child  {
     margin-left: 0px;
 }
 
-.nav-list>li .submenu {
+.nav-list>li .submenu, .nav-list>li>.submenu li>.submenu {
     display: block;
-}
-
-.nav-list>li>.submenu li>.submenu {
-    display: block;   
 }
