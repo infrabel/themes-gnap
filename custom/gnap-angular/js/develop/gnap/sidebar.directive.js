@@ -19,7 +19,7 @@
             // handles sidebar item selection
             scope.select = function (item) {
                 if (item.items) {
-                    item.open = !item.open;
+                    sidebarService.toggleSubmenu(item);
                 }
 
                 if (item.click) {
