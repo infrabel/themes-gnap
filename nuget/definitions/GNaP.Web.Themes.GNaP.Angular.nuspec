@@ -17,7 +17,12 @@
     <tags>gnap ui theme angular</tags>
   </metadata>
   <files>
+    <file src="app\**\*.*" target="content\vendor\gnap-theme-gnap-angular\app" />
+    <file src="css\**\*.css" target="content\vendor\gnap-theme-gnap-angular\css" />
+    <file src="fonts\**\*.*" target="content\vendor\gnap-theme-gnap-angular\fonts" />
     <file src="js\**\*.*" target="content\vendor\gnap-theme-gnap-angular\js" />
+    <file src="images\**\*.*" target="content\vendor\gnap-theme-gnap-angular\images" />
+    <file src="server\**\*.*" target="content\vendor\gnap-theme-gnap-angular\server" />
     <file src="*" target="content\vendor\gnap-theme-gnap-angular" />
   </files>
 </package>
