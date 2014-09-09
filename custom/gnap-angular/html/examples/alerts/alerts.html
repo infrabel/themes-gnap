@@ -2,7 +2,7 @@
   <div tab heading="HTML" class="tab-pane active">
     <div ng-non-bindable>
 <pre><code class="html" >&lt;div ng-controller=&quot;gnap-alerts&quot;&gt;
-    &lt;div alert ng-repeat=&quot;alert in alerts&quot; type=&quot;{{alert.type}}&quot; close=&quot;closeAlert($index)&quot;&gt;{{alert.msg}}&lt;/div&gt;
+    &lt;div alert ng-repeat=&quot;alert in alerts&quot; type=&quot;{{alert.type}}&quot; close=&quot;closeAlert($index)&quot; ng-bind-html=&quot;alert.msg&quot; &gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
   </div>
