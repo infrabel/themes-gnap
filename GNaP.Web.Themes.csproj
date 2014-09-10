@@ -215,6 +215,7 @@
     <Content Include="custom\gnap\html\site.json.replace-grunt.js" />
     <Content Include="custom\gnap\images\favicon.ico" />
     <Content Include="custom\gnap\images\loading.gif" />
+    <Content Include="custom\gnap\images\logo-black.png" />
     <Content Include="custom\gnap\images\logo-login.png" />
     <Content Include="custom\gnap\images\logo.png" />
     <Content Include="docs\Architecture.png" />
