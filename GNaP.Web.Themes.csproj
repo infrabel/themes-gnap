@@ -2864,6 +2864,7 @@
     <Content Include="raw\ui-bootstrap\typeahead\test\typeahead.spec.js" />
     <Content Include="raw\ui-bootstrap\typeahead\typeahead.js" />
     <Content Include="raw\ui-bootstrap\ui-bootstrap-tpls-0.11.0.js" />
+    <Content Include="raw\ui-router\ui-router.js" />
     <Content Include="tasks\ace.js" />
     <Content Include="tasks\highlight.js" />
     <Content Include="tasks\angular.js" />
