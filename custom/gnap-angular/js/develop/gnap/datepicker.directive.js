@@ -57,9 +57,9 @@
             '<table class="datepicker" role="grid" aria-labelledby="{{uniqueId}}-title" aria-activedescendant="{{activeDateId}}">\n' +
             '  <thead>\n' +
             '    <tr>\n' +
-            '      <th><button type="button" class="datepicker-day pull-left" ng-click="move(-1)" tabindex="-1"><i class="icon-chevron-left"></i></button></th>\n' +
+            '      <th><button type="button" class="datepicker-day" ng-click="move(-1)" tabindex="-1"><i class="icon-arrow-left"></i></button></th>\n' +
             '      <th colspan="{{5 + showWeeks}}"><button id="{{uniqueId}}-title" role="heading" aria-live="assertive" aria-atomic="true" type="button" class="datepicker-day" ng-click="toggleMode()" tabindex="-1" style="width:100%;"><strong>{{title}}</strong></button></th>\n' +
-            '      <th><button type="button" class="datepicker-day pull-right" ng-click="move(1)" tabindex="-1"><i class="icon-chevron-right"></i></button></th>\n' +
+            '      <th><button type="button" class="datepicker-day" ng-click="move(1)" tabindex="-1"><i class="icon-arrow-right"></i></button></th>\n' +
             '    </tr>\n' +
             '    <tr>\n' +
             '      <th ng-show="showWeeks" class="text-center"></th>\n' +
