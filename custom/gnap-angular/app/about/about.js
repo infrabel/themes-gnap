@@ -1,18 +1,21 @@
-angular.module('gnap-app')
-    .controller('AboutController', ['sidebarService', 'breadcrumbsService', AboutController]);
+(function () {
+    angular
+        .module('gnap-app')
+        .controller('AboutController', ['sidebarService', 'breadcrumbsService', AboutController]);
 
-function AboutController(sidebarService, breadcrumbsService) {
+    function AboutController(sidebarService, breadcrumbsService) {
 
-    // configure breadcrumbs
-    breadcrumbsService.setBreadcrumbs([
-        {
-            title: 'Home',
-            url: '/'
-        },
-        {
-            title: 'About'
-        }
-    ]);
+        // configure breadcrumbs
+        breadcrumbsService.setBreadcrumbs([
+            {
+                title: 'Home',
+                url: '/'
+            },
+            {
+                title: 'About'
+            }
+        ]);
 
-    sidebarService.setActive('about');
-};
+        sidebarService.setActive('about');
+    };
+})();

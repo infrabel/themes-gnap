@@ -1,18 +1,21 @@
-angular.module('gnap-app')
-    .controller('TypographyController', ['sidebarService', 'breadcrumbsService', TypographyController]);
+(function () {
+    angular
+        .module('gnap-app')
+        .controller('TypographyController', ['sidebarService', 'breadcrumbsService', TypographyController]);
 
-function TypographyController(sidebarService, breadcrumbsService) {
+    function TypographyController(sidebarService, breadcrumbsService) {
 
-    // configure breadcrumbs
-    breadcrumbsService.setBreadcrumbs([
-        {
-            title: 'Home',
-            url: '/'
-        },
-        {
-            title: 'Typography'
-        }
-    ]);
+        // configure breadcrumbs
+        breadcrumbsService.setBreadcrumbs([
+            {
+                title: 'Home',
+                url: '/'
+            },
+            {
+                title: 'Typography'
+            }
+        ]);
 
-    sidebarService.setActive('typography');
-};
+        sidebarService.setActive('typography');
+    };
+})();
