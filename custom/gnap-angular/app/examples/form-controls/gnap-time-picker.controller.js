@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-time-picker', ['$scope', GnapTimepickerController]);
+        .module('gnap-example-app')
+        .controller('gnap-time-picker', GnapTimepickerController);
+
+    GnapTimepickerController.$inject = ['$scope'];
 
     function GnapTimepickerController($scope) {
         $scope.sometime = new Date(2014, 1, 1, 10, 30, 0);

@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-date-picker', ['$scope', GnapDatepickerController]);
+        .module('gnap-example-app')
+        .controller('gnap-date-picker', GnapDatepickerController);
+
+    GnapDatepickerController.$inject = ['$scope'];
 
     function GnapDatepickerController($scope) {
         $scope.date = new Date();

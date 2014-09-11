@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-error-notification', ['$scope', 'notification', GnapErrorNotificationController]);
+        .module('gnap-example-app')
+        .controller('gnap-error-notification', GnapErrorNotificationController);
+
+    GnapErrorNotificationController.$inject = ['$scope', 'notification'];
 
     function GnapErrorNotificationController($scope, notification) {
         $scope.notify = function () {

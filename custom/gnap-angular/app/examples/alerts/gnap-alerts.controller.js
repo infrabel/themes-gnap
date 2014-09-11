@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-alerts', ['$scope', '$sce', GnapAlertsController]);
+        .module('gnap-example-app')
+        .controller('gnap-alerts', GnapAlertsController);
+
+    GnapAlertsController.$inject = ['$scope', '$sce'];
 
     function GnapAlertsController($scope, $sce) {
         $scope.alerts = [

@@ -5,7 +5,9 @@
 (function () {
     angular
         .module('gnap')
-        .factory('sidebarService', ['localStorageService', sidebarService]);
+        .factory('sidebarService', sidebarService);
+
+    sidebarService.$inject = ['localStorageService'];
 
     function sidebarService(localStorageService) {
         var settings = {
