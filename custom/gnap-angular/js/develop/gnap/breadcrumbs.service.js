@@ -8,19 +8,17 @@
         .factory('breadcrumbsService', breadcrumbsService);
 
     function breadcrumbsService() {
-        var breadcrumbs = [];
-
-        return {
-            setBreadcrumbs: setBreadcrumbs,
-            getBreadcrumbs: getBreadcrumbs
+        var breadcrumbs = {
+            crumbs: []
         };
 
         function setBreadcrumbs(value) {
-            breadcrumbs = value;
+            breadcrumbs.crumbs = value;
         };
 
-        function getBreadcrumbs() {
-            return breadcrumbs;
+        return {
+            breadcrumbs: breadcrumbs,
+            setBreadcrumbs: setBreadcrumbs
         };
     };
 })();
