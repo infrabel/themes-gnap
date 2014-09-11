@@ -7,6 +7,7 @@ deploy/
 *.suo
 *.user
 *.sln.docstates
+*.userprefs
 
 # Angular JS Ignores
 /build/
