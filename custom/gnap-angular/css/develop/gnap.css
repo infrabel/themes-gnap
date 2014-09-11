@@ -25,3 +25,7 @@ ul[datepicker-popup-wrap] {
 ul[datepicker-popup-wrap] div[datepicker] {
     padding: 4px;
 }
+
+.datepicker table tr td span {
+    width: 31% !important;
+}
