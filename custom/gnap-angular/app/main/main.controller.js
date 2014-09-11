@@ -68,13 +68,13 @@
                 key: 'error-404',
                 title: 'Error 404',
                 icon: 'icon-circle',
-                state: 'main.error404'
+                state: 'main.error-404'
             },
             {
                 key: 'error-500',
                 title: 'Error 500',
                 icon: 'icon-circle-blank',
-                state: 'main.error500'
+                state: 'main.error-500'
             },
             {
                 key: 'login',

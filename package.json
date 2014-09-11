@@ -26,6 +26,7 @@
     "grunt-mkdir": "^0.1.1",
     "grunt-contrib-imagemin": "^0.7.1",
     "grunt-include-replace": "^2.0.0",
-    "grunt-contrib-htmlmin": "^0.3.0"
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-cleanempty": "^1.0.0"
   }
 }
