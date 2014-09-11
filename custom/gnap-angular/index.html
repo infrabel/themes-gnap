@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="gnap-app">
+<head>
+    <meta charset="utf-8" />
+    <title>Examples - GNaP</title>
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="css/font-awesome-ie7.min.css" />
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/jquery.gritter.min.css" />
+    <link rel="stylesheet" href="css/chosen.min.css" />
+    <link rel="stylesheet" href="css/datepicker.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="css/ace-fonts.min.css" />
+    <link rel="stylesheet" href="css/ace.min.css" />
+    <link rel="stylesheet" href="css/ace-skins.min.css" />
+    <link rel="stylesheet" href="css/print.min.css" media="print" />
+    <link rel="stylesheet" href="css/gnap.min.css" />
+    <link rel="stylesheet" href="css/app.min.css" />
+    <link rel="stylesheet" href="css/highlight/github.min.css" />
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ace-ie.min.css" />
+        <link rel="stylesheet" href="css/ie8.min.css" />
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/ie9.min.css" />
+    <link rel="stylesheet" href="css/custom.min.css" />
+
+    <script src="js/modernizr.min.js"></script>
+
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<body>
+   
+    <div ui-view></div>
+
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='js/jquery.min.js'>" + "<" + "/script>");
+    </script>
+    <script type="text/javascript">
+        if ("ontouchend" in document) document.write("<script src='js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+
+    <script src="js/jquery.gritter.min.js"></script>
+    <script src="js/jquery.inputlimiter.1.3.1.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/jquery.hotkeys.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.dataTables.bootstrap.min.js"></script>
+    <script src="js/chosen.jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-wysiwyg.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
+    <script src="js/highlight.pack.min.js"></script>
+
+    <script src="js/ace.min.js"></script>
+    <script src="js/ace-extra.min.js"></script>
+    <script src="js/ace-elements.min.js"></script>
+    <script src="js/layout.min.js"></script>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+	<script src="js/angular-local-storage/angular-local-storage.min.js"></script>
+
+    <script src="js/ui-bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script src="js/localytics-chosen/chosen.min.js"></script>
+    <script src="js/ng-bootbox/ng-bootbox.min.js"></script>
+    <script src="js/angular-datatables/angular-datatables.min.js"></script>
+    <script src="js/ui-router/ui-router.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+    <!-- gnap angular -->
+    <script src="js/gnap/gnap.min.js"></script>
+    <script src="js/gnap/breadcrumbs.service.min.js"></script>
+    <script src="js/gnap/breadcrumbs.directive.min.js"></script>
+    <script src="js/gnap/sidebar-toggler.directive.min.js"></script>
+    <script src="js/gnap/sidebar.service.min.js"></script>
+    <script src="js/gnap/sidebar.directive.min.js"></script>
+    <script src="js/gnap/search.directive.min.js"></script>
+    <script src="js/gnap/pager.directive.min.js"></script>
+    <script src="js/gnap/notification.service.min.js"></script>
+    <script src="js/gnap/input-limiter.directive.min.js"></script>
+    <script src="js/gnap/masked-input.directive.min.js"></script>
+    <script src="js/gnap/wysiwyg.directive.min.js"></script>
+    <script src="js/gnap/choice-toggle.directive.min.js"></script>
+    <script src="js/gnap/datepicker.directive.min.js"></script>
+    <script src="js/gnap/daterange.directive.min.js"></script>
+    <script src="js/gnap/timepicker.directive.min.js"></script>
+    <script src="js/gnap/header-checkbox.directive.min.js"></script>
+
+
+    <!-- companion app js -->
+    <script src="app/app.js"></script>
+    <script src="app/main/routes.js"></script>
+    <script src="app/main/main.js"></script>
+    <script src="app/about/about.js"></script>
+    <script src="app/about/routes.js"></script>
+    <script src="app/typography/routes.js"></script>
+    <script src="app/typography/typography.js"></script>
+    <script src="app/examples/routes.js"></script>
+    <script src="app/examples/examples.js"></script>
+
+    <!-- example app services and directives -->
+    <script src="app/session-dropdown.js"></script>
+
+</body>
+</html>
