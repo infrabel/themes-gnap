@@ -38,6 +38,7 @@
             };
         };
 
+        // TODO: ng-required and other should be passed in from the outside, not hardcoded
         return {
             restrict: 'AE',
             scope: {
