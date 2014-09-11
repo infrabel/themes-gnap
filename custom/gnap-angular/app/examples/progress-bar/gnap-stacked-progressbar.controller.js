@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-stacked-progressbar', ['$scope', GnapStackedProgressbarController]);
+        .module('gnap-example-app')
+        .controller('gnap-stacked-progressbar', GnapStackedProgressbarController);
+
+    GnapStackedProgressbarController.$inject = ['$scope'];
 
     function GnapStackedProgressbarController($scope) {
         $scope.collection = [];

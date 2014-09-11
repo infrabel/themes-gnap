@@ -1,11 +1,11 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-custom-dialog', ['$scope', '$modal', GnapCustomDialogController]);
+        .module('gnap-example-app')
+        .controller('gnap-custom-dialog', GnapCustomDialogController)
+        .controller('gnap-custom-dialog-instance', GnapCustomDialogInstanceController);
 
-    angular
-        .module('gnap-app')
-        .controller('gnap-custom-dialog-instance', ['$scope', '$modalInstance', 'items', GnapCustomDialogInstanceController]);
+    GnapCustomDialogController.$inject = ['$scope', '$modal'];
+    GnapCustomDialogInstanceController.$inject = ['$scope', '$modalInstance', 'items'];
 
     function GnapCustomDialogController($scope, $modal) {
         $scope.items = ['item1', 'item2', 'item3'];

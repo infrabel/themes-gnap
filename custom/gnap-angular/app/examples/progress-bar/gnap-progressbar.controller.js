@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-progressbar', ['$scope', GnapProgressbarController]);
+        .module('gnap-example-app')
+        .controller('gnap-progressbar', GnapProgressbarController);
+
+    GnapProgressbarController.$inject = ['$scope'];
 
     function GnapProgressbarController($scope) {
         $scope.progress = 40;

@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-success-notification', ['$scope', 'notification', GnapSuccessNotificationController]);
+        .module('gnap-example-app')
+        .controller('gnap-success-notification', GnapSuccessNotificationController);
+
+    GnapSuccessNotificationController.$inject = ['$scope', 'notification'];
 
     function GnapSuccessNotificationController($scope, notification) {
         $scope.notify = function () {

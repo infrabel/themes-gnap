@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-pagination', ['$scope', GnapPaginationController]);
+        .module('gnap-example-app')
+        .controller('gnap-pagination', GnapPaginationController);
+
+    GnapPaginationController.$inject = ['$scope'];
 
     function GnapPaginationController($scope) {
         $scope.totalItems = 164;
