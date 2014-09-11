@@ -128,6 +128,8 @@
     <Content Include="custom\flatly\index.html" />
     <Content Include="custom\flatly\bootswatch.less.replace-grunt.js" />
     <Content Include="custom\gnap-angular\app\app.config.js" />
+    <Content Include="custom\gnap-angular\app\error-404\error-404.controller.js" />
+    <None Include="custom\gnap-angular\app\error-404\error-404.html" />
     <Content Include="custom\gnap-angular\app\examples\alerts\gnap-alerts.controller.js" />
     <Content Include="custom\gnap-angular\app\examples\dialogs\gnap-custom-dialog.controller.js" />
     <Content Include="custom\gnap-angular\app\examples\dialogs\gnap-prompt-dialog.controller.js" />
@@ -146,6 +148,10 @@
     <Content Include="custom\gnap-angular\app\examples\sections\gnap-collapse.controller.js" />
     <Content Include="custom\gnap-angular\app\session-dropdown.html" />
     <Content Include="custom\gnap-angular\app\session-dropdown.js" />
+    <Content Include="custom\gnap-angular\app\error-404\routes.config.js" />
+    <Content Include="custom\gnap-angular\app\error-500\routes.config.js" />
+    <Content Include="custom\gnap-angular\app\error-500\error-500.controller.js" />
+    <None Include="custom\gnap-angular\app\error-500\error-500.html" />
     <Content Include="custom\gnap-angular\css\develop\app.css" />
     <Content Include="custom\gnap-angular\css\develop\gnap.css" />
     <Content Include="custom\gnap-angular\js\develop\gnap\breadcrumbs.directive.js" />
@@ -2858,6 +2864,7 @@
     <Content Include="tasks\options\clean.js" />
     <Content Include="tasks\options\jquery.copy.js" />
     <Content Include="tasks\themes\gnap-angular.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.cleanempty.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.includereplace.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.cssmin.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.replace.js" />

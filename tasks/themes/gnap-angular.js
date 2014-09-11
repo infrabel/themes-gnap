@@ -17,7 +17,8 @@
                         'copy:gnap-angular_deploy_gnap',
                         'copy:gnap-angular_deploy',
                         'copy:gnap-angular_deploy_gnap_directives',
-                        'clean:gnap-angular_deploy'
+                        'clean:gnap-angular_deploy',
+                        'cleanempty:gnap-angular_empty_deploy'
         ]);
     });
     
