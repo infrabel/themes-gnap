@@ -26,6 +26,31 @@ ul[datepicker-popup-wrap] div[datepicker] {
     padding: 4px;
 }
 
-.datepicker table tr td span {
-    width: 31% !important;
+.datepicker table {
+    width: 100%;
+}
+
+.datepicker table tr td.month:hover,
+.datepicker table tr td.year:hover {
+  background: #eeeeee;
+  cursor: pointer;
+}
+
+.datepicker table tr td.month,
+.datepicker table tr td.year {
+  height: 30px;
+  line-height: 30px;
+  margin: 1%;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.datepicker table tr td.month {
+    width: 23%;
+}
+
+.datepicker table tr td.year {
+    width: 17%;
 }
