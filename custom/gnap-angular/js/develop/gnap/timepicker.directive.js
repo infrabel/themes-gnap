@@ -8,6 +8,10 @@
         .module('gnap')
         .directive('gnapTimepicker', gnapTimepicker);
 
+    angular
+        .module("template/timepicker/timepicker.html")
+        .run(["$templateCache", gnapTimepickerTemplate]);
+
     function gnapTimepicker() {
 
         return {
@@ -77,12 +81,10 @@
                 scope.status.isopen = !scope.status.isopen;
             };
         };
-    }
-})();
+    };
 
-//override template for timepicker
-angular.module("template/timepicker/timepicker.html", []).run([
-    "$templateCache", function ($templateCache) {
+    function gnapTimepickerTemplate($templateCache) {
+
         $templateCache.put("template/timepicker/timepicker.html",
             "<table>\n" +
             " <tbody>\n" +
@@ -109,7 +111,6 @@ angular.module("template/timepicker/timepicker.html", []).run([
             "     <td ng-show=\"showMeridian\"></td>\n" +
             "   </tr>\n" +
             " </tbody>\n" +
-            "</table>\n" +
-            "");
-    }
-]);
+            "</table>");
+    };
+})();
