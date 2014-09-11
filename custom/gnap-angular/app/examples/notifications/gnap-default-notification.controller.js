@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-default-notification', ['$scope', 'notification', GnapDefaultNotificationController]);
+        .module('gnap-example-app')
+        .controller('gnap-default-notification', GnapDefaultNotificationController);
+
+    GnapDefaultNotificationController.$inject = ['$scope', 'notification'];
 
     function GnapDefaultNotificationController($scope, notification) {
         $scope.notify = function () {

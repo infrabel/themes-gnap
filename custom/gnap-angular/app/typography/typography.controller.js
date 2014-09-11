@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('TypographyController', ['sidebarService', 'breadcrumbsService', TypographyController]);
+        .module('gnap-example-app')
+        .controller('TypographyController', TypographyController);
+
+    TypographyController.$inject = ['sidebarService', 'breadcrumbsService'];
 
     function TypographyController(sidebarService, breadcrumbsService) {
 

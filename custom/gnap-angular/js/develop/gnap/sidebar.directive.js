@@ -6,13 +6,12 @@
 (function () {
     angular
         .module('gnap')
-        .directive('gnapSidebar', ['sidebarService', '$state', gnapSidebar]);
-
-    angular
-        .module('gnap')
+        .directive('gnapSidebar', gnapSidebar)
         .animation('.submenu', gnapSidebarSlideUpSlideDown);
 
-    function gnapSidebar(sidebarService, $state) {
+    gnapSidebar.$inject = ['$state', 'sidebarService'];
+
+    function gnapSidebar($state, sidebarService) {
         function link(scope, element, attrs) {
             scope.settings = sidebarService.settings;
 

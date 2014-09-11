@@ -1,5 +1,5 @@
 angular
-  .module('gnap-app')
+  .module('gnap-example-app')
   .directive('sessionDropdown', function () {
     return {
       restrict: 'A',

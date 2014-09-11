@@ -6,9 +6,11 @@
 (function () {
     angular
         .module('gnap')
-        .directive('gnapBreadcrumbs', ['breadcrumbsService', '$location', '$state', gnapBreadcrumbs]);
+        .directive('gnapBreadcrumbs', gnapBreadcrumbs);
 
-    function gnapBreadcrumbs(breadcrumbsService, $location, $state) {
+    gnapBreadcrumbs.$inject = ['$location', '$state', 'breadcrumbsService'];
+
+    function gnapBreadcrumbs($location, $state, breadcrumbsService) {
 
         return {
             restrict: 'A',

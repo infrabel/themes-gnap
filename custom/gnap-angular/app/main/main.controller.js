@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('MainController', ['sidebarService', MainController]);
+        .module('gnap-example-app')
+        .controller('MainController', MainController);
+
+    MainController.$inject = ['sidebarService'];
 
     function MainController(sidebarService) {
 
