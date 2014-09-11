@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-date-range-picker', ['$scope', GnapDaterangepickerController]);
+        .module('gnap-example-app')
+        .controller('gnap-date-range-picker', GnapDaterangepickerController);
+
+    GnapDaterangepickerController.$inject = ['$scope'];
 
     function GnapDaterangepickerController($scope) {
         $scope.range = {

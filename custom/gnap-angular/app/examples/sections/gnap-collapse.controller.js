@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-collapse', ['$scope', GnapCollapseController]);
+        .module('gnap-example-app')
+        .controller('gnap-collapse', GnapCollapseController);
+
+    GnapCollapseController.$inject = ['$scope'];
 
     function GnapCollapseController($scope) {
         $scope.isCollapsed = false;

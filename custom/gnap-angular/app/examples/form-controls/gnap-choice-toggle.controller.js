@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-choice-toggle', ['$scope', GnapChoiceToggleController]);
+        .module('gnap-example-app')
+        .controller('gnap-choice-toggle', GnapChoiceToggleController);
+
+    GnapChoiceToggleController.$inject = ['$scope'];
 
     function GnapChoiceToggleController($scope) {
         $scope.value = true;

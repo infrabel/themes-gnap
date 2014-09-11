@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('gnap-app')
+        .module('gnap-example-app')
         .config(['$stateProvider', function ($stateProvider) {
             $stateProvider
                 .state('main.about', {

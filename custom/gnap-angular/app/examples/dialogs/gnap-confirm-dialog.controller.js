@@ -1,7 +1,9 @@
 (function () {
     angular
-        .module('gnap-app')
-        .controller('gnap-confirm-dialog', ['$scope', GnapConfirmDialogController]);
+        .module('gnap-example-app')
+        .controller('gnap-confirm-dialog', GnapConfirmDialogController);
+
+    GnapConfirmDialogController.$inject = ['$scope'];
 
     function GnapConfirmDialogController($scope) {
         $scope.confirm = function () {

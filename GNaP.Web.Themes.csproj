@@ -127,6 +127,7 @@
     <Content Include="custom\flatly\variables.less.replace-grunt.js" />
     <Content Include="custom\flatly\index.html" />
     <Content Include="custom\flatly\bootswatch.less.replace-grunt.js" />
+    <Content Include="custom\gnap-angular\app\app.config.js" />
     <Content Include="custom\gnap-angular\app\examples\alerts\gnap-alerts.controller.js" />
     <Content Include="custom\gnap-angular\app\examples\dialogs\gnap-custom-dialog.controller.js" />
     <Content Include="custom\gnap-angular\app\examples\dialogs\gnap-prompt-dialog.controller.js" />
@@ -2883,7 +2884,7 @@
     <Content Include="tasks\themes\sample\sample.semver.js" />
     <Content Include="tasks\util.js" />
     <Content Include="themes.js" />
-    <Content Include="custom\gnap-angular\app\app.js" />
+    <Content Include="custom\gnap-angular\app\app.module.js" />
     <Content Include="custom\gnap-angular\index.html" />
     <None Include="custom\gnap-angular\app\main\main.html" />
     <Content Include="custom\gnap-angular\app\main\main.controller.js" />
