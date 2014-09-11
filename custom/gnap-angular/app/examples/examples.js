@@ -1,18 +1,21 @@
-angular.module('gnap-app')
-    .controller('ExamplesController', ['sidebarService', 'breadcrumbsService', ExamplesController]);
+(function () {
+    angular
+        .module('gnap-app')
+        .controller('ExamplesController', ['sidebarService', 'breadcrumbsService', ExamplesController]);
 
-function ExamplesController(sidebarService, breadcrumbsService) {
+    function ExamplesController(sidebarService, breadcrumbsService) {
 
-    // configure breadcrumbs
-    breadcrumbsService.setBreadcrumbs([
-        {
-            title: 'Home',
-            url: '/'
-        },
-        {
-            title: 'Examples'
-        }
-    ]);
+        // configure breadcrumbs
+        breadcrumbsService.setBreadcrumbs([
+            {
+                title: 'Home',
+                url: '/'
+            },
+            {
+                title: 'Examples'
+            }
+        ]);
 
-    sidebarService.setActive('examples');
-};
+        sidebarService.setActive('examples');
+    };
+})();
