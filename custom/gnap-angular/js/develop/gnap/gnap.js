@@ -13,4 +13,5 @@ angular
     .config(['datepickerConfig', function (datepickerConfig) {
         datepickerConfig.showWeeks = false;
         datepickerConfig.startingDay = '1';
-    }]);
+        datepickerConfig.formatMonth = 'MMM';
+}]);
