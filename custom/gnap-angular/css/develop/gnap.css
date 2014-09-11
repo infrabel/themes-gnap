@@ -18,44 +18,10 @@ ul.breadcrumb>li:first-child  {
     display: block;
 }
 
-.datepicker-day {
-	color: black;
-	background-color: transparent;
-	border: 0px;
+ul[datepicker-popup-wrap] {
+    padding: 0px;
 }
 
-.datepicker-day:hover {
-	border: 0px;
-}
-
-.datepicker-day.active span.text-info,
-.datepicker-day.active {
-	color: white !important;
-	border: 0px;
-}
-
-.datepicker-cell {
-	padding: 0px;
-    height: 30px !important;
-    width: 35px !important;
-}
-
-.datepicker-cell:hover {
-	background-color: #eeeeee;
-}
-
-button.datepicker-day {
-    background-color: transparent !important;
-}
-
-div.daterangepicker-datepicker {
-	display: inline-block;
-	border: 1px solid #eeeeee;
-	margin: 4px 8px 0px 0px;
-}
-
-div.daterangepicker-from-to {
-	display: inline-block;
-	border: 1px solid #ffffff;
-	margin: 4px 4px 4px 4px;
+ul[datepicker-popup-wrap] div[datepicker] {
+    padding: 4px;
 }
