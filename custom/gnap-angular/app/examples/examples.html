@@ -11,14 +11,14 @@
             <i class="icon-cog"></i>
             Primary
         </button>
-        @@include('html/examples/buttons/basic-buttons.html')
+        @@include('html/buttons/basic-buttons.html')
 
         <h3 class="header smaller">
             Form Example
         </h3>
         <button class="btn btn-primary">Save</button>
         <button class="btn btn-default">Cancel</button>
-         @@include('html/examples/buttons/form-example.html')
+        @@include('html/buttons/form-example.html')
 
         <h3 class="header smaller">
             Tooltips (hover over these)
@@ -28,7 +28,7 @@
         <button class="btn btn-primary" tooltip="This is a tooltip on the right!" tooltip-placement="right">Right tooltip</button>
         <button class="btn btn-primary" tooltip="This is a tooltip on top!" tooltip-placement="top">Top tooltip</button>
         <button class="btn btn-primary" tooltip="This is a tooltip at the bottom!" tooltip-placement="bottom">Bottom tooltip</button>
-        @@include('html/examples/buttons/tooltips.html')
+        @@include('html/buttons/tooltips.html')
 
         <h3 class="header smaller">
             Various Sizes
@@ -38,14 +38,14 @@
         <button class="btn btn-primary btn-sm">Small</button>
         <button class="btn btn-primary">Default</button>
         <button class="btn btn-primary btn-lg">Large</button>
-        @@include('html/examples/buttons/various-sizes.html')
+        @@include('html/buttons/various-sizes.html')
 
         <h3 class="header smaller">
             Disabled Buttons
         </h3>
         <button class="btn btn-primary disabled">Disabled Primary</button>
         <button class="btn btn-default disabled">Disabled Default</button>
-        @@include('html/examples/buttons/disabled-buttons.html')
+        @@include('html/buttons/disabled-buttons.html')
 
         <h3 class="header smaller">
             Dropdown Button
@@ -71,7 +71,7 @@
                 </li>
             </ul>
         </div>
-        @@include('html/examples/buttons/dropdown-buttons.html')
+        @@include('html/buttons/dropdown-buttons.html')
 
         <h3 class="header smaller">
             Grouped Buttons
@@ -85,11 +85,10 @@
             <button class="btn btn-primary">Ok</button>
             <button class="btn btn-default">Cancel</button>
         </div>
-        @@include('html/examples/buttons/grouped-buttons.html')
+        @@include('html/buttons/grouped-buttons.html')
     </div> <!-- buttons tab -->
 
     <div tab heading="Progress Bar" id="progressbar" class="tab-pane">
-
         <h3 class="header smaller">
             Progress Bar
         </h3>
@@ -101,7 +100,7 @@
             <div progressbar class="progress-small progress-striped active" value="progress"></div>
             <div progressbar class="progress-small progress-striped" value="workLeft"></div>
         </div>
-         @@include('html/examples/progress-bar/progress-bar.html')
+        @@include('html/progress-bar/progress-bar.html')
 
         <h3>
             Stacked
@@ -115,17 +114,15 @@
                 </div>
             </div>
         </div>
-         @@include('html/examples/progress-bar/stacked.html')
-
+        @@include('html/progress-bar/stacked.html')
     </div> <!-- progress bar tab -->
 
     <div tab heading="Dialogs" id="dialogs" class="tab-pane">
-
         <h3 class="header smaller">
             Alert Dialog
         </h3>
         <button class="btn btn-primary" ng-bootbox-alert="Alert message!">Click Me!</button>
-         @@include('html/examples/dialogs/alert-dialog.html')
+        @@include('html/dialogs/alert-dialog.html')
 
         <h3 class="header smaller">
             Confirm Dialog
@@ -138,7 +135,7 @@
                 Click Me!
             </button>
         </div>
-         @@include('html/examples/dialogs/confirm-dialog.html')
+        @@include('html/dialogs/confirm-dialog.html')
 
         <h3 class="header smaller">
             Prompt Dialog
@@ -151,7 +148,7 @@
                 Click Me!
             </button>
         </div>
-         @@include('html/examples/dialogs/prompt-dialog.html')
+        @@include('html/dialogs/prompt-dialog.html')
 
         <h3 class="header smaller">
             Custom Dialog
@@ -176,8 +173,7 @@
             </script>
             <button class="btn btn-primary" ng-click="open()">Click Me!</button>
         </div>
-         @@include('html/examples/dialogs/custom-dialog.html')
-
+        @@include('html/dialogs/custom-dialog.html')
     </div> <!-- dialogs tab -->
 
     <div tab heading="Alerts" id="alerts" class="tab-pane">
@@ -187,7 +183,7 @@
         <div ng-controller="gnap-alerts">
             <div alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" ng-bind-html="alert.msg"></div>
         </div>
-         @@include('html/examples/alerts/alerts.html')
+        @@include('html/alerts/alerts.html')
     </div> <!-- alerts tab -->
 
     <div tab heading="Pagination" id="pagination" class="tab-pane" ng-controller="gnap-pagination">
@@ -195,24 +191,23 @@
             Previous / Next Pagination
         </h3>
         <div gnap-pager max-size="0" total-items="totalItems" current-page="currentPage"></div>
-         @@include('html/examples/pagination/previous-next-pagination.html')
+        @@include('html/pagination/previous-next-pagination.html')
 
         <h3 class="header smaller">
             Full Pagination
         </h3>
         <div gnap-pager max-size="5" total-items="totalItems" current-page="currentPage"></div>
-         @@include('html/examples/pagination/few-pages.html')
+        @@include('html/pagination/few-pages.html')
 
-         @@include('html/examples/pagination/javascript.html')
+        @@include('html/pagination/javascript.html')
     </div>  <!-- pagination tab -->
 
     <div tab heading="Icons" id="icons" class="tab-pane">
-
         <h3 class="header smaller">
             Loading Icon
         </h3>
         <img src="images/loading.gif" alt="Loading..." />
-         @@include('html/examples/icons/loading-icon.html')
+        @@include('html/icons/loading-icon.html')
 
         <h3 class="header smaller">
             361 Scalable FontAwesome Icons
@@ -619,9 +614,7 @@
                 </ul>
             </div>
         </div>
-
-         @@include('html/examples/icons/icon-example.html')
-
+        @@include('html/icons/icon-example.html')
     </div> <!-- icons tab -->
 
     <div tab heading="Labels" id="labels" class="tab-pane">
@@ -630,7 +623,8 @@
         </h3>
         <span class="label label-primary">Default</span>
         <span class="label label-success arrowed">Success</span>
-         @@include('html/examples/labels/standard-labels.html')
+        @@include('html/labels/standard-labels.html')
+
         <h3 class="header smaller">
             Indicators
         </h3>
@@ -639,7 +633,8 @@
         <span class="badge badge-warning">4</span>
         <span class="badge badge-danger">6</span>
         <span class="badge badge-info">8</span>
-         @@include('html/examples/labels/indicators.html')
+        @@include('html/labels/indicators.html')
+
         <h3 class="header smaller">
             Variations
         </h3>
@@ -649,11 +644,10 @@
         </span>
         <span class="label label-lg label-pink arrowed-right">Large</span>
         <span class="label label-lg label-purple arrowed">Purple</span>
-         @@include('html/examples/labels/variations.html')
+        @@include('html/labels/variations.html')
     </div> <!-- indidcators tab -->
 
     <div tab heading="Tables" id="tables" class="tab-pane">
-
         <h3 class="header smaller">
             Standard Table
         </h3>
@@ -714,7 +708,7 @@
                 </tbody>
             </table>
         </div>
-         @@include('html/examples/tables/standard-table.html')
+        @@include('html/tables/standard-table.html')
 
         <h3 class="header smaller">
             Full Table
@@ -987,13 +981,11 @@
                     </tr>
                 </tbody>
             </table>
-             @@include('html/examples/tables/full-table.html')
+            @@include('html/tables/full-table.html')
         </div>
-
     </div> <!-- tables tab -->
 
     <div tab heading="Sections" id="sections" class="tab-pane">
-
         <h3 class="header smaller">
             Tabs
         </h3>
@@ -1007,7 +999,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis neque id leo tincidunt, vel interdum tortor egestas. Quisque at massa sit amet nisl placerat euismod sit amet non leo. Suspendisse egestas, leo id scelerisque euismod, massa sapien feugiat mi, at pulvinar lorem est sit amet est.</p>
             </div>
         </div>
-         @@include('html/examples/sections/tabs.html')
+        @@include('html/sections/tabs.html')
 
         <h3 class="header smaller">
             Container
@@ -1029,7 +1021,7 @@
                 </div>
             </div>
         </div>
-         @@include('html/examples/sections/container.html')
+        @@include('html/sections/container.html')
 
         <h3 class="header smaller">
             Collapsable Container
@@ -1066,7 +1058,7 @@
                 </div>
             </div>
         </div>
-         @@include('html/examples/sections/collapsable-container.html')
+        @@include('html/sections/collapsable-container.html')
 
         <h3 class="header smaller">
             Collapsable Container With Buttons
@@ -1108,8 +1100,7 @@
                 </div>
             </div>
         </div>
-         @@include('html/examples/sections/collapsable-container-with-buttons.html')
-
+        @@include('html/sections/collapsable-container-with-buttons.html')
     </div> <!-- sections tab -->
 
     <div tab heading="Notifications" id="notifications" class="tab-pane">
@@ -1120,7 +1111,7 @@
             <button class="btn btn-primary" ng-click="notify()">Click Me!</button>
             <button class="btn btn-default" ng-click="remove()">Remove Notification</button>
         </div>
-         @@include('html/examples/notifications/default-notification.html')
+        @@include('html/notifications/default-notification.html')
 
         <h3 class="header smaller">
             Success Notification
@@ -1129,7 +1120,7 @@
             <button class="btn btn-primary" ng-click="notify()">Click Me!</button>
             <button class="btn btn-default" ng-click="remove()">Remove Notification</button>
         </div>
-         @@include('html/examples/notifications/success-notification.html')
+        @@include('html/notifications/success-notification.html')
 
         <h3 class="header smaller">
             Error Notification
@@ -1138,12 +1129,11 @@
             <button class="btn btn-primary" ng-click="notify()">Click Me!</button>
             <button class="btn btn-default" ng-click="remove()">Remove Notification</button>
         </div>
-         @@include('html/examples/notifications/error-notification.html')
+        @@include('html/notifications/error-notification.html')
     </div> <!-- notifications tab -->
 
     <div tab heading="Form controls" id="forms" class="tab-pane">
         <form class="form-horizontal" role="form">
-
             <h3 class="header smaller">
                 Common Input Controls
             </h3>
@@ -1153,7 +1143,7 @@
                     <input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-5" />
                 </div>
             </div>
-             @@include('html/examples/form-controls/text-field.html')
+            @@include('html/form-controls/text-field.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-2">Password Field</label>
@@ -1164,7 +1154,7 @@
                     </span>
                 </div>
             </div>
-             @@include('html/examples/form-controls/password-field.html')
+            @@include('html/form-controls/password-field.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right" for="form-input-readonly">Readonly field</label>
@@ -1172,7 +1162,7 @@
                     <input type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" readonly="readonly" />
                 </div>
             </div>
-             @@include('html/examples/form-controls/readonly-field.html')
+            @@include('html/form-controls/readonly-field.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right" for="form-input-disabled">Disabled field</label>
@@ -1180,7 +1170,7 @@
                     <input type="text" class="col-xs-10 col-sm-5" id="form-input-disabled" value="This text field is disabled!" disabled="disabled" />
                 </div>
             </div>
-             @@include('html/examples/form-controls/disabled-field.html')
+            @@include('html/form-controls/disabled-field.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right">Input with Icon</label>
@@ -1200,7 +1190,7 @@
                     </span>
                 </div>
             </div>
-             @@include('html/examples/form-controls/input-with-icon.html')
+            @@include('html/form-controls/input-with-icon.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-select-3">Dropdown</label>
@@ -1260,7 +1250,7 @@
                     </select>
                 </div>
             </div>
-             @@include('html/examples/form-controls/dropdown.html')
+            @@include('html/form-controls/dropdown.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-select-4">Multiple</label>
@@ -1320,7 +1310,7 @@
                     </select>
                 </div>
             </div>
-             @@include('html/examples/form-controls/multiple-dropdown.html')
+            @@include('html/form-controls/multiple-dropdown.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right">Checkbox</label>
@@ -1345,7 +1335,7 @@
                     </div>
                 </div>
             </div>
-             @@include('html/examples/form-controls/checkbox.html')
+            @@include('html/form-controls/checkbox.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right">Radio</label>
@@ -1370,7 +1360,7 @@
                     </div>
                 </div>
             </div>
-             @@include('html/examples/form-controls/radio.html')
+            @@include('html/form-controls/radio.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right">Default textarea</label>
@@ -1380,7 +1370,7 @@
                     </div>
                 </div>
             </div>
-             @@include('html/examples/form-controls/default-textarea.html')
+            @@include('html/form-controls/default-textarea.html')
 
             <h3 class="header smaller">
                 Specialized Input Controls
@@ -1393,7 +1383,7 @@
                     </div>
                 </div>
             </div>
-             @@include('html/examples/form-controls/date-picker.html')
+            @@include('html/form-controls/date-picker.html')
 
             <div class="form-group" ng-controller="gnap-date-range-picker">
                 <label class="col-sm-3 control-label no-padding-right">Date Range</label>
@@ -1401,7 +1391,7 @@
                     <span gnap-daterange date-begin="range.dateStart" date-end="range.dateEnd" icon-position="{{iconPosition}}"></span>
                 </div>
             </div>
-             @@include('html/examples/form-controls/date-range-picker.html')
+            @@include('html/form-controls/date-range-picker.html')
 
             <div class="form-group" ng-controller="gnap-time-picker">
                 <label class="col-sm-3 control-label no-padding-right">Time Picker</label>
@@ -1409,7 +1399,7 @@
                     <span gnap-timepicker time="sometime" icon-position="right"></span>
                 </div>
             </div>
-             @@include('html/examples/form-controls/time-picker.html')
+            @@include('html/form-controls/time-picker.html')
 
             <div ng-controller="gnap-choice-toggle">
                 <div class="form-group">
@@ -1422,7 +1412,7 @@
                     </div>
                 </div>
             </div>
-             @@include('html/examples/form-controls/choice-toggle.html')
+            @@include('html/form-controls/choice-toggle.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right">File input</label>
@@ -1432,7 +1422,7 @@
                     </div>
                 </div>
             </div>
-             @@include('html/examples/form-controls/file-input.html')
+            @@include('html/form-controls/file-input.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right">Multiple File input</label>
@@ -1446,7 +1436,7 @@
                     </div>
                 </div>
             </div>
-             @@include('html/examples/form-controls/multiple-file-input.html')
+            @@include('html/form-controls/multiple-file-input.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right">Masked field</label>
@@ -1457,7 +1447,7 @@
                     </span>
                 </div>
             </div>
-             @@include('html/examples/form-controls/masked-field.html')
+            @@include('html/form-controls/masked-field.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right">Textarea with character limit</label>
@@ -1467,7 +1457,7 @@
                     </div>
                 </div>
             </div>
-             @@include('html/examples/form-controls/textarea-with-character-limit.html')
+            @@include('html/form-controls/textarea-with-character-limit.html')
 
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right">WYSIWYG</label>
@@ -1475,7 +1465,7 @@
                     <div gnap-wysiwyg></div>
                 </div>
             </div>
-             @@include('html/examples/form-controls/wysiwyg.html')
+            @@include('html/form-controls/wysiwyg.html')
 
             <h3 class="header smaller">
                 Sizing Examples
@@ -1522,9 +1512,7 @@
                     <input class="form-control input-xxlarge" type="text" placeholder=".input-xxlarge" />
                 </div>
             </div>
-             @@include('html/examples/form-controls/sizing-examples.html')
-
+            @@include('html/form-controls/sizing-examples.html')
         </form>
     </div> <!-- form tab -->
-
 </div> <!-- tabset -->
