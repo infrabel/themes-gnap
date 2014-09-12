@@ -56,10 +56,15 @@
                 state: 'main.about'
             },
             {
+                key: 'getting-started',
+                title: 'Getting Started',
+                icon: 'icon-fire',
+                state: 'main.getting-started'
+            },
+            {
                 key: 'examples',
                 title: 'Examples',
                 icon: 'icon-heart',
-                active: true,
                 state: 'main.examples'
             },
             {
