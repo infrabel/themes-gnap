@@ -1,6 +1,6 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code class="html">&lt;div ng-controller=&quot;gnap-custom-dialog&quot;&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-custom-dialog&quot;&gt;
     &lt;script type=&quot;text/ng-template&quot; id=&quot;myModalContent.html&quot;&gt;
         &lt;div class=&quot;modal-header&quot;&gt;
             &lt;h3 class=&quot;modal-title&quot;&gt;I am a modal!&lt;/h3&gt;
@@ -23,7 +23,7 @@
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
-<pre><code class="javascript">angular
+<pre><code gnap-highlight>angular
     .module(&#39;gnap-example-app&#39;)
     .controller(&#39;gnap-custom-dialog&#39;, function($scope, $modal) {
         $scope.items = [&#39;item1&#39;, &#39;item2&#39;, &#39;item3&#39;];
