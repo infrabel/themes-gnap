@@ -128,6 +128,9 @@
     <Content Include="custom\flatly\variables.less.replace-grunt.js" />
     <Content Include="custom\flatly\index.html" />
     <Content Include="custom\flatly\bootswatch.less.replace-grunt.js" />
+    <Content Include="custom\gnap-angular\app\getting-started\getting-started.controller.js" />
+    <None Include="custom\gnap-angular\app\getting-started\getting-started.html" />
+    <Content Include="custom\gnap-angular\app\getting-started\routes.config.js" />
     <Content Include="custom\gnap-angular\app\app.config.js" />
     <Content Include="custom\gnap-angular\app\error-404\error-404.controller.js" />
     <None Include="custom\gnap-angular\app\error-404\error-404.html" />
