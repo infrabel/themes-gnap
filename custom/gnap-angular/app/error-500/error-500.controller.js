@@ -11,7 +11,7 @@
         breadcrumbsService.setBreadcrumbs([
             {
                 title: 'Home',
-                state: 'main'
+                url: '/'
             },
             {
                 title: 'Error 500'
