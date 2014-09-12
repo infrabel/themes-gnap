@@ -23,11 +23,18 @@
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
-<pre><code gnap-highlight>angular
-    .module(&#39;gnap-example-app&#39;)
-    .controller(&#39;gnap-custom-dialog&#39;, function($scope, $modal) {
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-custom-dialog&#39;, GnapCustomDialogController)
+        .controller(&#39;gnap-custom-dialog-instance&#39;, GnapCustomDialogInstanceController);
+
+    GnapCustomDialogController.$inject = [&#39;$scope&#39;, &#39;$modal&#39;];
+    GnapCustomDialogInstanceController.$inject = [&#39;$scope&#39;, &#39;$modalInstance&#39;, &#39;items&#39;];
+
+    function GnapCustomDialogController($scope, $modal) {
         $scope.items = [&#39;item1&#39;, &#39;item2&#39;, &#39;item3&#39;];
-  
+
         $scope.open = function (size) {
             var modalInstance = $modal.open({
                 templateUrl: &#39;myModalContent.html&#39;,
@@ -45,8 +52,9 @@
                 alert(&#39;You dismissed the dialog!&#39;);
             });
         };
-    })
-    .controller(&#39;gnap-custom-dialog-instance&#39;, function($scope, $modalInstance, items) {
+    };
+
+    function GnapCustomDialogInstanceController($scope, $modalInstance, items) {
         $scope.items = items;
 
         $scope.selected = {
@@ -60,7 +68,8 @@
         $scope.cancel = function () {
             $modalInstance.dismiss(&#39;cancel&#39;);
         };
-    });</code></pre>
+    };
+})();</code></pre>
   </div>
 </div>
 
