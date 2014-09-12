@@ -3,7 +3,7 @@
  * @file pager.directive.js
  * @example <div gnap-pager max-size="5" total-items="totalItems" current-page="currentPage"></div>
  */
-(function() {
+(function () {
     angular
         .module('gnap')
         .directive('gnapPager', gnapPager);

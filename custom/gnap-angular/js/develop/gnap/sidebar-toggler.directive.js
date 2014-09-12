@@ -6,7 +6,9 @@
 (function () {
     angular
         .module('gnap')
-        .directive('gnapSidebarToggler', ['sidebarService', gnapSidebarToggler]);
+        .directive('gnapSidebarToggler', gnapSidebarToggler);
+
+    gnapSidebarToggler.$inject = ['sidebarService'];
 
     function gnapSidebarToggler(sidebarService) {
         function link(scope, element, attrs) {
