@@ -10,16 +10,22 @@
   </div>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
-<pre><code gnap-highlight>angular
-    .module(&#39;gnap-example-app&#39;)
-    .controller(&#39;gnap-date-range-picker&#39;, function($scope) {
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-date-range-picker&#39;, GnapDaterangepickerController);
+
+    GnapDaterangepickerController.$inject = [&#39;$scope&#39;];
+
+    function GnapDaterangepickerController($scope) {
         $scope.range = {
             dateStart: new Date(2014, 0, 7),
-           dateEnd: new Date(2014, 7, 14)
+            dateEnd: new Date(2014, 7, 14)
         };
-    
+
         $scope.iconPosition = &#39;left&#39;;
-    });</code></pre>
+    };
+})();</code></pre>
   </div>
 </div>
 
