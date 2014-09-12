@@ -2,7 +2,7 @@
 
 
 
-<a href='http://github.com/angular/angular.js/tree/master/src/ng/directive/ngEventDirs.js#L362' class='view-source pull-right btn btn-primary'>
+<a href='http://github.com/angular/angular.js/tree/master/src/ng/directive/ngEventDirs.js#L378' class='view-source pull-right btn btn-primary'>
   <i class="glyphicon glyphicon-zoom-in">&nbsp;</i>View Source
 </a>
 
@@ -21,6 +21,9 @@
 
 <div class="api-profile-description">
   <p>Specify custom behavior on focus event.</p>
+<p>Note: As the <code>focus</code> event is executed synchronously when calling <code>input.focus()</code>
+AngularJS executes the expression using <code>scope.$evalAsync</code> if the event is fired
+during an <code>$apply</code> to ensure a consistent state.</p>
 
 </div>
 

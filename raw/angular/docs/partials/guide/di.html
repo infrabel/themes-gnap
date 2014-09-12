@@ -70,7 +70,7 @@ injector, as in this example:</p>
 <p>When Angular compiles the HTML, it processes the <code>ng-controller</code> directive, which in turn
 asks the injector to create an instance of the controller and its dependencies.</p>
 <pre><code class="lang-js">injector.instantiate(MyController);</code></pre>
-<p>This is all done behinds the scenes. Notice that by having the <code>ng-controller</code> ask the injector to
+<p>This is all done behind the scenes. Notice that by having the <code>ng-controller</code> ask the injector to
 instantiate the class, it can satisfy all of the dependencies of <code>MyController</code> without the
 controller ever knowing about the injector.</p>
 <p>This is the best outcome. The application code simply declares the dependencies it needs, without
