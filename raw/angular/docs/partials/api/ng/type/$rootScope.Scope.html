@@ -128,9 +128,8 @@ compiled HTML template is executed.)</p>
 
 </h3>
     <div><p>Creates a new child <a href="api/ng/type/$rootScope.Scope">scope</a>.</p>
-<p>The parent scope will propagate the <a href="api/ng/type/$rootScope.Scope#$digest">$digest()</a> and
-<a href="api/ng/type/$rootScope.Scope#$digest">$digest()</a> events. The scope can be removed from the
-scope hierarchy using <a href="api/ng/type/$rootScope.Scope#$destroy">$destroy()</a>.</p>
+<p>The parent scope will propagate the <a href="api/ng/type/$rootScope.Scope#$digest">$digest()</a> event.
+The scope can be removed from the scope hierarchy using <a href="api/ng/type/$rootScope.Scope#$destroy">$destroy()</a>.</p>
 <p><a href="api/ng/type/$rootScope.Scope#$destroy">$destroy()</a> must be called on a scope when it is
 desired for the scope and its child scopes to be permanently detached from the parent and
 thus stop participating in model change detection and listener notification by invoking.</p>
@@ -1066,7 +1065,30 @@ clean up DOM bindings before an element is removed from the DOM.</p>
     <table class="variables-matrix return-arguments">
   <tr>
     <td></td>
+    <td><p>Unique scope ID (monotonically increasing) useful for debugging.</p>
+</td>
+  </tr>
+</table>
+  </li>
+  
+  <li id="$parent">
+    <h3><code>$parent</code></h3>
+    <table class="variables-matrix return-arguments">
+  <tr>
     <td></td>
+    <td><p>Reference to the parent scope.</p>
+</td>
+  </tr>
+</table>
+  </li>
+  
+  <li id="$root">
+    <h3><code>$root</code></h3>
+    <table class="variables-matrix return-arguments">
+  <tr>
+    <td></td>
+    <td><p>Reference to the root scope.</p>
+</td>
   </tr>
 </table>
   </li>

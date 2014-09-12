@@ -117,7 +117,7 @@ phonecatApp.controller(&#39;PhoneListCtrl&#39;, [&#39;$scope&#39;, &#39;$http&#3
 controller in our tests is a bit more complicated. We could use the <code>new</code> operator and provide the
 constructor with some kind of fake <code>$http</code> implementation. However, Angular provides a mock <code>$http</code>
 service that we can use in unit tests.  We configure &quot;fake&quot; responses to server requests by calling
-methods on a service called $httpBackend:</p>
+methods on a service called <code>$httpBackend</code>:</p>
 <pre><code class="lang-js">describe(&#39;PhoneCat controllers&#39;, function() {
 
   describe(&#39;PhoneListCtrl&#39;, function(){

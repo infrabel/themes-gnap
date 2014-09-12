@@ -1,27 +1,55 @@
 // Meta data used by the AngularJS docs app
 angular.module('versionsData', [])
   .value('NG_VERSION', {
-  "raw": "v1.2.23",
+  "raw": "v1.2.24",
   "major": 1,
   "minor": 2,
-  "patch": 23,
+  "patch": 24,
   "prerelease": [],
   "build": [],
-  "version": "1.2.23",
-  "codeName": "superficial-malady",
-  "full": "1.2.23"
+  "version": "1.2.24",
+  "codeName": "static-levitation",
+  "full": "1.2.24"
 })
   .value('NG_VERSIONS', [
   {
-    "raw": "v1.2.23",
+    "raw": "v1.2.24",
     "major": 1,
     "minor": 2,
-    "patch": 23,
+    "patch": 24,
     "prerelease": [],
     "build": [],
-    "version": "1.2.23",
-    "codeName": "superficial-malady",
-    "full": "1.2.23"
+    "version": "1.2.24",
+    "codeName": "static-levitation",
+    "full": "1.2.24"
+  },
+  {
+    "raw": "v1.3.0-rc.1",
+    "major": 1,
+    "minor": 3,
+    "patch": 0,
+    "prerelease": [
+      "rc",
+      1
+    ],
+    "build": [],
+    "version": "1.3.0-rc.1",
+    "isStable": false,
+    "docsUrl": "http://code.angularjs.org/1.3.0-rc.1/docs"
+  },
+  {
+    "raw": "v1.3.0-rc.0",
+    "major": 1,
+    "minor": 3,
+    "patch": 0,
+    "prerelease": [
+      "rc",
+      0
+    ],
+    "build": [],
+    "version": "1.3.0-rc.0",
+    "isStable": false,
+    "docsUrl": "http://code.angularjs.org/1.3.0-rc.0/docs"
   },
   {
     "raw": "v1.3.0-beta.19",
@@ -288,6 +316,17 @@ angular.module('versionsData', [])
     "version": "1.3.0-beta.1",
     "isStable": false,
     "docsUrl": "http://code.angularjs.org/1.3.0-beta.1/docs"
+  },
+  {
+    "raw": "v1.2.23",
+    "major": 1,
+    "minor": 2,
+    "patch": 23,
+    "prerelease": [],
+    "build": [],
+    "version": "1.2.23",
+    "isStable": true,
+    "docsUrl": "http://code.angularjs.org/1.2.23/docs"
   },
   {
     "raw": "v1.2.22",
