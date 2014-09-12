@@ -3,9 +3,13 @@
         .module('gnap-example-app')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['sidebarService'];
+    MainController.$inject = ['$scope', 'sidebarService'];
 
-    function MainController(sidebarService) {
+    function MainController($scope, sidebarService) {
+
+        $scope.search = function () {
+            alert('Searching for ' + $scope.keywords);
+        }
 
         // configure shortcuts
         sidebarService.settings.shortcuts = [
