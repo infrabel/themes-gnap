@@ -6,17 +6,27 @@
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
-<pre><code gnap-highlight>angular
-    .module(&#39;gnap-example-app&#39;)
-    .controller(&#39;gnap-error-notification&#39;, function($scope, notification) {
-        $scope.notify = function() {
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-error-notification&#39;, GnapErrorNotificationController);
+
+    GnapErrorNotificationController.$inject = [&#39;$scope&#39;, &#39;notification&#39;];
+
+    function GnapErrorNotificationController($scope, notification) {
+        $scope.notify = function () {
             notification.show({
                 type: &#39;error&#39;,
                 title: &#39;This is an error notification&#39;,
                 text: &#39;This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.&#39;
             });
         };
-    });</code></pre>
+
+        $scope.remove = function () {
+            notification.removeAll();
+        };
+    };
+})();</code></pre>
   </div>
 </div>
 
