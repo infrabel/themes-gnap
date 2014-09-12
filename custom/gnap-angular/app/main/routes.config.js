@@ -1,11 +1,15 @@
 (function () {
     angular
         .module('gnap-example-app')
-        .config(['$stateProvider', function ($stateProvider) {
-            $stateProvider
-                .state('main', {
-                    templateUrl: 'app/main/main.html',
-                    controller: 'MainController'
-                });
-        }]);
+        .config(mainRouteConfig);
+
+    mainRouteConfig.$inject = ['$stateProvider'];
+
+    function mainRouteConfig($stateProvider) {
+        $stateProvider
+            .state('main', {
+                templateUrl: 'app/main/main.html',
+                controller: 'MainController'
+            });
+    };
 })();
