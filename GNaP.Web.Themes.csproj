@@ -63,6 +63,7 @@
     <Content Include="custom\ace\html\app\views\layouts\partials\_shared\_template\jquery.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-404.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-500.mustache.replace-grunt.js" />
+    <None Include="custom\ace\css\less\theme\custom-progressbar.less" />
     <None Include="custom\ace\html\app\views\layouts\partials\_shared\sidenav\shortcuts.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\alerts_alert-info.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\examples\alerts_alert-success.mustache" />
@@ -154,6 +155,7 @@
     <None Include="custom\gnap-angular\app\error-500\error-500.html" />
     <Content Include="custom\gnap-angular\css\develop\app.css" />
     <Content Include="custom\gnap-angular\css\develop\gnap.css" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\alert.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\breadcrumbs.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\breadcrumbs.html" />
     <Content Include="custom\gnap-angular\js\develop\gnap\breadcrumbs.service.js" />
