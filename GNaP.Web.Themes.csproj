@@ -162,6 +162,7 @@
     <Content Include="custom\gnap-angular\js\develop\gnap\daterange.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\gnap.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\header-checkbox.directive.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\highlight.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\input-limiter.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\masked-input.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\notification.service.js" />

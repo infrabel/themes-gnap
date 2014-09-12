@@ -1,7 +1,7 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
   <div ng-non-bindable>
-<pre><code class="html">&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-date-range-picker&quot;&gt;
+<pre><code gnap-highlight="html">&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-date-range-picker&quot;&gt;
     &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Date Range&lt;/label&gt;
     &lt;div class=&quot;col-sm-9&quot;&gt;
         &lt;span gnap-date-range date-begin=&quot;range.dateStart&quot; date-end=&quot;range.dateEnd&quot; icon-position=&quot;{{iconPosition}}&quot;&gt;&lt;/span&gt;
@@ -10,7 +10,7 @@
   </div>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
-<pre><code class="javascript">angular
+<pre><code gnap-highlight>angular
     .module(&#39;gnap-example-app&#39;)
     .controller(&#39;gnap-date-range-picker&#39;, function($scope) {
         $scope.range = {
