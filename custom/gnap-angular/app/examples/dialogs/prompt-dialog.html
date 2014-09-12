@@ -10,17 +10,23 @@
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
-<pre><code gnap-highlight>angular
-    .module('gnap-example-app')
-    .controller('gnap-prompt-dialog', function($scope) {
-        $scope.accept = function(name) {
-            alert('Hello ' + name);
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-prompt-dialog&#39;, GnapPromptDialogController);
+
+    GnapPromptDialogController.$inject = [&#39;$scope&#39;];
+
+    function GnapPromptDialogController($scope) {
+        $scope.accept = function (name) {
+            alert(&#39;Hello &#39; + name);
         };
 
-        $scope.cancel = function() {
-            alert('You cancelled!');
+        $scope.cancel = function () {
+            alert(&#39;You cancelled!&#39;);
         };
-    });</code></pre>
+    };
+})();</code></pre>
   </div>
 </div>
 
