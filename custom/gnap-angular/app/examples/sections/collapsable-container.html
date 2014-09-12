@@ -1,0 +1,45 @@
+<div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-collapse&quot;&gt;
+  &lt;div class=&quot;widget-box&quot;&gt;
+    &lt;div class=&quot;widget-header widget-header-flat&quot;&gt;
+      &lt;h5&gt;Some Group&lt;/h5&gt;
+
+      &lt;div class=&quot;widget-toolbar&quot;&gt;
+        &lt;a href=&quot;#&quot; data-action=&quot;settings&quot;&gt;
+          &lt;i class=&quot;icon-cog&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+
+        &lt;a href=&quot;#&quot; data-action=&quot;reload&quot;&gt;
+          &lt;i class=&quot;icon-refresh&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+
+        &lt;a href=&quot;#&quot; ng-click=&quot;isCollapsed = !isCollapsed&quot;&gt;
+          &lt;i ng-class=&quot;{true:&#39;icon-chevron-down&#39;, false:&#39;icon-chevron-up&#39;}[isCollapsed]&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;widget-body&quot; collapse=&quot;isCollapsed&quot;&gt;
+      &lt;div class=&quot;widget-main&quot;&gt;
+        &lt;p class=&quot;alert alert-info&quot;&gt;
+          Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+        &lt;/p&gt;
+        &lt;p class=&quot;alert alert-success&quot;&gt;
+          Raw denim you probably haven&#39;t heard of them jean shorts Austin.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+  <pre><code gnap-highlight>angular
+  .module(&#39;gnap-example-app&#39;)
+  .controller(&#39;gnap-collapse&#39;, function($scope) {
+    $scope.isCollapsed = false;
+  });</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>

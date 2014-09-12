@@ -1,0 +1,1519 @@
+<div class="page-header">
+    <h1>Commonly used controls</h1>
+</div>
+
+<div tabset>
+    <div tab heading="Buttons" id="buttons" class="tab-pane active">
+        <h3 class="header smaller">
+            Basic Buttons
+        </h3>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-primary">
+            <i class="icon-cog"></i>
+            Primary
+        </button>
+        @@include('buttons/basic-buttons.html')
+
+        <h3 class="header smaller">
+            Form Example
+        </h3>
+        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-default">Cancel</button>
+        @@include('buttons/form-example.html')
+
+        <h3 class="header smaller">
+            Tooltips (hover over these)
+        </h3>
+        <button class="btn btn-primary" tooltip="This is a default tooltip!">Default tooltip</button>
+        <button class="btn btn-primary" tooltip="This is a tooltip on the left!" tooltip-placement="left">Left tooltip</button>
+        <button class="btn btn-primary" tooltip="This is a tooltip on the right!" tooltip-placement="right">Right tooltip</button>
+        <button class="btn btn-primary" tooltip="This is a tooltip on top!" tooltip-placement="top">Top tooltip</button>
+        <button class="btn btn-primary" tooltip="This is a tooltip at the bottom!" tooltip-placement="bottom">Bottom tooltip</button>
+        @@include('buttons/tooltips.html')
+
+        <h3 class="header smaller">
+            Various Sizes
+        </h3>
+        <button class="btn btn-primary btn-minier">Tiny</button>
+        <button class="btn btn-primary btn-xs">Mini</button>
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+        @@include('buttons/various-sizes.html')
+
+        <h3 class="header smaller">
+            Disabled Buttons
+        </h3>
+        <button class="btn btn-primary disabled">Disabled Primary</button>
+        <button class="btn btn-default disabled">Disabled Default</button>
+        @@include('buttons/disabled-buttons.html')
+
+        <h3 class="header smaller">
+            Dropdown Button
+        </h3>
+        <div class="btn-group" dropdown>
+            <button type="button" class="btn btn-primary dropdown-toggle">
+                Action
+                <i class="icon-angle-down icon-on-right"></i>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a href="#">Action</a>
+                </li>
+                <li>
+                    <a href="#">Another action</a>
+                </li>
+                <li>
+                    <a href="#">Something else here</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">Separated link</a>
+                </li>
+            </ul>
+        </div>
+        @@include('buttons/dropdown-buttons.html')
+
+        <h3 class="header smaller">
+            Grouped Buttons
+        </h3>
+        <div class="btn-group">
+            <button class="btn btn-primary">Save</button>
+            <button class="btn btn-primary">Update</button>
+            <button class="btn btn-primary">Delete</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-primary">Ok</button>
+            <button class="btn btn-default">Cancel</button>
+        </div>
+        @@include('buttons/grouped-buttons.html')
+    </div> <!-- buttons tab -->
+
+    <div tab heading="Progress Bar" id="progressbar" class="tab-pane">
+        <h3 class="header smaller">
+            Progress Bar
+        </h3>
+        <div ng-controller="gnap-progressbar">
+            <div class="form-group">
+                <label class="control-label">Progress</label>
+                <div><input type="text" ng-model="progress"></div>
+            </div>
+            <div progressbar class="progress-small progress-striped active" value="progress"></div>
+            <div progressbar class="progress-small progress-striped" value="workLeft"></div>
+        </div>
+        @@include('progress-bar/progress-bar.html')
+
+        <h3>
+            Stacked
+        </h3>
+        <div ng-controller="gnap-stacked-progressbar">
+            <input ng-repeat="bar in collection track by $index" type="text" ng-model="bar.value">
+            <hr>
+            <div progress class="progress-small progress-striped active">
+                <div bar ng-repeat="bar in collection track by $index" value="bar.value" type="{{bar.type}}">
+                    <span>{{bar.value}}%</span>
+                </div>
+            </div>
+        </div>
+        @@include('progress-bar/stacked.html')
+    </div> <!-- progress bar tab -->
+
+    <div tab heading="Dialogs" id="dialogs" class="tab-pane">
+        <h3 class="header smaller">
+            Alert Dialog
+        </h3>
+        <button class="btn btn-primary" ng-bootbox-alert="Alert message!">Click Me!</button>
+        @@include('dialogs/alert-dialog.html')
+
+        <h3 class="header smaller">
+            Confirm Dialog
+        </h3>
+        <div ng-controller="gnap-confirm-dialog">
+            <button class="btn btn-primary"
+                    ng-bootbox-confirm="Are you sure you want to confirm this?"
+                    ng-bootbox-confirm-action="confirm()"
+                    ng-bootbox-confirm-action-cancel="cancel()">
+                Click Me!
+            </button>
+        </div>
+        @@include('dialogs/confirm-dialog.html')
+
+        <h3 class="header smaller">
+            Prompt Dialog
+        </h3>
+        <div ng-controller="gnap-prompt-dialog">
+            <button class="btn btn-primary"
+                    ng-bootbox-prompt="Please type in your name"
+                    ng-bootbox-prompt-action="accept(result)"
+                    ng-bootbox-prompt-action-cancel="cancel()">
+                Click Me!
+            </button>
+        </div>
+        @@include('dialogs/prompt-dialog.html')
+
+        <h3 class="header smaller">
+            Custom Dialog
+        </h3>
+        <div ng-controller="gnap-custom-dialog">
+            <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">I am a modal!</h3>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li ng-repeat="item in items">
+                            <a ng-click="selected.item = item">{{ item }}</a>
+                        </li>
+                    </ul>
+                    Selected: <b>{{ selected.item }}</b>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="ok()">OK</button>
+                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                </div>
+            </script>
+            <button class="btn btn-primary" ng-click="open()">Click Me!</button>
+        </div>
+        @@include('dialogs/custom-dialog.html')
+    </div> <!-- dialogs tab -->
+
+    <div tab heading="Alerts" id="alerts" class="tab-pane">
+        <h3 class="header smaller">
+            Alerts
+        </h3>
+        <div ng-controller="gnap-alerts">
+            <div alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" ng-bind-html="alert.msg"></div>
+        </div>
+        @@include('alerts/alerts.html')
+    </div> <!-- alerts tab -->
+
+    <div tab heading="Pagination" id="pagination" class="tab-pane" ng-controller="gnap-pagination">
+        <h3 class="header smaller">
+            Previous / Next Pagination
+        </h3>
+        <div gnap-pager max-size="0" total-items="totalItems" current-page="currentPage"></div>
+        @@include('pagination/previous-next-pagination.html')
+
+        <h3 class="header smaller">
+            Full Pagination
+        </h3>
+        <div gnap-pager max-size="5" total-items="totalItems" current-page="currentPage"></div>
+        @@include('pagination/few-pages.html')
+
+        @@include('pagination/javascript.html')
+    </div>  <!-- pagination tab -->
+
+    <div tab heading="Icons" id="icons" class="tab-pane">
+        <h3 class="header smaller">
+            Loading Icon
+        </h3>
+        <img src="images/loading.gif" alt="Loading..." />
+        @@include('icons/loading-icon.html')
+
+        <h3 class="header smaller">
+            361 Scalable FontAwesome Icons
+            <small>
+                <a href="http://fontawesome.io/icons/" target="_blank">
+                    (see all icons <i class="icon-external-link"></i>)
+                </a>
+            </small>
+        </h3>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="icon-adjust"></i>
+                        icon-adjust
+                    </li>
+
+                    <li>
+                        <i class="icon-asterisk"></i>
+                        icon-asterisk
+                    </li>
+
+                    <li>
+                        <i class="icon-ban-circle"></i>
+                        icon-ban-circle
+                    </li>
+
+                    <li>
+                        <i class="icon-bar-chart"></i>
+                        icon-bar-chart
+                    </li>
+
+                    <li>
+                        <i class="icon-barcode"></i>
+                        icon-barcode
+                    </li>
+
+                    <li>
+                        <i class="icon-beaker"></i>
+                        icon-beaker
+                    </li>
+
+                    <li>
+                        <i class="icon-beer"></i>
+                        icon-beer
+                    </li>
+
+                    <li>
+                        <i class="icon-bell"></i>
+                        icon-bell
+                    </li>
+
+                    <li>
+                        <i class="icon-bell-alt"></i>
+                        icon-bell-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-bolt"></i>
+                        icon-bolt
+                    </li>
+
+                    <li>
+                        <i class="icon-book"></i>
+                        icon-book
+                    </li>
+
+                    <li>
+                        <i class="icon-bookmark"></i>
+                        icon-bookmark
+                    </li>
+
+                    <li>
+                        <i class="icon-bookmark-empty"></i>
+                        icon-bookmark-empty
+                    </li>
+
+                    <li>
+                        <i class="icon-briefcase"></i>
+                        icon-briefcase
+                    </li>
+
+                    <li>
+                        <i class="icon-bullhorn"></i>
+                        icon-bullhorn
+                    </li>
+
+                    <li>
+                        <i class="icon-calendar"></i>
+                        icon-calendar
+                    </li>
+
+                    <li>
+                        <i class="icon-camera"></i>
+                        icon-camera
+                    </li>
+
+                    <li>
+                        <i class="icon-camera-retro"></i>
+                        icon-camera-retro
+                    </li>
+
+                    <li>
+                        <i class="icon-certificate"></i>
+                        icon-certificate
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="icon-check"></i>
+                        icon-check
+                    </li>
+
+                    <li>
+                        <i class="icon-check-empty"></i>
+                        icon-check-empty
+                    </li>
+
+                    <li>
+                        <i class="icon-circle"></i>
+                        icon-circle
+                    </li>
+
+                    <li>
+                        <i class="icon-circle-blank"></i>
+                        icon-circle-blank
+                    </li>
+
+                    <li>
+                        <i class="icon-cloud"></i>
+                        icon-cloud
+                    </li>
+
+                    <li>
+                        <i class="icon-cloud-download"></i>
+                        icon-cloud-download
+                    </li>
+
+                    <li>
+                        <i class="icon-cloud-upload"></i>
+                        icon-cloud-upload
+                    </li>
+
+                    <li>
+                        <i class="icon-coffee"></i>
+                        icon-coffee
+                    </li>
+
+                    <li>
+                        <i class="icon-cog"></i>
+                        icon-cog
+                    </li>
+
+                    <li>
+                        <i class="icon-cogs"></i>
+                        icon-cogs
+                    </li>
+
+                    <li>
+                        <i class="icon-comment"></i>
+                        icon-comment
+                    </li>
+
+                    <li>
+                        <i class="icon-comment-alt"></i>
+                        icon-comment-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-comments"></i>
+                        icon-comments
+                    </li>
+
+                    <li>
+                        <i class="icon-comments-alt"></i>
+                        icon-comments-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-credit-card"></i>
+                        icon-credit-card
+                    </li>
+
+                    <li>
+                        <i class="icon-dashboard"></i>
+                        icon-dashboard
+                    </li>
+
+                    <li>
+                        <i class="icon-desktop"></i>
+                        icon-desktop
+                    </li>
+
+                    <li>
+                        <i class="icon-download"></i>
+                        icon-download
+                    </li>
+
+                    <li>
+                        <i class="icon-download-alt"></i>
+                        icon-download-alt
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="icon-edit"></i>
+                        icon-edit
+                    </li>
+
+                    <li>
+                        <i class="icon-envelope"></i>
+                        icon-envelope
+                    </li>
+
+                    <li>
+                        <i class="icon-envelope-alt"></i>
+                        icon-envelope-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-exchange"></i>
+                        icon-exchange
+                    </li>
+
+                    <li>
+                        <i class="icon-exclamation-sign"></i>
+                        icon-exclamation-sign
+                    </li>
+
+                    <li>
+                        <i class="icon-external-link"></i>
+                        icon-external-link
+                    </li>
+
+                    <li>
+                        <i class="icon-eye-close"></i>
+                        icon-eye-close
+                    </li>
+
+                    <li>
+                        <i class="icon-eye-open"></i>
+                        icon-eye-open
+                    </li>
+
+                    <li>
+                        <i class="icon-facetime-video"></i>
+                        icon-facetime-video
+                    </li>
+
+                    <li>
+                        <i class="icon-fighter-jet"></i>
+                        icon-fighter-jet
+                    </li>
+
+                    <li>
+                        <i class="icon-film"></i>
+                        icon-film
+                    </li>
+
+                    <li>
+                        <i class="icon-filter"></i>
+                        icon-filter
+                    </li>
+
+                    <li>
+                        <i class="icon-fire"></i>
+                        icon-fire
+                    </li>
+
+                    <li>
+                        <i class="icon-flag"></i>
+                        icon-flag
+                    </li>
+
+                    <li>
+                        <i class="icon-folder-close"></i>
+                        icon-folder-close
+                    </li>
+
+                    <li>
+                        <i class="icon-folder-open"></i>
+                        icon-folder-open
+                    </li>
+
+                    <li>
+                        <i class="icon-folder-close-alt"></i>
+                        icon-folder-close-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-folder-open-alt"></i>
+                        icon-folder-open-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-food"></i>
+                        icon-food
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="icon-gift"></i>
+                        icon-gift
+                    </li>
+
+                    <li>
+                        <i class="icon-glass"></i>
+                        icon-glass
+                    </li>
+
+                    <li>
+                        <i class="icon-globe"></i>
+                        icon-globe
+                    </li>
+
+                    <li>
+                        <i class="icon-group"></i>
+                        icon-group
+                    </li>
+
+                    <li>
+                        <i class="icon-hdd"></i>
+                        icon-hdd
+                    </li>
+
+                    <li>
+                        <i class="icon-headphones"></i>
+                        icon-headphones
+                    </li>
+
+                    <li>
+                        <i class="icon-heart"></i>
+                        icon-heart
+                    </li>
+
+                    <li>
+                        <i class="icon-heart-empty"></i>
+                        icon-heart-empty
+                    </li>
+
+                    <li>
+                        <i class="icon-home"></i>
+                        icon-home
+                    </li>
+
+                    <li>
+                        <i class="icon-inbox"></i>
+                        icon-inbox
+                    </li>
+
+                    <li>
+                        <i class="icon-info-sign"></i>
+                        icon-info-sign
+                    </li>
+
+                    <li>
+                        <i class="icon-key"></i>
+                        icon-key
+                    </li>
+
+                    <li>
+                        <i class="icon-leaf"></i>
+                        icon-leaf
+                    </li>
+
+                    <li>
+                        <i class="icon-laptop"></i>
+                        icon-laptop
+                    </li>
+
+                    <li>
+                        <i class="icon-legal"></i>
+                        icon-legal
+                    </li>
+
+                    <li>
+                        <i class="icon-lemon"></i>
+                        icon-lemon
+                    </li>
+
+                    <li>
+                        <i class="icon-lightbulb"></i>
+                        icon-lightbulb
+                    </li>
+
+                    <li>
+                        <i class="icon-lock"></i>
+                        icon-lock
+                    </li>
+
+                    <li>
+                        <i class="icon-unlock"></i>
+                        icon-unlock
+                    </li>
+                </ul>
+            </div>
+        </div>
+        @@include('icons/icon-example.html')
+    </div> <!-- icons tab -->
+
+    <div tab heading="Labels" id="labels" class="tab-pane">
+        <h3 class="header smaller">
+            Standard Labels
+        </h3>
+        <span class="label label-primary">Default</span>
+        <span class="label label-success arrowed">Success</span>
+        @@include('labels/standard-labels.html')
+
+        <h3 class="header smaller">
+            Indicators
+        </h3>
+        <span class="badge badge-primary">1</span>
+        <span class="badge badge-success">2</span>
+        <span class="badge badge-warning">4</span>
+        <span class="badge badge-danger">6</span>
+        <span class="badge badge-info">8</span>
+        @@include('labels/indicators.html')
+
+        <h3 class="header smaller">
+            Variations
+        </h3>
+        <span class="label label-warning">
+            <i class="icon-warning-sign bigger-120"></i>
+            Warning
+        </span>
+        <span class="label label-lg label-pink arrowed-right">Large</span>
+        <span class="label label-lg label-purple arrowed">Purple</span>
+        @@include('labels/variations.html')
+    </div> <!-- indidcators tab -->
+
+    <div tab heading="Tables" id="tables" class="tab-pane">
+        <h3 class="header smaller">
+            Standard Table
+        </h3>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Price</th>
+                        <th class="hidden-480">Clicks</th>
+                        <th>
+                            <i class="icon-time bigger-110 hidden-480"></i>
+                            Update
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#">ace.com</a>
+                        </td>
+                        <td>$45</td>
+                        <td class="hidden-480">3,330</td>
+                        <td>Feb 12</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">base.com</a>
+                        </td>
+                        <td>$35</td>
+                        <td class="hidden-480">2,595</td>
+                        <td>Feb 18</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">max.com</a>
+                        </td>
+                        <td>$60</td>
+                        <td class="hidden-480">4,400</td>
+                        <td>Mar 11</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">best.com</a>
+                        </td>
+                        <td>$75</td>
+                        <td class="hidden-480">6,500</td>
+                        <td>Apr 03</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">pro.com</a>
+                        </td>
+                        <td>$55</td>
+                        <td class="hidden-480">4,250</td>
+                        <td>Jan 21</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @@include('tables/standard-table.html')
+
+        <h3 class="header smaller">
+            Full Table
+        </h3>
+        <div class="table-header">
+            A Table Title
+        </div>
+        <div class="table-responsive">
+            <table datatable class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="center">
+                            <label>
+                                <input type="checkbox" gnap-header-checkbox class="ace" />
+                                <span class="lbl"></span>
+                            </label>
+                        </th>
+                        <th>Domain</th>
+                        <th>Price</th>
+                        <th class="hidden-480">Clicks</th>
+                        <th>
+                            <i class="icon-time bigger-110 hidden-480"></i>
+                            Update
+                        </th>
+                        <th class="hidden-480">Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">
+                            <label>
+                                <input type="checkbox" class="ace" />
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <a href="#">app.com</a>
+                        </td>
+                        <td>$45</td>
+                        <td class="hidden-480">3,330</td>
+                        <td>Feb 12</td>
+                        <td class="hidden-480">
+                            Expiring
+                        </td>
+                        <td>
+                            <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                <a class="blue" href="#">
+                                    <i class="icon-zoom-in bigger-130"></i>
+                                </a>
+                                <a class="green" href="#">
+                                    <i class="icon-pencil bigger-130"></i>
+                                </a>
+                                <a class="red confirm-delete" confirm-message="Can I delete it ?" href="#">
+                                    <i class="icon-trash bigger-130"></i>
+                                </a>
+                            </div>
+                            <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                <div class="inline position-relative">
+                                    <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon-caret-down icon-only bigger-120"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-only-icon pull-right dropdown-caret dropdown-close">
+                                        <li>
+                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+                                                <span>
+                                                    <i class="icon-zoom-in bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                                <span>
+                                                    <i class="icon-edit bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                <span>
+                                                    <i class="icon-trash bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">
+                            <label>
+                                <input type="checkbox" class="ace" />
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <a href="#">base.com</a>
+                        </td>
+                        <td>$35</td>
+                        <td class="hidden-480">2,595</td>
+                        <td>Feb 18</td>
+                        <td class="hidden-480">
+                            Registered
+                        </td>
+                        <td>
+                            <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                <a class="blue" href="#">
+                                    <i class="icon-zoom-in bigger-130"></i>
+                                </a>
+                                <a class="green" href="#">
+                                    <i class="icon-pencil bigger-130"></i>
+                                </a>
+                                <a class="red" href="#">
+                                    <i class="icon-trash bigger-130"></i>
+                                </a>
+                            </div>
+                            <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                <div class="inline position-relative">
+                                    <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon-caret-down icon-only bigger-120"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-only-icon pull-right dropdown-caret dropdown-close">
+                                        <li>
+                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+                                                <span class="blue">
+                                                    <i class="icon-zoom-in bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                                <span class="green">
+                                                    <i class="icon-edit bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                <span class="red">
+                                                    <i class="icon-trash bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="center">
+                            <label>
+                                <input type="checkbox" class="ace" />
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <a href="#">max.com</a>
+                        </td>
+                        <td>$60</td>
+                        <td class="hidden-480">4,400</td>
+                        <td>Mar 11</td>
+                        <td class="hidden-480">
+                            Expiring
+                        </td>
+                        <td>
+                            <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                <a class="blue" href="#">
+                                    <i class="icon-zoom-in bigger-130"></i>
+                                </a>
+                                <a class="green" href="#">
+                                    <i class="icon-pencil bigger-130"></i>
+                                </a>
+                                <a class="red" href="#">
+                                    <i class="icon-trash bigger-130"></i>
+                                </a>
+                            </div>
+                            <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                <div class="inline position-relative">
+                                    <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon-caret-down icon-only bigger-120"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-only-icon pull-right dropdown-caret dropdown-close">
+                                        <li>
+                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+                                                <span class="blue">
+                                                    <i class="icon-zoom-in bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                                <span class="green">
+                                                    <i class="icon-edit bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                <span class="red">
+                                                    <i class="icon-trash bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">
+                            <label>
+                                <input type="checkbox" class="ace" />
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <a href="#">best.com</a>
+                        </td>
+                        <td>$75</td>
+                        <td class="hidden-480">6,500</td>
+                        <td>Apr 03</td>
+                        <td class="hidden-480">
+                            Flagged
+                        </td>
+                        <td>
+                            <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                <a class="blue" href="#">
+                                    <i class="icon-zoom-in bigger-130"></i>
+                                </a>
+                                <a class="green" href="#">
+                                    <i class="icon-pencil bigger-130"></i>
+                                </a>
+                                <a class="red" href="#">
+                                    <i class="icon-trash bigger-130"></i>
+                                </a>
+                            </div>
+                            <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                <div class="inline position-relative">
+                                    <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon-caret-down icon-only bigger-120"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-only-icon pull-right dropdown-caret dropdown-close">
+                                        <li>
+                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+                                                <span class="blue">
+                                                    <i class="icon-zoom-in bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                                <span class="green">
+                                                    <i class="icon-edit bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                <span class="red">
+                                                    <i class="icon-trash bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            @@include('tables/full-table.html')
+        </div>
+    </div> <!-- tables tab -->
+
+    <div tab heading="Sections" id="sections" class="tab-pane">
+        <h3 class="header smaller">
+            Tabs
+        </h3>
+        <div tabset>
+            <div tab heading="Home">
+                <p>
+                    Here is an example of the basic tabs that we have to use
+                </p>
+            </div>
+            <div tab heading="Messages">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis neque id leo tincidunt, vel interdum tortor egestas. Quisque at massa sit amet nisl placerat euismod sit amet non leo. Suspendisse egestas, leo id scelerisque euismod, massa sapien feugiat mi, at pulvinar lorem est sit amet est.</p>
+            </div>
+        </div>
+        @@include('sections/tabs.html')
+
+        <h3 class="header smaller">
+            Container
+        </h3>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="widget-box">
+                    <div class="widget-header widget-header-flat">
+                        <h4 class="smaller">
+                            <i class="icon-quote-left smaller-80"></i>
+                            Some Group
+                        </h4>
+                    </div>
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            This is some grouped content
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @@include('sections/container.html')
+
+        <h3 class="header smaller">
+            Collapsable Container
+        </h3>
+        <div class="row">
+            <div class="col-sm-6">
+                <div ng-controller="gnap-collapse">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-flat">
+                            <h5>Some Group</h5>
+                            <div class="widget-toolbar">
+                                <a href="#" data-action="settings">
+                                    <i class="icon-cog"></i>
+                                </a>
+                                <a href="#" data-action="reload">
+                                    <i class="icon-refresh"></i>
+                                </a>
+                                <a href="#" ng-click="isCollapsed = !isCollapsed">
+                                    <i ng-class="{true:'icon-chevron-down', false:'icon-chevron-up'}[isCollapsed]"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="widget-body" collapse="isCollapsed">
+                            <div class="widget-main">
+                                <p class="alert alert-info">
+                                    Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+                                </p>
+                                <p class="alert alert-success">
+                                    Raw denim you probably haven't heard of them jean shorts Austin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @@include('sections/collapsable-container.html')
+
+        <h3 class="header smaller">
+            Collapsable Container With Buttons
+        </h3>
+        <div class="row">
+            <div class="col-sm-8">
+                <div ng-controller="gnap-collapse">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-flat">
+                            <h5>Some Group</h5>
+
+                            <div class="widget-toolbar">
+                                <a href="#" ng-click="isCollapsed = !isCollapsed">
+                                    <i class="1 bigger-125" ng-class="{true:'icon-chevron-down', false:'icon-chevron-up'}[isCollapsed]"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="widget-body" collapse="isCollapsed">
+                            <div class="widget-main">
+                                <p class="alert alert-info">
+                                    Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+                                </p>
+                                <p class="alert alert-success">
+                                    Raw denim you probably haven't heard of them jean shorts Austin.
+                                </p>
+                            </div>
+                            <div class="widget-toolbox padding-8 clearfix">
+                                <button class="btn btn-xs btn-danger pull-left">
+                                    <i class="icon-remove"></i>
+                                    <span class="bigger-110">I don't accept</span>
+                                </button>
+                                <button class="btn btn-xs btn-success pull-right">
+                                    <span class="bigger-110">I accept</span>
+                                    <i class="icon-arrow-right icon-on-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @@include('sections/collapsable-container-with-buttons.html')
+    </div> <!-- sections tab -->
+
+    <div tab heading="Notifications" id="notifications" class="tab-pane">
+        <h3 class="header smaller">
+            Default Notification
+        </h3>
+        <div ng-controller="gnap-default-notification">
+            <button class="btn btn-primary" ng-click="notify()">Click Me!</button>
+            <button class="btn btn-default" ng-click="remove()">Remove Notification</button>
+        </div>
+        @@include('notifications/default-notification.html')
+
+        <h3 class="header smaller">
+            Success Notification
+        </h3>
+        <div ng-controller="gnap-success-notification">
+            <button class="btn btn-primary" ng-click="notify()">Click Me!</button>
+            <button class="btn btn-default" ng-click="remove()">Remove Notification</button>
+        </div>
+        @@include('notifications/success-notification.html')
+
+        <h3 class="header smaller">
+            Error Notification
+        </h3>
+        <div ng-controller="gnap-error-notification">
+            <button class="btn btn-primary" ng-click="notify()">Click Me!</button>
+            <button class="btn btn-default" ng-click="remove()">Remove Notification</button>
+        </div>
+        @@include('notifications/error-notification.html')
+    </div> <!-- notifications tab -->
+
+    <div tab heading="Form controls" id="forms" class="tab-pane">
+        <form class="form-horizontal" role="form">
+            <h3 class="header smaller">
+                Common Input Controls
+            </h3>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Text Field</label>
+                <div class="col-sm-9">
+                    <input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-5" />
+                </div>
+            </div>
+            @@include('form-controls/text-field.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-2">Password Field</label>
+                <div class="col-sm-9">
+                    <input type="password" id="form-field-2" placeholder="Password" class="col-xs-10 col-sm-5" />
+                    <span class="help-inline col-xs-12 col-sm-7">
+                        <span class="middle">Inline help text</span>
+                    </span>
+                </div>
+            </div>
+            @@include('form-controls/password-field.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-input-readonly">Readonly field</label>
+                <div class="col-sm-9">
+                    <input type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" readonly="readonly" />
+                </div>
+            </div>
+            @@include('form-controls/readonly-field.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-input-disabled">Disabled field</label>
+                <div class="col-sm-9">
+                    <input type="text" class="col-xs-10 col-sm-5" id="form-input-disabled" value="This text field is disabled!" disabled="disabled" />
+                </div>
+            </div>
+            @@include('form-controls/disabled-field.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Input with Icon</label>
+                <div class="col-sm-9">
+                    <span class="input-icon col-xs-10 col-sm-5">
+                        <input type="text" id="form-field-icon-1" />
+                        <i class="icon-user theme_color"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right"></label>
+                <div class="col-sm-9">
+                    <span class="input-icon input-icon-right col-xs-10 col-sm-5">
+                        <input type="text" id="form-field-icon-2" />
+                        <i class="icon-lock theme_color"></i>
+                    </span>
+                </div>
+            </div>
+            @@include('form-controls/input-with-icon.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-select-3">Dropdown</label>
+                <div class="col-sm-9">
+                    <select chosen class="width-80 col-xs-10 col-sm-5" id="form-field-select-3" data-placeholder="Choose a Country...">
+                        <option value="">&nbsp;</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
+            </div>
+            @@include('form-controls/dropdown.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-select-4">Multiple</label>
+                <div class="col-sm-9">
+                    <select multiple="multiple" class="width-80 chosen-select" id="form-field-select-4" data-placeholder="Choose a Country...">
+                        <option value="">&nbsp;</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
+            </div>
+            @@include('form-controls/multiple-dropdown.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Checkbox</label>
+                <div class="col-sm-9">
+                    <div class="checkbox">
+                        <label>
+                            <input name="form-field-checkbox" class="ace ace-checkbox-2" type="checkbox" />
+                            <span class="lbl"> Choice #1</span>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input name="form-field-checkbox" class="ace ace-checkbox-2" type="checkbox" />
+                            <span class="lbl"> Choice #2</span>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label class="block">
+                            <input name="form-field-checkbox" disabled="" type="checkbox" class="ace" />
+                            <span class="lbl"> Disabled</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            @@include('form-controls/checkbox.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Radio</label>
+                <div class="col-sm-9">
+                    <div class="radio">
+                        <label>
+                            <input name="form-field-radio" type="radio" class="ace" />
+                            <span class="lbl"> Option #1</span>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input name="form-field-radio" type="radio" class="ace" />
+                            <span class="lbl"> Option #2</span>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input disabled="" name="form-field-radio" type="radio" class="ace" />
+                            <span class="lbl"> Disabled</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            @@include('form-controls/radio.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Default textarea</label>
+                <div class="col-sm-9">
+                    <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <textarea class="form-control" id="form-field-8" placeholder="Default Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            @@include('form-controls/default-textarea.html')
+
+            <h3 class="header smaller">
+                Specialized Input Controls
+            </h3>
+            <div class="form-group" ng-controller="gnap-date-picker">
+                <label class="col-sm-3 control-label no-padding-right">Date Picker</label>
+                <div class="col-sm-9">
+                    <div class="input-group col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <span gnap-datepicker date="date" icon-position="right"></span>
+                    </div>
+                </div>
+            </div>
+            @@include('form-controls/date-picker.html')
+
+            <div class="form-group" ng-controller="gnap-date-range-picker">
+                <label class="col-sm-3 control-label no-padding-right">Date Range</label>
+                <div class="col-sm-9">
+                    <span gnap-daterange date-begin="range.dateStart" date-end="range.dateEnd" icon-position="{{iconPosition}}"></span>
+                </div>
+            </div>
+            @@include('form-controls/date-range-picker.html')
+
+            <div class="form-group" ng-controller="gnap-time-picker">
+                <label class="col-sm-3 control-label no-padding-right">Time Picker</label>
+                <div class="col-sm-9">
+                    <span gnap-timepicker time="sometime" icon-position="right"></span>
+                </div>
+            </div>
+            @@include('form-controls/time-picker.html')
+
+            <div ng-controller="gnap-choice-toggle">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">Choice toggle</label>
+                    <div class="col-sm-9">
+                        <span gnap-choice-toggle choice="value"></span>
+                        <span gnap-choice-toggle lang="en" choice="value"></span>
+                        <span gnap-choice-toggle lang="fr" choice="value"></span>
+                        <span gnap-choice-toggle lang="nl" choice="value"></span>
+                    </div>
+                </div>
+            </div>
+            @@include('form-controls/choice-toggle.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">File input</label>
+                <div class="col-sm-9">
+                    <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <input type="file" id="id-input-file-2" />
+                    </div>
+                </div>
+            </div>
+            @@include('form-controls/file-input.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Multiple File input</label>
+                <div class="col-sm-9">
+                    <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <input multiple="" type="file" id="id-input-file-3" />
+                        <label>
+                            <input type="checkbox" name="file-format" id="id-file-format" class="ace" />
+                            <span class="lbl"> Allow only images</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            @@include('form-controls/multiple-file-input.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Masked field</label>
+                <div class="col-sm-9">
+                    <input gnap-masked-input="a*-999-a999" class="col-xs-10 col-sm-5" type="text" id="form-field-mask-3" />
+                    <span class="help-inline col-xs-12 col-sm-7">
+                        a*-999-a999
+                    </span>
+                </div>
+            </div>
+            @@include('form-controls/masked-field.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Textarea with character limit</label>
+                <div class="col-sm-9">
+                    <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <textarea class="form-control" id="form-field-9" gnap-input-limiter="200"></textarea>
+                    </div>
+                </div>
+            </div>
+            @@include('form-controls/textarea-with-character-limit.html')
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">WYSIWYG</label>
+                <div class="col-sm-9">
+                    <div gnap-wysiwyg></div>
+                </div>
+            </div>
+            @@include('form-controls/wysiwyg.html')
+
+            <h3 class="header smaller">
+                Sizing Examples
+            </h3>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Full width</label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="text" placeholder="no input class" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Mini</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-mini" type="text" placeholder=".input-mini" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Small</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-small" type="text" placeholder=".input-small" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Medium</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-medium" type="text" placeholder=".input-medium" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Large</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-large" type="text" placeholder=".input-large" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Extra large</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-xlarge" type="text" placeholder=".input-xlarge" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Extra extra large</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-xxlarge" type="text" placeholder=".input-xxlarge" />
+                </div>
+            </div>
+            @@include('form-controls/sizing-examples.html')
+        </form>
+    </div> <!-- form tab -->
+</div> <!-- tabset -->
