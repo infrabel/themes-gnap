@@ -8,6 +8,17 @@
         .module('gnap')
         .directive('gnapPager', gnapPager);
 
+    angular
+        .module('template/pagination/pager.html')
+        .run(gnapPagerTemplate);
+
+    angular
+        .module('template/pagination/pagination.html')
+        .run(gnapPaginationTemplate);
+
+    gnapPagerTemplate.$inject = ['$templateCache'];
+    gnapPaginationTemplate.$inject = ['$templateCache'];
+
     function gnapPager() {
         return {
             restrict: 'AE',
@@ -16,7 +27,28 @@
                 currentPage: '=',
                 maxSize: '='
             },
-            template: '<div pagination max-size="maxSize" boundary-links="true" previous-text="&lsaquo;" ng-model="currentPage" total-items="totalItems" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></div>'
+            template: '<div pagination max-size="maxSize" boundary-links="true" previous-text="&lt;i class=&quot;icon-angle-left&quot;&gt;&lt;/i&gt;" ng-model="currentPage" total-items="totalItems" next-text="&lt;i class=&quot;icon-angle-right&quot;&gt;&lt;/i&gt;" first-text="&lt;i class=&quot;icon-double-angle-left&quot;&gt;&lt;/i&gt;" last-text="&lt;i class=&quot;icon-double-angle-right&quot;&gt;&lt;/i&gt;"></div>'
         };
-    }
+    };
+
+    function gnapPagerTemplate($templateCache) {
+
+        $templateCache.put("template/pagination/pager.html",
+            "<ul class=\"pager\">\n" +
+            "  <li ng-class=\"{disabled: noPrevious(), previous: align}\"><a href ng-click=\"selectPage(page - 1)\"><span ng-bind-html=\"getText('previous')\"></span></a></li>\n" +
+            "  <li ng-class=\"{disabled: noNext(), next: align}\"><a href ng-click=\"selectPage(page + 1)\"><span ng-bind-html=\"getText('next')\"></span></a></li>\n" +
+            "</ul>");
+    };
+
+    function gnapPaginationTemplate($templateCache) {
+
+        $templateCache.put("template/pagination/pagination.html",
+            "<ul class=\"pagination\">\n" +
+            "  <li ng-if=\"boundaryLinks\" ng-class=\"{disabled: noPrevious()}\"><a href ng-click=\"selectPage(1)\"><span ng-bind-html=\"getText('first')\"></span></a></li>\n" +
+            "  <li ng-if=\"directionLinks\" ng-class=\"{disabled: noPrevious()}\"><a href ng-click=\"selectPage(page - 1)\"><span ng-bind-html=\"getText('previous')\"></span></a></li>\n" +
+            "  <li ng-repeat=\"page in pages track by $index\" ng-class=\"{active: page.active}\"><a href ng-click=\"selectPage(page.number)\">{{page.text}}</a></li>\n" +
+            "  <li ng-if=\"directionLinks\" ng-class=\"{disabled: noNext()}\"><a href ng-click=\"selectPage(page + 1)\"><span ng-bind-html=\"getText('next')\"></span></a></li>\n" +
+            "  <li ng-if=\"boundaryLinks\" ng-class=\"{disabled: noNext()}\"><a href ng-click=\"selectPage(totalPages)\"><span ng-bind-html=\"getText('last')\"></span></a></li>\n" +
+            "</ul>");
+    };
 })();
