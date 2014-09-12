@@ -181,7 +181,7 @@
             Alerts
         </h3>
         <div ng-controller="gnap-alerts">
-            <div alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" ng-bind-html="alert.msg"></div>
+            <div alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.msg"></span></div>
         </div>
         @@include('alerts/alerts.html')
     </div> <!-- alerts tab -->
