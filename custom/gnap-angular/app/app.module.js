@@ -7,10 +7,4 @@
                                      'ngBootbox',
                                      'localytics.directives',
                                      'datatables']);
-
-        //.controller('main', ['$scope', 'sidebarService', 'breadcrumbsService', function ($scope, sidebarService, breadcrumbsService) {
-        //    $scope.search = function () {
-        //        alert('Searching for ' + $scope.keywords);
-        //    }
-        //}]);
 })();
