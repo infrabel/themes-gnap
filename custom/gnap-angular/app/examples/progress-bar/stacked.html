@@ -1,6 +1,6 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane in active">
-<pre><code class="html">&lt;div ng-controller=&quot;gnap-stacked-progressbar&quot;&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-stacked-progressbar&quot;&gt;
     &lt;input ng-repeat=&quot;bar in collection track by $index&quot; type=&quot;text&quot; ng-model=&quot;bar.value&quot;&gt;
     &lt;hr&gt;
     &lt;div progress class=&quot;progress-small progress-striped active&quot;&gt;
@@ -11,7 +11,7 @@
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
-<pre><code class="javascript">angular
+<pre><code gnap-highlight>angular
     .module(&#39;gnap-example-app&#39;)
     .controller(&#39;gnap-stacked-progressbar&#39;, function($scope) {
         $scope.collection = [];
