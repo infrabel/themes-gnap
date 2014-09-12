@@ -11,14 +11,19 @@
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
-<pre><code gnap-highlight>angular
-    .module(&#39;gnap-example-app&#39;)
-    .controller(&#39;gnap-stacked-progressbar&#39;, function($scope) {
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-stacked-progressbar&#39;, GnapStackedProgressbarController);
+
+    GnapStackedProgressbarController.$inject = [&#39;$scope&#39;];
+
+    function GnapStackedProgressbarController($scope) {
         $scope.collection = [];
 
         $scope.collection.push({
             value: 20,
-             type: &#39;success&#39;
+            type: &#39;success&#39;
         });
 
         $scope.collection.push({
@@ -30,7 +35,8 @@
             value: 25,
             type: &#39;error&#39;
         });
-    });</code></pre>
+    };
+})();</code></pre>
   </div>
 </div>
 
