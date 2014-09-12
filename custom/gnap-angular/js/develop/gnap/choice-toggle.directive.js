@@ -3,7 +3,7 @@
  * @file choice-toggle.directive.js
  * @example <span gnap-choice-toggle choice="value"></span>
  */
-(function() {
+(function () {
     angular
         .module('gnap')
         .directive('gnapChoiceToggle', gnapChoiceToggle);
@@ -37,7 +37,7 @@
                 inputNode.removeAttr('checked');
             }
 
-            scope.toggle = function() {
+            scope.toggle = function () {
                 scope.choice = !scope.choice;
             };
         };
