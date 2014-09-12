@@ -8,11 +8,17 @@
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
-<pre><code gnap-highlight>angular
-    .module(&#39;gnap-example-app&#39;)
-    .controller(&#39;gnap-time-picker&#39;, function($scope) {
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-time-picker&#39;, GnapTimepickerController);
+
+    GnapTimepickerController.$inject = [&#39;$scope&#39;];
+
+    function GnapTimepickerController($scope) {
         $scope.sometime = new Date(2014, 1, 1, 10, 30, 0);
-    });</code></pre>
+    };
+})();</code></pre>
   </div>
 </div>
 
