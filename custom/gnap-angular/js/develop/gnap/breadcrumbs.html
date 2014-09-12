@@ -1,9 +1,9 @@
 <div class="breadcrumbs" id="breadcrumbs">
     <ul class="breadcrumb">
-        <li ng-repeat="breadcrumb in breadcrumbs" ng-class="{ active: $last }">
+        <li ng-repeat="crumb in breadcrumbs.crumbs" ng-class="{ active: $last }">
             <i class="icon-home home-icon" ng-show="$first"></i>
-            <a href="#" ng-click="breadcrumb.click()" ng-hide="$last">{{ breadcrumb.title }}</a>
-            <span ng-show="$last">{{ breadcrumb.title }}</span>
+            <a ng-click="select(crumb)" ng-hide="$last">{{ crumb.title }}</a>
+            <span ng-show="$last">{{ crumb.title }}</span>
         </li>
     </ul>
 </div>

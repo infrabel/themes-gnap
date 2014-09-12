@@ -39,5 +39,12 @@
         cwd: './raw/angular-local-storage/',
         src: ['*.*', '**/*.*', '!*.zip'],
         dest: './deploy/angular/angular-local-storage/'
+    },
+
+    raw_angular_ui_router_to_deploy: {
+        expand: true,
+        cwd: './raw/ui-router/',
+        src: ['*.*', '**/*.*', '!*.zip'],
+        dest: './deploy/angular/ui-router/'
     }
 };

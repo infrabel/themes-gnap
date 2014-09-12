@@ -1,0 +1,27 @@
+<div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+    <div ng-non-bindable>
+<pre><code gnap-highlight="html">&lt;div ng-controller=&quot;gnap-alerts&quot;&gt;
+    &lt;div alert ng-repeat=&quot;alert in alerts&quot; type=&quot;{{alert.type}}&quot; close=&quot;closeAlert($index)&quot; ng-bind-html=&quot;alert.msg&quot; &gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>angular
+    .module(&#39;gnap-example-app&#39;)
+    .controller(&#39;gnap-alerts&#39;, function($scope) {
+        $scope.alerts = [
+            { type: &#39;danger&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Oh snap!&lt;/b&gt; Change a few things up and try submitting again.&#39;) },
+            { type: &#39;success&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Well done!&lt;/b&gt; You successfully read this important alert message.&#39;) },
+            { type: &#39;warning&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Warning!&lt;/b&gt; Best check your self, you\&#39;re not looking too good.&#39;) },
+            { type: &#39;info&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Heads up!&lt;/b&gt; This alert needs your attention, but it\&#39;s not super important.&#39;) }
+        ];
+
+        $scope.closeAlert = function(index) {
+            $scope.alerts.splice(index, 1);
+        };
+    });</code></pre>
+  </div>
+</div>
+
+<a example-link source="ui-bootstrap"></a>
