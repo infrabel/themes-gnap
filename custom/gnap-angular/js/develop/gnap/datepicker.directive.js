@@ -10,15 +10,19 @@
 
     angular
         .module('template/datepicker/day.html')
-        .run(['$templateCache', gnapDatepickerDayTemplate]);
+        .run(gnapDatepickerDayTemplate);
 
     angular
         .module('template/datepicker/month.html')
-        .run(['$templateCache', gnapDatepickerMonthTemplate]);
+        .run(gnapDatepickerMonthTemplate);
 
     angular
         .module('template/datepicker/year.html')
-        .run(['$templateCache', gnapDatepickerYearTemplate]);
+        .run(gnapDatepickerYearTemplate);
+
+    gnapDatepickerDayTemplate.$inject = ['$templateCache'];
+    gnapDatepickerMonthTemplate.$inject = ['$templateCache'];
+    gnapDatepickerYearTemplate.$inject = ['$templateCache'];
 
     function gnapDatepicker() {
 
