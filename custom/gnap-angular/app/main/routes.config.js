@@ -8,6 +8,7 @@
     function mainRouteConfig($stateProvider) {
         $stateProvider
             .state('main', {
+                abstract: true,
                 templateUrl: 'app/main/main.html',
                 controller: 'MainController'
             });
