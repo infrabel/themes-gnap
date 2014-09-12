@@ -11,7 +11,7 @@
         breadcrumbsService.setBreadcrumbs([
             {
                 title: 'Home',
-                url: '/'
+                state: 'main'
             },
             {
                 title: 'Error 404'
