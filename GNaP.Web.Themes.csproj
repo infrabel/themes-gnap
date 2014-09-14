@@ -53,6 +53,10 @@
     <Content Include="custom\ace\css\less\variables.less.replace-grunt.js" />
     <Content Include="custom\ace\html\app\data\common\script-mapping.json.replace-grunt.js" />
     <Content Include="custom\ace\html\app\data\common\style-mapping.json.replace-grunt.js" />
+    <Content Include="custom\ace\html\app\data\pages\treeview.json.replace-grunt.js" />
+    <Content Include="custom\ace\html\app\data\pages\gallery.json.replace-grunt.js" />
+    <Content Include="custom\ace\html\app\views\assets\scripts\treeview.js" />
+    <Content Include="custom\ace\html\app\views\assets\scripts\gallery.js" />
     <Content Include="custom\ace\html\app\views\assets\scripts\examples.js" />
     <Content Include="custom\ace\html\app\views\layouts\partials\login\_template\footer.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\layouts\partials\login\_template\header.mustache.replace-grunt.js" />
@@ -62,6 +66,7 @@
     <Content Include="custom\ace\html\app\views\layouts\partials\_shared\_template\header.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\layouts\partials\_shared\_template\jquery.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-404.mustache.replace-grunt.js" />
+    <Content Include="custom\ace\html\app\views\pages\gallery.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-500.mustache.replace-grunt.js" />
     <None Include="custom\ace\css\less\theme\custom-progressbar.less" />
     <None Include="custom\ace\html\app\views\layouts\partials\_shared\sidenav\shortcuts.mustache" />
@@ -129,6 +134,9 @@
     <Content Include="custom\flatly\index.html" />
     <Content Include="custom\flatly\bootswatch.less.replace-grunt.js" />
     <Content Include="custom\gnap-angular\app\getting-started\getting-started.controller.js" />
+    <None Include="custom\ace\html\app\views\pages\partials\gallery\gallery.mustache" />
+    <None Include="custom\ace\html\app\views\pages\partials\treeview\treeview.mustache" />
+    <None Include="custom\ace\html\app\views\pages\treeview.mustache" />
     <None Include="custom\gnap-angular\app\getting-started\getting-started.html" />
     <Content Include="custom\gnap-angular\app\getting-started\routes.config.js" />
     <Content Include="custom\gnap-angular\app\app.config.js" />
