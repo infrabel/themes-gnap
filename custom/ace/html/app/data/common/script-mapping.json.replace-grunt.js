@@ -9,6 +9,10 @@
                 to: '.js'
             },
             {
+                from: '-min.js',
+                to: '.js'
+            },
+            {
                 from: '.js',
                 to: '.min.js'
             }
