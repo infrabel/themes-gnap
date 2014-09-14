@@ -12,6 +12,7 @@
         'copy:raw_ace_html_to_build',
         'copy:raw_ace_css_to_build',
         'copy:raw_ace_js_to_build',
+        'copy:fix_raw_ace_js_fuelux',
         'copy:raw_ace_fonts_to_build',
         'copy:raw_ace_images1_to_build',
         'copy:raw_ace_images2_to_build',

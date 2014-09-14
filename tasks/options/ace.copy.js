@@ -20,6 +20,13 @@
         dest: './build/ace/js/'
     },
 
+    fix_raw_ace_js_fuelux: {
+        expand: true,
+        cwd: './raw/ace/assets/js/fuelux/data/',
+        src: ['*.*', '**/*.*'],
+        dest: './build/ace/js/uncompressed/fuelux/data/'
+    },
+
     raw_ace_fonts_to_build: {
         expand: true,
         cwd: './raw/ace/assets/font/',
