@@ -5,20 +5,25 @@
 (function () {
     angular
         .module('gnap')
-        .factory('breadcrumbsService', breadcrumbsService);
+        .factory('breadcrumbsService', ['$state', breadcrumbsService]);
 
-    function breadcrumbsService() {
+    function breadcrumbsService($state) {
         var breadcrumbs = {
             crumbs: []
         };
 
-        function setBreadcrumbs(value) {
-            breadcrumbs.crumbs = value;
+        function addBreadcrumb(value) {
+            breadcrumbs.crumbs.push(value);
+        };
+
+        function removeLastBreadcrumb() {
+            breadcrumbs.crumbs.pop();  
         };
 
         return {
             breadcrumbs: breadcrumbs,
-            setBreadcrumbs: setBreadcrumbs
+            addBreadcrumb: addBreadcrumb,
+            removeLastBreadcrumb: removeLastBreadcrumb
         };
     };
 })();
