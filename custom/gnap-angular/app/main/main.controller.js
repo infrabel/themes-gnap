@@ -91,7 +91,7 @@
                 icon: 'icon-user',
                 click: function () {
                     alert('Going to the Login page ...');
-                    sidebarService.setActive('login');
+                    sidebarService.setSelected('login');
                 }
             },
             {
@@ -105,7 +105,7 @@
                         icon: 'icon-leaf',
                         click: function () {
                             alert('Going to the level2 page ...');
-                            sidebarService.setActive('multi-level-menu/level-2');
+                            sidebarService.setSelected('multi-level-menu/level-2');
                         }
                     },
                     {
@@ -119,7 +119,7 @@
                                 icon: 'icon-plus',
                                 click: function () {
                                     alert('Going to the Level 3 page ...');
-                                    sidebarService.setActive('multi-level-menu/level-2-with-sub/level-3');
+                                    sidebarService.setSelected('multi-level-menu/level-2-with-sub/level-3');
                                 }
                             },
                             {
@@ -128,7 +128,7 @@
                                 icon: 'icon-eye-open',
                                 click: function () {
                                     alert('Going to the Next Level 3 page ...');
-                                    sidebarService.setActive('multi-level-menu/level-2-with-sub/next-level-3');
+                                    sidebarService.setSelected('multi-level-menu/level-2-with-sub/next-level-3');
                                 }
                             }
                         ]

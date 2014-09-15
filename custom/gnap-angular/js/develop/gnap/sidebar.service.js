@@ -97,9 +97,13 @@
             return false;
         };
 
-        function setActive(path) {
+        function setSelected(path) {
             // parse the path into an array
-            var parsedPath = (path instanceof Array) ? path : path.split('/');
+            var parsedPath = path == null
+                                ? []
+                                : ((path instanceof Array)
+                                    ? path
+                                    : path.split('/'));
 
             // find the item to set as active
             updateActiveState(settings.items, parsedPath);
@@ -130,9 +134,14 @@
             }
         };
 
+        function clearSelected() {
+            setSelected(null);
+        };
+
         return {
             settings: settings,
-            setActive: setActive,
+            setSelected: setSelected,
+            clearSelected: clearSelected,
             toggleMenu: toggleMenu,
             toggleCollapsed: toggleCollapsed,
             toggleSubmenu: toggleSubmenu
