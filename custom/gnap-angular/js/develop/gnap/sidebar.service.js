@@ -99,7 +99,11 @@
 
         function setSelected(path) {
             // parse the path into an array
-            var parsedPath = path == null ? [] : ((path instanceof Array) ? path : path.split('/'));
+            var parsedPath = path == null
+                                ? []
+                                : ((path instanceof Array)
+                                    ? path
+                                    : path.split('/'));
 
             // find the item to set as active
             updateActiveState(settings.items, parsedPath);

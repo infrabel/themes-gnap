@@ -5,9 +5,9 @@
 (function () {
     angular
         .module('gnap')
-        .factory('breadcrumbsService', ['$state', breadcrumbsService]);
+        .factory('breadcrumbsService', breadcrumbsService);
 
-    function breadcrumbsService($state) {
+    function breadcrumbsService() {
         var breadcrumbs = {
             crumbs: []
         };
@@ -17,7 +17,7 @@
         };
 
         function removeLastBreadcrumb() {
-            breadcrumbs.crumbs.pop();  
+            breadcrumbs.crumbs.pop();
         };
 
         return {
