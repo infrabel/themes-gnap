@@ -5,7 +5,7 @@
 
     AboutController.$inject = [];
 
-    function AboutController(sidebarService) {
+    function AboutController() {
     };
     
 })();

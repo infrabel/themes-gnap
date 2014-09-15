@@ -25,15 +25,15 @@
         $stateProvider.state(stateSettings.name, stateSettings.state);
     };
 
-    onEnter.$inject = ['breadcrumbsService', 'sidebarService'];
+    onEnter.$inject = ['breadcrumbsService'];
 
-    function onEnter(breadcrumbsService, sidebarService) {
+    function onEnter(breadcrumbsService) {
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
     };
 
-    onExit.$inject = ['breadcrumbsService', 'sidebarService'];
+    onExit.$inject = ['breadcrumbsService'];
 
-    function onExit(breadcrumbsService, sidebarService) {
+    function onExit(breadcrumbsService) {
         breadcrumbsService.removeLastBreadcrumb();
     };
 })();
