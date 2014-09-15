@@ -1,16 +1,41 @@
 (function () {
     angular
         .module('gnap-example-app')
-        .config(error500RouteConfig);
+        .config(stateConfig);
 
-    error500RouteConfig.$inject = ['$stateProvider'];
+    var stateSettings = {
+        name: 'main.error-500',
+        state: {
+            url: '/error-500',
+            templateUrl: 'app/error-500/error-500.html',
+            controller: 'Error500Controller'
+        },
+        breadcrumb: {
+            title: 'Error 500'
+        },
+        sidebarKey: 'error-500'
+    };
 
-    function error500RouteConfig($stateProvider) {
-        $stateProvider
-            .state('main.error-500', {
-                url: '/error-500',
-                templateUrl: 'app/error-500/error-500.html',
-                controller: 'Error500Controller'
-            });
+    stateSettings.state.onEnter = onEnter;
+    stateSettings.state.onExit = onExit;
+
+    stateConfig.$inject = ['$stateProvider'];
+
+    function stateConfig($stateProvider) {
+        $stateProvider.state(stateSettings.name, stateSettings.state);
+    };
+
+    onEnter.$inject = ['breadcrumbsService', 'sidebarService'];
+
+    function onEnter(breadcrumbsService, sidebarService) {
+        breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
+        sidebarService.setSelected(stateSettings.sidebarKey);
+    };
+
+    onExit.$inject = ['breadcrumbsService', 'sidebarService'];
+
+    function onExit(breadcrumbsService, sidebarService) {
+        breadcrumbsService.removeLastBreadcrumb();
+        sidebarService.clearSelected();
     };
 })();

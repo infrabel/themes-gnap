@@ -3,21 +3,9 @@
         .module('gnap-example-app')
         .controller('AboutController', AboutController);
 
-    AboutController.$inject = ['sidebarService', 'breadcrumbsService'];
+    AboutController.$inject = [];
 
-    function AboutController(sidebarService, breadcrumbsService) {
-
-        // configure breadcrumbs
-        breadcrumbsService.setBreadcrumbs([
-            {
-                title: 'Home',
-                url: '/'
-            },
-            {
-                title: 'About'
-            }
-        ]);
-
-        sidebarService.setActive('about');
+    function AboutController(sidebarService) {
     };
+    
 })();
