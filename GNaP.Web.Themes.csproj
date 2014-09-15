@@ -133,6 +133,7 @@
     <Content Include="custom\flatly\variables.less.replace-grunt.js" />
     <Content Include="custom\flatly\index.html" />
     <Content Include="custom\flatly\bootswatch.less.replace-grunt.js" />
+    <Content Include="custom\gnap-angular\app\examples\buttons\gnap-buttons.controller.js" />
     <Content Include="custom\gnap-angular\app\getting-started\getting-started.controller.js" />
     <None Include="custom\ace\html\app\views\pages\partials\gallery\gallery.mustache" />
     <None Include="custom\ace\html\app\views\pages\partials\treeview\treeview.mustache" />

@@ -3,12 +3,12 @@
 </div>
 
 <div tabset>
-    <div tab heading="Buttons" id="buttons" class="tab-pane active">
+    <div tab heading="Buttons" id="buttons" class="tab-pane active" ng-controller="gnap-buttons">
         <h3 class="header smaller">
             Basic Buttons
         </h3>
-        <button class="btn btn-primary">Primary</button>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" ng-click="primary()">Primary</button>
+        <button class="btn btn-primary" ng-click="primary()">
             <i class="icon-cog"></i>
             Primary
         </button>
@@ -17,8 +17,8 @@
         <h3 class="header smaller">
             Form Example
         </h3>
-        <button class="btn btn-primary">Save</button>
-        <button class="btn btn-default">Cancel</button>
+        <button class="btn btn-primary" ng-click="save()">Save</button>
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
         @@include('buttons/form-example.html')
 
         <h3 class="header smaller">
@@ -51,27 +51,27 @@
         <h3 class="header smaller">
             Dropdown Button
         </h3>
-        <div class="btn-group" dropdown>
-            <button type="button" class="btn btn-primary dropdown-toggle">
-                Action
-                <i class="icon-angle-down icon-on-right"></i>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li>
-                    <a>Action</a>
-                </li>
-                <li>
-                    <a>Another action</a>
-                </li>
-                <li>
-                    <a>Something else here</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a>Separated link</a>
-                </li>
-            </ul>
-        </div>
+    <div class="btn-group" dropdown is-open="status.isopen">
+        <button type="button" class="btn btn-primary dropdown-toggle">
+            Action
+            <i class="icon-angle-down icon-on-right"></i>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li>
+                <a ng-click="action1()">Action</a>
+            </li>
+            <li>
+                <a ng-click="action2()">Another action</a>
+            </li>
+            <li>
+                <a ng-click="action3()">Something else here</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="a link to somewhere else">Separated link</a>
+            </li>
+        </ul>
+    </div>
         @@include('buttons/dropdown-buttons.html')
 
         <h3 class="header smaller">
