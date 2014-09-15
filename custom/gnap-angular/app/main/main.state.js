@@ -44,7 +44,6 @@
     };
 
     function setupSidebarShortcuts(sidebarService) {
-        // configure shortcuts
         sidebarService.settings.shortcuts = [
             {
                 title: 'Statistics',
@@ -82,7 +81,6 @@
     };
 
     function setupSidebarItems(sidebarService) {
-        // configure menu items
         sidebarService.settings.items = [
             {
                 key: 'about',
