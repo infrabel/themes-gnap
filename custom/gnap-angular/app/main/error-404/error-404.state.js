@@ -4,16 +4,16 @@
         .config(stateConfig);
 
     var stateSettings = {
-        name: 'main.error-500',
+        name: 'main.error-404',
         state: {
-            url: '/error-500',
-            templateUrl: 'app/error-500/error-500.html',
-            controller: 'Error500Controller'
+            url: '/error-404',
+            templateUrl: 'app/main/error-404/error-404.html',
+            controller: 'Error404Controller'
         },
         breadcrumb: {
-            title: 'Error 500'
+            title: 'Error 404'
         },
-        sidebarKey: 'error-500'
+        sidebarKey: 'error-404'
     };
 
     stateSettings.state.onEnter = onEnter;
