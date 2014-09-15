@@ -1,16 +1,41 @@
 (function () {
     angular
         .module('gnap-example-app')
-        .config(examplesRouteConfig);
+        .config(stateConfig);
 
-    examplesRouteConfig.$inject = ['$stateProvider'];
+    var stateSettings = {
+        name: 'main.examples',
+        state: {
+            url: '/examples',
+            templateUrl: 'app/examples/examples.html',
+            controller: 'ExamplesController'
+        },
+        breadcrumb: {
+            title: 'Examples'
+        },
+        sidebarKey: 'examples'
+    };
 
-    function examplesRouteConfig($stateProvider) {
-        $stateProvider
-            .state('main.examples', {
-                url: '/examples',
-                templateUrl: 'app/examples/examples.html',
-                controller: 'ExamplesController'
-            });
+    stateSettings.state.onEnter = onEnter;
+    stateSettings.state.onExit = onExit;
+
+    stateConfig.$inject = ['$stateProvider'];
+
+    function stateConfig($stateProvider) {
+        $stateProvider.state(stateSettings.name, stateSettings.state);
+    };
+
+    onEnter.$inject = ['breadcrumbsService', 'sidebarService'];
+
+    function onEnter(breadcrumbsService, sidebarService) {
+        breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
+        sidebarService.setSelected(stateSettings.sidebarKey);
+    };
+
+    onExit.$inject = ['breadcrumbsService', 'sidebarService'];
+
+    function onExit(breadcrumbsService, sidebarService) {
+        breadcrumbsService.removeLastBreadcrumb();
+        sidebarService.clearSelected();
     };
 })();
