@@ -7,7 +7,7 @@
         name: 'main.about',
         state: {
             url: '/about',
-            templateUrl: 'app/about/about.html',
+            templateUrl: 'app/main/about/about.html',
             controller: 'AboutController'
         },
         breadcrumb: {
