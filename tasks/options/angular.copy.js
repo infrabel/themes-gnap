@@ -46,5 +46,12 @@
         cwd: './raw/ui-router/',
         src: ['*.*', '**/*.*', '!*.zip'],
         dest: './deploy/angular/ui-router/'
+    },
+
+    raw_angular_translate_to_deploy: {
+        expand: true,
+        cwd: './raw/angular-translate/',
+        src: ['*.*', '**/*.*', '!*.zip'],
+        dest: './deploy/angular/angular-translate/'
     }
 };
