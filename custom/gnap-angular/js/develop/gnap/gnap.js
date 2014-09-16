@@ -2,7 +2,8 @@
     angular
         .module('gnap', ['ngAnimate',
                          'ui.bootstrap',
-                         'LocalStorageModule']);
+                         'LocalStorageModule',
+                         'pascalprecht.translate']);
 
     // configure the local storage service to use 'gnap' as the key prefix
     angular
