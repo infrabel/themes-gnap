@@ -12,7 +12,8 @@
         'copy:raw_angular_bootstrap_to_deploy',
         'copy:raw_angular_datatables_to_deploy',
         'copy:raw_angular_local_storage_to_deploy',
-        'copy:raw_angular_ui_router_to_deploy'
-
+        'copy:raw_angular_ui_router_to_deploy',
+        'copy:raw_angular_translate_to_deploy',
+        'copy:raw_angular_dynamic_locale_to_deploy'
     ]);
 };
