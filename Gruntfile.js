@@ -14,6 +14,7 @@ module.exports = function (grunt) {
     'use strict';
 
     grunt.util.linefeed = '\r\n';
+    grunt.file.defaultEncoding = 'utf8';
 
     var config = {
         pkg: grunt.file.readJSON('package.json')
