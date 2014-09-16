@@ -1,0 +1,24 @@
+{
+    "sidebar": {
+        "shortcuts": {
+            "statistics": "Statistiques",
+            "edit": "Modifier",
+            "profile": "Profil",
+            "administration": "Administration"
+        },
+        "items": {
+            "about": "À propos",
+            "getting-started": "Commencer",
+            "examples": "Exemples",
+            "typography": "Typographie",
+            "error-404": "Error 404",
+            "error-500": "Error 500",
+            "login": "Connexion",
+            "multi-level-menu": "Multi Level Menu",
+            "level-2": "Level 2",
+            "level-2-with-sub": "Level 2 With Sub",
+            "level-3": "Level 3",
+            "next-level-3": "Next Level 3"
+        }
+    }
+}

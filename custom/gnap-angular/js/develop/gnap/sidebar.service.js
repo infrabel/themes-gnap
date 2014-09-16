@@ -7,9 +7,9 @@
         .module('gnap')
         .factory('sidebarService', sidebarService);
 
-    sidebarService.$inject = ['localStorageService'];
+    sidebarService.$inject = ['$translate', 'localStorageService'];
 
-    function sidebarService(localStorageService) {
+    function sidebarService($translate, localStorageService) {
 
         var settings = {
             items: [],
@@ -20,11 +20,33 @@
 
         return {
             settings: settings,
+            setItems: setItems,
+            setShortcuts: setShortcuts,
+            clearItems: clearItems,
+            clearShortcuts: clearShortcuts,
             setSelected: setSelected,
             clearSelected: clearSelected,
             toggleMenu: toggleMenu,
             toggleCollapsed: toggleCollapsed,
             toggleSubmenu: toggleSubmenu
+        };
+
+        function setItems(value) {
+            resolveTranslations(value);
+            settings.items = value;
+        };
+
+        function setShortcuts(value) {
+            resolveTranslations(value);
+            settings.shortcuts = value;
+        };
+
+        function clearItems() {
+            settings.items = [];
+        }
+
+        function clearShortcuts() {
+            settings.shortcuts = [];
         };
 
         function toggleMenu() {
@@ -53,7 +75,6 @@
         };
 
         function findSiblings(item) {
-
             if (isRootMenuItem(item)) {
                 return settings.items;
             }
@@ -146,6 +167,25 @@
 
         function clearSelected() {
             setSelected(null);
+        };
+
+        function resolveTranslations(items) {
+            for (var itemIndex = 0; itemIndex < items.length; itemIndex++) {
+                var item = items[itemIndex];
+                if (item.titleTranslationId) {
+                    (function (translatable) {
+                        $translate(translatable.titleTranslationId).then(function (translation) {
+                            translatable._title = translation || translatable.title;
+                        });
+                    })(item);
+                } else {
+                    item._title = item.title;
+                }
+
+                if (item.items) {
+                    resolveTranslations(item.items);
+                }
+            }
         };
     };
 })();
