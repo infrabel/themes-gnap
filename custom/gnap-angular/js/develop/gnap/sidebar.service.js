@@ -7,9 +7,9 @@
         .module('gnap')
         .factory('sidebarService', sidebarService);
 
-    sidebarService.$inject = ['localStorageService', '$translate'];
+    sidebarService.$inject = ['$translate', 'localStorageService'];
 
-    function sidebarService(localStorageService, $translate) {
+    function sidebarService($translate, localStorageService) {
 
         var settings = {
             items: [],
@@ -47,7 +47,7 @@
 
         function clearShortcuts() {
             settings.shortcuts = [];
-        }
+        };
 
         function toggleMenu() {
             settings.visible = !settings.visible;
@@ -173,7 +173,7 @@
             for (var itemIndex = 0; itemIndex < items.length; itemIndex++) {
                 var item = items[itemIndex];
                 if (item.titleTranslationId) {
-                    (function (translatable) {  
+                    (function (translatable) {
                         $translate(translatable.titleTranslationId).then(function (translation) {
                             translatable._title = translation || translatable.title;
                         });
