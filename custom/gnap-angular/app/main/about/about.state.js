@@ -13,7 +13,8 @@
         breadcrumb: {
             title: 'About'
         },
-        sidebarKey: 'about'
+        sidebarKey: 'about',
+        translations: 'app/main/about',
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -37,5 +38,13 @@
     function onExit(breadcrumbsService, sidebarService) {
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
+    };
+
+    if (stateSettings.translations) {
+        stateSettings.state.resolve = stateSettings.state.resolve || {};
+        stateSettings.state.resolve.translations = function($translatePartialLoader, $translate) {
+            $translatePartialLoader.addPart(stateSettings.translations);
+            return $translate.refresh();
+        };
     };
 })();
