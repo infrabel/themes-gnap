@@ -13,7 +13,7 @@
             restrict: 'A',
             scope: {
                 keywords: '=',
-                handler: "&"
+                handler: '&'
             },
             templateUrl: 'js/gnap/search.html'
         };
