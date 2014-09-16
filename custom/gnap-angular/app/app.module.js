@@ -6,5 +6,7 @@
                                      'ngSanitize',
                                      'ngBootbox',
                                      'localytics.directives',
+                                     'pascalprecht.translate',
+                                     'tmh.dynamicLocale',
                                      'datatables']);
 })();
