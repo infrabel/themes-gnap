@@ -26,22 +26,6 @@
 
     function gnapDatepicker() {
 
-        function link(scope, element, attrs) {
-            scope.opened = false;
-
-            scope.open = function ($event) {
-                $event.preventDefault();
-                $event.stopPropagation();
-                scope.opened = true;
-            };
-
-            scope.toggle = function ($event) {
-                $event.preventDefault();
-                $event.stopPropagation();
-                scope.opened = !scope.opened;
-            };
-        };
-
         // TODO: ng-required and other should be passed in from the outside, not hardcoded
         return {
             restrict: 'AE',
@@ -61,6 +45,22 @@
                 '    </span>' +
                 '</p>',
             link: link
+        };
+
+        function link(scope, element, attrs) {
+            scope.opened = false;
+
+            scope.open = function ($event) {
+                $event.preventDefault();
+                $event.stopPropagation();
+                scope.opened = true;
+            };
+
+            scope.toggle = function ($event) {
+                $event.preventDefault();
+                $event.stopPropagation();
+                scope.opened = !scope.opened;
+            };
         };
     };
 

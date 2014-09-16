@@ -10,13 +10,13 @@
 
     function gnapMaskedInput() {
 
-        function link(scope, element, attrs) {
-            element.mask(attrs['gnapMaskedInput']);
-        };
-
         return {
             restrict: 'A',
             link: link
         };
-    }
+
+        function link(scope, element, attrs) {
+            element.mask(attrs['gnapMaskedInput']);
+        };
+    };
 })();
