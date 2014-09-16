@@ -13,7 +13,8 @@
         breadcrumb: {
             title: 'Home',
             url: '/'
-        }
+        },
+        translations: 'app/main'
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -37,16 +38,24 @@
     onExit.$inject = ['breadcrumbsService', 'sidebarService'];
 
     function onExit(breadcrumbsService, sidebarService) {
-        sidebarService.settings.shortcuts = [];
-        sidebarService.settings.items = [];
+        sidebarService.clearShortcuts();
+        sidebarService.clearItems();
 
         breadcrumbsService.removeLastBreadcrumb();
     };
 
+    if (stateSettings.translations) {
+        stateSettings.state.resolve = stateSettings.state.resolve || {};
+        stateSettings.state.resolve.translations = function($translatePartialLoader, $translate) {
+            $translatePartialLoader.addPart(stateSettings.translations);
+            return $translate.refresh();
+        };
+    };
+
     function setupSidebarShortcuts(sidebarService) {
-        sidebarService.settings.shortcuts = [
+        sidebarService.setShortcuts([
             {
-                title: 'Statistics',
+                titleTranslationId: 'sidebar.shortcuts.statistics',
                 buttonClass: 'btn btn-success',
                 icon: 'icon-signal',
                 click: function () {
@@ -54,7 +63,7 @@
                 }
             },
             {
-                title: 'Edit',
+                titleTranslationId: 'sidebar.shortcuts.edit',
                 buttonClass: 'btn btn-info',
                 icon: 'icon-pencil',
                 click: function () {
@@ -62,7 +71,7 @@
                 }
             },
             {
-                title: 'Profile',
+                titleTranslationId: 'sidebar.shortcuts.profile',
                 buttonClass: 'btn btn-warning',
                 icon: 'icon-group',
                 click: function () {
@@ -70,57 +79,57 @@
                 }
             },
             {
-                title: 'Administration',
+                titleTranslationId: 'sidebar.shortcuts.administration',
                 buttonClass: 'btn btn-danger',
                 icon: 'icon-cogs',
                 click: function () {
                     alert('Going to the administration page ...');
                 }
             }
-        ];
+        ]);
     };
 
     function setupSidebarItems(sidebarService) {
-        sidebarService.settings.items = [
+        sidebarService.setItems([
             {
                 key: 'about',
-                title: 'About',
+                titleTranslationId: 'sidebar.items.about',
                 icon: 'icon-lightbulb',
                 state: 'main.about'
             },
             {
                 key: 'getting-started',
-                title: 'Getting Started',
+                titleTranslationId: 'sidebar.items.getting-started',
                 icon: 'icon-fire',
                 state: 'main.getting-started'
             },
             {
                 key: 'examples',
-                title: 'Examples',
+                titleTranslationId: 'sidebar.items.examples',
                 icon: 'icon-heart',
                 state: 'main.examples'
             },
             {
                 key: 'typography',
-                title: 'Typography',
+                titleTranslationId: 'sidebar.items.typography',
                 icon: 'icon-text-width',
                 state: 'main.typography'
             },
             {
                 key: 'error-404',
-                title: 'Error 404',
+                titleTranslationId: 'sidebar.items.error-404',
                 icon: 'icon-circle',
                 state: 'main.error-404'
             },
             {
                 key: 'error-500',
-                title: 'Error 500',
+                titleTranslationId: 'sidebar.items.error-500',
                 icon: 'icon-circle-blank',
                 state: 'main.error-500'
             },
             {
                 key: 'login',
-                title: 'Login',
+                titleTranslationId: 'sidebar.items.login',
                 icon: 'icon-user',
                 click: function () {
                     alert('Going to the Login page ...');
@@ -129,12 +138,12 @@
             },
             {
                 key: 'multi-level-menu',
-                title: 'Multi Level Menu',
+                titleTranslationId: 'sidebar.items.multi-level-menu',
                 icon: 'icon-globe',
                 items: [
                     {
                         key: 'level-2',
-                        title: 'Level 2',
+                        titleTranslationId: 'sidebar.items.level-2',
                         icon: 'icon-leaf',
                         click: function () {
                             alert('Going to the level2 page ...');
@@ -143,12 +152,12 @@
                     },
                     {
                         key: 'level-2-with-sub',
-                        title: 'Level 2 with Sub',
+                        titleTranslationId: 'sidebar.items.level-2-with-sub',
                         icon: 'icon-pencil',
                         items: [
                             {
                                 key: 'level-3',
-                                title: 'Level 3',
+                                titleTranslationId: 'sidebar.items.level-3',
                                 icon: 'icon-plus',
                                 click: function () {
                                     alert('Going to the Level 3 page ...');
@@ -157,7 +166,7 @@
                             },
                             {
                                 key: 'next-level-3',
-                                title: 'Next Level 3',
+                                titleTranslationId: 'sidebar.items.next-level-3',
                                 icon: 'icon-eye-open',
                                 click: function () {
                                     alert('Going to the Next Level 3 page ...');
@@ -168,6 +177,6 @@
                     }
                 ]
             }
-        ];
+        ]);
     };
 })();
