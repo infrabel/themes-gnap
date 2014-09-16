@@ -7,7 +7,9 @@
         .module('gnap')
         .factory('breadcrumbsService', breadcrumbsService);
 
-    function breadcrumbsService() {
+    breadcrumbsService.$inject = ['$translate'];
+
+    function breadcrumbsService($translate) {
         var breadcrumbs = {
             crumbs: []
         };
@@ -19,6 +21,15 @@
         };
 
         function addBreadcrumb(value) {
+            // resolve _title: if a titleTranslationId is given then the translation will be loaded async,
+            // otherwise the value of title is copied into _title
+            if (value.titleTranslationId) {
+                $translate(value.titleTranslationId).then(function (translation) {
+                    value._title = translation;
+                });
+            } else {
+                value._title = value.title;
+            }
             breadcrumbs.crumbs.push(value);
         };
 
