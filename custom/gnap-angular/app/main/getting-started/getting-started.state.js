@@ -4,16 +4,16 @@
         .config(stateConfig);
 
     var stateSettings = {
-        name: 'main.typography',
+        name: 'main.getting-started',
         state: {
-            url: '/typography',
-            templateUrl: 'app/typography/typography.html',
-            controller: 'TypographyController'
+            url: '/getting-started',
+            templateUrl: 'app/main/getting-started/getting-started.html',
+            controller: 'GettingStartedController'
         },
         breadcrumb: {
-            title: 'Typography'
+            title: 'Getting Started'
         },
-        sidebarKey: 'typography'
+        sidebarKey: 'getting-started'
     };
 
     stateSettings.state.onEnter = onEnter;
