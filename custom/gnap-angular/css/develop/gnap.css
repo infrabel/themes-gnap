@@ -18,6 +18,8 @@ ul.breadcrumb>li:first-child  {
     display: block;
 }
 
+li[gnap-locale-selector] span { margin-left: 5px; }
+
 ul[datepicker-popup-wrap] {
     padding: 0px;
 }
