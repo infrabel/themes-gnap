@@ -3,7 +3,7 @@
         expand: true,
         cwd: './raw/angular/',
         src: ['*.*', '**/*.*', '!*.zip'],
-        dest: './deploy/angular/'
+        dest: './deploy/angular/angular/'
     },
 
     raw_angular_chosen_to_deploy: {
@@ -46,5 +46,19 @@
         cwd: './raw/ui-router/',
         src: ['*.*', '**/*.*', '!*.zip'],
         dest: './deploy/angular/ui-router/'
+    },
+
+    raw_angular_translate_to_deploy: {
+        expand: true,
+        cwd: './raw/angular-translate/',
+        src: ['*.*', '**/*.*', '!*.zip'],
+        dest: './deploy/angular/angular-translate/'
+    },
+
+    raw_angular_dynamic_locale_to_deploy: {
+        expand: true,
+        cwd: './raw/angular-dynamic-locale/',
+        src: ['*.*', '**/*.*', '!*.zip'],
+        dest: './deploy/angular/angular-dynamic-locale/'
     }
 };

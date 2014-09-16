@@ -9,8 +9,8 @@
         .directive('gnapTimepicker', gnapTimepicker);
 
     angular
-        .module("template/timepicker/timepicker.html")
-        .run(["$templateCache", gnapTimepickerTemplate]);
+        .module('template/timepicker/timepicker.html')
+        .run(['$templateCache', gnapTimepickerTemplate]);
 
     function gnapTimepicker() {
 
