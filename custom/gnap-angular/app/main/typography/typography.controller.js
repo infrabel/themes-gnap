@@ -3,8 +3,9 @@
         .module('gnap-example-app')
         .controller('TypographyController', TypographyController);
 
-    TypographyController.$inject = [];
+    TypographyController.$inject = ['$scope'];
 
-    function TypographyController() {
+    function TypographyController($scope) {
+        $scope.isHorizontalList = false;
     };
 })();
