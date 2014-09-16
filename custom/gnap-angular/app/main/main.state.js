@@ -46,7 +46,7 @@
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
-        stateSettings.state.resolve.translations = function($translatePartialLoader, $translate) {
+        stateSettings.state.resolve.translations = function ($translatePartialLoader, $translate) {
             $translatePartialLoader.addPart(stateSettings.translations);
             return $translate.refresh();
         };
