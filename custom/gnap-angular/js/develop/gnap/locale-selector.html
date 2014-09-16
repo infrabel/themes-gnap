@@ -1,0 +1,15 @@
+﻿
+<a data-toggle="dropdown" class="dropdown-toggle">
+    <span class="user-info">
+        {{currentLocale.title}}
+    </span>
+    <i class="icon-caret-down"></i>
+</a>
+<ul class="user-menu pull-right dropdown-menu dropdown-default dropdown-caret dropdown-close">
+    <li ng-repeat="locale in locales">
+        <a ng-click="setLocale(locale.name)">
+            <i class="icon-cog"></i>
+            {{locale.title}}
+        </a>
+    </li>
+</ul>
