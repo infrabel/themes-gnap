@@ -1,10 +1,8 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-    <div ng-non-bindable>
-<pre><code gnap-highlight="html">&lt;div ng-controller=&quot;gnap-alerts&quot;&gt;
-    &lt;div alert ng-repeat=&quot;alert in alerts&quot; type=&quot;{{alert.type}}&quot; close=&quot;closeAlert($index)&quot;&gt;&lt;span ng-bind-html=&quot;alert.msg&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-alerts&quot;&gt;
+    &lt;div alert ng-repeat=&quot;alert in alerts&quot; type=&quot;&#123;&#123;alert.type&#125;&#125;&quot; close=&quot;closeAlert($index)&quot;&gt;&lt;span ng-bind-html=&quot;alert.msg&quot;&gt;&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-    </div>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
 <pre><code gnap-highlight>(function () {
