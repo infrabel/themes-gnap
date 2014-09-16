@@ -26,9 +26,9 @@
 
             if (scope.lang == 'nl' || scope.lang == 'fr' || scope.lang == 'en') {
                 labelNode.addClass(scope.lang);
-                inputNode.addClass("ace-switch-7");
+                inputNode.addClass('ace-switch-7');
             } else {
-                inputNode.addClass("ace-switch-6");
+                inputNode.addClass('ace-switch-6');
             }
 
             if (scope.choice == true) {

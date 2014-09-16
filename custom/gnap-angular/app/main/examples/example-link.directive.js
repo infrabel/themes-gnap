@@ -16,8 +16,8 @@
         };
 
         function link(scope, element, attrs) {
-            element.addClass("label");
-            element.addClass("label-default");
+            element.addClass('label');
+            element.addClass('label-default');
             element.attr('target', '_blank');
             element.prepend('<i class="icon-external-link"></i>&nbsp; View on ' + attrs['source']);
 

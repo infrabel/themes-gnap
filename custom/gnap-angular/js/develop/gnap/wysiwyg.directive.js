@@ -22,9 +22,9 @@
                 var msg = '';
 
                 if (reason === 'unsupported-file-type') {
-                    msg = "Unsupported format " + detail;
+                    msg = 'Unsupported format ' + detail;
                 } else {
-                    console.log("error uploading file", reason, detail);
+                    console.log('error uploading file', reason, detail);
                 }
 
                 $('<div class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
@@ -33,7 +33,7 @@
 
             function supportsContentEditable() {
                 //"contentEditable" in document.documentElement returns true in android 2
-                var hasContentEditable = ("contentEditable" in document.documentElement);
+                var hasContentEditable = ('contentEditable' in document.documentElement);
 
                 if (hasContentEditable) {
                     var ua = navigator.userAgent;
@@ -52,7 +52,7 @@
                     'wysiwyg': { fileUploadError: showErrorAlert }
                 }).prev().addClass('wysiwyg-style1');
             } else {
-                element.text("WSYWIG Feature not supported");
+                element.text('WSYWIG Feature not supported');
             }
         };
     };
