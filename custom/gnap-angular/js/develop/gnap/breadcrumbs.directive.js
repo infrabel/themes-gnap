@@ -19,7 +19,7 @@
             link: link
         };
 
-        function link(scope, element, attrs) {
+        function link(scope) {
             // get the current breadcrumbs and link them to the scope
             scope.breadcrumbs = breadcrumbsService.breadcrumbs;
 
