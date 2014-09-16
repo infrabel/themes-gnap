@@ -11,7 +11,7 @@
             controller: 'AboutController'
         },
         breadcrumb: {
-            title: 'About'
+            titleTranslationId: 'ABOUT'
         },
         sidebarKey: 'about',
         translations: 'app/main/about',
