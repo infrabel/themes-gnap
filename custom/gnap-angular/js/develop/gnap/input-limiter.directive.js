@@ -10,6 +10,11 @@
 
     function gnapInputLimiter() {
 
+        return {
+            restrict: 'A',
+            link: link
+        };
+
         function link(scope, element, attrs) {
             element.attr('maxlength', attrs['gnapInputLimiter']);
 
@@ -30,10 +35,5 @@
                 limitTextShow: false
             });
         };
-
-        return {
-            restrict: 'A',
-            link: link
-        };
-    }
+    };
 })();

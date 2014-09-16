@@ -12,6 +12,14 @@
     gnapSidebar.$inject = ['$state', 'sidebarService'];
 
     function gnapSidebar($state, sidebarService) {
+
+        return {
+            restrict: 'A',
+            replace: true,
+            templateUrl: 'js/gnap/sidebar.html',
+            link: link
+        };
+
         function link(scope, element, attrs) {
             scope.settings = sidebarService.settings;
 
@@ -35,13 +43,6 @@
                 sidebarService.toggleCollapsed();
             };
         };
-
-        return {
-            restrict: 'A',
-            replace: true,
-            templateUrl: 'js/gnap/sidebar.html',
-            link: link
-        };
     };
 
     // custom animation for ng-hide (slide-up/slide-down)
@@ -58,6 +59,7 @@
                     };
                 }
             },
+
             removeClass: function (element, className, done) {
                 if (className === 'ng-hide') {
                     element.hide();

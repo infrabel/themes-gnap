@@ -11,6 +11,13 @@
     gnapSidebarToggler.$inject = ['sidebarService'];
 
     function gnapSidebarToggler(sidebarService) {
+
+        return {
+            restrict: 'A',
+            templateUrl: 'js/gnap/sidebar-toggler.html',
+            link: link
+        };
+
         function link(scope, element, attrs) {
             scope.settings = sidebarService.settings;
 
@@ -19,11 +26,5 @@
                 sidebarService.toggleMenu();
             };
         };
-
-        return {
-            restrict: 'A',
-            templateUrl: 'js/gnap/sidebar-toggler.html',
-            link: link
-        };
-    }
+    };
 })();

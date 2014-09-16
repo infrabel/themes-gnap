@@ -12,18 +12,18 @@
             crumbs: []
         };
 
+        return {
+            breadcrumbs: breadcrumbs,
+            addBreadcrumb: addBreadcrumb,
+            removeLastBreadcrumb: removeLastBreadcrumb
+        };
+
         function addBreadcrumb(value) {
             breadcrumbs.crumbs.push(value);
         };
 
         function removeLastBreadcrumb() {
             breadcrumbs.crumbs.pop();
-        };
-
-        return {
-            breadcrumbs: breadcrumbs,
-            addBreadcrumb: addBreadcrumb,
-            removeLastBreadcrumb: removeLastBreadcrumb
         };
     };
 })();

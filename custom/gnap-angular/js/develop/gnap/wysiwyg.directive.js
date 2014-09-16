@@ -10,6 +10,11 @@
 
     function gnapWysiwyg() {
 
+        return {
+            restrict: 'A',
+            link: link
+        };
+
         function link(scope, element, attrs) {
             element.addClass('wysiwyg-editor');
 
@@ -24,7 +29,7 @@
 
                 $('<div class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
                     '<strong>File upload error</strong>' + msg + '</div>').prependTo('#alerts');
-            }
+            };
 
             function supportsContentEditable() {
                 //"contentEditable" in document.documentElement returns true in android 2
@@ -50,10 +55,5 @@
                 element.text("WSYWIG Feature not supported");
             }
         };
-
-        return {
-            restrict: 'A',
-            link: link
-        };
-    }
+    };
 })();
