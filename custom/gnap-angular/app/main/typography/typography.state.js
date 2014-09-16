@@ -1,7 +1,7 @@
 (function () {
     angular
         .module('gnap-example-app')
-        .config(stateConfig);
+        .config(stateConfiguration);
 
     var stateSettings = {
         name: 'main.typography',
@@ -19,9 +19,9 @@
     stateSettings.state.onEnter = onEnter;
     stateSettings.state.onExit = onExit;
 
-    stateConfig.$inject = ['$stateProvider'];
+    stateConfiguration.$inject = ['$stateProvider'];
 
-    function stateConfig($stateProvider) {
+    function stateConfiguration($stateProvider) {
         $stateProvider.state(stateSettings.name, stateSettings.state);
     };
 

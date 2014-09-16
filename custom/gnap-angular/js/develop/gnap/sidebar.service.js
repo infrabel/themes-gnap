@@ -10,11 +10,21 @@
     sidebarService.$inject = ['localStorageService'];
 
     function sidebarService(localStorageService) {
+
         var settings = {
             items: [],
             shortcuts: [],
             visible: false,
             collapsed: localStorageService.get('sidebar-collapsed') === 'true'
+        };
+
+        return {
+            settings: settings,
+            setSelected: setSelected,
+            clearSelected: clearSelected,
+            toggleMenu: toggleMenu,
+            toggleCollapsed: toggleCollapsed,
+            toggleSubmenu: toggleSubmenu
         };
 
         function toggleMenu() {
@@ -136,15 +146,6 @@
 
         function clearSelected() {
             setSelected(null);
-        };
-
-        return {
-            settings: settings,
-            setSelected: setSelected,
-            clearSelected: clearSelected,
-            toggleMenu: toggleMenu,
-            toggleCollapsed: toggleCollapsed,
-            toggleSubmenu: toggleSubmenu
         };
     };
 })();

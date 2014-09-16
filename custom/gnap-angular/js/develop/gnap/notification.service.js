@@ -12,7 +12,7 @@
         return {
             show: show,
             removeAll: removeAll
-        }
+        };
 
         function show(options) {
             $.gritter.add({
@@ -25,5 +25,5 @@
         function removeAll() {
             $.gritter.removeAll();
         };
-    }
+    };
 })();
