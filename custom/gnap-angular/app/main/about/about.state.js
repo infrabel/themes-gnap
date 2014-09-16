@@ -14,7 +14,7 @@
             titleTranslationId: 'ABOUT'
         },
         sidebarKey: 'about',
-        translations: 'app/main/about',
+        translations: 'app/main/about'
     };
 
     stateSettings.state.onEnter = onEnter;
