@@ -8,7 +8,7 @@
         '!./deploy/gnap-angular/**',
         './deploy/gnap-angular/*.html',
         '!./deploy/gnap-angular/index.html',
-        './deploy/gnap-angular/app/examples/**/*.html',
-        '!./deploy/gnap-angular/app/examples/*.html'
+        './deploy/gnap-angular/app/main/examples/**/*.html',
+        '!./deploy/gnap-angular/app/main/examples/*.html'
     ]
 };
