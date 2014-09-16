@@ -1,14 +1,15 @@
 ﻿/**
- * @desc locale selector
- * @file locale-selector.directive.js
+ * @desc detects which language should be chosen
+ * @file language-negotiation.service.js
  */
 (function () {
-    angular.module('gnap')
-    	.factory('languageNegotiationService', languageNegotiationService);
+    angular
+        .module('gnap')
+        .factory('languageNegotiationService', languageNegotiationService);
 
-    languageNegotiationService.$inject = ['$window'];
+    languageNegotiationService.$inject = [];
 
-    function languageNegotiationService($window) {
+    function languageNegotiationService() {
         return {
             getPreferredLanguage: getPreferredLanguage
         };
@@ -21,7 +22,7 @@
             if (language) {
                 return language;
             }
-            
+
             // if a language was not found and the detected one is a specific then search again on the parent language
             if (isRegional(detectedLanguage)) {
                 language = findLanguage(knownLanguages, getParentLanguage(detectedLanguage));
@@ -32,33 +33,37 @@
 
             // a preferred language could not be detected
             return null;
-        }
+        };
 
         function detectLanguage() {
             var nav = window.navigator;
             return ((
-              nav.language ||
-              nav.browserLanguage ||
-              nav.systemLanguage ||
-              nav.userLanguage
-            ) || '')/*.split('-').join('_')*/;
+                nav.language ||
+                    nav.browserLanguage ||
+                    nav.systemLanguage ||
+                    nav.userLanguage
+            ) || '');
         };
 
         function isRegional(language) {
             return language.indexOf('-') > 0;
-        }
+        };
 
         function findLanguage(knownLanguages, language) {
             for (var knownLanguageIndex in knownLanguages) {
                 var knownLanguage = knownLanguages[knownLanguageIndex];
-                if (knownLanguage == language) return knownLanguage;
+
+                if (knownLanguage == language)
+                    return knownLanguage;
             }
             return null;
-        }
+        };
 
         function getParentLanguage(language) {
-            if (!isRegional(language)) throw language + " is not a regional language";
+            if (!isRegional(language))
+                throw language + ' is not a regional language';
+
             return language.substring(0, language.indexOf('-'));
-        }
-    }
+        };
+    };
 })();

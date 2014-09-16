@@ -3,7 +3,8 @@
  * @file locale-selector.directive.js
  */
 (function () {
-    angular.module('gnap')
+    angular
+        .module('gnap')
         .directive('gnapLocaleSelector', gnapLocaleSelector);
 
     gnapLocaleSelector.$inject = ['localeService'];
@@ -11,8 +12,8 @@
     function gnapLocaleSelector(localeService) {
         return {
             restrict: 'A',
-            scope: { },
-            templateUrl: 'js/gnap//locale-selector.html', 
+            scope: {},
+            templateUrl: 'js/gnap/locale-selector.html',
             link: link
         };
 
@@ -20,9 +21,9 @@
             scope.currentLocale = localeService.getCurrentLocale();
             scope.locales = localeService.getLocales();
 
-            scope.setLocale = function(locale) {
+            scope.setLocale = function (locale) {
                 localeService.setCurrentLocale(locale);
             };
-        }
+        };
     };
 })();
