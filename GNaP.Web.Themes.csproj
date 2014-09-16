@@ -222,8 +222,8 @@
     <Content Include="custom\gnap-angular\app\main\typography\typography.controller.js" />
     <Content Include="custom\gnap-angular\app\main\typography\typography.html" />
     <Content Include="custom\gnap-angular\app\main\typography\typography.state.js" />
-    <Content Include="custom\gnap-angular\app\session-dropdown.html" />
-    <Content Include="custom\gnap-angular\app\session-dropdown.js" />
+    <Content Include="custom\gnap-angular\app\main\session-dropdown.html" />
+    <Content Include="custom\gnap-angular\app\main\session-dropdown.directive.js" />
     <Content Include="custom\gnap-angular\css\develop\app.css" />
     <Content Include="custom\gnap-angular\css\develop\gnap.css" />
     <Content Include="custom\gnap-angular\js\develop\gnap\alert.directive.js" />

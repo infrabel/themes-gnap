@@ -12,6 +12,7 @@
         return {
             restrict: 'A',
             scope: {
+                text: '=',
                 keywords: '=',
                 handler: '&'
             },

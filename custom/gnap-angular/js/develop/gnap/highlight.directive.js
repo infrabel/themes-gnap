@@ -1,6 +1,6 @@
 /**
  * @desc applies code syntax coloring
- * @file highlight.directive
+ * @file highlight.directive.js
  * @example <code gnap-highlight class="html">html code here</code>
  */
 (function () {
