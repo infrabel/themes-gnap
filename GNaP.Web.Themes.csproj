@@ -237,9 +237,14 @@
     <Content Include="custom\gnap-angular\js\develop\gnap\header-checkbox.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\highlight.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\input-limiter.directive.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\language-negotiation.service.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\locale-selector.directive.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\locale-selector.html" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\locale.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\masked-input.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\notification.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\pager.directive.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\partial-loader-error-handler.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\search.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\search.html" />
     <Content Include="custom\gnap-angular\js\develop\gnap\sidebar-toggler.directive.js" />
@@ -1047,7 +1052,10 @@
     <Content Include="raw\ace\wysiwyg.html" />
     <Content Include="raw\angular-datatables\angular-datatables.js" />
     <Content Include="raw\angular-datatables\datatables.bootstrap.css" />
+    <Content Include="raw\angular-dynamic-locale\tmhDynamicLocale.js" />
     <Content Include="raw\angular-local-storage\angular-local-storage.js" />
+    <Content Include="raw\angular-translate\angular-translate.js" />
+    <Content Include="raw\angular-translate\loader-partial.js" />
     <Content Include="raw\angular\angular-animate.js" />
     <Content Include="raw\angular\angular-animate.min.js" />
     <Content Include="raw\angular\angular-cookies.js" />
@@ -2967,6 +2975,9 @@
     <Content Include="themes.js" />
     <Content Include="custom\gnap-angular\app\app.module.js" />
     <Content Include="custom\gnap-angular\index.html" />
+    <None Include="custom\gnap-angular\app\main\about\translations.en.json" />
+    <None Include="custom\gnap-angular\app\main\about\translations.fr.json" />
+    <None Include="custom\gnap-angular\app\main\about\translations.nl.json" />
     <None Include="custom\gnap-angular\app\main\main.html" />
     <Content Include="custom\gnap-angular\app\main\main.controller.js" />
     <Content Include="custom\gnap-angular\app\main\main.state.js" />
