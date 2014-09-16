@@ -4,16 +4,16 @@
         .config(stateConfig);
 
     var stateSettings = {
-        name: 'main.error-404',
+        name: 'main.typography',
         state: {
-            url: '/error-404',
-            templateUrl: 'app/error-404/error-404.html',
-            controller: 'Error404Controller'
+            url: '/typography',
+            templateUrl: 'app/main/typography/typography.html',
+            controller: 'TypographyController'
         },
         breadcrumb: {
-            title: 'Error 404'
+            title: 'Typography'
         },
-        sidebarKey: 'error-404'
+        sidebarKey: 'typography'
     };
 
     stateSettings.state.onEnter = onEnter;
