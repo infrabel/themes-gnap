@@ -17,5 +17,5 @@
             },
             templateUrl: 'js/gnap/search.html'
         };
-    }
+    };
 })();

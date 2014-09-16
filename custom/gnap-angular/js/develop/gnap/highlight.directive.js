@@ -12,6 +12,11 @@
 
     function gnapHighlight($timeout) {
 
+        return {
+            restrict: 'A',
+            link: link
+        };
+
         function link(scope, element, attrs) {
             var language = attrs['gnapHighlight'];
             var snippet = element.text();
@@ -22,10 +27,5 @@
                     : hljs.highlightAuto(snippet).value);
             }, 0);
         };
-
-        return {
-            restrict: 'A',
-            link: link
-        };
-    }
+    };
 })();
