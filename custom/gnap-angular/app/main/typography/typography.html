@@ -28,7 +28,7 @@
         <h4>h4. Heading 4</h4>
         <h5>h5. Heading 5</h5>
         <h6>h6. Heading 6</h6>
-    </div><!-- /span -->
+    </div>
 
     <div class="col-sm-6">
         <div class="widget-box">
@@ -232,7 +232,7 @@
                                     <b>Horizontal</b>
                                 </small>
 
-                                <input id="id-check-horizontal" type="checkbox" class="ace ace-switch ace-switch-6" />
+                                <input type="checkbox" class="ace ace-switch ace-switch-6" ng-click="isHorizontalList = !isHorizontalList" />
                                 <span class="lbl"></span>
                             </label>
                         </div>
@@ -240,9 +240,10 @@
 
                     <div class="widget-body">
                         <div class="widget-main">
-                            <code class="pull-right" id="dt-list-code">&lt;dl&gt;</code>
+                            <code class="pull-right" id="dt-list-code" ng-hide="isHorizontalList">&lt;dl&gt;</code>
+                            <code class="pull-right" id="dt-list-code" ng-hide="!isHorizontalList">&lt;dl class="dl-horizontal"&gt;</code>
                             
-                            <dl id="dt-list-1">
+                            <dl ng-class="{true: 'dl-horizontal'}[isHorizontalList]">
                                 <dt>Description lists</dt>
                                 <dd>A description list is perfect for defining terms.</dd>
                                 <dt>Euismod</dt>
@@ -272,11 +273,11 @@
                     </div>
                     <div class="widget-body">
                         <div class="widget-main">
-                            <pre class="prettyprint linenums">&lt;p class="muted"&gt;Fusce dapibus, tellus ac cursus commodo.&lt;/p&gt;
+                            <pre><code gnap-highlight>&lt;p class="muted"&gt;Fusce dapibus, tellus ac cursus commodo.&lt;/p&gt;
 &lt;p class="text-warning"&gt;Etiam porta sem malesuada.&lt;/p&gt;
 &lt;p class="text-error"&gt;Donec ullamcorper nulla non metus auctor fringilla.&lt;/p&gt;
 &lt;p class="text-info"&gt;Aenean eu leo quam.&lt;/p&gt;
-&lt;p class="text-success"&gt;Duis mollis.&lt;/p&gt;</pre>
+&lt;p class="text-success"&gt;Duis mollis.&lt;/p&gt;</code></pre>
                         </div>
                     </div>
                 </div>
