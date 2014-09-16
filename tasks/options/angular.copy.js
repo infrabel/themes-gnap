@@ -3,7 +3,7 @@
         expand: true,
         cwd: './raw/angular/',
         src: ['*.*', '**/*.*', '!*.zip'],
-        dest: './deploy/angular/angular'
+        dest: './deploy/angular/angular/'
     },
 
     raw_angular_chosen_to_deploy: {

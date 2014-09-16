@@ -3,12 +3,13 @@
  * @file locale.service.js
  */
 (function () {
-    angular.module('gnap')
-    	.factory('localeService', localeService);
+    angular
+        .module('gnap')
+        .factory('localeService', localeService);
 
-    localeService.$inject = ['$window', '$translate', 'languageNegotiationService', 'tmhDynamicLocale'];
+    localeService.$inject = ['$window', '$translate', 'languageNegotiationService', 'tmhDynamicLocale', 'localStorageService'];
 
-    function localeService($window, $translate, languageNegotiationService, tmhDynamicLocale) {
+    function localeService($window, $translate, languageNegotiationService, tmhDynamicLocale, localStorageService) {
 
         var locales = [
             { name: 'nl', title: 'Nederlands' },
@@ -45,24 +46,25 @@
 
         function setCurrentLocale(value) {
             // store locale
-            $window.localStorage.setItem("locale", value);
+            localStorageService.set('locale', value);
             $window.location.reload();
         };
 
         function getCurrentLocale() {
             // read locale from local storage or detect it
-            var locale = $window.localStorage.getItem("locale")
-                         || languageNegotiationService.getPreferredLanguage(locales.map(function (l) { return l.name; }));
+            var locale = localStorageService.get('locale')
+                || languageNegotiationService.getPreferredLanguage(locales.map(function (l) { return l.name; }));
+
             if (locale) {
-                return findLocale(function(l) { return l.name == locale; });
+                return findLocale(function (l) { return l.name == locale; });
             }
-            
+
             // return default
             return getDefaultLocale();
         };
 
         function getDefaultLocale() {
-            return findLocale(function(locale) { return locale.default; });
+            return findLocale(function (locale) { return locale.default; });
         };
 
         function findLocale(predicate) {

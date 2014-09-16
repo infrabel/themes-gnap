@@ -7,6 +7,8 @@
         .module('gnap')
         .factory('breadcrumbsService', breadcrumbsService);
 
+    breadcrumbsService.$inject = [];
+
     function breadcrumbsService() {
         var breadcrumbs = {
             crumbs: []

@@ -3,8 +3,9 @@
  * @file partial-loader-error-handler.service.js
  */
 (function () {
-    angular.module("gnap")
-        .factory("partialLoaderErrorHandler", partialLoaderErrorHandler);
+    angular
+        .module('gnap')
+        .factory('partialLoaderErrorHandler', partialLoaderErrorHandler);
 
     partialLoaderErrorHandler.$inject = ['$q'];
 
