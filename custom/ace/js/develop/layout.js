@@ -48,10 +48,12 @@ jQuery(function ($) {
     }
 
     // TODO: Test on mobile devices
-    $('.select2').select2({
-        allowClear: true,
-        shouldFocusInput: function () { return false; }
-    });
+    if (jQuery().select2) {
+        $('.select2').select2({
+            allowClear: true,
+            shouldFocusInput: function() { return false; }
+        });
+    }
 
     //menu-min bug - Only in safari - ('hover' transformed in 'tap' event)
     // - Cannot 'tap' on link. 
