@@ -5,7 +5,7 @@
                                      'ui.router',
                                      'ngSanitize',
                                      'ngBootbox',
-                                     'localytics.directives',
+                                     'ui.select2',
                                      'pascalprecht.translate',
                                      'tmh.dynamicLocale',
                                      'datatables']);

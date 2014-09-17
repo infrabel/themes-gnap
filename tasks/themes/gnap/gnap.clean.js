@@ -1,4 +1,8 @@
 ﻿module.exports = {
+    gnap_ace_select2: [
+        './build/ace/js/develop/select2.js'
+    ],
+
     gnap_deploy: [
         './deploy/*',
         '!./deploy/gnap/**',

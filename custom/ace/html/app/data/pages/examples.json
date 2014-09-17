@@ -1,6 +1,6 @@
 {
  "title" : "Examples",
  "no-header" : true,
- "styles" : ["gritter", "chosen", "datepicker", "timepicker", "daterangepicker"],
- "scripts" : ["gritter", "spin", "chosen", "datepicker", "timepicker", "daterangepicker", "inputlimiter", "maskedinput", "wysiwyg", "dataTables", "bootbox"] 
+ "styles" : ["gritter", "select2", "datepicker", "timepicker", "daterangepicker"],
+ "scripts" : ["gritter", "spin", "select2", "datepicker", "timepicker", "daterangepicker", "inputlimiter", "maskedinput", "wysiwyg", "dataTables", "bootbox"] 
 }
