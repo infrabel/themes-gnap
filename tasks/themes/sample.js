@@ -33,6 +33,9 @@
         grunt.config.set('nugetpack.sample.options.version', version);
 
         grunt.task.run(['mkdir:sample_nuget',
+                        'rename:sample_package',
+                        'compress:sample',
+                        'rename:sample_release:' + version,
                         'nugetpack:sample']);
     });
 };

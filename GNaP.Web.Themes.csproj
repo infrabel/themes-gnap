@@ -3023,15 +3023,19 @@
     <Content Include="tasks\themes\gnap-angular\gnap-angular.semver.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.mkdir.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.nugetpack.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.rename.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.compress.js" />
     <Content Include="tasks\themes\gnap\gnap.imagemin.js" />
     <Content Include="tasks\themes\gnap\gnap.clean.js" />
     <Content Include="tasks\themes\gnap\gnap.copy.js" />
     <Content Include="tasks\themes\gnap\gnap.mkdir.js" />
+    <Content Include="tasks\themes\gnap\gnap.compress.js" />
     <Content Include="tasks\themes\gnap\gnap.nugetpack.js" />
     <Content Include="tasks\themes\gnap\gnap.rename.js" />
     <Content Include="tasks\themes\gnap\gnap.semver.js" />
     <Content Include="tasks\themes\sample.js" />
     <Content Include="tasks\themes\gnap.js" />
+    <Content Include="tasks\themes\sample\sample.compress.js" />
     <Content Include="tasks\themes\sample\sample.clean.js" />
     <Content Include="tasks\themes\sample\sample.copy.js" />
     <Content Include="tasks\themes\sample\sample.mkdir.js" />
@@ -3875,6 +3879,7 @@
     <Folder Include="deploy\" />
     <Folder Include="nuget\packages\" />
     <Folder Include="raw\ace\mustache\app\views\pages\partials\_shared\" />
+    <Folder Include="releases\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,7 +4,7 @@
         dest: './nuget/packages/GNaP.Themes.Web.Sample',
 
         options: {
-            basePath: './deploy/sample'
+            basePath: './deploy/vendor/gnap-theme-sample/'
         }
     }
 };

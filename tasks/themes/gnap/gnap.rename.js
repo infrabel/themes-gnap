@@ -15,5 +15,23 @@
                 dest: './build/ace/js/jquery.min.js'
             }
         ]
+    },
+
+    gnap_package: {
+        files: [
+            {
+                src: './deploy/gnap/',
+                dest: './deploy/vendor/gnap-theme-gnap/'
+            }
+        ]
+    },
+
+    gnap_release: {
+        files: [
+            {
+                src: './releases/GNaP.Themes.Web.GNaP/gnap.zip',
+                dest: './releases/GNaP.Themes.Web.GNaP/GNaP.Themes.Web.GNaP.<%= grunt.task.current.args[0] %>.zip',
+            }
+        ]
     }
 };
