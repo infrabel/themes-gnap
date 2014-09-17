@@ -1,6 +1,8 @@
 ﻿module.exports = {
     gnap_ace_select2: [
-        './build/ace/js/develop/select2.js'
+        './build/ace/js/develop/select2.js',
+        './build/ace/js/develop/chosen.jquery.js',
+        './build/ace/css/develop/chosen.css'
     ],
 
     gnap_deploy: [
