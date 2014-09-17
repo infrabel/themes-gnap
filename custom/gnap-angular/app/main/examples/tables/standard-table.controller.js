@@ -6,7 +6,7 @@
     GnapStandardTableController.$inject = ['$scope', 'Domain'];
 
     function GnapStandardTableController($scope, Domain) {
-        Domain.query(function(domains) {
+        Domain.query(function (domains) {
             $scope.domains = domains;
         });
     };
