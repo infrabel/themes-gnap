@@ -37,6 +37,9 @@
         grunt.config.set('nugetpack.gnap-angular.options.version', version);
 
         grunt.task.run(['mkdir:gnap-angular_nuget',
+                        'rename:gnap-angular_package',
+                        'compress:gnap-angular',
+                        'rename:gnap-angular_release:' + version,
                         'nugetpack:gnap-angular']);
     });
 };
