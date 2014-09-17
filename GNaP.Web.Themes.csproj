@@ -219,7 +219,10 @@
     <Content Include="custom\gnap-angular\app\main\examples\sections\container.html" />
     <Content Include="custom\gnap-angular\app\main\examples\sections\gnap-collapse.controller.js" />
     <Content Include="custom\gnap-angular\app\main\examples\sections\tabs.html" />
+    <Content Include="custom\gnap-angular\app\main\examples\tables\domain.service.js" />
+    <Content Include="custom\gnap-angular\app\main\examples\tables\full-table.controller.js" />
     <Content Include="custom\gnap-angular\app\main\examples\tables\full-table.html" />
+    <Content Include="custom\gnap-angular\app\main\examples\tables\standard-table.controller.js" />
     <Content Include="custom\gnap-angular\app\main\examples\tables\standard-table.html" />
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.controller.js" />
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.html" />
@@ -3049,6 +3052,7 @@
     <None Include="custom\gnap-angular\app\main\about\translations.en.json" />
     <None Include="custom\gnap-angular\app\main\about\translations.fr.json" />
     <None Include="custom\gnap-angular\app\main\about\translations.nl.json" />
+    <None Include="custom\gnap-angular\app\main\examples\tables\domains.json" />
     <None Include="custom\gnap-angular\app\main\main.html" />
     <Content Include="custom\gnap-angular\app\main\main.controller.js" />
     <Content Include="custom\gnap-angular\app\main\main.state.js" />
