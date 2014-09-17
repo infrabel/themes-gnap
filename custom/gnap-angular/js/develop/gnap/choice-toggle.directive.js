@@ -16,7 +16,7 @@
                 choice: '=',
                 lang: '@'
             },
-            template: '<label><input name="switch-field-2" class="ace ace-switch" type="checkbox" ng-model="choice" ng-change="toggle()" /><span class="lbl"></span></label>',
+            template: '<label><input class="ace ace-switch" type="checkbox" ng-model="choice" /><span class="lbl"></span></label>',
             link: link
         };
 
@@ -36,10 +36,6 @@
             } else {
                 inputNode.removeAttr('checked');
             }
-
-            scope.toggle = function () {
-                scope.choice = !scope.choice;
-            };
         };
     }
 })();
