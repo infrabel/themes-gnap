@@ -60,5 +60,12 @@
         cwd: './raw/angular-dynamic-locale/',
         src: ['*.*', '**/*.*', '!*.zip'],
         dest: './deploy/angular/angular-dynamic-locale/'
+    },
+
+    raw_angular_ui_select2_to_deploy: {
+        expand: true,
+        cwd: './raw/ui-select2/src/',
+        src: ['*.*', '**/*.*', '!*.zip'],
+        dest: './deploy/angular/ui-select2/'
     }
 };

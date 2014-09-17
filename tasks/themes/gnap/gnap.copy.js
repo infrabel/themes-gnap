@@ -34,11 +34,32 @@
         dest: './build/ace/js/develop/'
     },
 
+    gnap_select2js_to_build_ace: {
+        expand: true,
+        cwd: './deploy/select2/',
+        src: ['*.js', '!*.min.js', '!*.min.map'],
+        dest: './build/ace/js/develop/select2/'
+    },
+
+    gnap_select2css_to_build_ace: {
+        expand: true,
+        cwd: './deploy/select2/',
+        src: ['*.css', '**/*.css'],
+        dest: './build/ace/css/develop/'
+    },
+
+    gnap_select2images_to_build_ace: {
+        expand: true,
+        cwd: './deploy/select2/',
+        src: ['*.gif', '*.png', '**/*.gif', '**/*.png'],
+        dest: './build/ace/images/'
+    },
+
     gnap_highlightjs_to_build_ace: {
         expand: true,
         cwd: './deploy/highlight/',
         src: ['*.js', '!*.min.js', '!*.min.map'],
-        dest: './build/ace/js/develop/'
+        dest: './build/ace/js/develop/highlight/'
     },
 
     gnap_highlightcss_to_build_ace: {

@@ -1,1 +1,23 @@
-<pre class="example"><code gnap-highlight>Todo</code></pre>
+<div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-multiple-dropdown&quot;&gt;
+    &lt;select ui-select2 ng-model=&quot;mydropdown&quot; multiple=&quot;multiple&quot; class=&quot;col-xs-10 col-sm-5&quot;&gt;
+        &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;                                   
+        &lt;option value=&quot;AK&quot;&gt;Alqska&lt;/option&gt;   
+        ...
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-multiple-dropdown&#39;, GnapMultipleDropdownController);
+
+    function GnapMultipleDropdownController() {
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="angular-select2"></a>
