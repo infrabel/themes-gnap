@@ -4,7 +4,7 @@
         dest: './nuget/packages/GNaP.Themes.Web.GNaP.Angular',
 
         options: {
-            basePath: './deploy/gnap-angular'
+            basePath: './deploy/vendor/gnap-theme-gnap-angular/'
         }
     }
 };

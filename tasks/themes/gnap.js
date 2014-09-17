@@ -43,6 +43,9 @@
         grunt.config.set('nugetpack.gnap.options.version', version);
 
         grunt.task.run(['mkdir:gnap_nuget',
+                        'rename:gnap_package',
+                        'compress:gnap',
+                        'rename:gnap_release:' + version,
                         'nugetpack:gnap']);
     });
 };
