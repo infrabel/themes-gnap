@@ -6,19 +6,19 @@
     GnapFullTableController.$inject = ['$scope', 'Domain'];
 
     function GnapFullTableController($scope, Domain) {
-        Domain.query(function(domains) {
+        Domain.query(function (domains) {
             $scope.domains = domains;
         });
 
-        $scope.view = function(domain) {
+        $scope.view = function (domain) {
             alert('Going to the view \'' + domain.domain + '\' page ...');
         };
 
-        $scope.edit = function(domain) {
+        $scope.edit = function (domain) {
             alert('Going to the edit \'' + domain.domain + '\' page ...');
         };
 
-        $scope.delete = function(domain) {
+        $scope.delete = function (domain) {
             alert('Logic to delete \'' + domain.domain + '\' should be executed now ...');
         }
     };
