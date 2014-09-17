@@ -4,6 +4,7 @@
                                      'ui.bootstrap',
                                      'ui.router',
                                      'ngSanitize',
+                                     'ngResource',
                                      'ngBootbox',
                                      'ui.select2',
                                      'pascalprecht.translate',
