@@ -5,7 +5,8 @@
         .config(urlRouterConfiguration)
         .config(translationConfiguration)
         .config(localeConfiguration)
-        .run(localeInitalization);
+        .run(localeInitalization)
+        .run(select2Initialization);
 
     var defaultPage = '/about';
 
@@ -42,6 +43,13 @@
 
     function localeConfiguration(tmhDynamicLocaleProvider) {
         tmhDynamicLocaleProvider.localeLocationPattern('js/angular/i18n/angular-locale_{{locale}}.min.js');
+    };
+
+    select2Initialization.$inject = ['uiSelect2Config'];
+
+    function select2Initialization(uiSelect2Config) {
+        uiSelect2Config.allowClear = true;
+        uiSelect2Config.shouldFocusInput = function () { return false; }
     };
 
     localeInitalization.$inject = ['localeService'];

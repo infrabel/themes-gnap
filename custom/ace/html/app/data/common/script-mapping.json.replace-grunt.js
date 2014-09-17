@@ -5,6 +5,10 @@
         replacements:
         [
             {
+                from: '"select2.min.js"',
+                to: '"select2/select2.min.js"'
+            },
+            {
                 from: '.min.js',
                 to: '.js'
             },
