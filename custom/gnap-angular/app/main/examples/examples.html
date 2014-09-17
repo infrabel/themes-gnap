@@ -728,7 +728,7 @@
                                 <a class="green" ng-click="edit(domain)">
                                     <i class="icon-pencil bigger-130"></i>
                                 </a>
-                                <a class="red confirm-delete" ng-bootbox-confirm="Can I delete it ?" ng-bootbox-confirm-action="delete(domain)">
+                                <a class="red" ng-bootbox-confirm="Can I delete it ?" ng-bootbox-confirm-action="delete(domain)">
                                     <i class="icon-trash bigger-130"></i>
                                 </a>
                             </div>
@@ -739,22 +739,22 @@
                                     </button>
                                     <ul class="dropdown-menu dropdown-only-icon pull-right dropdown-caret dropdown-close">
                                         <li>
-                                            <a class="tooltip-info" data-rel="tooltip" title="View" ng-click="view(domain)">
+                                            <a tooltip="View" ng-click="view(domain)">
                                                 <span>
                                                     <i class="icon-zoom-in bigger-120"></i>
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="tooltip-success" data-rel="tooltip" title="Edit" ng-click="edit(domain)">
+                                            <a tooltip="Edit" ng-click="edit(domain)">
                                                 <span>
                                                     <i class="icon-edit bigger-120"></i>
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="tooltip-error" data-rel="tooltip" title="Delete" ng-bootbox-confirm="Can I delete it ?" ng-bootbox-confirm-action="delete(domain)">
-                                                <span>
+                                            <a ng-bootbox-confirm="Can I delete it ?" ng-bootbox-confirm-action="delete(domain)">
+                                                <span tooltip="Delete">
                                                     <i class="icon-trash bigger-120"></i>
                                                 </span>
                                             </a>
