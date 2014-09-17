@@ -1,9 +1,9 @@
-jQuery(function($) {
+jQuery(function ($) {
     var isIos = (/iP(hone|od|ad)/.test(window.navigator.userAgent));
     var isAndroid = /Android/i.test(window.navigator.userAgent);
 
     //reproduces the method in chosen.js. If chosen changes, change this too.
-    var browser_is_supported = function() {
+    var browser_is_supported = function () {
         if (window.navigator.appName === 'Microsoft Internet Explorer') {
             return document.documentMode >= 8;
         }
@@ -20,14 +20,14 @@ jQuery(function($) {
 
         return true;
     };
-    
+
     //input mask does not work on Android devices
     if (!isAndroid) {
         if (jQuery().mask) {
             $.mask.definitions['~'] = '[+-]';
             $('.input-mask-time').mask('99:99');
             $('.input-mask-date').mask('99-99-9999');
-            $('.input-mask-product').mask('a*-999-a999', { placeholder: ' ', completed: function() { alert('You typed the following: ' + this.val()); } });
+            $('.input-mask-product').mask('a*-999-a999', { placeholder: ' ', completed: function () { alert('You typed the following: ' + this.val()); } });
         }
     }
 
@@ -47,6 +47,12 @@ jQuery(function($) {
         $('.chosen-container.chosen-container-multi').addClass('col-xs-10 col-sm-5');
     }
 
+    // TODO: Test on mobile devices
+    $('.select2').select2({
+        allowClear: true,
+        shouldFocusInput: function () { return false; }
+    });
+
     //menu-min bug - Only in safari - ('hover' transformed in 'tap' event)
     // - Cannot 'tap' on link. 
     //      Cannot solve the problem because behaviour of safari navigator.
@@ -60,12 +66,12 @@ jQuery(function($) {
 
     //Used for tooltip
     if (jQuery().tooltip) {
-        $('[data-rel=tooltip]').tooltip({container:'body'});
+        $('[data-rel=tooltip]').tooltip({ container: 'body' });
     }
 
     //Date / time picker 
     if (jQuery().datepicker) {
-        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function() {
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
             $(this).prev().focus();
         });
     }
@@ -77,7 +83,7 @@ jQuery(function($) {
             format: 'DD-MM-YYYY',
             startDate: '' + today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear(),
             endDate: '' + (today.getDate() + 5) + '-' + (today.getMonth() + 1) + '-' + today.getFullYear(),
-        }).prev().on(ace.click_event, function() {
+        }).prev().on(ace.click_event, function () {
             $(this).next().focus();
         });
     }
@@ -96,7 +102,7 @@ jQuery(function($) {
     ////////////////////////////////////////////////////////////
 
     //find hovers and add click event
-    $('.sidebar .nav-list').on('click', 'li', function() {
+    $('.sidebar .nav-list').on('click', 'li', function () {
         var menumin = $(this).closest('.menu-min');
         if (menumin.length === 0)
             return;

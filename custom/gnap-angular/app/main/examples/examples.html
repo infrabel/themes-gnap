@@ -1192,10 +1192,10 @@
             </div>
             @@include('form-controls/input-with-icon.html')
 
-            <div class="form-group">
+            <div class="form-group" ng-controller="gnap-dropdown">
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-select-3">Dropdown</label>
                 <div class="col-sm-9">
-                    <select chosen class="width-80 col-xs-10 col-sm-5" id="form-field-select-3" data-placeholder="Choose a Country...">
+                    <select ui-select2 ng-model="mydropdown" class="col-xs-10 col-sm-5" id="form-field-select-3">
                         <option value="">&nbsp;</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -1252,11 +1252,10 @@
             </div>
             @@include('form-controls/dropdown.html')
 
-            <div class="form-group">
+            <div class="form-group" ng-controller="gnap-multiple-dropdown">
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-select-4">Multiple</label>
                 <div class="col-sm-9">
-                    <select multiple="multiple" class="width-80 chosen-select" id="form-field-select-4" data-placeholder="Choose a Country...">
-                        <option value="">&nbsp;</option>
+                    <select ui-select2 ng-model="mydropdown" multiple="multiple" class="col-xs-10 col-sm-5" id="form-field-select-4">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>

@@ -1,11 +1,17 @@
 ﻿module.exports = function (grunt) {
     grunt.registerTask('build-gnap', 'Builds GNaP theme', function () {
         grunt.task.run(['build-jquery',
+                        'build-select2',
                         'build-highlight',
                         'prepare-build-ace',
                         'rename:gnap_ace_less',
                         'customize-ace',
                         'copy:gnap_jquery_to_build_ace',
+                        'copy:gnap_select2js_to_build_ace',
+                        'copy:gnap_select2css_to_build_ace',
+                        'copy:gnap_select2images_to_build_ace',
+                        'clean:gnap_ace_select2',
+                        'task-wildcard-target:replace:select2',
                         'copy:gnap_highlightjs_to_build_ace',
                         'copy:gnap_highlightcss_to_build_ace',
                         'copy:gnap_custom_css_to_build_ace',

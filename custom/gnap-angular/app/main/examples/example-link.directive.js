@@ -34,6 +34,11 @@
                             url = 'https://github.com/eriktufvesson/ngbootbox';
                             break;
                         }
+                    case 'angular-select2':
+                        {
+                            url = 'https://github.com/angular-ui/ui-select2';
+                            break;
+                        }
                     case 'gnap-theme':
                         {
                             url = 'https://github.com/infrabel/GNaP.Web.Themes';
