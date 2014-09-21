@@ -1,25 +1,25 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-custom-dialog&quot;&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-custom-dialog as vm&quot;&gt;
     &lt;script type=&quot;text/ng-template&quot; id=&quot;myModalContent.html&quot;&gt;
         &lt;div class=&quot;modal-header&quot;&gt;
             &lt;h3 class=&quot;modal-title&quot;&gt;I am a modal!&lt;/h3&gt;
         &lt;/div&gt;
         &lt;div class=&quot;modal-body&quot;&gt;
             &lt;ul&gt;
-                &lt;li ng-repeat=&quot;item in items&quot;&gt;
-                    &lt;a ng-click=&quot;selected.item = item&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
+                &lt;li ng-repeat=&quot;item in vm.items&quot;&gt;
+                    &lt;a ng-click=&quot;vm.selected.item = item&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
                 &lt;/li&gt;
             &lt;/ul&gt;
-           Selected: &lt;b&gt;&#123;&#123; selected.item &#125;&#125;&lt;/b&gt;
+           Selected: &lt;b&gt;&#123;&#123; vm.selected.item &#125;&#125;&lt;/b&gt;
         &lt;/div&gt;
         &lt;div class=&quot;modal-footer&quot;&gt;
-            &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;ok()&quot;&gt;OK&lt;/button&gt;
-            &lt;button class=&quot;btn btn-warning&quot; ng-click=&quot;cancel()&quot;&gt;Cancel&lt;/button&gt;
+            &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.ok()&quot;&gt;OK&lt;/button&gt;
+            &lt;button class=&quot;btn btn-warning&quot; ng-click=&quot;vm.cancel()&quot;&gt;Cancel&lt;/button&gt;
         &lt;/div&gt;
     &lt;/script&gt;
 
-    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;open()&quot;&gt;click Me!&lt;/button&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.open()&quot;&gt;click Me!&lt;/button&gt;
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
@@ -29,19 +29,21 @@
         .controller(&#39;gnap-custom-dialog&#39;, GnapCustomDialogController)
         .controller(&#39;gnap-custom-dialog-instance&#39;, GnapCustomDialogInstanceController);
 
-    GnapCustomDialogController.$inject = [&#39;$scope&#39;, &#39;$modal&#39;];
-    GnapCustomDialogInstanceController.$inject = [&#39;$scope&#39;, &#39;$modalInstance&#39;, &#39;items&#39;];
+    GnapCustomDialogController.$inject = [&#39;$modal&#39;];
+    GnapCustomDialogInstanceController.$inject = [&#39;$modalInstance&#39;, &#39;items&#39;];
 
-    function GnapCustomDialogController($scope, $modal) {
-        $scope.items = [&#39;item1&#39;, &#39;item2&#39;, &#39;item3&#39;];
+    function GnapCustomDialogController($modal) {
+        var vm = this;
 
-        $scope.open = function (size) {
+        vm.items = [&#39;item1&#39;, &#39;item2&#39;, &#39;item3&#39;];
+
+        vm.open = function (size) {
             var modalInstance = $modal.open({
                 templateUrl: &#39;myModalContent.html&#39;,
-                controller: &#39;gnap-custom-dialog-instance&#39;,
+                controller: &#39;gnap-custom-dialog-instance as vm&#39;,
                 resolve: {
                     items: function () {
-                        return $scope.items;
+                        return vm.items;
                     }
                 }
             });
@@ -54,18 +56,20 @@
         };
     };
 
-    function GnapCustomDialogInstanceController($scope, $modalInstance, items) {
-        $scope.items = items;
+    function GnapCustomDialogInstanceController($modalInstance, items) {
+        var vm = this;
 
-        $scope.selected = {
-            item: $scope.items[0]
+        vm.items = items;
+
+        vm.selected = {
+            item: vm.items[0]
         };
 
-        $scope.ok = function () {
-            $modalInstance.close($scope.selected.item);
+        vm.ok = function () {
+            $modalInstance.close(vm.selected.item);
         };
 
-        $scope.cancel = function () {
+        vm.cancel = function () {
             $modalInstance.dismiss(&#39;cancel&#39;);
         };
     };

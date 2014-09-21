@@ -1,8 +1,8 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-buttons&quot;&gt;
-    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;primary()&quot;&gt;Primary&lt;/button&gt;
-    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;primary()&quot;&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-buttons as vm&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.primary()&quot;&gt;Primary&lt;/button&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.primary()&quot;&gt;
         &lt;i class=&quot;icon-cog&quot;&gt;&lt;/i&gt;
         Primary
     &lt;/button&gt;
@@ -14,10 +14,12 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-buttons&#39;, GnapButtonsController);
 
-    GnapButtonsController.$inject = [&#39;$scope&#39;];
+    GnapButtonsController.$inject = [];
 
-    function GnapButtonsController($scope) {
-        $scope.primary = function () {
+    function GnapButtonsController() {
+        var vm = this;
+
+        vm.primary = function () {
             alert(&#39;You clicked a primary button&#39;);
         };
     };

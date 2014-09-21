@@ -8,7 +8,7 @@
         state: {
             url: '/error-500',
             templateUrl: 'app/main/error-500/error-500.html',
-            controller: 'Error500Controller'
+            controller: 'Error500Controller as vm'
         },
         breadcrumb: {
             title: 'Error 500'

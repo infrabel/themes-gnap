@@ -1,9 +1,9 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code gnap-highlight>&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-time-picker&quot;&gt;
+<pre><code gnap-highlight>&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-time-picker as vm&quot;&gt;
     &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Time Picker&lt;/label&gt;
     &lt;div class=&quot;col-sm-9&quot;&gt;
-        &lt;span gnap-timepicker time=&quot;sometime&quot; icon-position=&quot;right&quot;&gt;&lt;/span&gt;
+        &lt;span gnap-timepicker time=&quot;vm.sometime&quot; icon-position=&quot;right&quot;&gt;&lt;/span&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
   </div>
@@ -13,10 +13,12 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-time-picker&#39;, GnapTimepickerController);
 
-    GnapTimepickerController.$inject = [&#39;$scope&#39;];
+    GnapTimepickerController.$inject = [];
 
-    function GnapTimepickerController($scope) {
-        $scope.sometime = new Date(2014, 1, 1, 10, 30, 0);
+    function GnapTimepickerController() {
+        var vm = this;
+
+        vm.sometime = new Date(2014, 1, 1, 10, 30, 0);
     };
 })();</code></pre>
   </div>

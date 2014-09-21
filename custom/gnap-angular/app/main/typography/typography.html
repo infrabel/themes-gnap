@@ -232,7 +232,7 @@
                                     <b>Horizontal</b>
                                 </small>
 
-                                <input type="checkbox" class="ace ace-switch ace-switch-6" ng-click="isHorizontalList = !isHorizontalList" />
+                                <input type="checkbox" class="ace ace-switch ace-switch-6" ng-click="vm.isHorizontalList = !vm.isHorizontalList" />
                                 <span class="lbl"></span>
                             </label>
                         </div>
@@ -240,10 +240,10 @@
 
                     <div class="widget-body">
                         <div class="widget-main">
-                            <code class="pull-right" id="dt-list-code" ng-hide="isHorizontalList">&lt;dl&gt;</code>
-                            <code class="pull-right" id="dt-list-code" ng-hide="!isHorizontalList">&lt;dl class="dl-horizontal"&gt;</code>
+                            <code class="pull-right" id="dt-list-code" ng-hide="vm.isHorizontalList">&lt;dl&gt;</code>
+                            <code class="pull-right" id="dt-list-code" ng-hide="!vm.isHorizontalList">&lt;dl class="dl-horizontal"&gt;</code>
                             
-                            <dl ng-class="{true: 'dl-horizontal'}[isHorizontalList]">
+                            <dl ng-class="{true: 'dl-horizontal'}[vm.isHorizontalList]">
                                 <dt>Description lists</dt>
                                 <dd>A description list is perfect for defining terms.</dd>
                                 <dt>Euismod</dt>

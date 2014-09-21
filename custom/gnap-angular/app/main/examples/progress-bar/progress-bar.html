@@ -1,12 +1,12 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane in active">
-<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-progressbar&quot;&gt;                        
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-progressbar as vm&quot;&gt;                        
     &lt;div class=&quot;form-group&quot;&gt;
         &lt;label class=&quot;control-label&quot;&gt;Progress&lt;/label&gt;
-        &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;progress&quot;&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;vm.progress&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div progressbar class=&quot;progress-small progress-striped active&quot; value=&quot;progress&quot;&gt;&lt;/div&gt;
-    &lt;div progressbar class=&quot;progress-small progress-striped&quot; value=&quot;workLeft&quot;&gt;&lt;/div&gt;
+    &lt;div progressbar class=&quot;progress-small progress-striped active&quot; value=&quot;vm.progress&quot;&gt;&lt;/div&gt;
+    &lt;div progressbar class=&quot;progress-small progress-striped&quot; value=&quot;vm.workLeft&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
@@ -18,8 +18,11 @@
     GnapProgressbarController.$inject = [&#39;$scope&#39;];
 
     function GnapProgressbarController($scope) {
-        $scope.progress = 40;
-        $scope.$watch(&#39;progress&#39;, function (progress) { $scope.workLeft = 100 - progress; });
+        var vm = this;
+
+        vm.progress = 40;
+
+        $scope.$watch(&#39;vm.progress&#39;, function (progress) { vm.workLeft = 100 - progress; });
     };
 })();</code></pre>
   </div>

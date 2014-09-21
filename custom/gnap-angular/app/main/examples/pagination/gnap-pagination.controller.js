@@ -3,10 +3,12 @@
         .module('gnap-example-app')
         .controller('gnap-pagination', GnapPaginationController);
 
-    GnapPaginationController.$inject = ['$scope'];
+    GnapPaginationController.$inject = [];
 
-    function GnapPaginationController($scope) {
-        $scope.totalItems = 164;
-        $scope.currentPage = 4;
+    function GnapPaginationController() {
+        var vm = this;
+
+        vm.totalItems = 164;
+        vm.currentPage = 4;
     };
 })();
