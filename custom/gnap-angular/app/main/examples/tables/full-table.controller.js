@@ -3,22 +3,24 @@
         .module('gnap-example-app')
         .controller('gnap-full-table', GnapFullTableController);
 
-    GnapFullTableController.$inject = ['$scope', 'Domain'];
+    GnapFullTableController.$inject = ['Domain'];
 
-    function GnapFullTableController($scope, Domain) {
+    function GnapFullTableController(Domain) {
+        var vm = this;
+
         Domain.query(function (domains) {
-            $scope.domains = domains;
+            vm.domains = domains;
         });
 
-        $scope.view = function (domain) {
+        vm.view = function (domain) {
             alert('Going to the view \'' + domain.domain + '\' page ...');
         };
 
-        $scope.edit = function (domain) {
+        vm.edit = function (domain) {
             alert('Going to the edit \'' + domain.domain + '\' page ...');
         };
 
-        $scope.delete = function (domain) {
+        vm.delete = function (domain) {
             alert('Logic to delete \'' + domain.domain + '\' should be executed now ...');
         }
     };

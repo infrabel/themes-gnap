@@ -3,9 +3,11 @@
         .module('gnap-example-app')
         .controller('gnap-time-picker', GnapTimepickerController);
 
-    GnapTimepickerController.$inject = ['$scope'];
+    GnapTimepickerController.$inject = [];
 
-    function GnapTimepickerController($scope) {
-        $scope.sometime = new Date(2014, 1, 1, 10, 30, 0);
+    function GnapTimepickerController() {
+        var vm = this;
+
+        vm.sometime = new Date(2014, 1, 1, 10, 30, 0);
     };
 })();

@@ -3,11 +3,17 @@
         .module('gnap-example-app')
         .controller('gnap-standard-table', GnapStandardTableController);
 
-    GnapStandardTableController.$inject = ['$scope', 'Domain'];
+    GnapStandardTableController.$inject = ['Domain'];
 
-    function GnapStandardTableController($scope, Domain) {
+    function GnapStandardTableController(Domain) {
+        var vm = this;
+
         Domain.query(function (domains) {
-            $scope.domains = domains;
+            vm.domains = domains;
         });
+
+        vm.view = function (domain) {
+            alert('Going to the view \'' + domain.domain + '\' page ...');
+        };
     };
 })();

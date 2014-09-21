@@ -3,11 +3,13 @@
         .module('gnap-example-app')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['$scope'];
+    MainController.$inject = [];
 
-    function MainController($scope) {
-        $scope.search = function () {
-            alert('Searching for ' + $scope.keywords);
+    function MainController() {
+        var vm = this;
+
+        vm.search = function () {
+            alert('Searching for ' + vm.keywords);
         }
     };
 })();
