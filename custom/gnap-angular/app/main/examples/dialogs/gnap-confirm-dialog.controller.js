@@ -3,14 +3,16 @@
         .module('gnap-example-app')
         .controller('gnap-confirm-dialog', GnapConfirmDialogController);
 
-    GnapConfirmDialogController.$inject = ['$scope'];
+    GnapConfirmDialogController.$inject = [];
 
-    function GnapConfirmDialogController($scope) {
-        $scope.confirm = function () {
+    function GnapConfirmDialogController() {
+        var vm = this;
+
+        vm.confirm = function () {
             alert('You were sure!');
         };
 
-        $scope.cancel = function () {
+        vm.cancel = function () {
             alert('You weren\'t sure!');
         };
     };

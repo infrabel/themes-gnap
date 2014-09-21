@@ -1,10 +1,10 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane in active">
-<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-stacked-progressbar&quot;&gt;
-    &lt;input ng-repeat=&quot;bar in collection track by $index&quot; type=&quot;text&quot; ng-model=&quot;bar.value&quot;&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-stacked-progressbar as vm&quot;&gt;
+    &lt;input ng-repeat=&quot;bar in vm.collection track by $index&quot; type=&quot;text&quot; ng-model=&quot;bar.value&quot;&gt;
     &lt;hr&gt;
     &lt;div progress class=&quot;progress-small progress-striped active&quot;&gt;
-        &lt;div bar ng-repeat=&quot;bar in collection track by $index&quot; value=&quot;bar.value&quot; type=&quot;&#123;&#123;bar.type&#125;&#125;&quot;&gt;
+        &lt;div bar ng-repeat=&quot;bar in vm.collection track by $index&quot; value=&quot;bar.value&quot; type=&quot;&#123;&#123;bar.type&#125;&#125;&quot;&gt;
             &lt;span&gt;&#123;&#123;bar.value&#125;&#125;%&lt;/span&gt;
         &lt;/div&gt;
     &lt;/div&gt;
@@ -16,22 +16,24 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-stacked-progressbar&#39;, GnapStackedProgressbarController);
 
-    GnapStackedProgressbarController.$inject = [&#39;$scope&#39;];
+    GnapStackedProgressbarController.$inject = [];
 
-    function GnapStackedProgressbarController($scope) {
-        $scope.collection = [];
+    function GnapStackedProgressbarController() {
+        var vm = this;
 
-        $scope.collection.push({
+        vm.collection = [];
+
+        vm.collection.push({
             value: 20,
             type: &#39;success&#39;
         });
 
-        $scope.collection.push({
+        vm.collection.push({
             value: 15,
             type: &#39;warning&#39;
         });
 
-        $scope.collection.push({
+        vm.collection.push({
             value: 25,
             type: &#39;error&#39;
         });

@@ -8,7 +8,7 @@
         state: {
             url: '/about',
             templateUrl: 'app/main/about/about.html',
-            controller: 'AboutController'
+            controller: 'AboutController as vm'
         },
         breadcrumb: {
             titleTranslationId: 'about'

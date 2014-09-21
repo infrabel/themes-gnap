@@ -1,10 +1,10 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code gnap-highlight>&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-date-picker&quot;&gt;
+<pre><code gnap-highlight>&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-date-picker as vm&quot;&gt;
     &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Date Picker&lt;/label&gt;
     &lt;div class=&quot;col-sm-9&quot;&gt;
         &lt;div class=&quot;input-group col-xs-10 col-sm-5 no-padding-left no-padding-right&quot;&gt;
-            &lt;span gnap-datepicker date=&quot;date&quot; icon-position=&quot;right&quot;&gt;&lt;/span&gt;
+            &lt;span gnap-datepicker date=&quot;vm.date&quot; icon-position=&quot;right&quot;&gt;&lt;/span&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -15,10 +15,12 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-date-picker&#39;, GnapDatepickerController);
 
-    GnapDatepickerController.$inject = [&#39;$scope&#39;];
+    GnapDatepickerController.$inject = [];
 
-    function GnapDatepickerController($scope) {
-        $scope.date = new Date();
+    function GnapDatepickerController() {
+        var vm = this;
+
+        vm.date = new Date();
     };
 })();</code></pre>
   </div>

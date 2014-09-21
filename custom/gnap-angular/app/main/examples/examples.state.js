@@ -8,7 +8,7 @@
         state: {
             url: '/examples',
             templateUrl: 'app/main/examples/examples.html',
-            controller: 'ExamplesController'
+            controller: 'ExamplesController as vm'
         },
         breadcrumb: {
             title: 'Examples'

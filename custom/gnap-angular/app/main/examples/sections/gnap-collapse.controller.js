@@ -3,9 +3,11 @@
         .module('gnap-example-app')
         .controller('gnap-collapse', GnapCollapseController);
 
-    GnapCollapseController.$inject = ['$scope'];
+    GnapCollapseController.$inject = [];
 
-    function GnapCollapseController($scope) {
-        $scope.isCollapsed = false;
+    function GnapCollapseController() {
+        var vm = this;
+
+        vm.isCollapsed = false;
     };
 })();

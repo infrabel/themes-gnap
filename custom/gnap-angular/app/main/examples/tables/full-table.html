@@ -3,7 +3,7 @@
 <pre><code gnap-highlight>&lt;div class=&quot;table-header&quot;&gt;
     A Table Title
 &lt;/div&gt;
-&lt;div class=&quot;table-responsive&quot; ng-controller=&quot;gnap-full-table&quot;&gt;
+&lt;div class=&quot;table-responsive&quot; ng-controller=&quot;gnap-full-table as vm&quot;&gt;
     &lt;table datatable class=&quot;table table-striped table-bordered table-hover&quot;&gt;
         &lt;thead&gt;
             &lt;tr&gt;
@@ -25,7 +25,7 @@
             &lt;/tr&gt;
         &lt;/thead&gt;
         &lt;tbody&gt;
-            &lt;tr ng-repeat=&quot;domain in domains&quot;&gt;
+            &lt;tr ng-repeat=&quot;domain in vm.domains&quot;&gt;
                 &lt;td class=&quot;center&quot;&gt;
                     &lt;label&gt;
                         &lt;input type=&quot;checkbox&quot; class=&quot;ace&quot; /&gt;
@@ -33,7 +33,7 @@
                     &lt;/label&gt;
                 &lt;/td&gt;
                 &lt;td&gt;
-                    &lt;a ng-click=&quot;view(domain)&quot;&gt;{{ domain.domain }}&lt;/a&gt;
+                    &lt;a ng-click=&quot;vm.view(domain)&quot;&gt;{{ domain.domain }}&lt;/a&gt;
                 &lt;/td&gt;
                 &lt;td&gt;{{ domain.price }}&lt;/td&gt;
                 &lt;td class=&quot;hidden-480&quot;&gt;{{ domain.clicks }}&lt;/td&gt;
@@ -41,13 +41,13 @@
                 &lt;td class=&quot;hidden-480&quot;&gt;{{ domain.status }}&lt;/td&gt;
                 &lt;td&gt;
                     &lt;div class=&quot;visible-md visible-lg hidden-sm hidden-xs action-buttons&quot;&gt;
-                        &lt;a class=&quot;blue&quot; ng-click=&quot;view(domain)&quot;&gt;
+                        &lt;a class=&quot;blue&quot; ng-click=&quot;vm.view(domain)&quot;&gt;
                             &lt;i class=&quot;icon-zoom-in bigger-130&quot;&gt;&lt;/i&gt;
                         &lt;/a&gt;
-                        &lt;a class=&quot;green&quot; ng-click=&quot;edit(domain)&quot;&gt;
+                        &lt;a class=&quot;green&quot; ng-click=&quot;vm.edit(domain)&quot;&gt;
                             &lt;i class=&quot;icon-pencil bigger-130&quot;&gt;&lt;/i&gt;
                         &lt;/a&gt;
-                        &lt;a class=&quot;red&quot; ng-bootbox-confirm=&quot;Can I delete it ?&quot; ng-bootbox-confirm-action=&quot;delete(domain)&quot;&gt;
+                        &lt;a class=&quot;red&quot; ng-bootbox-confirm=&quot;Can I delete it ?&quot; ng-bootbox-confirm-action=&quot;vm.delete(domain)&quot;&gt;
                             &lt;i class=&quot;icon-trash bigger-130&quot;&gt;&lt;/i&gt;
                         &lt;/a&gt;
                     &lt;/div&gt;
@@ -58,21 +58,21 @@
                             &lt;/button&gt;
                             &lt;ul class=&quot;dropdown-menu dropdown-only-icon pull-right dropdown-caret dropdown-close&quot;&gt;
                                 &lt;li&gt;
-                                    &lt;a tooltip=&quot;View&quot; ng-click=&quot;view(domain)&quot;&gt;
+                                    &lt;a tooltip=&quot;View&quot; ng-click=&quot;vm.view(domain)&quot;&gt;
                                         &lt;span&gt;
                                             &lt;i class=&quot;icon-zoom-in bigger-120&quot;&gt;&lt;/i&gt;
                                         &lt;/span&gt;
                                     &lt;/a&gt;
                                 &lt;/li&gt;
                                 &lt;li&gt;
-                                    &lt;a tooltip=&quot;Edit&quot; ng-click=&quot;edit(domain)&quot;&gt;
+                                    &lt;a tooltip=&quot;Edit&quot; ng-click=&quot;vm.edit(domain)&quot;&gt;
                                         &lt;span&gt;
                                             &lt;i class=&quot;icon-edit bigger-120&quot;&gt;&lt;/i&gt;
                                         &lt;/span&gt;
                                     &lt;/a&gt;
                                 &lt;/li&gt;
                                 &lt;li&gt;
-                                    &lt;a ng-bootbox-confirm=&quot;Can I delete it ?&quot; ng-bootbox-confirm-action=&quot;delete(domain)&quot;&gt;
+                                    &lt;a ng-bootbox-confirm=&quot;Can I delete it ?&quot; ng-bootbox-confirm-action=&quot;vm.delete(domain)&quot;&gt;
                                         &lt;span tooltip=&quot;Delete&quot;&gt;
                                             &lt;i class=&quot;icon-trash bigger-120&quot;&gt;&lt;/i&gt;
                                         &lt;/span&gt;
@@ -93,22 +93,24 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-full-table&#39;, GnapFullTableController);
 
-    GnapFullTableController.$inject = [&#39;$scope&#39;, &#39;Domain&#39;];
+    GnapFullTableController.$inject = [&#39;Domain&#39;];
 
-    function GnapFullTableController($scope, Domain) {
+    function GnapFullTableController(Domain) {
+        var vm = this;
+
         Domain.query(function(domains) {
-            $scope.domains = domains;
+            vm.domains = domains;
         });
 
-        $scope.view = function(domain) {
+        vm.view = function(domain) {
             alert(&#39;Going to the view \&#39;&#39; + domain.domain + &#39;\&#39; page ...&#39;);
         };
 
-        $scope.edit = function(domain) {
+        vm.edit = function(domain) {
             alert(&#39;Going to the edit \&#39;&#39; + domain.domain + &#39;\&#39; page ...&#39;);
         };
 
-        $scope.delete = function(domain) {
+        vm.delete = function(domain) {
             alert(&#39;Logic to delete \&#39;&#39; + domain.domain + &#39;\&#39; should be executed now ...&#39;);
         }
     };

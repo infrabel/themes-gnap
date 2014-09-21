@@ -1,8 +1,8 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-buttons&quot;&gt;
-    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;save()&quot;&gt;Save&lt;/button&gt;
-    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;cancel()&quot;&gt;Cancel&lt;/button&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-buttons as vm&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.save()&quot;&gt;Save&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.cancel()&quot;&gt;Cancel&lt;/button&gt;
 &lt;/div&gt;</code></pre>
   </div>
   <div tab heading="JavaScript" class="tab-pane">
@@ -11,14 +11,16 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-buttons&#39;, GnapButtonsController);
 
-    GnapButtonsController.$inject = [&#39;$scope&#39;];
+    GnapButtonsController.$inject = [];
 
-    function GnapButtonsController($scope) {
-        $scope.save = function () {
+    function GnapButtonsController() {
+        var vm = this;
+
+        vm.save = function () {
             alert(&#39;You clicked a save button&#39;);
         };
     
-        $scope.cancel = function () {
+        vm.cancel = function () {
             alert(&#39;You clicked a cancel button&#39;);
         };
     };

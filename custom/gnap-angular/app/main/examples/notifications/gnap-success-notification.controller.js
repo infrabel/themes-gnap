@@ -3,10 +3,12 @@
         .module('gnap-example-app')
         .controller('gnap-success-notification', GnapSuccessNotificationController);
 
-    GnapSuccessNotificationController.$inject = ['$scope', 'notification'];
+    GnapSuccessNotificationController.$inject = ['notification'];
 
-    function GnapSuccessNotificationController($scope, notification) {
-        $scope.notify = function () {
+    function GnapSuccessNotificationController(notification) {
+        var vm = this;
+
+        vm.notify = function () {
             notification.show({
                 type: 'success',
                 title: 'This is a success notification',
@@ -14,7 +16,7 @@
             });
         };
 
-        $scope.remove = function () {
+        vm.remove = function () {
             notification.removeAll();
         };
     };

@@ -8,7 +8,7 @@
         state: {
             url: '/getting-started',
             templateUrl: 'app/main/getting-started/getting-started.html',
-            controller: 'GettingStartedController'
+            controller: 'GettingStartedController as vm'
         },
         breadcrumb: {
             title: 'Getting Started'

@@ -3,9 +3,11 @@
         .module('gnap-example-app')
         .controller('gnap-date-picker', GnapDatepickerController);
 
-    GnapDatepickerController.$inject = ['$scope'];
+    GnapDatepickerController.$inject = [];
 
-    function GnapDatepickerController($scope) {
-        $scope.date = new Date();
+    function GnapDatepickerController() {
+        var vm = this;
+
+        vm.date = new Date();
     };
 })();

@@ -8,7 +8,7 @@
         state: {
             url: '/error-404',
             templateUrl: 'app/main/error-404/error-404.html',
-            controller: 'Error404Controller'
+            controller: 'Error404Controller as vm'
         },
         breadcrumb: {
             title: 'Error 404'

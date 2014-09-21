@@ -1,10 +1,10 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-prompt-dialog&quot;&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-prompt-dialo as vmg&quot;&gt;
     &lt;button class=&quot;btn btn-primary&quot;
             ng-bootbox-prompt=&quot;Please type in your name&quot;
-            ng-bootbox-prompt-action=&quot;accept(result)&quot;
-            ng-bootbox-prompt-action-cancel=&quot;cancel()&quot;&gt;
+            ng-bootbox-prompt-action=&quot;vm.accept(result)&quot;
+            ng-bootbox-prompt-action-cancel=&quot;vm.cancel()&quot;&gt;
         Prompt
     &lt;/button&gt;
 &lt;/div&gt;</code></pre>
@@ -15,14 +15,16 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-prompt-dialog&#39;, GnapPromptDialogController);
 
-    GnapPromptDialogController.$inject = [&#39;$scope&#39;];
+    GnapPromptDialogController.$inject = [];
 
-    function GnapPromptDialogController($scope) {
-        $scope.accept = function (name) {
+    function GnapPromptDialogController() {
+        var vm = this;
+
+        vm.accept = function (name) {
             alert(&#39;Hello &#39; + name);
         };
 
-        $scope.cancel = function () {
+        vm.cancel = function () {
             alert(&#39;You cancelled!&#39;);
         };
     };

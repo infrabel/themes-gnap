@@ -1,18 +1,18 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-collapse&quot;&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-collapse as vm&quot;&gt;
   &lt;div class=&quot;widget-box&quot;&gt;
     &lt;div class=&quot;widget-header widget-header-flat&quot;&gt;
       &lt;h5&gt;Some Group&lt;/h5&gt;
 
       &lt;div class=&quot;widget-toolbar&quot;&gt;
-        &lt;a ng-click=&quot;isCollapsed = !isCollapsed&quot;&gt;
-          &lt;i class=&quot;1 bigger-125&quot; ng-class=&quot;&#123;true:&#39;icon-chevron-down&#39;, false:&#39;icon-chevron-up&#39;&#125;[isCollapsed]&quot;&gt;&lt;/i&gt;
+        &lt;a ng-click=&quot;vm.isCollapsed = !vm.isCollapsed&quot;&gt;
+          &lt;i class=&quot;1 bigger-125&quot; ng-class=&quot;&#123;true:&#39;icon-chevron-down&#39;, false:&#39;icon-chevron-up&#39;&#125;[vm.isCollapsed]&quot;&gt;&lt;/i&gt;
         &lt;/a&gt;
       &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;widget-body&quot; collapse=&quot;isCollapsed&quot;&gt;
+    &lt;div class=&quot;widget-body&quot; collapse=&quot;vm.isCollapsed&quot;&gt;
       &lt;div class=&quot;widget-main&quot;&gt;
         &lt;p class=&quot;alert alert-info&quot;&gt;
           Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
@@ -44,10 +44,12 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-collapse&#39;, GnapCollapseController);
 
-    GnapCollapseController.$inject = [&#39;$scope&#39;];
+    GnapCollapseController.$inject = [];
 
-    function GnapCollapseController($scope) {
-        $scope.isCollapsed = false;
+    function GnapCollapseController() {
+        var vm = this;
+
+        vm.isCollapsed = false;
     };
 })();</code></pre>
   </div>
