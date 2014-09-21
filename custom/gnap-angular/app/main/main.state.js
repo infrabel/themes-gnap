@@ -8,7 +8,7 @@
         state: {
             abstract: true,
             templateUrl: 'app/main/main.html',
-            controller: 'MainController'
+            controller: 'MainController as vm'
         },
         breadcrumb: {
             title: 'Home',

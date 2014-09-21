@@ -4,19 +4,21 @@
         .controller('gnap-custom-dialog', GnapCustomDialogController)
         .controller('gnap-custom-dialog-instance', GnapCustomDialogInstanceController);
 
-    GnapCustomDialogController.$inject = ['$scope', '$modal'];
-    GnapCustomDialogInstanceController.$inject = ['$scope', '$modalInstance', 'items'];
+    GnapCustomDialogController.$inject = ['$modal'];
+    GnapCustomDialogInstanceController.$inject = ['$modalInstance', 'items'];
 
-    function GnapCustomDialogController($scope, $modal) {
-        $scope.items = ['item1', 'item2', 'item3'];
+    function GnapCustomDialogController($modal) {
+        var vm = this;
 
-        $scope.open = function (size) {
+        vm.items = ['item1', 'item2', 'item3'];
+
+        vm.open = function (size) {
             var modalInstance = $modal.open({
                 templateUrl: 'myModalContent.html',
-                controller: 'gnap-custom-dialog-instance',
+                controller: 'gnap-custom-dialog-instance as vm',
                 resolve: {
                     items: function () {
-                        return $scope.items;
+                        return vm.items;
                     }
                 }
             });
@@ -29,18 +31,20 @@
         };
     };
 
-    function GnapCustomDialogInstanceController($scope, $modalInstance, items) {
-        $scope.items = items;
+    function GnapCustomDialogInstanceController($modalInstance, items) {
+        var vm = this;
 
-        $scope.selected = {
-            item: $scope.items[0]
+        vm.items = items;
+
+        vm.selected = {
+            item: vm.items[0]
         };
 
-        $scope.ok = function () {
-            $modalInstance.close($scope.selected.item);
+        vm.ok = function () {
+            $modalInstance.close(vm.selected.item);
         };
 
-        $scope.cancel = function () {
+        vm.cancel = function () {
             $modalInstance.dismiss('cancel');
         };
     };

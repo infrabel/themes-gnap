@@ -1,6 +1,6 @@
 <div tabset class="example">
     <div tab heading="HTML" class="tab-pane in active">
-<pre><code gnap-highlight>&lt;div class=&quot;table-responsive&quot; ng-controller=&quot;gnap-standard-table&quot;&gt;
+<pre><code gnap-highlight>&lt;div class=&quot;table-responsive&quot; ng-controller=&quot;gnap-standard-table as vm&quot;&gt;
     &lt;table class=&quot;table table-striped table-bordered table-hover&quot;&gt;
         &lt;thead&gt;
             &lt;tr&gt;
@@ -14,9 +14,9 @@
             &lt;/tr&gt;
         &lt;/thead&gt;
         &lt;tbody&gt;
-            &lt;tr ng-repeat=&quot;domain in domains&quot;&gt;
+            &lt;tr ng-repeat=&quot;domain in vm.domains&quot;&gt;
                 &lt;td&gt;
-                    &lt;a ng-click=&quot;view(domain)&quot;&gt;{{ domain.domain }}&lt;/a&gt;
+                    &lt;a ng-click=&quot;vm.view(domain)&quot;&gt;{{ domain.domain }}&lt;/a&gt;
                 &lt;/td&gt;
                 &lt;td&gt;{{ domain.price }}&lt;/td&gt;
                 &lt;td class=&quot;hidden-480&quot;&gt;{{ domain.clicks }}&lt;/td&gt;
@@ -32,12 +32,18 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-standard-table&#39;, GnapStandardTableController);
 
-    GnapStandardTableController.$inject = [&#39;$scope&#39;, &#39;Domain&#39;];
+    GnapStandardTableController.$inject = [&#39;Domain&#39;];
 
-    function GnapStandardTableController($scope, Domain) {
+    function GnapStandardTableController(Domain) {
+        var vm = this;
+
         Domain.query(function(domains) {
-            $scope.domains = domains;
+            vm.domains = domains;
         });
+    
+        vm.view = function (domain) {
+            alert('Going to the view \'' + domain.domain + '\' page ...');
+        };
     };
 })();</code></pre>
     </div>

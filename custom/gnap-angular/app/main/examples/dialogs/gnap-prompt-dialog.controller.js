@@ -3,14 +3,16 @@
         .module('gnap-example-app')
         .controller('gnap-prompt-dialog', GnapPromptDialogController);
 
-    GnapPromptDialogController.$inject = ['$scope'];
+    GnapPromptDialogController.$inject = [];
 
-    function GnapPromptDialogController($scope) {
-        $scope.accept = function (name) {
+    function GnapPromptDialogController() {
+        var vm = this;
+
+        vm.accept = function (name) {
             alert('Hello ' + name);
         };
 
-        $scope.cancel = function () {
+        vm.cancel = function () {
             alert('You cancelled!');
         };
     };

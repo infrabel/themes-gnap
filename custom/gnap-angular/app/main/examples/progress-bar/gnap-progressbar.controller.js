@@ -6,7 +6,10 @@
     GnapProgressbarController.$inject = ['$scope'];
 
     function GnapProgressbarController($scope) {
-        $scope.progress = 40;
-        $scope.$watch('progress', function (progress) { $scope.workLeft = 100 - progress; });
+        var vm = this;
+
+        vm.progress = 40;
+
+        $scope.$watch('vm.progress', function (progress) { vm.workLeft = 100 - progress; });
     };
 })();

@@ -3,9 +3,11 @@
         .module('gnap-example-app')
         .controller('gnap-choice-toggle', GnapChoiceToggleController);
 
-    GnapChoiceToggleController.$inject = ['$scope'];
+    GnapChoiceToggleController.$inject = [];
 
-    function GnapChoiceToggleController($scope) {
-        $scope.value = true;
+    function GnapChoiceToggleController() {
+        var vm = this;
+
+        vm.value = true;
     };
 })();

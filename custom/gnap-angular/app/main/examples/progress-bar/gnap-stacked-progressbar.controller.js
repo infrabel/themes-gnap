@@ -3,22 +3,24 @@
         .module('gnap-example-app')
         .controller('gnap-stacked-progressbar', GnapStackedProgressbarController);
 
-    GnapStackedProgressbarController.$inject = ['$scope'];
+    GnapStackedProgressbarController.$inject = [];
 
-    function GnapStackedProgressbarController($scope) {
-        $scope.collection = [];
+    function GnapStackedProgressbarController() {
+        var vm = this;
 
-        $scope.collection.push({
+        vm.collection = [];
+
+        vm.collection.push({
             value: 20,
             type: 'success'
         });
 
-        $scope.collection.push({
+        vm.collection.push({
             value: 15,
             type: 'warning'
         });
 
-        $scope.collection.push({
+        vm.collection.push({
             value: 25,
             type: 'error'
         });

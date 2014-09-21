@@ -3,38 +3,40 @@
         .module('gnap-example-app')
         .controller('gnap-buttons', GnapButtonsController);
 
-    GnapButtonsController.$inject = ['$scope'];
+    GnapButtonsController.$inject = [];
 
-    function GnapButtonsController($scope) {
-        $scope.status = {
+    function GnapButtonsController() {
+        var vm = this;
+
+        vm.status = {
             isopen: false
         };
 
-        $scope.primary = function () {
+        vm.primary = function () {
             alert('You clicked a primary button');
         };
 
-        $scope.save = function () {
+        vm.save = function () {
             alert('You clicked a save button');
         };
 
-        $scope.cancel = function () {
+        vm.cancel = function () {
             alert('You clicked a cancel button');
         };
 
-        $scope.action1 = function () {
+        vm.action1 = function () {
             // do something here
-            $scope.status.isopen = false;
+            vm.status.isopen = false;
         };
 
-        $scope.action2 = function () {
+        vm.action2 = function () {
             // do something here
-            $scope.status.isopen = false;
+            vm.status.isopen = false;
         };
 
-        $scope.action3 = function () {
+        vm.action3 = function () {
             // do something here
-            $scope.status.isopen = false;
+            vm.status.isopen = false;
         };
     };
 })();

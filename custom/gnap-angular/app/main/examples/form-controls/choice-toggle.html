@@ -1,13 +1,13 @@
 <div tabset class="example">
   <div tab heading="HTML" class="tab-pane active">
-<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-choice-toggle&quot;&gt;
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-choice-toggle as vm&quot;&gt;
     &lt;div class=&quot;form-group&quot;&gt;
         &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Choice toggle directive&lt;/label&gt;
         &lt;div class=&quot;col-sm-9&quot;&gt;
-            &lt;span gnap-choice-toggle choice=&quot;value&quot;&gt;&lt;/span&gt;
-            &lt;span gnap-choice-toggle lang=&quot;fr&quot; choice=&quot;value&quot;&gt;&lt;/span&gt;
-            &lt;span gnap-choice-toggle lang=&quot;en&quot; choice=&quot;value&quot;&gt;&lt;/span&gt;
-           &lt;span gnap-choice-toggle lang=&quot;nl&quot; choice=&quot;value&quot;&gt;&lt;/span&gt;
+            &lt;span gnap-choice-toggle choice=&quot;vm.value&quot;&gt;&lt;/span&gt;
+            &lt;span gnap-choice-toggle lang=&quot;fr&quot; choice=&quot;vm.value&quot;&gt;&lt;/span&gt;
+            &lt;span gnap-choice-toggle lang=&quot;en&quot; choice=&quot;vm.value&quot;&gt;&lt;/span&gt;
+           &lt;span gnap-choice-toggle lang=&quot;nl&quot; choice=&quot;vm.value&quot;&gt;&lt;/span&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -18,10 +18,12 @@
         .module(&#39;gnap-example-app&#39;)
         .controller(&#39;gnap-choice-toggle&#39;, GnapChoiceToggleController);
 
-    GnapChoiceToggleController.$inject = [&#39;$scope&#39;];
+    GnapChoiceToggleController.$inject = [];
 
-    function GnapChoiceToggleController($scope) {
-        $scope.value = true;
+    function GnapChoiceToggleController() {
+        var vm = this;
+
+        vm.value = true;
     };
 })();</code></pre>
   </div>

@@ -8,7 +8,7 @@
         state: {
             url: '/typography',
             templateUrl: 'app/main/typography/typography.html',
-            controller: 'TypographyController'
+            controller: 'TypographyController as vm'
         },
         breadcrumb: {
             title: 'Typography'

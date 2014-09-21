@@ -3,10 +3,12 @@
         .module('gnap-example-app')
         .controller('gnap-error-notification', GnapErrorNotificationController);
 
-    GnapErrorNotificationController.$inject = ['$scope', 'notification'];
+    GnapErrorNotificationController.$inject = ['notification'];
 
-    function GnapErrorNotificationController($scope, notification) {
-        $scope.notify = function () {
+    function GnapErrorNotificationController(notification) {
+        var vm = this;
+
+        vm.notify = function () {
             notification.show({
                 type: 'error',
                 title: 'This is an error notification',
@@ -14,7 +16,7 @@
             });
         };
 
-        $scope.remove = function () {
+        vm.remove = function () {
             notification.removeAll();
         };
     };
