@@ -234,6 +234,8 @@
     <Content Include="custom\gnap-angular\app\main\session-dropdown.directive.js" />
     <Content Include="custom\gnap-angular\css\develop\app.css" />
     <Content Include="custom\gnap-angular\css\develop\gnap.css" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\title.service.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\title.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\alert.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\breadcrumbs.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\breadcrumbs.html" />

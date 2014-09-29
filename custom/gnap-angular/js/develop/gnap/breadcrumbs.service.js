@@ -30,6 +30,7 @@
             } else {
                 value._title = value.title;
             }
+
             breadcrumbs.crumbs.push(value);
         };
 
