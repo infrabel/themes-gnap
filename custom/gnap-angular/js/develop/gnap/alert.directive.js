@@ -1,5 +1,5 @@
 /**
- * @descAlert
+ * @desc Alert
  * @file alert.directive.js
  * @example <div alert type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.msg"></span></div>
  */
