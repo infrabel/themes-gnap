@@ -10,6 +10,7 @@
             templateUrl: 'app/main/main.html',
             controller: 'MainController as vm'
         },
+        title: 'Home',
         breadcrumb: {
             title: 'Home',
             url: '/'
@@ -26,18 +27,22 @@
         $stateProvider.state(stateSettings.name, stateSettings.state);
     };
 
-    onEnter.$inject = ['breadcrumbsService', 'sidebarService'];
+    onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onEnter(breadcrumbsService, sidebarService) {
+    function onEnter(titleService, breadcrumbsService, sidebarService) {
+        titleService.setTitle(stateSettings.title);
+
         setupSidebarShortcuts(sidebarService);
         setupSidebarItems(sidebarService);
 
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
     };
 
-    onExit.$inject = ['breadcrumbsService', 'sidebarService'];
+    onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onExit(breadcrumbsService, sidebarService) {
+    function onExit(titleService, breadcrumbsService, sidebarService) {
+        titleService.clearTitle();
+
         sidebarService.clearShortcuts();
         sidebarService.clearItems();
 
