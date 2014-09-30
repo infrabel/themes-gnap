@@ -10,6 +10,7 @@
             templateUrl: 'app/main/error-404/error-404.html',
             controller: 'Error404Controller as vm'
         },
+        title: 'Error 404',
         breadcrumb: {
             title: 'Error 404'
         },
@@ -25,16 +26,20 @@
         $stateProvider.state(stateSettings.name, stateSettings.state);
     };
 
-    onEnter.$inject = ['breadcrumbsService', 'sidebarService'];
+    onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onEnter(breadcrumbsService, sidebarService) {
+    function onEnter(titleService, breadcrumbsService, sidebarService) {
+        titleService.appendTitle(stateSettings.title);
+
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
         sidebarService.setSelected(stateSettings.sidebarKey);
     };
 
-    onExit.$inject = ['breadcrumbsService', 'sidebarService'];
+    onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onExit(breadcrumbsService, sidebarService) {
+    function onExit(titleService, breadcrumbsService, sidebarService) {
+        titleService.removeLastTitle();
+
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
     };
