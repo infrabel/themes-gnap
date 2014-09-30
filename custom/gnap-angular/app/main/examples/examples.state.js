@@ -10,7 +10,9 @@
             templateUrl: 'app/main/examples/examples.html',
             controller: 'ExamplesController as vm'
         },
-        title: 'Examples',
+        title: {
+            text: 'Examples'
+        },
         breadcrumb: {
             title: 'Examples'
         },

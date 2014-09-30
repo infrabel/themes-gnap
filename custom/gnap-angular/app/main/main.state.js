@@ -10,7 +10,9 @@
             templateUrl: 'app/main/main.html',
             controller: 'MainController as vm'
         },
-        title: 'Home',
+        title: {
+            text: 'Home'
+        },
         breadcrumb: {
             title: 'Home',
             url: '/'

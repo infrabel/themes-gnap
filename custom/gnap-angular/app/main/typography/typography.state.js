@@ -10,7 +10,9 @@
             templateUrl: 'app/main/typography/typography.html',
             controller: 'TypographyController as vm'
         },
-        title: 'Typography',
+        title: {
+            text: 'Typography'
+        },
         breadcrumb: {
             title: 'Typography'
         },
