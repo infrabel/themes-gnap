@@ -28,15 +28,25 @@
         function buildTitle() {
             var title = '';
 
-            if (titleService.prefix)
-                title += titleService.prefix + ' ';
+            if (titleService.prefix._text)
+                title += titleService.prefix._text + ' ';
 
-            title += titleService.title.parts.join(' ' + titleService.separator + ' ');
+            title += joinTitleParts(titleService.title.parts);
 
-            if (titleService.suffix)
-                title += ' ' + titleService.suffix;
+            if (titleService.suffix._text)
+                title += ' ' + titleService.suffix._text;
 
             return title;
         };
-    }
+
+        function joinTitleParts(parts) {
+            var out = [];
+
+            for (var i = 0; i < parts.length; i++) {
+                out.push(parts[i]._text);
+            }
+
+            return out.join(' ' + titleService.separator + ' ');
+        };
+    };
 })();

@@ -10,7 +10,9 @@
             templateUrl: 'app/main/getting-started/getting-started.html',
             controller: 'GettingStartedController as vm'
         },
-        title: 'Getting Started',
+        title: {
+            text: 'Getting Started'
+        },
         breadcrumb: {
             title: 'Getting Started'
         },

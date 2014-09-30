@@ -10,7 +10,9 @@
             templateUrl: 'app/main/error-500/error-500.html',
             controller: 'Error500Controller as vm'
         },
-        title: 'Error 500',
+        title: {
+            text: 'Error 500'
+        },
         breadcrumb: {
             title: 'Error 500'
         },
