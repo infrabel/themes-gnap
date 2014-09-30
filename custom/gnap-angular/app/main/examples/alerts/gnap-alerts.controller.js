@@ -3,7 +3,7 @@
         .module('gnap-example-app')
         .controller('gnap-alerts', GnapAlertsController);
 
-    GnapAlertsController.$inject = [ '$sce'];
+    GnapAlertsController.$inject = ['$sce'];
 
     function GnapAlertsController($sce) {
         var vm = this;
