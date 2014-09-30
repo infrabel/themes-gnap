@@ -10,6 +10,7 @@
             templateUrl: 'app/main/typography/typography.html',
             controller: 'TypographyController as vm'
         },
+        title: 'Typography',
         breadcrumb: {
             title: 'Typography'
         },
@@ -25,16 +26,20 @@
         $stateProvider.state(stateSettings.name, stateSettings.state);
     };
 
-    onEnter.$inject = ['breadcrumbsService', 'sidebarService'];
+    onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onEnter(breadcrumbsService, sidebarService) {
+    function onEnter(titleService, breadcrumbsService, sidebarService) {
+        titleService.appendTitle(stateSettings.title);
+
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
         sidebarService.setSelected(stateSettings.sidebarKey);
     };
 
-    onExit.$inject = ['breadcrumbsService', 'sidebarService'];
+    onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onExit(breadcrumbsService, sidebarService) {
+    function onExit(titleService, breadcrumbsService, sidebarService) {
+        titleService.removeLastTitle();
+
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
     };
