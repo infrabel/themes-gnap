@@ -20,11 +20,11 @@
     titleConfiguration.$inject = ['titleServiceProvider'];
 
     function titleConfiguration(titleServiceProvider) {
-        titleServiceProvider.setDefaultTitle('Home');
+        titleServiceProvider.setDefaultTitle({ text: '' });
         titleServiceProvider.setSeparator('-');
 
-        titleServiceProvider.setPrefix('GNaP &raquo;');
-        titleServiceProvider.setSuffix('');
+        titleServiceProvider.setPrefix({ text: 'GNaP &raquo;' });
+        titleServiceProvider.setSuffix({ text: '' });
     };
 
     tooltipConfiguration.$inject = ['$tooltipProvider'];

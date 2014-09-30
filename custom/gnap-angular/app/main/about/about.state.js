@@ -10,7 +10,9 @@
             templateUrl: 'app/main/about/about.html',
             controller: 'AboutController as vm'
         },
-        title: 'About',
+        title: {
+            textTranslationId: 'about'
+        },
         breadcrumb: {
             titleTranslationId: 'about'
         },
