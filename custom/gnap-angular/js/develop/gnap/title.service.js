@@ -10,11 +10,12 @@
     titleServiceProvider.$inject = [];
 
     function titleServiceProvider() {
-        var defaultTitle = '';
+        var defaultTitle = { text: '' };
         var separator = '-';
-        var prefix = '';
-        var suffix = '';
+        var prefix = { text: '' };
+        var suffix = { text: '' };
         
+        createTitleService.$inject = ['$translate'];
 
         return {
             setDefaultTitle: setDefaultTitle,
@@ -40,15 +41,19 @@
             suffix = value;
         };
 
-        function createTitleService() {
-            return new titleService(defaultTitle, separator, prefix, suffix);
+        function createTitleService($translate) {
+            return new titleService($translate, defaultTitle, separator, prefix, suffix);
         };
     };
 
-    function titleService(defaultTitle, separator, prefix, suffix) {
+    function titleService($translate, defaultTitle, separator, prefix, suffix) {
         var title = {
-            parts: defaultTitle ? [defaultTitle] : []
-        };      
+            parts: []
+        };
+
+        resolveTranslation(prefix);
+        resolveTranslation(suffix);
+        clearTitle();
 
         return {
             title: title,
@@ -63,11 +68,14 @@
         };
 
         function setTitle(value) {
-            // TODO: Support translated values
+            resolveTranslation(value);
+
             title.parts = value ? [value] : [];
         };
 
         function appendTitle(value) {
+            resolveTranslation(value);
+
             title.parts.push(value);
         };
 
@@ -77,6 +85,20 @@
 
         function clearTitle() {
             setTitle(defaultTitle);
+        };
+
+        function resolveTranslation(value) {
+            // resolve _text: if a textTranslationId is given then the translation will be loaded async,
+            // otherwise the value of text is copied into _text
+            if (value.textTranslationId) {
+                $translate(value.textTranslationId).then(function (translation) {
+                    value._text = translation;
+                });
+            } else {
+                value._text = value.text;
+            }
+
+            return value;
         };
     };
 })();

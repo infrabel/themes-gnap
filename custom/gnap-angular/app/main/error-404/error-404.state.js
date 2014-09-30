@@ -10,7 +10,9 @@
             templateUrl: 'app/main/error-404/error-404.html',
             controller: 'Error404Controller as vm'
         },
-        title: 'Error 404',
+        title: {
+            text: 'Error 404'
+        },
         breadcrumb: {
             title: 'Error 404'
         },
