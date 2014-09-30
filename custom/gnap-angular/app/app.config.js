@@ -5,6 +5,7 @@
         .config(urlRouterConfiguration)
         .config(translationConfiguration)
         .config(localeConfiguration)
+        .config(titleConfiguration)
         .run(localeInitalization)
         .run(select2Initialization);
 
@@ -15,6 +16,16 @@
         { name: 'fr', title: 'Français' },
         { name: 'en', title: 'English' }
     ];
+
+    titleConfiguration.$inject = ['titleServiceProvider'];
+
+    function titleConfiguration(titleServiceProvider) {
+        titleServiceProvider.setDefaultTitle('Home');
+        titleServiceProvider.setSeparator('-');
+
+        titleServiceProvider.setPrefix('GNaP &raquo;');
+        titleServiceProvider.setSuffix('');
+    };
 
     tooltipConfiguration.$inject = ['$tooltipProvider'];
 

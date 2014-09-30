@@ -16,7 +16,7 @@
             replace: true,
             restrict: 'A',
             scope: {},
-            template: '<title>{{ buildTitle() }}</title>',
+            template: '<title ng-bind-html="buildTitle()"><title>',
             link: link
         };
 
@@ -26,8 +26,17 @@
         };
 
         function buildTitle() {
-            // TODO: Get separater from config
-            return titleService.title.parts.join(' - ');
+            var title = '';
+
+            if (titleService.prefix)
+                title += titleService.prefix + ' ';
+
+            title += titleService.title.parts.join(' ' + titleService.separator + ' ');
+
+            if (titleService.suffix)
+                title += ' ' + titleService.suffix;
+
+            return title;
         };
     }
 })();
