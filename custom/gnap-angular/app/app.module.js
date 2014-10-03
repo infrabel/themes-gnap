@@ -6,6 +6,7 @@
                                      'ngSanitize',
                                      'ngResource',
                                      'ngBootbox',
+                                     'ngProgressLite',
                                      'ui.select2',
                                      'pascalprecht.translate',
                                      'tmh.dynamicLocale',

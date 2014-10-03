@@ -67,5 +67,12 @@
         cwd: './raw/ui-select2/src/',
         src: ['*.*', '**/*.*', '!*.zip'],
         dest: './deploy/angular/ui-select2/'
+    },
+
+    raw_angular_ngprogress_to_deploy: {
+        expand: true,
+        cwd: './raw/ngprogress-lite/',
+        src: ['*.*', '**/*.*', '!*.zip'],
+        dest: './deploy/angular/ngprogress-lite/'
     }
 };

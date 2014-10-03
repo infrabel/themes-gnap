@@ -70,6 +70,7 @@
     <Content Include="custom\ace\html\app\views\pages\error-404.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\gallery.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-500.mustache.replace-grunt.js" />
+    <None Include="custom\ace\css\less\theme\custom-progress.less" />
     <None Include="custom\ace\css\less\theme\custom-progressbar.less" />
     <None Include="custom\ace\css\less\theme\custom-thirdparty-select2.less" />
     <None Include="custom\ace\html\app\views\layouts\partials\_shared\sidenav\shortcuts.mustache" />
@@ -214,6 +215,8 @@
     <Content Include="custom\gnap-angular\app\main\examples\progress-bar\gnap-stacked-progressbar.controller.js" />
     <Content Include="custom\gnap-angular\app\main\examples\progress-bar\progress-bar.html" />
     <Content Include="custom\gnap-angular\app\main\examples\progress-bar\stacked.html" />
+    <Content Include="custom\gnap-angular\app\main\examples\progress\progress.html" />
+    <Content Include="custom\gnap-angular\app\main\examples\progress\gnap-progress.controller.js" />
     <Content Include="custom\gnap-angular\app\main\examples\sections\collapsable-container-with-buttons.html" />
     <Content Include="custom\gnap-angular\app\main\examples\sections\collapsable-container.html" />
     <Content Include="custom\gnap-angular\app\main\examples\sections\container.html" />
@@ -2843,6 +2846,8 @@
     <Content Include="raw\localytics-chosen\chosen.js" />
     <Content Include="raw\localytics-chosen\spinner.gif" />
     <Content Include="raw\ng-bootbox\ng-bootbox.js" />
+    <Content Include="raw\ngprogress-lite\ngprogress-lite.css" />
+    <Content Include="raw\ngprogress-lite\ngprogress-lite.js" />
     <Content Include="raw\select2\.gitignore" />
     <Content Include="raw\select2\select2-bootstrap.css" />
     <Content Include="raw\select2\select2-spinner.gif" />
