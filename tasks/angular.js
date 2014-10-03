@@ -15,6 +15,7 @@
         'copy:raw_angular_ui_router_to_deploy',
         'copy:raw_angular_translate_to_deploy',
         'copy:raw_angular_dynamic_locale_to_deploy',
-        'copy:raw_angular_ui_select2_to_deploy'
+        'copy:raw_angular_ui_select2_to_deploy',
+        'copy:raw_angular_ngprogress_to_deploy'
     ]);
 };

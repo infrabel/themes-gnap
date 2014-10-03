@@ -916,6 +916,19 @@
         </div>
         @@include('notifications/error-notification.html')
     </div> <!-- notifications tab -->
+    
+    <div tab heading="Progress" id="progress" class="tab-pane">
+        <h3 class="header smaller">
+            Progress Indicator
+        </h3>
+        <div ng-controller="gnap-progress as vm">
+            <button class="btn btn-primary" ng-click="vm.start()">Start!</button>
+            <button class="btn btn-default" ng-click="vm.set40()">Set 40%</button>
+            <button class="btn btn-default" ng-click="vm.increment()">Increment</button>
+            <button class="btn btn-default" ng-click="vm.done()">Done</button>
+        </div>
+        @@include('progress/progress.html')
+    </div> <!-- progress tab -->
 
     <div tab heading="Form controls" id="forms" class="tab-pane">
         <form class="form-horizontal" role="form">
