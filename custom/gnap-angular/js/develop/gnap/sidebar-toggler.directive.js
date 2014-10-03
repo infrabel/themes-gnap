@@ -8,13 +8,18 @@
         .module('gnap')
         .directive('gnapSidebarToggler', gnapSidebarToggler);
 
+    angular
+        .module('template/gnap/sidebar/sidebar-toggler.html', [])
+        .run(gnapSidebarTogglerTemplate);
+
     gnapSidebarToggler.$inject = ['sidebarService'];
+    gnapSidebarTogglerTemplate.$inject = ['$templateCache'];
 
     function gnapSidebarToggler(sidebarService) {
 
         return {
             restrict: 'A',
-            templateUrl: 'js/gnap/sidebar-toggler.html',
+            templateUrl: 'template/gnap/sidebar/sidebar-toggler.html',
             link: link
         };
 
@@ -26,5 +31,14 @@
                 sidebarService.toggleMenu();
             };
         };
+    };
+
+    function gnapSidebarTogglerTemplate($templateCache) {
+
+        $templateCache.put("template/gnap/sidebar/sidebar-toggler.html",
+            "<a class=\"menu-toggler\" ng-class=\"{display: settings.visible}\" ng-click=\"toggleMenu()\">\n" +
+            "    <span class=\"menu-text\"><\/span>\n" +
+            "<\/a>\n" +
+            "");
     };
 })();
