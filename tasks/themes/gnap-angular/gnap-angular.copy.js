@@ -12,7 +12,8 @@
         expand: true,
         cwd: './deploy/angular/',
         src: ['localytics-chosen/*.css',
-              'angular-datatables/*.css'],
+              'angular-datatables/*.css',
+              'ngprogress-lite/*.css'],
         dest: './build/gnap-angular/css/develop/'
     },
 
