@@ -7,13 +7,18 @@
         .module('gnap')
         .directive('gnapLocaleSelector', gnapLocaleSelector);
 
+    angular
+        .module('template/gnap/locale-selector/locale-selector.html', [])
+        .run(gnapLocaleSelectorTemplate);
+
     gnapLocaleSelector.$inject = ['localeService'];
+    gnapLocaleSelectorTemplate.$inject = ['$templateCache'];
 
     function gnapLocaleSelector(localeService) {
         return {
             restrict: 'A',
             scope: {},
-            templateUrl: 'js/gnap/locale-selector.html',
+            templateUrl: 'template/gnap/locale-selector/locale-selector.html',
             link: link
         };
 
@@ -25,5 +30,25 @@
                 localeService.setCurrentLocale(locale);
             };
         };
+    };
+
+    function gnapLocaleSelectorTemplate($templateCache) {
+
+        $templateCache.put("template/gnap/locale-selector/locale-selector.html",
+            "<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">\n" +
+            "    <span>\n" +
+            "        {{currentLocale.title}}\n" +
+            "    <\/span>\n" +
+            "    <i class=\"icon-caret-down\"><\/i>\n" +
+            "<\/a>\n" +
+            "\n" +
+            "<ul class=\"user-menu pull-right dropdown-menu dropdown-default dropdown-caret dropdown-close\">\n" +
+            "    <li ng-repeat=\"locale in locales\">\n" +
+            "        <a ng-click=\"setLocale(locale.name)\">\n" +
+            "            {{locale.title}}\n" +
+            "        <\/a>\n" +
+            "    <\/li>\n" +
+            "<\/ul>\n" +
+            "");
     };
 })();

@@ -238,7 +238,6 @@
     <Content Include="custom\gnap-angular\js\develop\gnap\title.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\alert.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\breadcrumbs.directive.js" />
-    <Content Include="custom\gnap-angular\js\develop\gnap\breadcrumbs.html" />
     <Content Include="custom\gnap-angular\js\develop\gnap\breadcrumbs.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\choice-toggle.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\datepicker.directive.js" />
@@ -249,18 +248,14 @@
     <Content Include="custom\gnap-angular\js\develop\gnap\input-limiter.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\language-negotiation.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\locale-selector.directive.js" />
-    <Content Include="custom\gnap-angular\js\develop\gnap\locale-selector.html" />
     <Content Include="custom\gnap-angular\js\develop\gnap\locale.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\masked-input.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\notification.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\pager.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\partial-loader-error-handler.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\search.directive.js" />
-    <Content Include="custom\gnap-angular\js\develop\gnap\search.html" />
     <Content Include="custom\gnap-angular\js\develop\gnap\sidebar-toggler.directive.js" />
-    <Content Include="custom\gnap-angular\js\develop\gnap\sidebar-toggler.html" />
     <Content Include="custom\gnap-angular\js\develop\gnap\sidebar.directive.js" />
-    <Content Include="custom\gnap-angular\js\develop\gnap\sidebar.html" />
     <Content Include="custom\gnap-angular\js\develop\gnap\sidebar.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\timepicker.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\wysiwyg.directive.js" />
