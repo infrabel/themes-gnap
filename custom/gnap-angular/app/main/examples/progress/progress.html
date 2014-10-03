@@ -1,0 +1,41 @@
+<div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-progress as vm&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.start()&quot;&gt;Start!&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.set40()&quot;&gt;Set 40%&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.increment()&quot;&gt;Increment&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.done()&quot;&gt;Done&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-progress&#39;, GnapProgressController);
+
+    GnapProgressController.$inject = [&#39;ngProgressLite&#39;];
+
+    function GnapProgressController(ngProgressLite) {
+        var vm = this;
+
+        vm.start = function () {
+            ngProgressLite.start();
+        };
+
+        vm.set40 = function () {
+            ngProgressLite.set(0.4);
+        };
+
+        vm.increment = function () {
+            ngProgressLite.inc();
+        };
+
+        vm.done = function () {
+            ngProgressLite.done();
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="ngprogress-lite"></a>

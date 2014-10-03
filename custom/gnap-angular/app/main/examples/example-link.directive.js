@@ -49,6 +49,12 @@
                             url = 'https://github.com/infrabel/GNaP.Web.Themes';
                             break;
                         }
+
+                    case 'ngprogress-lite':
+                        {
+                            url = 'https://github.com/voronianski/ngprogress-lite';
+                            break;
+                        }
                 }
                 element.attr('href', url);
             }
