@@ -337,6 +337,29 @@ textarea.form-control.limited {
     color: @text-color;
 }
 
+.table.table-hover tbody tr:hover td div.visible-xs a [class*=" icon-"],
+.table.table-hover tbody tr:hover td div.visible-sm a [class*=" icon-"],
+.table.table-hover tbody tr:hover td div.visible-xs a [class^=icon-],
+.table.table-hover tbody tr:hover td div.visible-xs a [class^=icon-],
+.table.table-hover tbody tr:hover td div.visible-xs i[class^=icon-],
+.table.table-hover tbody tr:hover td div.visible-xs i[class^=icon-] {
+    color: white;
+}
+
+.table.table-hover tbody tr:hover td div.visible-xs button:hover,
+.table.table-hover tbody tr:hover td div.visible-xs .open .btn-primary.dropdown-toggle {
+    background-color: @custom-base-primary-color !important;
+}
+
+.table.table-hover tbody tr:hover td div.visible-xs button:hover a [class*=" icon-"],
+.table.table-hover tbody tr:hover td div.visible-sm button:hover a [class*=" icon-"],
+.table.table-hover tbody tr:hover td div.visible-xs button:hover a [class^=icon-],
+.table.table-hover tbody tr:hover td div.visible-xs button:hover a [class^=icon-],
+.table.table-hover tbody tr:hover td div.visible-xs button:hover i[class^=icon-],
+.table.table-hover tbody tr:hover td div.visible-xs button:hover i[class^=icon-] {
+    color: @text-color;
+}
+
 div.bootstrap-timepicker-widget.dropdown-menu.open table tbody tr td a:hover {
     background-color: #eee !important;
 }
