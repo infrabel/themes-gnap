@@ -1,0 +1,11 @@
+Getting Started with NPM (as a developer)
+https://gist.github.com/coolaj86/1318304
+
+Locally test your npm modules without publishing them to npmjs.org
+http://podefr.tumblr.com/post/30488475488/locally-test-your-npm-modules-without-publishing-them
+
+npm-publish
+https://www.npmjs.org/doc/cli/npm-publish.html
+
+npm-developers
+https://www.npmjs.org/doc/misc/npm-developers.html
