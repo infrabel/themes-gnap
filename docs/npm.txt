@@ -9,3 +9,16 @@ https://www.npmjs.org/doc/cli/npm-publish.html
 
 npm-developers
 https://www.npmjs.org/doc/misc/npm-developers.html
+
+----
+Can I run a private npm repository without replicating the public repository?
+http://stackoverflow.com/questions/14609131/can-i-run-a-private-npm-repository-without-replicating-the-public-repository
+
+sinopia - Private npm repository server
+https://github.com/rlidwka/sinopia/
+
+Deploy a Private npm Registry Without CouchDB or Redis
+http://strongloop.com/strongblog/deploy-a-private-npm-registry-without-couchdb-or-redis/
+
+npm-registry-couchapp
+https://github.com/npm/npm-registry-couchapp
