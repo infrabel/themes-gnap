@@ -1,0 +1,13 @@
+{
+    "name": "gnap-theme-gnap",
+    "version": "0.0.0",
+    "description": "Standard layout for applications intended for NDCC. This package can be used by all technologies.",
+    "main": "start-server.cmd",
+    "keywords": [
+        "gnap",
+        "ui",
+        "theme"
+    ],
+    "author": "Infrabel, NDCC",
+    "license": "BSD-3-Clause"
+}
