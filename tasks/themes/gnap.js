@@ -46,6 +46,9 @@
                         'rename:gnap_package',
                         'compress:gnap',
                         'rename:gnap_release:' + version,
-                        'nugetpack:gnap']);
+                        'nugetpack:gnap',
+                        'copy:gnap_packagejson',
+                        'replace:gnap_packagejson:' + version,
+                        'publish:gnap_publish']);
     });
 };

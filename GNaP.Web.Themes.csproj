@@ -3104,6 +3104,7 @@
     <None Include="custom\flatly\bootstrap.less" />
     <None Include="custom\gnap\css\custom-variables.less" />
     <None Include="LICENSE" />
+    <None Include="npm\GNaP.Web.Themes.GNaP.Angular.json" />
     <None Include="nuget\definitions\GNaP.Web.Themes.GNaP.Angular.nuspec" />
     <None Include="nuget\definitions\GNaP.Web.Themes.Sample.nuspec" />
     <None Include="nuget\definitions\GNaP.Web.Themes.GNaP.nuspec" />
