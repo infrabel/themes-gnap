@@ -1,0 +1,15 @@
+{
+    "search": "Zoeken ...",
+    "welcome": "Welkom",
+    "sidebar": {
+        "shortcuts": {
+            "statistics": "Statistieken",
+            "edit": "Bewerken",
+            "profile": "Profiel",
+            "administration": "Administratie"
+        },
+        "items": {
+            "getting-started": "Aan de slag"
+        }
+    }
+}
