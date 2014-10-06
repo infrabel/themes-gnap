@@ -2,9 +2,7 @@
 
 > [Yeoman](http://yeoman.io) generator
 
-## Getting Started
-
-### What is Yeoman?
+## What is Yeoman?
 
 Trick question. It's not a thing. It's this guy:
 
@@ -18,7 +16,7 @@ Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](
 npm install -g yo
 ```
 
-### Yeoman Generators
+## Yeoman Generators
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
@@ -34,13 +32,10 @@ Finally, initiate the generator:
 yo gnap-angular
 ```
 
-### Getting To Know Yeoman
+## Copyright
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
+Copyright © 2014 Infrabel and contributors.
 
 ## License
 
-MIT
+generator-gnap-angular is licensed under [BSD (3-Clause)](http://choosealicense.com/licenses/bsd-3-clause/ "Read more about the BSD (3-Clause) License"). Refer to [LICENSE](https://github.com/infrabel/GNaP.Web.Themes/blob/master/LICENSE) for more information.
