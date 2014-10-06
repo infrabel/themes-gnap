@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="<%= appName %>">
+<head>
+    <meta charset="utf-8" />
+    <title gnap-title></title>
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="node_modules/<%= themeName %>/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/font-awesome.min.css" />
+
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/jquery.gritter.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/select2.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/datepicker.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ngprogress-lite/ngprogress-lite.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/highlight/github.min.css" />
+
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ace-fonts.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ace.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/print.min.css" media="print" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/gnap.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/app.min.css" />
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ace-ie.min.css" />
+        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ie8.min.css" />
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="node_modules/<%= themeName %>/js/html5shiv.min.js"></script>
+        <script src="node_modules/<%= themeName %>/js/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ie9.min.css" />
+    <link rel="stylesheet" href="node_modules/<%= themeName %>/css/custom.min.css" />
+
+    <script src="node_modules/<%= themeName %>/js/modernizr.min.js"></script>
+
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<body>
+    <div ui-view>Loading...</div>
+
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='node_modules/<%= themeName %>/js/jquery.min.js'>" + "<" + "/script>");
+    </script>
+    <script type="text/javascript">
+        if ("ontouchend" in document) document.write("<script src='node_modules/<%= themeName %>/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+
+    <script src="node_modules/<%= themeName %>/js/jquery.gritter.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/jquery.inputlimiter.1.3.1.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/jquery.maskedinput.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/jquery.hotkeys.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/jquery.dataTables.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/jquery.dataTables.bootstrap.min.js"></script>
+
+    <script src="node_modules/<%= themeName %>/js/bootstrap.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/bootbox.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/select2/select2.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/highlight/highlight.pack.min.js"></script>
+
+    <script src="node_modules/<%= themeName %>/js/ace.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/ace-extra.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/ace-elements.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/layout.min.js"></script>
+
+    <script src="node_modules/<%= themeName %>/js/angular/angular.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/angular/angular-sanitize.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/angular/angular-animate.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/angular/angular-resource.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/angular-local-storage/angular-local-storage.min.js"></script>
+
+    <script src="node_modules/<%= themeName %>/js/ui-bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/ui-select2/select2.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/ng-bootbox/ng-bootbox.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/ngprogress-lite/ngprogress-lite.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/angular-datatables/angular-datatables.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/ui-router/ui-router.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/angular-translate/angular-translate.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/angular-translate/loader-partial.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/angular-dynamic-locale/tmhDynamicLocale.min.js"></script>
+
+    <!-- gnap angular -->
+    <script src="node_modules/<%= themeName %>/js/gnap/gnap.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/title.service.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/title.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/highlight.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/alert.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/breadcrumbs.service.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/breadcrumbs.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/sidebar-toggler.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/sidebar.service.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/sidebar.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/search.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/pager.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/notification.service.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/input-limiter.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/masked-input.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/wysiwyg.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/choice-toggle.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/datepicker.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/daterange.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/timepicker.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/header-checkbox.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/language-negotiation.service.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/locale-selector.directive.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/locale.service.min.js"></script>
+    <script src="node_modules/<%= themeName %>/js/gnap/partial-loader-error-handler.service.min.js"></script>
+
+    <!-- companion app js -->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+
+    <script src="app/main/main.state.js"></script>
+    <script src="app/main/main.controller.js"></script>
+
+    <script src="app/main/getting-started/getting-started.state.js"></script>
+    <script src="app/main/getting-started/getting-started.controller.js"></script>
+
+    <!-- example app services and directives -->
+    <script src="app/main/session-dropdown.directive.js"></script>
+</body>
+</html>
