@@ -110,7 +110,7 @@ var GnapGenerator = yeoman.generators.Base.extend({
         var done = self.async();
 
         self.log('Installing theme (' + self.themeName + ')');
-        self.npmInstall([self.themeName], { 'saveDev': true }, done);
+        self.npmInstall([self.themeName], { }, done);
     }
 });
 
