@@ -40,6 +40,9 @@
                         'rename:gnap-angular_package',
                         'compress:gnap-angular',
                         'rename:gnap-angular_release:' + version,
-                        'nugetpack:gnap-angular']);
+                        'nugetpack:gnap-angular',
+                        'copy:gnap-angular_packagejson',
+                        'replace:gnap-angular_packagejson:' + version,
+                        'publish:gnap-angular_publish']);
     });
 };
