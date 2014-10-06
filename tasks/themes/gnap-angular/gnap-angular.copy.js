@@ -50,5 +50,10 @@
         cwd: './deploy/gnap-angular/js/develop/gnap',
         src: ['*.*', '**/*.*', '!*.js', '!**/*.js'],
         dest: './deploy/gnap-angular/js/gnap'
+    },
+
+    'gnap-angular_packagejson': {
+        src: './npm/GNaP.Web.Themes.GNaP.Angular.json',
+        dest: './deploy/vendor/gnap-theme-gnap-angular/package.json'        
     }
 };

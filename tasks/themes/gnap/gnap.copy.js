@@ -67,5 +67,10 @@
         cwd: './deploy/highlight/styles/',
         src: ['*.css', '**/*.css'],
         dest: './build/ace/css/develop/highlight/'
+    },
+
+    gnap_packagejson: {
+        src: './npm/GNaP.Web.Themes.GNaP.json',
+        dest: './deploy/vendor/gnap-theme-gnap/package.json'        
     }
 };
