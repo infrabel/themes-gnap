@@ -1,6 +1,6 @@
 {
   "name": "generator-gnap-angular",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "AngularJS application opinionated for GNaP",
   "license": "BSD-3-Clause",
   "main": "app/index.js",
@@ -27,7 +27,8 @@
   "dependencies": {
     "yeoman-generator": "^0.17.0",
     "chalk": "^0.5.0",
-    "yosay": "^0.3.0"
+    "yosay": "^0.3.0",
+    "cli-color": "^0.3.0"
   },
   "devDependencies": {
     "mocha": "*"
