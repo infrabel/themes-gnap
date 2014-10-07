@@ -297,6 +297,10 @@
     <Content Include="generator\gnap-angular\app\templates\app\main\session-dropdown.directive.js" />
     <Content Include="generator\gnap-angular\app\templates\app\main\session-dropdown.html" />
     <Content Include="generator\gnap-angular\app\templates\index.html" />
+    <Content Include="generator\gnap-angular\state\index.js" />
+    <Content Include="generator\gnap-angular\state\templates\state.js" />
+    <Content Include="generator\gnap-angular\state\templates\state.html" />
+    <Content Include="generator\gnap-angular\state\templates\controller.js" />
     <Content Include="Gruntfile.js" />
     <Content Include="raw\ace\assets\avatars\avatar.png" />
     <Content Include="raw\ace\assets\avatars\avatar1.png" />
@@ -3130,6 +3134,7 @@
     <None Include="generator\gnap-angular\app\templates\_package.json" />
     <None Include="generator\gnap-angular\package.json" />
     <None Include="generator\gnap-angular\README.md" />
+    <None Include="generator\gnap-angular\state\templates\translations.json" />
     <None Include="LICENSE" />
     <None Include="npm\GNaP.Web.Themes.GNaP.Angular.json" />
     <None Include="npm\GNaP.Web.Themes.GNaP.json" />
