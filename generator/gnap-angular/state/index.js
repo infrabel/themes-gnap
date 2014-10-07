@@ -143,9 +143,44 @@ var GnapGenerator = yeoman.generators.NamedBase.extend({
                 stateTitle: self.stateTitleFrench
             });
 
+            // TODO: We should only rewrite things on first add? Right now it always appends
+
+            // update index.html
+            var indexFile = self.readFileAsString('index.html');
+            indexFile = self.appendScripts(indexFile, 'js/states.js', [fullPath + '/' + self.stateNameLast + '.state.js']);
+            indexFile = self.appendScripts(indexFile, 'js/controllers.js', [fullPath + '/' + self.stateNameLast + '.controller.js']);
+            self.writeFileFromString(indexFile, 'index.html');
+
+            // add to sidebar if required, as well as the translations for the sidebar
+            if (self.stateVisibleInSidebar) {
+                self.updateFile = function(path, hook, replacement) {
+                    var file = self.readFileAsString(path);
+                    file = file.replace(hook, replacement);
+                    self.writeFileFromString(file, path);
+                };
+
+                var sidebarHook = '// ======= yeoman sidebar hook =======';
+                var sidebarItem = ",\n" +
+                    "            {\n" +
+                    "                key: '" + self.stateName + "',\n" +
+                    "                titleTranslationId: 'sidebar.items." + self.stateName + "',\n" +
+                    "                icon: 'icon-circle-blank',\n" +
+                    "                state: '" + self.stateName + "'\n" +
+                    "            }\n" +
+                    "            " + sidebarHook;
+
+                var translationHook = '"items": {';
+                var translationItemEnglish = translationHook + '\n            "' + self.stateName + '": "' + self.stateTitleEnglish + '",';
+                var translationItemDutch = translationHook + '\n            "' + self.stateName + '": "' + self.stateTitleDutch + '",';
+                var translationItemFrench = translationHook + '\n            "' + self.stateName + '": "' + self.stateTitleFrench + '",';
+
+                self.updateFile('app/main/main.state.js', sidebarHook, sidebarItem);
+                self.updateFile('app/main/translations.en.json', translationHook, translationItemEnglish);
+                self.updateFile('app/main/translations.nl.json', translationHook, translationItemDutch);
+                self.updateFile('app/main/translations.fr.json', translationHook, translationItemFrench);
+            }
+
             // TODO: Need to check if parent states are present and warn the user if they are not
-            // TODO: Update index.html
-            // TODO: Update sidebar if self.stateVisibleInSidebar
         }
     },
 
