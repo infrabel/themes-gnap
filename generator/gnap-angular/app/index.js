@@ -3,26 +3,25 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
+var clc = require('cli-color');
 
-var GnapGenerator = yeoman.generators.Base.extend({
+var GNaPGenerator = yeoman.generators.Base.extend({
     initializing: function () {
         this.pkg = require('../package.json');
     },
 
     prompting: function () {
-        var self = this;
-        var done = self.async();
+        var self = this,
+            done = self.async();
 
-        self.log(yosay(
-            'Welcome to the outstanding GNaP generator!'
-        ));
-
-        self.inputRequired = function(input, inputName) {
+        self.inputRequired = function (input, inputName) {
             if (input)
                 return true;
 
             return inputName + ' is required!';
         };
+
+        self.log(yosay('Welcome to the outstanding GNaP generator!'));
 
         var prompts = [
             {
@@ -44,10 +43,6 @@ var GnapGenerator = yeoman.generators.Base.extend({
                 name: 'theme-name',
                 message: 'Which theme does your application use?',
                 choices: [
-                /*{ 
-                    name: 'GNaP.Themes.Web.GNaP',
-                    value: 'gnap-theme-gnap'
-                },*/
                 {
                     name: 'GNaP.Themes.Web.GNaP.Angular',
                     value: 'gnap-theme-gnap-angular'
@@ -107,12 +102,19 @@ var GnapGenerator = yeoman.generators.Base.extend({
     },
 
     end: function () {
-        var self = this;
-        var done = self.async();
+        var self = this,
+            done = self.async();
 
-        self.log('Installing theme (' + self.themeName + ')');
-        self.npmInstall([self.themeName], { }, done);
+        self.log(clc.green('   create') + ' theme (' + clc.cyan(self.themeName) + ')');
+        self.npmInstall([self.themeName], { }, function() {
+            self.log();
+            self.log(clc.green('!') + clc.whiteBright(' Successfully created ') + clc.cyan(self.appName));
+            self.log(clc.green('!') + clc.whiteBright(' To see your site, run:'));
+            self.log('\t' + clc.yellowBright('start-server.cmd'));
+
+            done();
+        });
     }
 });
 
-module.exports = GnapGenerator;
+module.exports = GNaPGenerator;
