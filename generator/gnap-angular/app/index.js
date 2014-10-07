@@ -25,41 +25,42 @@ var GnapGenerator = yeoman.generators.Base.extend({
         };
 
         var prompts = [
-        {
-            type: 'input',
-            name: 'app-name',
-            message: 'What is the project name of your application?',
-            validate: function (input) { return self.inputRequired(input, 'Project name'); }
-        },
-
-        {
-            type: 'input',
-            name: 'app-title',
-            message: 'What is the title of your application?',
-            validate: function (input) { return self.inputRequired(input, 'Project title'); }
-        },
-
-        {
-            type: 'list',
-            name: 'theme-name',
-            message: 'Which theme does your application use?',
-            choices: [
-            /*{ 
-                name: 'GNaP.Themes.Web.GNaP',
-                value: 'gnap-theme-gnap'
-            },*/
             {
-                name: 'GNaP.Themes.Web.GNaP.Angular',
-                value: 'gnap-theme-gnap-angular'
-            }],
-            default: 'gnap-theme-gnap-angular',
-            validate: function (input) { return inputRequired(input, 'Theme'); }
-        }];
+                type: 'input',
+                name: 'app-name',
+                message: 'What is the project name of your application?',
+                validate: function (input) { return self.inputRequired(input, 'Project name'); }
+            },
+
+            {
+                type: 'input',
+                name: 'app-title',
+                message: 'What is the title of your application?',
+                validate: function (input) { return self.inputRequired(input, 'Project title'); }
+            },
+
+            {
+                type: 'list',
+                name: 'theme-name',
+                message: 'Which theme does your application use?',
+                choices: [
+                /*{ 
+                    name: 'GNaP.Themes.Web.GNaP',
+                    value: 'gnap-theme-gnap'
+                },*/
+                {
+                    name: 'GNaP.Themes.Web.GNaP.Angular',
+                    value: 'gnap-theme-gnap-angular'
+                }],
+                default: 'gnap-theme-gnap-angular',
+                validate: function (input) { return inputRequired(input, 'Theme'); }
+            }
+        ];
 
         self.prompt(prompts, function (props) {
-            this.appName = props['app-name'];
+            this.appName = props['app-name'].toLowerCase();
             this.appTitle = props['app-title'];
-            this.themeName = props['theme-name'];
+            this.themeName = props['theme-name'].toLowerCase();
 
             this.config.set('app-name', this.appName);
             this.config.set('app-title', this.appTitle);
