@@ -78,7 +78,7 @@ var GnapGenerator = yeoman.generators.Base.extend({
             self.template('index.html', 'index.html', { appName: self.appName, themeName: self.themeName });
             
             self.dest.mkdir('app');
-            self.template('app/app.config.js', 'app/app.config.js', { appName: self.appName, appTitle: self.appTitle });
+            self.template('app/app.config.js', 'app/app.config.js', { appName: self.appName, appTitle: self.appTitle, themeName: self.themeName });
             self.template('app/app.module.js', 'app/app.module.js', { appName: self.appName });
 
             self.dest.mkdir('app/main');

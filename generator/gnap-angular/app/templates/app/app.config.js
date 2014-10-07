@@ -53,7 +53,7 @@
     localeConfiguration.$inject = ['tmhDynamicLocaleProvider'];
 
     function localeConfiguration(tmhDynamicLocaleProvider) {
-        tmhDynamicLocaleProvider.localeLocationPattern('js/angular/i18n/angular-locale_{{locale}}.min.js');
+        tmhDynamicLocaleProvider.localeLocationPattern('node_modules/<%= themeName %>/js/angular/i18n/angular-locale_{{locale}}.min.js');
     };
 
     select2Initialization.$inject = ['uiSelect2Config'];
