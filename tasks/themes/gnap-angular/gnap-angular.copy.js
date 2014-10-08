@@ -55,5 +55,10 @@
     'gnap-angular_packagejson': {
         src: './npm/GNaP.Web.Themes.GNaP.Angular.json',
         dest: './deploy/vendor/gnap-theme-gnap-angular/package.json'        
+    },
+
+    'gnap-angular_readme': {
+        src: './npm/README.md',
+        dest: './deploy/vendor/gnap-theme-gnap-angular/README.md'
     }
 };

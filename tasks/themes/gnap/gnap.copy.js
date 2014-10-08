@@ -72,5 +72,10 @@
     gnap_packagejson: {
         src: './npm/GNaP.Web.Themes.GNaP.json',
         dest: './deploy/vendor/gnap-theme-gnap/package.json'        
+    },
+
+    gnap_readme: {
+        src: './npm/README.md',
+        dest: './deploy/vendor/gnap-theme-gnap/README.md'
     }
 };
