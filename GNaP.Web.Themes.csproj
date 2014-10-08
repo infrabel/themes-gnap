@@ -3135,6 +3135,7 @@
     <None Include="generator\gnap-angular\README.md" />
     <None Include="generator\gnap-angular\state\templates\translations.json" />
     <None Include="LICENSE" />
+    <None Include="npm\README.md" />
     <None Include="npm\GNaP.Web.Themes.GNaP.Angular.json" />
     <None Include="npm\GNaP.Web.Themes.GNaP.json" />
     <None Include="nuget\definitions\GNaP.Web.Themes.GNaP.Angular.nuspec" />
