@@ -93,6 +93,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
             var self = this;
 
             self.template('Gruntfile.js', 'Gruntfile.js', { pkg: self.pkg, portNumber: self.portNumber });
+            self.src.copy('jshintrc', '.jshintrc');
             self.template('_package.json', 'package.json', { appName: self.appName, appTitle: self.appTitle, themeName: self.themeName });
             self.template('index.html', 'index.html', { appName: self.appName, themeName: self.themeName });
             
@@ -127,7 +128,9 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         self.npmInstall([self.themeName], {}, function() {
             self.npmInstall(['grunt',
                              'grunt-contrib-connect',
+                             'grunt-contrib-jshint',
                              'grunt-contrib-watch',
+                             'jshint-stylish',
                              'load-grunt-tasks',
                              'time-grunt'], { 'saveDev': true }, function() {
                 self.log();

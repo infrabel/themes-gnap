@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('<%= appName %>')
@@ -6,6 +8,5 @@
     <%= stateNameCapitalized %>Controller.$inject = [];
 
     function <%= stateNameCapitalized %>Controller() {
-    };
-    
+    }
 })();

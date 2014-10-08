@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('<%= appName %>')
@@ -8,8 +10,8 @@
     function MainController() {
         var vm = this;
 
-        vm.search = function () {
-            alert('Searching for ' + vm.keywords);
-        }
-    };
+        vm.search = function() {
+            window.alert('Searching for ' + vm.keywords);
+        };
+    }
 })();
