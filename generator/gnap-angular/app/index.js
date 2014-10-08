@@ -21,6 +21,19 @@ var GNaPGenerator = yeoman.generators.Base.extend({
             return inputName + ' is required!';
         };
 
+        self.isValidPortNumber = function(input) {
+            if (!/^[0-9]+$/.test('' + input))
+                return 'Port number must be a number!';
+
+            if (input > 65535)
+                return 'Port number must be less than 65535';
+
+            if (input < 1)
+                return 'Port number must be greater than 1';
+
+            return true;
+        };
+
         self.log(yosay('Welcome to the outstanding GNaP generator!'));
 
         var prompts = [
@@ -49,6 +62,14 @@ var GNaPGenerator = yeoman.generators.Base.extend({
                 }],
                 default: 'gnap-theme-gnap-angular',
                 validate: function (input) { return inputRequired(input, 'Theme'); }
+            },
+
+            {
+                type: 'input',
+                name: 'port-number',
+                message: 'Which port should the development server run on?',
+                validate: function (input) { return self.isValidPortNumber(input); },
+                default: 9000
             }
         ];
 
@@ -56,10 +77,12 @@ var GNaPGenerator = yeoman.generators.Base.extend({
             this.appName = props['app-name'].toLowerCase();
             this.appTitle = props['app-title'];
             this.themeName = props['theme-name'].toLowerCase();
+            this.portNumber = props['port-number'];
 
             this.config.set('app-name', this.appName);
             this.config.set('app-title', this.appTitle);
             this.config.set('theme-name', this.themeName);
+            this.config.set('port-number', this.portNumber);
 
             done();
         }.bind(self));
@@ -69,7 +92,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         app: function () {
             var self = this;
 
-            self.template('Gruntfile.js', 'Gruntfile.js', { pkg: self.pkg });
+            self.template('Gruntfile.js', 'Gruntfile.js', { pkg: self.pkg, portNumber: self.portNumber });
             self.template('_package.json', 'package.json', { appName: self.appName, appTitle: self.appTitle, themeName: self.themeName });
             self.template('index.html', 'index.html', { appName: self.appName, themeName: self.themeName });
             
