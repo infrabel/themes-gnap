@@ -3129,8 +3129,7 @@
     <None Include="generator\gnap-angular\app\templates\app\main\translations.nl.json" />
     <None Include="generator\gnap-angular\app\templates\editorconfig" />
     <None Include="generator\gnap-angular\app\templates\jshintrc" />
-    <None Include="generator\gnap-angular\app\templates\start-server.cmd" />
-    <None Include="generator\gnap-angular\app\templates\_bower.json" />
+    <Content Include="generator\gnap-angular\app\templates\Gruntfile.js" />
     <None Include="generator\gnap-angular\app\templates\_package.json" />
     <None Include="generator\gnap-angular\package.json" />
     <None Include="generator\gnap-angular\README.md" />

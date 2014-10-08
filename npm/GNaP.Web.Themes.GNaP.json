@@ -8,6 +8,10 @@
         "ui",
         "theme"
     ],
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/infrabel/GNaP.Web.Themes.git"
+    },
     "author": "Infrabel, NDCC",
     "license": "BSD-3-Clause"
 }

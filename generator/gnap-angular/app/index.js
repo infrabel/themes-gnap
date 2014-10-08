@@ -69,8 +69,8 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         app: function () {
             var self = this;
 
-            self.template('_package.json', 'package.json', { appName: self.appName, themeName: self.themeName });
-            self.template('start-server.cmd', 'start-server.cmd', { themeName: self.themeName });
+            self.template('Gruntfile.js', 'Gruntfile.js', { pkg: self.pkg });
+            self.template('_package.json', 'package.json', { appName: self.appName, appTitle: self.appTitle, themeName: self.themeName });
             self.template('index.html', 'index.html', { appName: self.appName, themeName: self.themeName });
             
             self.dest.mkdir('app');
@@ -93,11 +93,6 @@ var GNaPGenerator = yeoman.generators.Base.extend({
             self.template('app/main/getting-started/getting-started.controller.js', 'app/main/getting-started/getting-started.controller.js', { appName: self.appName });
             self.src.copy('app/main/getting-started/getting-started.html', 'app/main/getting-started/getting-started.html');
             self.template('app/main/getting-started/getting-started.state.js', 'app/main/getting-started/getting-started.state.js', { appName: self.appName });
-        },
-
-        projectfiles: function () {
-            //this.src.copy('editorconfig', '.editorconfig');
-            //this.src.copy('jshintrc', '.jshintrc');
         }
     },
 
@@ -106,13 +101,19 @@ var GNaPGenerator = yeoman.generators.Base.extend({
             done = self.async();
 
         self.log(clc.green('   create') + ' theme (' + clc.cyan(self.themeName) + ')');
-        self.npmInstall([self.themeName], { }, function() {
-            self.log();
-            self.log(clc.green('!') + clc.whiteBright(' Successfully created ') + clc.cyan(self.appName));
-            self.log(clc.green('!') + clc.whiteBright(' To see your site, run:'));
-            self.log('\t' + clc.yellowBright('start-server.cmd'));
+        self.npmInstall([self.themeName], {}, function() {
+            self.npmInstall(['grunt',
+                             'grunt-contrib-connect',
+                             'grunt-contrib-watch',
+                             'load-grunt-tasks',
+                             'time-grunt'], { 'saveDev': true }, function() {
+                self.log();
+                self.log(clc.green('!') + clc.whiteBright(' Successfully created ') + clc.cyan(self.appName));
+                self.log(clc.green('!') + clc.whiteBright(' To see your site, run:'));
+                self.log('\t' + clc.yellowBright('grunt serve'));
 
-            done();
+                done();
+            });
         });
     }
 });
