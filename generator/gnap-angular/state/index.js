@@ -168,8 +168,7 @@ var GNaPGenerator = yeoman.generators.NamedBase.extend({
                     "                titleTranslationId: 'sidebar.items." + self.stateName + "',\n" +
                     "                icon: 'icon-circle-blank',\n" +
                     "                state: '" + self.stateName + "'\n" +
-                    "            }\n" +
-                    "            " + sidebarHook;
+                    "            }" + sidebarHook;
 
                 var translationHook = '"items": {';
                 var translationItemEnglish = translationHook + '\n            "' + self.stateName + '": "' + self.stateTitleEnglish + '",';

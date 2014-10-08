@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('<%= appName %>')
@@ -6,5 +8,5 @@
     GettingStartedController.$inject = [];
 
     function GettingStartedController() {
-    };
+    }
 })();

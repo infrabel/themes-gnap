@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('<%= appName %>')
@@ -27,7 +29,7 @@
 
     function stateConfiguration($stateProvider) {
         $stateProvider.state(stateSettings.name, stateSettings.state);
-    };
+    }
 
     onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -38,7 +40,7 @@
         setupSidebarItems(sidebarService);
 
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
-    };
+    }
 
     onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -49,7 +51,7 @@
         sidebarService.clearItems();
 
         breadcrumbsService.removeLastBreadcrumb();
-    };
+    }
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
@@ -57,7 +59,7 @@
             $translatePartialLoader.addPart(stateSettings.translations);
             return $translate.refresh();
         };
-    };
+    }
 
     function setupSidebarShortcuts(sidebarService) {
         sidebarService.setShortcuts([
@@ -66,7 +68,7 @@
                 buttonClass: 'btn btn-success',
                 icon: 'icon-signal',
                 click: function () {
-                    alert('Going to the statistics page ...');
+                    window.alert('Going to the statistics page ...');
                 }
             },
             {
@@ -74,7 +76,7 @@
                 buttonClass: 'btn btn-info',
                 icon: 'icon-pencil',
                 click: function () {
-                    alert('Going to the edit page ...');
+                    window.alert('Going to the edit page ...');
                 }
             },
             {
@@ -82,7 +84,7 @@
                 buttonClass: 'btn btn-warning',
                 icon: 'icon-group',
                 click: function () {
-                    alert('Going to the profile page ...');
+                    window.alert('Going to the profile page ...');
                 }
             },
             {
@@ -90,11 +92,11 @@
                 buttonClass: 'btn btn-danger',
                 icon: 'icon-cogs',
                 click: function () {
-                    alert('Going to the administration page ...');
+                    window.alert('Going to the administration page ...');
                 }
             }
         ]);
-    };
+    }
 
     function setupSidebarItems(sidebarService) {
         sidebarService.setItems([
@@ -103,9 +105,8 @@
                 titleTranslationId: 'sidebar.items.getting-started',
                 icon: 'icon-fire',
                 state: 'main.getting-started'
-            }
-            // ======= yeoman sidebar hook =======
-            // Note: Do not remove the above hook if you wish the sidebar to remain working
+            }// ======= yeoman sidebar hook =======
+             // Note: Do not remove the above hook if you wish the sidebar to remain working
         ]);
-    };
+    }
 })();

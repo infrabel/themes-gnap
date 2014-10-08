@@ -8,11 +8,17 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         watch: {
+            js: {
+                files: ['./app/**/*.js'],
+                tasks: ['jshint'],
+                options: {
+                    livereload: true
+                }
+            },
             livereload: {
                 files: [
                     'index.html',
                     './app/**/*.html',
-                    './app/**/*.js',
                     './app/**/*.json'
                 ],
                 options: {
@@ -31,7 +37,7 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    middleware: function (connect) {
+                    middleware: function(connect) {
                         return [
                             connect.static('./node_modules'),
                             connect.static('./')
@@ -39,10 +45,21 @@ module.exports = function (grunt) {
                     }
                 }
             }
+        },
+
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+                reporter: require('jshint-stylish')
+            },
+            all: [
+                'Gruntfile.js',
+                './app/**/*.js'
+            ]
         }
     });
 
-    grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
+    grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function () {
         if (grunt.option('allow-remote')) {
             grunt.config.set('connect.options.hostname', '0.0.0.0');
         }
