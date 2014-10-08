@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('<%= appName %>')
@@ -26,7 +28,7 @@
 
     function stateConfiguration($stateProvider) {
         $stateProvider.state(stateSettings.name, stateSettings.state);
-    };
+    }
 
     onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -35,7 +37,7 @@
 
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
         sidebarService.setSelected(stateSettings.sidebarKey);
-    };
+    }
 
     onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -44,5 +46,5 @@
 
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
-    };
+    }
 })();

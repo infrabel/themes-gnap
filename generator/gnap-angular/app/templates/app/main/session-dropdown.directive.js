@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc session dropdown logic
  * @file session-dropdown.directive.js
@@ -13,5 +15,5 @@
             restrict: 'A',
             templateUrl: 'app/main/session-dropdown.html'
         };
-    };
+    }
 })();
