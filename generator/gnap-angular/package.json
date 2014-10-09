@@ -1,6 +1,6 @@
 {
     "name": "generator-gnap-angular",
-    "version": "0.11.0",
+    "version": "0.12.0",
     "description": "AngularJS application opinionated for GNaP",
     "license": "BSD-3-Clause",
     "main": "app/index.js",
@@ -17,7 +17,8 @@
         "test": "mocha"
     },
     "files": [
-        "app"
+        "app",
+        "state"
     ],
     "keywords": [
         "yeoman-generator",
