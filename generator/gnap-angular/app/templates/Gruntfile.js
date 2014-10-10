@@ -12,7 +12,8 @@ module.exports = function (grunt) {
                 files: ['./app/**/*.js'],
                 tasks: ['jshint'],
                 options: {
-                    livereload: true
+                    livereload: '<%%= connect.options.livereload %>',
+                    livereloadOnError: false
                 }
             },
             livereload: {
@@ -22,7 +23,8 @@ module.exports = function (grunt) {
                     './app/**/*.json'
                 ],
                 options: {
-                    livereload: '<%%= connect.options.livereload %>'
+                    livereload: '<%%= connect.options.livereload %>',
+                    livereloadOnError: false
                 }
             }
         },
