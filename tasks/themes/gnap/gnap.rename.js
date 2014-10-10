@@ -13,6 +13,10 @@
             {
                 src: './build/ace/js/jquery-*.min.js',
                 dest: './build/ace/js/jquery.min.js'
+            },
+            {
+                src: './build/ace/js/develop/jquery-*.js',
+                dest: './build/ace/js/develop/jquery.js'
             }
         ]
     },
