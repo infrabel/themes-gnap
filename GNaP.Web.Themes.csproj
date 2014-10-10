@@ -262,14 +262,6 @@
     <Content Include="custom\gnap-angular\js\develop\gnap\sidebar.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\timepicker.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\wysiwyg.directive.js" />
-    <Content Include="custom\gnap-angular\server\Microsoft.Owin.Diagnostics.dll" />
-    <Content Include="custom\gnap-angular\server\Microsoft.Owin.dll" />
-    <Content Include="custom\gnap-angular\server\Microsoft.Owin.FileSystems.dll" />
-    <Content Include="custom\gnap-angular\server\Microsoft.Owin.Host.HttpListener.dll" />
-    <Content Include="custom\gnap-angular\server\Microsoft.Owin.Hosting.dll" />
-    <Content Include="custom\gnap-angular\server\Microsoft.Owin.StaticFiles.dll" />
-    <Content Include="custom\gnap-angular\server\Owin.dll" />
-    <Content Include="custom\gnap-angular\server\simple-http-server.exe" />
     <Content Include="custom\gnap\html\site.json.replace-grunt.js" />
     <Content Include="custom\gnap\images\favicon.ico" />
     <Content Include="custom\gnap\images\loading.gif" />
@@ -3106,7 +3098,6 @@
     <None Include="custom\gnap-angular\app\main\translations.en.json" />
     <None Include="custom\gnap-angular\app\main\translations.fr.json" />
     <None Include="custom\gnap-angular\app\main\translations.nl.json" />
-    <None Include="custom\gnap-angular\server\simple-http-server.exe.config" />
     <None Include="custom\gnap-angular\start-server.cmd" />
     <None Include="custom\gnap\html\app\data\pages\about.json" />
     <None Include="custom\ace\html\app\data\pages\examples.json" />
@@ -3916,6 +3907,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="build\" />
+    <Folder Include="custom\gnap-angular\server\" />
     <Folder Include="deploy\" />
     <Folder Include="nuget\packages\" />
     <Folder Include="raw\ace\mustache\app\views\pages\partials\_shared\" />
