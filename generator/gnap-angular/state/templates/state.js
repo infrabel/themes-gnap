@@ -9,7 +9,7 @@
         name: '<%= stateName %>',
         state: {
             url: '<%= stateUrl %>',
-            templateUrl: '<%= fullPath %>/<%= stateNameLast %>.html',
+            templateUrl: '<%= generatedPath %>/<%= stateNameLast %>.html',
             controller: '<%= stateNameCapitalized %>Controller as vm'
         },
         title: {
@@ -19,7 +19,7 @@
             titleTranslationId: '<%= stateName %>.title'
         },
         sidebarKey: '<%= stateName %>',
-        translations: '<%= fullPath %>'
+        translations: '<%= generatedPath %>'
     };
 
     stateSettings.state.onEnter = onEnter;
