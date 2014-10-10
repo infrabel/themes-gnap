@@ -230,6 +230,9 @@
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.controller.js" />
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.html" />
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.state.js" />
+    <Content Include="custom\gnap-angular\app\main\secure\secure.controller.js" />
+    <Content Include="custom\gnap-angular\app\main\secure\secure.html" />
+    <Content Include="custom\gnap-angular\app\main\secure\secure.state.js" />
     <Content Include="custom\gnap-angular\app\main\typography\typography.controller.js" />
     <Content Include="custom\gnap-angular\app\main\typography\typography.html" />
     <Content Include="custom\gnap-angular\app\main\typography\typography.state.js" />
