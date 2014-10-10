@@ -155,10 +155,10 @@ var GNaPGenerator = yeoman.generators.NamedBase.extend({
 
             // update index.html
             var stateHook = '<!-- build:js js/states.js -->';
-            self.updateFile('src/index.html', stateHook, stateHook + '\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.state.js"></script>');
+            self.updateFile('src/index.html', stateHook, stateHook + '\r\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.state.js"></script>');
 
             var controllerHook = '<!-- build:js js/controllers.js -->';
-            self.updateFile('src/index.html', controllerHook, controllerHook + '\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.controller.js"></script>');
+            self.updateFile('src/index.html', controllerHook, controllerHook + '\r\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.controller.js"></script>');
 
             // add to sidebar if required, as well as the translations for the sidebar
             if (self.stateVisibleInSidebar) {

@@ -46,6 +46,12 @@ module.exports = function(grunt) {
                         ];
                     }
                 }
+            },
+            dist: {
+                options: {
+                    base: './dist',
+                    livereload: false
+                }
             }
         },
 
@@ -64,7 +70,7 @@ module.exports = function(grunt) {
                     'dist/styles'
                 ]
             },
-            html: ['dist/{,*/}*.html'],
+            html: ['./dist/index.html'],
             css: ['dist/styles/{,*/}*.css']
         },
 
@@ -115,9 +121,13 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function() {
+    grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function(target) {
         if (grunt.option('allow-remote')) {
             grunt.config.set('connect.options.hostname', '0.0.0.0');
+        }
+
+        if (target === 'dist') {
+            return grunt.task.run(['build', 'connect:dist:keepalive']);
         }
 
         grunt.task.run([
@@ -130,9 +140,9 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
-        'concat',
-        //'cssmin',
-        'uglify',
+        'concat:generated',
+        'cssmin:generated',
+        'uglify:generated',
         'copy:dist',
         //'rev',
         'usemin' /*,
