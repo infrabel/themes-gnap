@@ -3,7 +3,7 @@ obj/
 node_modules/
 build/
 deploy/
-packages/
+custom/**/packages/
 
 *.suo
 *.user
