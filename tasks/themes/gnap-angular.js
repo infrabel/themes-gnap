@@ -7,6 +7,7 @@
                         'copy:gnap-angular_angular_css_to_build',
                         'copy:gnap-angular_angular_images_to_build',
                         'copy:gnap-angular_custom_to_build',
+                        'copy:gnap-angular_server_to_build',
                         'includereplace:gnap-angular_replace_examples',
                         'cssmin:build_gnap_angular_css',
                         'uglify:gnap-angular',
