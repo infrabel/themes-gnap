@@ -2,14 +2,14 @@
 // <%= pkg.name %> <%= pkg.version %>
 'use strict';
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
         watch: {
             js: {
-                files: ['./app/**/*.js'],
+                files: ['./src/app/**/*.js'],
                 tasks: ['jshint'],
                 options: {
                     livereload: '<%%= connect.options.livereload %>',
@@ -18,9 +18,9 @@ module.exports = function (grunt) {
             },
             livereload: {
                 files: [
-                    'index.html',
-                    './app/**/*.html',
-                    './app/**/*.json'
+                    './src/index.html',
+                    './src/app/**/*.html',
+                    './src/app/**/*.json'
                 ],
                 options: {
                     livereload: '<%%= connect.options.livereload %>',
@@ -41,11 +41,64 @@ module.exports = function (grunt) {
                 options: {
                     middleware: function(connect) {
                         return [
-                            connect.static('./node_modules'),
-                            connect.static('./')
+                            connect.static('./src'),
+                            connect().use('/node_modules', connect.static('./node_modules'))
                         ];
                     }
                 }
+            }
+        },
+
+        useminPrepare: {
+            options: {
+                dest: 'dist'
+            },
+            html: './src/index.html'
+        },
+
+        usemin: {
+            options: {
+                assetsDirs: [
+                    'dist',
+                    'dist/images',
+                    'dist/styles'
+                ]
+            },
+            html: ['dist/{,*/}*.html'],
+            css: ['dist/styles/{,*/}*.css']
+        },
+
+        clean: {
+            dist: {
+                files: [
+                    {
+                        dot: true,
+                        src: [
+                            '.tmp',
+                            'dist/*',
+                            '!dist/.git*'
+                        ]
+                    }
+                ]
+            },
+            server: '.tmp'
+        },
+
+        copy: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: 'src',
+                        dest: 'dist',
+                        src: [
+                            './index.html',
+                            './**/*.html',
+                            './**/*.json'
+                        ]
+                    }
+                ]
             }
         },
 
@@ -56,19 +109,33 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                './app/**/*.js'
+                './src/app/*.js',
+                './src/app/**/*.js'
             ]
         }
     });
 
-    grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function () {
+    grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function() {
         if (grunt.option('allow-remote')) {
             grunt.config.set('connect.options.hostname', '0.0.0.0');
         }
 
         grunt.task.run([
+            'clean:server',
             'connect:livereload',
             'watch'
         ]);
     });
+
+    grunt.registerTask('build', [
+        'clean:dist',
+        'useminPrepare',
+        'concat',
+        //'cssmin',
+        'uglify',
+        'copy:dist',
+        //'rev',
+        'usemin' /*,
+            'htmlmin'*/
+    ]);
 };
