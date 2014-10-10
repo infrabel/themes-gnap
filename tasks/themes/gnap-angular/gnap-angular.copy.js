@@ -27,8 +27,15 @@
     'gnap-angular_custom_to_build': {
         expand: true,
         cwd: './custom/gnap-angular/',
-        src: ['*.*', '**/*.*'],
+        src: ['*.*', '**/*.*', '!server/*.*', '!server/**/*.*'],
         dest: './build/gnap-angular/'
+    },
+
+    'gnap-angular_server_to_build': {
+        expand: true,
+        cwd: './custom/gnap-angular/server/release/',
+        src: ['*.*', '**/*.*'],
+        dest: './build/gnap-angular/server/'
     },
 
     'gnap-angular_deploy_gnap': {

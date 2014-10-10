@@ -1,0 +1,37 @@
+[
+    {
+        "domain": "app.com",
+        "price": "$45",
+        "clicks": "3,330",
+        "update": "Feb 12",
+        "status": "Expiring"
+    },
+    {
+        "domain": "base.com",
+        "price": "$35",
+        "clicks": "2,595",
+        "update": "Feb 18",
+        "status": "Registered"
+    },
+    {
+        "domain": "max.com",
+        "price": "$60",
+        "clicks": "4,400",
+        "update": "Mar 11",
+        "status": "Expiring"
+    },
+    {
+        "domain": "best.com",
+        "price": "$75",
+        "clicks": "6,500",
+        "update": "Apr 03",
+        "status": "Flagged"
+    },
+    {
+        "domain": "pro.com",
+        "price": "$55",
+        "clicks": "4,250",
+        "update": "Jan 21",
+        "status": "Flagged"
+    }
+]
