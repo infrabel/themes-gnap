@@ -4,4 +4,4 @@ ECHO Launching browser at http://localhost:%PORT% - It is possibly you will have
 explorer.exe http://localhost:%PORT%/
 
 ECHO Starting server at http://localhost:%PORT%/
-server\simple-http-server.exe %PORT% ..\
+server\ExampleHttpServer.exe -p %PORT% -r ..\
