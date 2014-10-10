@@ -99,7 +99,7 @@
     <Compile Include="Auth\JwtTokenService.cs" />
     <Compile Include="Bootstrap\Startup.cs" />
     <Compile Include="Api\TokensController.cs" />
-    <Compile Include="Api\DomainsController.cs" />
+    <Compile Include="Api\BankAccountsController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -109,7 +109,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Api\Domains.json">
+    <Content Include="Api\BankAccounts.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="app.config" />

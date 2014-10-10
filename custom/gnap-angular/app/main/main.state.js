@@ -144,6 +144,12 @@
                 }
             },
             {
+                key: 'secure',
+                titleTranslationId: 'sidebar.items.secure',
+                icon: 'icon-circle-blank',
+                state: 'main.secure'
+            },
+            {
                 key: 'multi-level-menu',
                 titleTranslationId: 'sidebar.items.multi-level-menu',
                 icon: 'icon-globe',
