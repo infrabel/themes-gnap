@@ -92,7 +92,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         app: function () {
             var self = this;
 
-            self.template('Gruntfile.js', 'Gruntfile.js', { pkg: self.pkg, portNumber: self.portNumber });
+            self.template('Gruntfile.js', 'Gruntfile.js', { pkg: self.pkg, portNumber: self.portNumber, themeName: self.themeName });
             self.src.copy('jshintrc', '.jshintrc');
             self.template('_package.json', 'package.json', { appName: self.appName, appTitle: self.appTitle, themeName: self.themeName });
 

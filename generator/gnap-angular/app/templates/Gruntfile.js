@@ -103,6 +103,17 @@ module.exports = function(grunt) {
                             './**/*.html',
                             './**/*.json'
                         ]
+                    },
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: 'node_modules/<%= themeName %>',
+                        dest: 'dist',
+                        src: [
+                            './fonts/*.*',
+                            './images/*.*', // TODO: We should copy this to images vendor?
+                            './images/**/*.*'
+                        ]
                     }
                 ]
             }

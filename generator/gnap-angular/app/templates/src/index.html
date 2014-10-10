@@ -24,27 +24,38 @@
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/gnap.css" />
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/app.css" />    
         <!-- endbuild -->
-
+        <!-- build:css(.) css/vendor-print.css -->
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/print.css" media="print" />
-
+        <!-- endbuild -->
+        
+        <!-- build:css(.) css/vendor-ie7.css -->
         <!--[if IE 7]>
             <link rel="stylesheet" href="node_modules/<%= themeName %>/css/font-awesome-ie7.min.css" />
         <![endif]-->
-
+        <!-- endbuild -->
+        
+        <!-- build:css(.) css/vendor-ie8.css -->
         <!--[if lte IE 8]>
             <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ace-ie.min.css" />
             <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ie8.min.css" />
         <![endif]-->
-
+        <!-- endbuild -->
+        
+        <!-- build:css(.) css/vendor-ie.css -->
         <!--[if lt IE 9]>
             <script src="node_modules/<%= themeName %>/js/html5shiv.min.js"></script>
             <script src="node_modules/<%= themeName %>/js/respond.min.js"></script>
         <![endif]-->
-
+        <!-- endbuild -->
+        
+        <!-- build:css(.) css/vendor-ie9.css -->
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ie9.min.css" />
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/custom.min.css" />
-
+        <!-- endbuild -->
+        
+        <!-- build:js(.) js/modernizr.js -->
         <script src="node_modules/<%= themeName %>/js/modernizr.min.js"></script>
+        <!-- endbuild -->
 
         <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     </head>
@@ -120,22 +131,18 @@
         <script src="node_modules/<%= themeName %>/js/develop/gnap/locale.service.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/gnap/partial-loader-error-handler.service.js"></script>
         <!-- endbuild -->
-
         <!-- build:js js/config.js -->
         <script src="app/app.module.js"></script>
         <script src="app/app.config.js"></script>
         <!-- endbuild -->
-
         <!-- build:js js/states.js -->
         <script src="app/main/getting-started/getting-started.state.js"></script>
-        <script src="app/main/main.state.js"></script>
+        <script src="app/main/main.state.js"></script>        
         <!-- endbuild -->
-        
         <!-- build:js js/controllers.js -->
         <script src="app/main/getting-started/getting-started.controller.js"></script>
         <script src="app/main/main.controller.js"></script>
         <!-- endbuild -->
-
         <!-- build:js js/app.js -->
         <script src="app/main/session-dropdown.directive.js"></script>
         <!-- endbuild -->
