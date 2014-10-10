@@ -41,9 +41,9 @@ var GNaPGenerator = yeoman.generators.NamedBase.extend({
         // stateNameCapitalized: MainTestShow
         self.stateNameCapitalized = self.replaceAll(' ', '', self.toTitleCase(self.replaceAll('.', ' ', self.stateName)));
 
-        // stateNameParts: [app, main, test, show]
+        // stateNameParts: [src, app, main, test, show]
         self.stateNameParts = self.stateName.split('.');
-        self.stateNameParts.splice(0, 0, 'app');
+        self.stateNameParts.splice(0, 0, 'src', 'app');
 
         // stateNameLast: show
         self.stateNameLast = self.stateNameParts[self.stateNameParts.length - 1];
@@ -101,7 +101,8 @@ var GNaPGenerator = yeoman.generators.NamedBase.extend({
     writing: {
         app: function () {
             var self = this,
-                fullPath = self.stateNameParts.join('/');
+                fullPath = self.stateNameParts.join('/'),
+                generatedPath = fullPath.replace('src/', '');
 
             self.updateFile = function (path, hook, replacement) {
                 var file = self.readFileAsString(path);
@@ -128,7 +129,7 @@ var GNaPGenerator = yeoman.generators.NamedBase.extend({
                 stateName: self.stateName,
                 stateNameCapitalized: self.stateNameCapitalized,
                 stateNameLast: self.stateNameLast,
-                fullPath: fullPath,
+                generatedPath: generatedPath,
                 stateUrl: self.stateUrl
             });
 
@@ -154,10 +155,10 @@ var GNaPGenerator = yeoman.generators.NamedBase.extend({
 
             // update index.html
             var stateHook = '<!-- build:js js/states.js -->';
-            self.updateFile('index.html', stateHook, stateHook + '\n        <script src="' + fullPath + '/' + self.stateNameLast + '.state.js"></script>');
+            self.updateFile('src/index.html', stateHook, stateHook + '\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.state.js"></script>');
 
             var controllerHook = '<!-- build:js js/controllers.js -->';
-            self.updateFile('index.html', controllerHook, controllerHook + '\n        <script src="' + fullPath + '/' + self.stateNameLast + '.controller.js"></script>');
+            self.updateFile('src/index.html', controllerHook, controllerHook + '\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.controller.js"></script>');
 
             // add to sidebar if required, as well as the translations for the sidebar
             if (self.stateVisibleInSidebar) {
@@ -175,10 +176,10 @@ var GNaPGenerator = yeoman.generators.NamedBase.extend({
                 var translationItemDutch = translationHook + '\n            "' + self.stateName + '": "' + self.stateTitleDutch + '",';
                 var translationItemFrench = translationHook + '\n            "' + self.stateName + '": "' + self.stateTitleFrench + '",';
 
-                self.updateFile('app/main/main.state.js', sidebarHook, sidebarItem);
-                self.updateFile('app/main/translations.en.json', translationHook, translationItemEnglish);
-                self.updateFile('app/main/translations.nl.json', translationHook, translationItemDutch);
-                self.updateFile('app/main/translations.fr.json', translationHook, translationItemFrench);
+                self.updateFile('src/app/main/main.state.js', sidebarHook, sidebarItem);
+                self.updateFile('src/app/main/translations.en.json', translationHook, translationItemEnglish);
+                self.updateFile('src/app/main/translations.nl.json', translationHook, translationItemDutch);
+                self.updateFile('src/app/main/translations.fr.json', translationHook, translationItemFrench);
             }
 
             // TODO: Need to check if parent states are present and warn the user if they are not
