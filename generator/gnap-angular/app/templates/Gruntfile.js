@@ -130,7 +130,7 @@ module.exports = function(grunt) {
 
         replace: {
             dist: {
-                src: ['./dist/index.html', './dist/js/config.js', './dist/vendor/css/*.css'],
+                src: ['./dist/index.html', './dist/app/js/app.js', './dist/vendor/css/*.css'],
                 overwrite: true,
                 replacements: [
                     {
@@ -146,8 +146,8 @@ module.exports = function(grunt) {
                         to: 'url(\'../fonts',
                     },
                     {
-                        from: 'url(\../../fonts',
-                        to: 'url(\../fonts',
+                        from: 'url(../../fonts',
+                        to: 'url(../fonts',
                     },
                     {
                         from: 'url("../../images',
