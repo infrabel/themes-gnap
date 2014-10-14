@@ -74,7 +74,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         ];
 
         self.prompt(prompts, function (props) {
-            this.appName = props['app-name'].toLowerCase();
+            this.appName = props['app-name'].replace(/\s+/g, '-').toLowerCase();
             this.appTitle = props['app-title'];
             this.themeName = props['theme-name'].toLowerCase();
             this.portNumber = props['port-number'];
