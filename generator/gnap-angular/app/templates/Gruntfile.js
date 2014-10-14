@@ -66,12 +66,13 @@ module.exports = function(grunt) {
             options: {
                 assetsDirs: [
                     'dist',
-                    'dist/images',
-                    'dist/styles'
+                    'dist/vendor/images',
+                    'dist/vendor/css',
+                    'dist/vendor/fonts'
                 ]
             },
             html: ['./dist/index.html'],
-            css: ['dist/styles/{,*/}*.css']
+            css: ['./dist/app/css/*.css', './dist/vendor/css/*.css']
         },
 
         clean: {
@@ -171,13 +172,15 @@ module.exports = function(grunt) {
 
         uglify: {
             dist: {
-                files: [{
-                    expand: true,
-                    flatten: false,
-                    cwd: './dist/vendor/js/angular/i18n/',
-                    src: ['./*.js'],
-                    dest: './dist/vendor/js/angular/i18n/'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        flatten: false,
+                        cwd: './dist/vendor/js/angular/i18n/',
+                        src: ['./*.js'],
+                        dest: './dist/vendor/js/angular/i18n/'
+                    }
+                ]
             }
         },
 
@@ -190,12 +193,30 @@ module.exports = function(grunt) {
                     removeAttributeQuotes: true,
                     removeRedundantAttributes: true
                 },
-                files: [{
-                    expand: true,
-                    cwd: './dist',
-                    src: '**/*.html',
-                    dest: './dist'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: './dist',
+                        src: '**/*.html',
+                        dest: './dist'
+                    }
+                ]
+            }
+        },
+
+        rev: {
+            dist: {
+                files: {
+                    src: [
+                        './dist/app/js/*.js',
+                        './dist/app/css/*.css',
+                        // TODO: dist/app/ *.html *.json
+                        './dist/vendor/css/*.css',
+                        './dist/vendor/fonts/*.*',
+                        './dist/vendor/images/**/*.*',
+                        './dist/vendor/js/*.js'
+                    ]
+                }
             }
         },
 
@@ -235,11 +256,11 @@ module.exports = function(grunt) {
         'cssmin:generated',
         'uglify:generated',
         'copy:dist',
-        //'rev',
-        'usemin' ,
-        'htmlmin',
         'replace:dist',
-        'uglify:dist'
+        'uglify:dist',
+        'rev',
+        'usemin',
+        'htmlmin'
     ]);
 
     //grunt.registerTask('default', [
