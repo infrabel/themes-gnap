@@ -57,7 +57,7 @@
         <script src="node_modules/<%= themeName %>/js/develop/modernizr.js"></script>
         <!-- endbuild -->
         
-        <!-- build:css css/app.css -->
+        <!-- build:css app/css/app.css -->
         <link rel="stylesheet" href="css/app.css" />
         <!-- endbuild -->
 
@@ -103,8 +103,7 @@
         <script src="node_modules/<%= themeName %>/js/develop/angular-translate/angular-translate.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/angular-translate/loader-partial.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/angular-dynamic-locale/tmhDynamicLocale.js"></script>
-        <!-- endbuild -->
-        <!-- build:js(.) vendor/js/gnap.js -->
+
         <script src="node_modules/<%= themeName %>/js/develop/gnap/gnap.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/gnap/title.service.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/gnap/title.directive.js"></script>
@@ -132,19 +131,16 @@
         <script src="node_modules/<%= themeName %>/js/develop/gnap/partial-loader-error-handler.service.js"></script>
         <!-- endbuild -->
 
-        <!-- build:js js/config.js -->
+        <!-- build:js app/js/app.js -->
         <script src="app/app.module.js"></script>
         <script src="app/app.config.js"></script>
-        <!-- endbuild -->
-        <!-- build:js js/states.js -->
+
         <script src="app/main/getting-started/getting-started.state.js"></script>
-        <script src="app/main/main.state.js"></script>        
-        <!-- endbuild -->
-        <!-- build:js js/controllers.js -->
         <script src="app/main/getting-started/getting-started.controller.js"></script>
+
+        <script src="app/main/main.state.js"></script>
         <script src="app/main/main.controller.js"></script>
-        <!-- endbuild -->
-        <!-- build:js js/app.js -->
+
         <script src="app/main/session-dropdown.directive.js"></script>
         <!-- endbuild -->
     </body>

@@ -23,8 +23,8 @@ module.exports = {
                 to: 'url(\'../../fonts',
             },
             {
-                from: 'url(\../fonts',
-                to: 'url(\../../fonts',
+                from: 'url(../fonts',
+                to: 'url(../../fonts',
             },
             {
                 from: 'url("../images',
