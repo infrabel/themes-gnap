@@ -181,6 +181,24 @@ module.exports = function(grunt) {
             }
         },
 
+        htmlmin: {
+            dist: {
+                options: {
+                    collapseWhitespace: true,
+                    conservativeCollapse: true,
+                    preserveLineBreaks: true,
+                    removeAttributeQuotes: true,
+                    removeRedundantAttributes: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: './dist',
+                    src: '**/*.html',
+                    dest: './dist'
+                }]
+            }
+        },
+
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
@@ -219,7 +237,7 @@ module.exports = function(grunt) {
         'copy:dist',
         //'rev',
         'usemin' ,
-        //'htmlmin'
+        'htmlmin',
         'replace:dist',
         'uglify:dist'
     ]);
