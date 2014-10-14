@@ -108,14 +108,76 @@ module.exports = function(grunt) {
                         expand: true,
                         dot: true,
                         cwd: 'node_modules/<%= themeName %>',
-                        dest: 'dist',
+                        dest: './dist/vendor',
                         src: [
                             './fonts/*.*',
-                            './images/*.*', // TODO: We should copy this to images vendor?
+                            './images/*.*',
                             './images/**/*.*'
+                        ]
+                    },
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: 'node_modules/<%= themeName %>/js/angular/i18n',
+                        dest: './dist/vendor/js/angular/i18n',
+                        src: [
+                            './*.js'
                         ]
                     }
                 ]
+            }
+        },
+
+        replace: {
+            dist: {
+                src: ['./dist/index.html', './dist/js/config.js', './dist/vendor/css/*.css'],
+                overwrite: true,
+                replacements: [
+                    {
+                        from: 'node_modules/<%= themeName %>/images/',
+                        to: 'vendor/images/'
+                    },
+                    {
+                        from: 'url("../../fonts',
+                        to: 'url("../fonts',
+                    },
+                    {
+                        from: 'url(\'../../fonts',
+                        to: 'url(\'../fonts',
+                    },
+                    {
+                        from: 'url(\../../fonts',
+                        to: 'url(\../fonts',
+                    },
+                    {
+                        from: 'url("../../images',
+                        to: 'url("../images',
+                    },
+                    {
+                        from: 'url(\'../../images',
+                        to: 'url(\'../images',
+                    },
+                    {
+                        from: 'url(../../images',
+                        to: 'url(../images',
+                    },
+                    {
+                        from: 'node_modules/<%= themeName %>/js/angular/i18n',
+                        to: 'vendor/js/angular/i18n',
+                    }
+                ]
+            }
+        },
+
+        uglify: {
+            dist: {
+                files: [{
+                    expand: true,
+                    flatten: false,
+                    cwd: './dist/vendor/js/angular/i18n/',
+                    src: ['./*.js'],
+                    dest: './dist/vendor/js/angular/i18n/'
+                }]
             }
         },
 
@@ -156,7 +218,15 @@ module.exports = function(grunt) {
         'uglify:generated',
         'copy:dist',
         //'rev',
-        'usemin' /*,
-            'htmlmin'*/
+        'usemin' ,
+        //'htmlmin'
+        'replace:dist',
+        'uglify:dist'
     ]);
+
+    //grunt.registerTask('default', [
+    //    'newer:jshint',
+    //    'test',
+    //    'build'
+    //]);
 };

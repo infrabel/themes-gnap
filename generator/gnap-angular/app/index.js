@@ -98,7 +98,10 @@ var GNaPGenerator = yeoman.generators.Base.extend({
 
             self.dest.mkdir('src');
             self.template('src/index.html', 'src/index.html', { appName: self.appName, themeName: self.themeName });
-            
+
+            self.dest.mkdir('src/css');
+            self.src.copy('src/css/app.css', 'src/css/app.css');
+
             self.dest.mkdir('src/app');
             self.template('src/app/app.config.js', 'src/app/app.config.js', { appName: self.appName, appTitle: self.appTitle, themeName: self.themeName });
             self.template('src/app/app.module.js', 'src/app/app.module.js', { appName: self.appName });
@@ -137,6 +140,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
                              'grunt-contrib-jshint',
                              'grunt-contrib-uglify',
                              'grunt-contrib-watch',
+                             'grunt-text-replace',
                              'grunt-usemin',
                              'jshint-stylish',
                              'load-grunt-tasks',
