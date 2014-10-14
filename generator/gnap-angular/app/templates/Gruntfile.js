@@ -99,7 +99,7 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     src: [
-                        './dist/app/css/*.css', 
+                        './dist/app/css/*.css',
                         './dist/vendor/css/*.css',
                         './dist/app/js/*.js'
                     ]
@@ -162,6 +162,16 @@ module.exports = function(grunt) {
         },
 
         replace: {
+            translations: {
+                src: ['./dist/app/js/app.js'],
+                overwrite: true,
+                replacements: [
+                    {
+                        from: '{part}/translations.{lang}.json',
+                        to: '{part}/translations.{lang}.json?<%%= grunt.task.current.args[0] %>'
+                    }
+                ]
+            },
             dist: {
                 src: ['./dist/index.html', './dist/app/js/app.js', './dist/vendor/css/*.css'],
                 overwrite: true,
@@ -236,6 +246,17 @@ module.exports = function(grunt) {
             }
         },
 
+        concat: {
+            translations: {
+                files: [
+                    {
+                        dest: '.tmp/translations.json',
+                        src: ['./dist/app/**/translations.en.json', './dist/app/**/translations.fr.json', './dist/app/**/translations.nl.json']
+                    }
+                ]
+            }
+        },
+
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
@@ -265,6 +286,15 @@ module.exports = function(grunt) {
         ]);
     });
 
+    grunt.registerTask('hash-translations', function() {
+        var hash = require('crypto').createHash('md5');
+        hash.update(grunt.file.read('.tmp/translations.json'), 'utf8');
+        var translationHash = hash.digest('hex').slice(0, 8);
+
+        grunt.log.write('Translation hash: ' + translationHash);
+        grunt.task.run(['replace:translations:' + translationHash]);
+    });
+
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
@@ -272,8 +302,10 @@ module.exports = function(grunt) {
         'cssmin:generated',
         'uglify:generated',
         'copy:dist',
+        'concat:translations',
         'replace:dist',
         'uglify:dist',
+        'hash-translations',
         'rev:predist',
         'usemin',
         'rev:dist',
