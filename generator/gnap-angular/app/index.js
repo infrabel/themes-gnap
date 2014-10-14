@@ -137,6 +137,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
                              'grunt-contrib-connect',
                              'grunt-contrib-copy',
                              'grunt-contrib-cssmin',
+                             'grunt-contrib-htmlmin',
                              'grunt-contrib-jshint',
                              'grunt-contrib-uglify',
                              'grunt-contrib-watch',
