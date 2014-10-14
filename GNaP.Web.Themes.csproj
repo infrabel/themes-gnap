@@ -288,6 +288,7 @@
     <Content Include="generator\gnap-angular\app\templates\src\app\main\main.state.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\session-dropdown.directive.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\session-dropdown.html" />
+    <Content Include="generator\gnap-angular\app\templates\src\css\app.css" />
     <Content Include="generator\gnap-angular\app\templates\src\index.html" />
     <Content Include="generator\gnap-angular\state\index.js" />
     <Content Include="generator\gnap-angular\state\templates\state.js" />
