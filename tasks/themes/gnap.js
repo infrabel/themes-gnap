@@ -22,6 +22,7 @@
                         'imagemin:gnap_images_jpg',
                         'imagemin:gnap_images_gif',
                         'rename:gnap_ace_js',
+                        'replace:gnap_develop',
                         'deploy-ace',
                         'copy:gnap_deploy_ace',
                         'clean:gnap_deploy'
