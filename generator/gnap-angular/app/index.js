@@ -141,6 +141,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
                              'grunt-contrib-jshint',
                              'grunt-contrib-uglify',
                              'grunt-contrib-watch',
+                             'grunt-rev',
                              'grunt-text-replace',
                              'grunt-usemin',
                              'jshint-stylish',
