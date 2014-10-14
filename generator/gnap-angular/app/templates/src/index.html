@@ -7,9 +7,9 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
-        <!-- build:css(.) css/vendor.css -->
-        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/font-awesome.min.css" />
+        <!-- build:css(.) vendor/css/vendor.css -->
+        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/bootstrap.css" />
+        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/font-awesome.css" />
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/jquery.gritter.css" />
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/select2.css" />
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/datepicker.css" />
@@ -24,47 +24,52 @@
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/gnap.css" />
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/app.css" />    
         <!-- endbuild -->
-        <!-- build:css(.) css/vendor-print.css -->
+        <!-- build:css(.) vendor/css/vendor-print.css -->
         <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/print.css" media="print" />
         <!-- endbuild -->
         
-        <!-- build:css(.) css/vendor-ie7.css -->
+        <!-- build:css(.) vendor/css/vendor-ie7.css -->
         <!--[if IE 7]>
-            <link rel="stylesheet" href="node_modules/<%= themeName %>/css/font-awesome-ie7.min.css" />
+            <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/font-awesome-ie7.css" />
         <![endif]-->
         <!-- endbuild -->
         
-        <!-- build:css(.) css/vendor-ie8.css -->
+        <!-- build:css(.) vendor/css/vendor-ie8.css -->
         <!--[if lte IE 8]>
-            <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ace-ie.min.css" />
-            <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ie8.min.css" />
+            <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/ace-ie.css" />
+            <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/ie8.css" />
         <![endif]-->
         <!-- endbuild -->
         
-        <!-- build:css(.) css/vendor-ie.css -->
+        <!-- build:css(.) vendor/css/vendor-ie.css -->
         <!--[if lt IE 9]>
-            <script src="node_modules/<%= themeName %>/js/html5shiv.min.js"></script>
-            <script src="node_modules/<%= themeName %>/js/respond.min.js"></script>
+            <script src="node_modules/<%= themeName %>/js/develop/html5shiv.js"></script>
+            <script src="node_modules/<%= themeName %>/js/develop/respond.js"></script>
         <![endif]-->
         <!-- endbuild -->
         
-        <!-- build:css(.) css/vendor-ie9.css -->
-        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/ie9.min.css" />
-        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/custom.min.css" />
+        <!-- build:css(.) vendor/css/vendor-ie9.css -->
+        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/ie9.css" />
+        <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/custom.css" />
         <!-- endbuild -->
         
-        <!-- build:js(.) js/modernizr.js -->
-        <script src="node_modules/<%= themeName %>/js/modernizr.min.js"></script>
+        <!-- build:js(.) vendor/js/modernizr.js -->
+        <script src="node_modules/<%= themeName %>/js/develop/modernizr.js"></script>
+        <!-- endbuild -->
+        
+        <!-- build:css css/app.css -->
+        <link rel="stylesheet" href="css/app.css" />
         <!-- endbuild -->
 
-        <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="node_modules/<%= themeName %>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     </head>
 
     <body>
         <div ui-view>Loading...</div>
         
-        <!-- build:js(.) js/vendor.js -->
+        <!-- build:js(.) vendor/js/vendor.js -->
         <script src="node_modules/<%= themeName %>/js/develop/jquery.js"></script>
+        <script src="node_modules/<%= themeName %>/js/develop/jquery.mobile.custom.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/jquery.gritter.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/jquery.inputlimiter.1.3.1.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/jquery.maskedinput.js"></script>
@@ -99,12 +104,7 @@
         <script src="node_modules/<%= themeName %>/js/develop/angular-translate/loader-partial.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/angular-dynamic-locale/tmhDynamicLocale.js"></script>
         <!-- endbuild -->
-        
-        <script type="text/javascript">
-            if ("ontouchend" in document) document.write("<script src='node_modules/<%= themeName %>/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
-        </script>
-
-        <!-- build:js(.) js/gnap.js -->
+        <!-- build:js(.) vendor/js/gnap.js -->
         <script src="node_modules/<%= themeName %>/js/develop/gnap/gnap.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/gnap/title.service.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/gnap/title.directive.js"></script>
@@ -131,6 +131,7 @@
         <script src="node_modules/<%= themeName %>/js/develop/gnap/locale.service.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/gnap/partial-loader-error-handler.service.js"></script>
         <!-- endbuild -->
+
         <!-- build:js js/config.js -->
         <script src="app/app.module.js"></script>
         <script src="app/app.config.js"></script>
