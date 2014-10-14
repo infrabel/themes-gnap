@@ -69,10 +69,17 @@ module.exports = function(grunt) {
                     'dist/vendor/images',
                     'dist/vendor/css',
                     'dist/vendor/fonts'
-                ]
+                ],
+                patterns: {
+                    // FIXME While usemin won't have full support for revved files we have to put all references manually here
+                    js: [
+                        [/templateUrl:'.+?(\.html)'/gm, 'Update the JS to reference our revved templates']
+                    ]
+                }
             },
             html: ['./dist/index.html'],
-            css: ['./dist/app/css/*.css', './dist/vendor/css/*.css']
+            css: ['./dist/app/css/*.css', './dist/vendor/css/*.css'],
+            js: ['./dist/app/js/*.js'],
         },
 
         clean: {
@@ -208,9 +215,10 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     src: [
+                        // TODO: dist/app/ *.html *.json
+                        './dist/app/**/*.html',
                         './dist/app/js/*.js',
                         './dist/app/css/*.css',
-                        // TODO: dist/app/ *.html *.json
                         './dist/vendor/css/*.css',
                         './dist/vendor/fonts/*.*',
                         './dist/vendor/images/**/*.*',
@@ -258,7 +266,7 @@ module.exports = function(grunt) {
         'copy:dist',
         'replace:dist',
         'uglify:dist',
-        'rev',
+        'rev:dist',
         'usemin',
         'htmlmin'
     ]);
