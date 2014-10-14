@@ -1,6 +1,6 @@
 {
     "name": "generator-gnap-angular",
-    "version": "0.15.0",
+    "version": "0.16.0",
     "description": "AngularJS application opinionated for GNaP",
     "license": "BSD-3-Clause",
     "main": "app/index.js",

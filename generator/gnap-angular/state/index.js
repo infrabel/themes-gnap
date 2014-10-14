@@ -154,11 +154,8 @@ var GNaPGenerator = yeoman.generators.NamedBase.extend({
             // TODO: We should only rewrite things on first add? Right now it always appends
 
             // update index.html
-            var stateHook = '<!-- build:js js/states.js -->';
-            self.updateFile('src/index.html', stateHook, stateHook + '\r\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.state.js"></script>');
-
-            var controllerHook = '<!-- build:js js/controllers.js -->';
-            self.updateFile('src/index.html', controllerHook, controllerHook + '\r\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.controller.js"></script>');
+            var appHook = '<script src="app/app.config.js"></script>';
+            self.updateFile('src/index.html', appHook, appHook + '\r\n\r\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.state.js"></script>\r\n        <script src="' + generatedPath + '/' + self.stateNameLast + '.controller.js"></script>');
 
             // add to sidebar if required, as well as the translations for the sidebar
             if (self.stateVisibleInSidebar) {
