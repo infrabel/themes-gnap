@@ -50,12 +50,12 @@
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
         stateSettings.state.resolve.translations = refreshTranslations;
+    }
 
-        refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
 
-        function refreshTranslations($translatePartialLoader, $translate) {
-            $translatePartialLoader.addPart(stateSettings.translations);
-            return $translate.refresh();
-        };
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
     }
 })();
