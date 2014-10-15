@@ -95,6 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\EmployeesController.cs" />
     <Compile Include="Arguments\CommandLineArguments.cs" />
     <Compile Include="Auth\JwtTokenService.cs" />
     <Compile Include="Bootstrap\Startup.cs" />

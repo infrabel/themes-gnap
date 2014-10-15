@@ -77,16 +77,17 @@
         $httpProvider.interceptors.push('authenticationInterceptor');
     };
 
-    handleStateChangeError.$inject = ['$rootScope', '$location', 'sessionService'];
+    handleStateChangeError.$inject = ['$rootScope', '$state', '$location', 'sessionService'];
 
-    function handleStateChangeError($rootScope, $location, sessionService) {
+    function handleStateChangeError($rootScope, $state, $location, sessionService) {
         $rootScope.$on('$stateChangeError',
             function (event, toState, toParams, fromState, fromParams, error) {
                 
+                // unauthorized
                 if (error.status === 401) {
-
                     event.preventDefault();
 
+                    // end the current session
                     sessionService.abandonSession();
                     
                     // go to login screen (only once!)
@@ -94,6 +95,14 @@
                         var redirectState = toState.name;
                         $location.url('/login').search({ redirect_state: redirectState });
                     }
+                }
+
+                // forbidden
+                if (error.status === 403) {
+                    event.preventDefault();
+                    
+                    // redirect to 'forbidden' error page
+                    $state.go('main.error-403');
                 }
             });
     }
