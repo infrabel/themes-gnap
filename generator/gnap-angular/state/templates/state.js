@@ -9,7 +9,7 @@
         name: '<%= stateName %>',
         state: {
             url: '<%= stateUrl %>',
-            templateUrl: '<%= fullPath %>/<%= stateNameLast %>.html',
+            templateUrl: '<%= generatedPath %>/<%= stateNameLast %>.html',
             controller: '<%= stateNameCapitalized %>Controller as vm'
         },
         title: {
@@ -19,7 +19,7 @@
             titleTranslationId: '<%= stateName %>.title'
         },
         sidebarKey: '<%= stateName %>',
-        translations: '<%= fullPath %>'
+        translations: '<%= generatedPath %>'
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -51,9 +51,13 @@
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
-        stateSettings.state.resolve.translations = function ($translatePartialLoader, $translate) {
-            $translatePartialLoader.addPart(stateSettings.translations);
-            return $translate.refresh();
-        };
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
     }
 })();
