@@ -8,10 +8,28 @@
         .module('gnap-example-app')
         .directive('sessionDropdown', sessionDropdown);
 
-    function sessionDropdown() {
+    sessionDropdown.$inject = ['$state', 'sessionService'];
+
+    function sessionDropdown($state, sessionService) {
         return {
             restrict: 'A',
-            templateUrl: 'app/main/session-dropdown.html'
+            templateUrl: 'app/main/session-dropdown.html',
+            controllerAs: 'vm',
+            controller: function() {
+                var vm = this;
+
+                vm.name = sessionService.user.name;
+                vm.isAuthenticated = sessionService.user.isAuthenticated;
+
+                vm.logout = function() {
+                    sessionService.abandonSession();
+                    $state.go('public.login');
+                };
+
+                vm.login = function () {
+                    $state.go('public.login');
+                };
+            }
         };
     };
 })();
