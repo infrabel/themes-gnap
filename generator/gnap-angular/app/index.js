@@ -74,7 +74,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         ];
 
         self.prompt(prompts, function (props) {
-            this.appName = props['app-name'].toLowerCase();
+            this.appName = props['app-name'].replace(/\s+/g, '-').toLowerCase();
             this.appTitle = props['app-title'];
             this.themeName = props['theme-name'].toLowerCase();
             this.portNumber = props['port-number'];
@@ -92,31 +92,36 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         app: function () {
             var self = this;
 
-            self.template('Gruntfile.js', 'Gruntfile.js', { pkg: self.pkg, portNumber: self.portNumber });
+            self.template('Gruntfile.js', 'Gruntfile.js', { pkg: self.pkg, portNumber: self.portNumber, themeName: self.themeName });
             self.src.copy('jshintrc', '.jshintrc');
             self.template('_package.json', 'package.json', { appName: self.appName, appTitle: self.appTitle, themeName: self.themeName });
-            self.template('index.html', 'index.html', { appName: self.appName, themeName: self.themeName });
-            
-            self.dest.mkdir('app');
-            self.template('app/app.config.js', 'app/app.config.js', { appName: self.appName, appTitle: self.appTitle, themeName: self.themeName });
-            self.template('app/app.module.js', 'app/app.module.js', { appName: self.appName });
 
-            self.dest.mkdir('app/main');
-            self.template('app/main/main.controller.js', 'app/main/main.controller.js', { appName: self.appName });
-            self.src.copy('app/main/main.html', 'app/main/main.html');
-            self.template('app/main/main.state.js', 'app/main/main.state.js', { appName: self.appName });
+            self.dest.mkdir('src');
+            self.template('src/index.html', 'src/index.html', { appName: self.appName, themeName: self.themeName });
 
-            self.template('app/main/session-dropdown.directive.js', 'app/main/session-dropdown.directive.js', { appName: self.appName });
-            self.src.copy('app/main/session-dropdown.html', 'app/main/session-dropdown.html');
+            self.dest.mkdir('src/css');
+            self.src.copy('src/css/app.css', 'src/css/app.css');
 
-            self.src.copy('app/main/translations.en.json', 'app/main/translations.en.json');
-            self.src.copy('app/main/translations.fr.json', 'app/main/translations.fr.json');
-            self.src.copy('app/main/translations.nl.json', 'app/main/translations.nl.json');
+            self.dest.mkdir('src/app');
+            self.template('src/app/app.config.js', 'src/app/app.config.js', { appName: self.appName, appTitle: self.appTitle, themeName: self.themeName });
+            self.template('src/app/app.module.js', 'src/app/app.module.js', { appName: self.appName });
 
-            self.dest.mkdir('app/main/getting-started');
-            self.template('app/main/getting-started/getting-started.controller.js', 'app/main/getting-started/getting-started.controller.js', { appName: self.appName });
-            self.src.copy('app/main/getting-started/getting-started.html', 'app/main/getting-started/getting-started.html');
-            self.template('app/main/getting-started/getting-started.state.js', 'app/main/getting-started/getting-started.state.js', { appName: self.appName });
+            self.dest.mkdir('src/app/main');
+            self.template('src/app/main/main.controller.js', 'src/app/main/main.controller.js', { appName: self.appName });
+            self.src.copy('src/app/main/main.html', 'src/app/main/main.html');
+            self.template('src/app/main/main.state.js', 'src/app/main/main.state.js', { appName: self.appName });
+
+            self.template('src/app/main/session-dropdown.directive.js', 'src/app/main/session-dropdown.directive.js', { appName: self.appName });
+            self.src.copy('src/app/main/session-dropdown.html', 'src/app/main/session-dropdown.html');
+
+            self.src.copy('src/app/main/translations.en.json', 'src/app/main/translations.en.json');
+            self.src.copy('src/app/main/translations.fr.json', 'src/app/main/translations.fr.json');
+            self.src.copy('src/app/main/translations.nl.json', 'src/app/main/translations.nl.json');
+
+            self.dest.mkdir('src/app/main/getting-started');
+            self.template('src/app/main/getting-started/getting-started.controller.js', 'src/app/main/getting-started/getting-started.controller.js', { appName: self.appName });
+            self.src.copy('src/app/main/getting-started/getting-started.html', 'src/app/main/getting-started/getting-started.html');
+            self.template('src/app/main/getting-started/getting-started.state.js', 'src/app/main/getting-started/getting-started.state.js', { appName: self.appName });
         }
     },
 
@@ -127,9 +132,18 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         self.log(clc.green('   create') + ' theme (' + clc.cyan(self.themeName) + ')');
         self.npmInstall([self.themeName], {}, function() {
             self.npmInstall(['grunt',
+                             'grunt-contrib-clean',
+                             'grunt-contrib-concat',
                              'grunt-contrib-connect',
+                             'grunt-contrib-copy',
+                             'grunt-contrib-cssmin',
+                             'grunt-contrib-htmlmin',
                              'grunt-contrib-jshint',
+                             'grunt-contrib-uglify',
                              'grunt-contrib-watch',
+                             'grunt-rev',
+                             'grunt-text-replace',
+                             'grunt-usemin',
                              'jshint-stylish',
                              'load-grunt-tasks',
                              'time-grunt'], { 'saveDev': true }, function() {

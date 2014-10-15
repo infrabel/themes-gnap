@@ -1,0 +1,15 @@
+{
+    "search": "Recherche ...",
+    "welcome": "Bienvenu",
+    "sidebar": {
+        "shortcuts": {
+            "statistics": "Statistiques",
+            "edit": "Modifier",
+            "profile": "Profil",
+            "administration": "Administration"
+        },
+        "items": {
+            "getting-started": "Commencer"
+        }
+    }
+}
