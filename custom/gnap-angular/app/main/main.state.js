@@ -138,10 +138,7 @@
                 key: 'login',
                 titleTranslationId: 'sidebar.items.login',
                 icon: 'icon-user',
-                click: function () {
-                    alert('Going to the Login page ...');
-                    sidebarService.setSelected('login');
-                }
+                state: 'public.login'
             },
             {
                 key: 'secure',

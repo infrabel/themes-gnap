@@ -6,8 +6,10 @@
         .config(translationConfiguration)
         .config(localeConfiguration)
         .config(titleConfiguration)
+        .config(authConfiguration)
         .run(localeInitalization)
-        .run(select2Initialization);
+        .run(select2Initialization)
+        .run(handleStateChangeError);
 
     var defaultPage = '/about';
 
@@ -68,4 +70,31 @@
     function localeInitalization(localeService) {
         localeService.initialize(supportedLanguages);
     };
+
+    authConfiguration.$inject = ['$httpProvider'];
+
+    function authConfiguration($httpProvider) {
+        $httpProvider.interceptors.push('authenticationInterceptor');
+    };
+
+    handleStateChangeError.$inject = ['$rootScope', '$location', 'sessionService'];
+
+    function handleStateChangeError($rootScope, $location, sessionService) {
+        $rootScope.$on('$stateChangeError',
+            function (event, toState, toParams, fromState, fromParams, error) {
+                
+                if (error.status === 401) {
+
+                    event.preventDefault();
+
+                    sessionService.abandonSession();
+                    
+                    // go to login screen (only once!)
+                    if (toState.name != "public.login") {
+                        var redirectState = toState.name;
+                        $location.url('/login').search({ redirect_state: redirectState });
+                    }
+                }
+            });
+    }
 })();

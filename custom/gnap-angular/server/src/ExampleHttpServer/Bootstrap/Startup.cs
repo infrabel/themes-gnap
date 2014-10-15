@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Net.Http.Formatting;
+using System.Web.Http;
 using ExampleHttpServer.Properties;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.Security;
@@ -70,7 +71,6 @@ namespace ExampleHttpServer.Bootstrap
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
                 );
-
             builder.UseWebApi(config);
         }
     }
