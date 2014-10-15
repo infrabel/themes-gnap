@@ -1,6 +1,7 @@
 {
     "search": "Recherche ...",
     "welcome": "Bienvenu",
+	"login": "Connexion",
     "sidebar": {
         "shortcuts": {
             "statistics": "Statistiques",

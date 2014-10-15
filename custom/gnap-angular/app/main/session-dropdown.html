@@ -1,9 +1,9 @@
-<a data-toggle="dropdown" class="dropdown-toggle">
+<a data-toggle="dropdown" class="dropdown-toggle" ng-show="vm.isAuthenticated">
     <span class="icon-user">&nbsp;</span>
 
     <span class="user-info">
         <small>{{ 'welcome' | translate }},</small>
-        Username <!-- TODO: Should be filled in by auth bits -->
+        {{ vm.name }}
     </span>
 
     <i class="icon-caret-down"></i>
@@ -27,9 +27,14 @@
     <li class="divider"></li>
 
     <li>
-        <a href="#">
+        <a ng-click="vm.logout()">
             <i class="icon-off"></i>
             Logout
         </a>
     </li>
 </ul>
+
+<a ng-click="vm.login()" ng-hide="vm.isAuthenticated">
+    <span class="icon-key">&nbsp;</span>
+    {{ 'login' | translate }}
+</a>

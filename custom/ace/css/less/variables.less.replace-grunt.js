@@ -67,6 +67,10 @@ module.exports = {
             {
                 from: /@widget-header-color:.*;/g,
                 to: '@widget-header-color: @custom-base-primary-color;'
+            },
+            {
+                from: /@body-bg:.*;/g,
+                to: '@body-bg: @custom-body-bg;'
             }
         ]
     }

@@ -8,7 +8,12 @@
         state: {
             url: '/secure',
             templateUrl: 'app/main/secure/secure.html',
-            controller: 'SecureController as vm'
+            controller: 'SecureController as vm',
+            resolve: {
+                bankAccounts: function(BankAccount) {
+                    return BankAccount.query().$promise;
+                }
+            }
         },
         title: {
             text: 'Secure'

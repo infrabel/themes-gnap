@@ -3,9 +3,10 @@
         .module('gnap-example-app')
         .controller('SecureController', SecureController);
 
-    SecureController.$inject = [];
+    SecureController.$inject = ['bankAccounts'];
 
-    function SecureController() {
+    function SecureController(bankAccounts) {
+        console.log(bankAccounts);
     };
     
 })();
