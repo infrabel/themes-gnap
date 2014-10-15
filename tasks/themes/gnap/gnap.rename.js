@@ -8,11 +8,19 @@
         ]
     },
 
-    gnap_ace_jquery: {
+    gnap_ace_js: {
         files: [
             {
                 src: './build/ace/js/jquery-*.min.js',
                 dest: './build/ace/js/jquery.min.js'
+            },
+            {
+                src: './build/ace/js/develop/jquery-*.js',
+                dest: './build/ace/js/develop/jquery.js'
+            },
+            {
+                src: './build/ace/js/develop/respond.src.js',
+                dest: './build/ace/js/develop/respond.js'
             }
         ]
     },
