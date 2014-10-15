@@ -135,16 +135,16 @@
                 state: 'main.error-500'
             },
             {
-                key: 'login',
-                titleTranslationId: 'sidebar.items.login',
-                icon: 'icon-user',
-                state: 'public.login'
-            },
-            {
                 key: 'secure',
                 titleTranslationId: 'sidebar.items.secure',
-                icon: 'icon-circle-blank',
+                icon: 'icon-lock',
                 state: 'main.secure'
+            },
+            {
+                key: 'unauthorized',
+                titleTranslationId: 'sidebar.items.unauthorized',
+                icon: 'icon-ban-circle',
+                state: 'main.unauthorized'
             },
             {
                 key: 'multi-level-menu',
