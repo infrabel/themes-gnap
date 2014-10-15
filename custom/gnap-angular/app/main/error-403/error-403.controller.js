@@ -1,10 +1,10 @@
 (function () {
     angular
         .module('gnap-example-app')
-        .controller('Error403Controller', Error404Controller);
+        .controller('Error403Controller', Error403Controller);
 
-    Error404Controller.$inject = [];
+    Error403Controller.$inject = [];
 
-    function Error404Controller() {
+    function Error403Controller() {
     };
 })();
