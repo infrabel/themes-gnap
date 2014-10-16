@@ -233,7 +233,6 @@
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.controller.js" />
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.html" />
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.state.js" />
-    <Content Include="custom\gnap-angular\app\main\secure\employee.resource.js" />
     <Content Include="custom\gnap-angular\app\main\secure\bank-account.resource.js" />
     <Content Include="custom\gnap-angular\app\main\secure\secure.controller.js" />
     <Content Include="custom\gnap-angular\app\main\secure\secure.html" />
