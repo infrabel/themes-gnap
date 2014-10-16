@@ -36,7 +36,7 @@ namespace ExampleHttpServer.Auth
             // create JWT token
             var token = TokenHandler.CreateToken(
                 subject: new ClaimsIdentity(new[] {
-				    new Claim(ClaimTypes.Name, username),
+                    new Claim(ClaimTypes.Name, username),
                     new Claim(ClaimTypes.GivenName, "John"),
                     new Claim(ClaimTypes.Surname, "Doe"),
                     new Claim(ClaimTypes.Email, "john@doe.com")
