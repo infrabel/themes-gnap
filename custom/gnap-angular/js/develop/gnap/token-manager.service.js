@@ -19,15 +19,15 @@
         };
 
         function setToken(token) {
-            localStorageService.set('gnap-token', token);
+            localStorageService.set('token', token);
         };
 
         function clearToken() {
-            localStorageService.remove('gnap-token');
+            localStorageService.remove('token');
         };
 
         function getToken() {
-            return localStorageService.get('gnap-token');
+            return localStorageService.get('token');
         };
 
         function getParsedToken() {

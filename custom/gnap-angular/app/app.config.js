@@ -91,7 +91,7 @@
                     sessionService.abandonSession();
                     
                     // go to login screen (only once!)
-                    if (toState.name != "public.login") {
+                    if (toState.name !== 'public.login') {
                         var redirectState = toState.name;
                         $location.url('/login').search({ redirect_state: redirectState });
                     }

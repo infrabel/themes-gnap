@@ -40,10 +40,14 @@
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
-        stateSettings.state.resolve.translations = function ($translatePartialLoader, $translate) {
-            $translatePartialLoader.addPart(stateSettings.translations);
-            return $translate.refresh();
-        };
+        stateSettings.state.resolve.translations = refreshTranslations;
     };
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
+    }
 
 })();
