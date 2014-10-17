@@ -7,6 +7,8 @@
         .config(localeConfiguration)
         .config(titleConfiguration)
         .config(authConfiguration)
+        .config(fourOhFourConfiguration)
+        .config(errorHandlingConfiguration)
         .run(localeInitalization)
         .run(select2Initialization)
         .run(handleStateChangeError);
@@ -105,5 +107,34 @@
                     $state.go('main.error-403');
                 }
             });
+    };
+
+    fourOhFourConfiguration.$inject = ['$urlRouterProvider'];
+
+    function fourOhFourConfiguration($urlRouterProvider) {
+        $urlRouterProvider.otherwise('/error-404');
     }
+
+    errorHandlingConfiguration.$inject = ['$provide'];
+
+    function errorHandlingConfiguration($provide) {
+        $provide.decorator('$exceptionHandler', extendExceptionHandler);
+
+        extendExceptionHandler.$inject = ['$delegate', 'notification'];
+
+        function extendExceptionHandler($delegate, notification) {
+            return function (exception, cause) {
+                $delegate(exception, cause);
+                /**
+                 * TODO: log errors to remote web server + show localized error message
+                 */
+                notification.show({
+                    title: 'Something went wrong ...',
+                    text: 'Onze excuses hiervoor.',
+                    type: 'error'
+                });
+            };
+        }
+    };
+
 })();
