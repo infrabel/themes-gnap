@@ -3120,6 +3120,9 @@
     <None Include="custom\gnap-angular\app\main\translations.en.json" />
     <None Include="custom\gnap-angular\app\main\translations.fr.json" />
     <None Include="custom\gnap-angular\app\main\translations.nl.json" />
+    <None Include="custom\gnap-angular\js\develop\gnap\translations.en.json" />
+    <None Include="custom\gnap-angular\js\develop\gnap\translations.fr.json" />
+    <None Include="custom\gnap-angular\js\develop\gnap\translations.nl.json" />
     <None Include="custom\gnap-angular\start-server.cmd" />
     <None Include="custom\gnap\html\app\data\pages\about.json" />
     <None Include="custom\ace\html\app\data\pages\examples.json" />
