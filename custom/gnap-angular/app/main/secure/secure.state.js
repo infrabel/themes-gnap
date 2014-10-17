@@ -10,9 +10,7 @@
             templateUrl: 'app/main/secure/secure.html',
             controller: 'SecureController as vm',
             resolve: {
-                bankAccounts: function(BankAccount) {
-                    return BankAccount.query().$promise;
-                }
+                bankAccounts: resolveBankAccounts
             }
         },
         title: {
@@ -53,9 +51,19 @@
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
-        stateSettings.state.resolve.translations = function ($translatePartialLoader, $translate) {
-            $translatePartialLoader.addPart(stateSettings.translations);
-            return $translate.refresh();
-        };
+        stateSettings.state.resolve.translations = refreshTranslations;
     };
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
+    }
+
+    resolveBankAccounts.$inject = ['BankAccount'];
+
+    function resolveBankAccounts(BankAccount) {
+        return BankAccount.query().$promise;
+    }
 })();
