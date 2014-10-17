@@ -5,7 +5,7 @@
 (function () {
     angular
         .module('gnap')
-	        .factory('authenticationInterceptor', AuthenticationInterceptor);
+        .factory('authenticationInterceptor', AuthenticationInterceptor);
 
     AuthenticationInterceptor.$inject = ['$q', '$location', 'tokenManagerService'];
 
