@@ -6,6 +6,5 @@
     PublicController.$inject = [];
 
     function PublicController() {
-        var vm = this;
     };
 })();
