@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc displays a timepicker
  * @file timepicker.directive.js
@@ -42,21 +44,21 @@
             link: link
         };
 
-        function link(scope, element, attrs) {
+        function link(scope) {
             scope.getDisplayTime = function (time) {
                 var hh = time.getHours();
                 var mm = time.getMinutes();
 
-                if (hh < 10) { hh = "0" + hh; }
-                if (mm < 10) { mm = "0" + mm; }
+                if (hh < 10) { hh = '0' + hh; }
+                if (mm < 10) { mm = '0' + mm; }
 
-                return hh + ":" + mm;
+                return hh + ':' + mm;
             };
 
             scope.$watch('time', function (time) { scope.displayTime = scope.getDisplayTime(time); });
 
             scope.inputChanged = function () {
-                var parseableTime = "Thu, 01 Jan 1970 " + scope.displayTime + ":00";
+                var parseableTime = 'Thu, 01 Jan 1970 ' + scope.displayTime + ':00';
 
                 var parsedTime = Date.parse(parseableTime);
                 if (!isNaN(parsedTime)) {
@@ -80,11 +82,12 @@
                 $event.stopPropagation();
                 scope.status.isopen = !scope.status.isopen;
             };
-        };
-    };
+        }
+    }
 
     function gnapTimepickerTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/timepicker/timepicker.html",
             "<table>\n" +
             " <tbody>\n" +
@@ -112,5 +115,6 @@
             "   </tr>\n" +
             " </tbody>\n" +
             "</table>");
-    };
+        /* jshint ignore:end */
+    }
 })();

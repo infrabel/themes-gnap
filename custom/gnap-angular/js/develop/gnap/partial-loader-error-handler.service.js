@@ -1,4 +1,6 @@
-﻿/**
+﻿'use strict';
+
+/**
  * @desc partial loader error handler
  * @file partial-loader-error-handler.service.js
  */
@@ -14,5 +16,5 @@
             console.log('Translations file could not be loaded for language ' + languageKey + ', part: ' + partName);
             return $q.when({});
         };
-    };
+    }
 })();

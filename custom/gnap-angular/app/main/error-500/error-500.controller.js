@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -6,5 +8,5 @@
     Error500Controller.$inject = [];
 
     function Error500Controller() {
-    };
+    }
 })();

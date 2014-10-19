@@ -1,4 +1,6 @@
-﻿/**
+﻿'use strict';
+
+/**
  * @desc authentication interceptor
  * @file authentication.interceptor.js
  */
@@ -23,5 +25,5 @@
                 return config;
             }
         };
-    };
+    }
 })();

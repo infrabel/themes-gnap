@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc displays a sidebar
  * @file sidebar.directive.js
@@ -47,8 +49,8 @@
             scope.toggleCollapsed = function () {
                 sidebarService.toggleCollapsed();
             };
-        };
-    };
+        }
+    }
 
     // custom animation for ng-hide (slide-up/slide-down)
     function gnapSidebarSlideUpSlideDown() {
@@ -78,10 +80,11 @@
                 }
             }
         };
-    };
+    }
 
     function gnapSidebarTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/gnap/sidebar/sidebar.html",
             "<div id=\"sidebar\" class=\"sidebar\" ng-class=\"{\'menu-min\': settings.collapsed, display: settings.visible}\">\n" +
             "\n" +
@@ -138,5 +141,6 @@
             "    <\/div>\n" +
             "<\/div>\n" +
             "");
-    };
+        /* jshint ignore:end */
+    }
 })();

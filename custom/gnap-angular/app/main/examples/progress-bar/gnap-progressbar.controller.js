@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -11,5 +13,5 @@
         vm.progress = 40;
 
         $scope.$watch('vm.progress', function (progress) { vm.workLeft = 100 - progress; });
-    };
+    }
 })();

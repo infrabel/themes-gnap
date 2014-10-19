@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -9,5 +11,5 @@
         var vm = this;
 
         vm.isCollapsed = false;
-    };
+    }
 })();
