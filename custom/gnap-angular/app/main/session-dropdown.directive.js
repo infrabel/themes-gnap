@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc session dropdown logic
  * @file session-dropdown.directive.js
@@ -19,6 +21,7 @@
         };
 
         function sessionDropdownController() {
+            /* jshint validthis: true */
             var vm = this;
 
             vm.name = sessionService.user.name;
@@ -33,5 +36,5 @@
                 $state.go('public.login');
             };
         }
-    };
+    }
 })();

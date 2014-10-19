@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -10,5 +12,5 @@
 
         vm.totalItems = 164;
         vm.currentPage = 4;
-    };
+    }
 })();

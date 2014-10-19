@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -14,5 +16,5 @@
         };
 
         vm.iconPosition = 'left';
-    };
+    }
 })();

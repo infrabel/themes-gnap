@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc limits the number of characters that can be entered in a textarea
  * @file input-limiter.directive.js
@@ -34,6 +36,6 @@
                 remText: '%n',
                 limitTextShow: false
             });
-        };
-    };
+        }
+    }
 })();

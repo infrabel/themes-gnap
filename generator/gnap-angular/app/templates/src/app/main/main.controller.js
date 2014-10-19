@@ -5,13 +5,14 @@
         .module('<%= appName %>')
         .controller('MainController', MainController);
 
-    MainController.$inject = [];
+    MainController.$inject = ['$window'];
 
-    function MainController() {
+    function MainController($window) {
+        /* jshint validthis: true */
         var vm = this;
 
         vm.search = function() {
-            window.alert('Searching for ' + vm.keywords);
+            $window.alert('Searching for ' + vm.keywords);
         };
     }
 })();

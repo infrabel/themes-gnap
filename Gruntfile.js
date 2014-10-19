@@ -27,7 +27,7 @@ module.exports = function (grunt) {
         merge(config, loadConfig(dir + '/', '.js'));
     });
 
-    merge(config, loadConfig('./custom/', '-grunt.js'));
+    merge(config, loadConfig('./custom/', '-grunt.js', '-grunt'));
 
     //console.log(config);
 
@@ -39,14 +39,17 @@ module.exports = function (grunt) {
     grunt.loadTasks('./tasks/themes/');
 };
 
-function loadConfig(path, extension) {
+function loadConfig(path, extension, marker) {
     var glob = require('glob'),
         object = {},
         key;
 
     glob.sync('**/*' + extension, { cwd: path }).forEach(function (option) {
-        key = option.replace(extension, '');
-        key = key.split('.').slice(-1);
+        if (marker) {
+            key = option.replace(marker, '').split('.').slice(-2, -1);
+        } else {
+            key = option.split('.').slice(-2, -1);
+        }
 
         if (key in object) {
             object[key] = merge(object[key], require(path + option));
