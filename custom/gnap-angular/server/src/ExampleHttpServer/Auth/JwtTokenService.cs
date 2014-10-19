@@ -8,16 +8,15 @@ namespace ExampleHttpServer.Auth
 {
     public class JwtTokenService
     {
-
         private static readonly JwtSecurityTokenHandler TokenHandler = new JwtSecurityTokenHandler();
         private readonly string _issuer;
         private readonly string _audience;
         private readonly byte[] _tokenSigningKey;
-        
-        public JwtTokenService() : this(
-            Settings.Default.Issuer,
-            Settings.Default.Audience,
-            TextEncodings.Base64.Decode(Settings.Default.TokenSigningKey))
+
+        public JwtTokenService()
+            : this(Settings.Default.Issuer,
+                   Settings.Default.Audience,
+                   TextEncodings.Base64.Decode(Settings.Default.TokenSigningKey))
         {
         }
 
@@ -25,7 +24,7 @@ namespace ExampleHttpServer.Auth
         {
             _issuer = issuer;
             _audience = audience;
-            _tokenSigningKey =  tokenSigningKey;
+            _tokenSigningKey = tokenSigningKey;
         }
 
         public string GenerateToken(string username)
@@ -40,7 +39,7 @@ namespace ExampleHttpServer.Auth
                     new Claim(ClaimTypes.GivenName, "John"),
                     new Claim(ClaimTypes.Surname, "Doe"),
                     new Claim(ClaimTypes.Email, "john@doe.com")
-			    }),
+                }),
                 issuer: _issuer,
                 audience: _audience,
                 signingCredentials: new SigningCredentials(
@@ -52,6 +51,5 @@ namespace ExampleHttpServer.Auth
             // write JWT token to string format
             return TokenHandler.WriteToken(token);
         }
-
     }
 }

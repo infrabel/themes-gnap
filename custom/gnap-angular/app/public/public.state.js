@@ -49,5 +49,4 @@
         $translatePartialLoader.addPart(stateSettings.translations);
         return $translate.refresh();
     }
-
 })();
