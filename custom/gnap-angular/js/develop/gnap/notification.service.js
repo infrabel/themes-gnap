@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc displays a notification
  * @file notification.service.js
@@ -15,15 +17,16 @@
         };
 
         function show(options) {
+            /* jshint camelcase:false */
             $.gritter.add({
                 title: options.title,
                 text: options.text,
                 class_name: 'gritter-' + (options.type || 'default')
             });
-        };
+        }
 
         function removeAll() {
             $.gritter.removeAll();
-        };
-    };
+        }
+    }
 })();

@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -25,8 +27,9 @@
                     sessionService.beginSession(token.Token);
 
                     // redirect back to the referrer or to the app root
-                    if ($location.search().redirect_state) {
-                        $state.go($location.search().redirect_state);
+                    var redirectState = $location.search().redirect_state; /* jshint ignore:line*/
+                    if (redirectState) {
+                        $state.go(redirectState);
                     } else {
                         $location.path('/');
                     }
@@ -36,6 +39,6 @@
                         vm.invalidCredentials = true;
                     }
                 });
-        };
-    };
+        }
+    }
 })();

@@ -70,6 +70,7 @@
     <Content Include="custom\ace\html\app\views\pages\error-404.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\gallery.mustache.replace-grunt.js" />
     <Content Include="custom\ace\html\app\views\pages\error-500.mustache.replace-grunt.js" />
+    <None Include=".jshintrc" />
     <None Include="custom\ace\css\less\theme\custom-progress.less" />
     <None Include="custom\ace\css\less\theme\custom-progressbar.less" />
     <None Include="custom\ace\css\less\theme\custom-thirdparty-select2.less" />
@@ -3050,6 +3051,7 @@
     <Content Include="tasks\options\clean.js" />
     <Content Include="tasks\options\jquery.copy.js" />
     <Content Include="tasks\themes\gnap-angular.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.jshint.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.cleanempty.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.includereplace.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.cssmin.js" />

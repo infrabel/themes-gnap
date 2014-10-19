@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -27,7 +29,7 @@
 
     function stateConfiguration($stateProvider) {
         $stateProvider.state(stateSettings.name, stateSettings.state);
-    };
+    }
 
     onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -38,7 +40,7 @@
         setupSidebarItems(sidebarService);
 
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
-    };
+    }
 
     onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -49,7 +51,7 @@
         sidebarService.clearItems();
 
         breadcrumbsService.removeLastBreadcrumb();
-    };
+    }
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
@@ -70,7 +72,7 @@
                 buttonClass: 'btn btn-success',
                 icon: 'icon-signal',
                 click: function () {
-                    alert('Going to the statistics page ...');
+                    window.alert('Going to the statistics page ...');
                 }
             },
             {
@@ -78,7 +80,7 @@
                 buttonClass: 'btn btn-info',
                 icon: 'icon-pencil',
                 click: function () {
-                    alert('Going to the edit page ...');
+                    window.alert('Going to the edit page ...');
                 }
             },
             {
@@ -86,7 +88,7 @@
                 buttonClass: 'btn btn-warning',
                 icon: 'icon-group',
                 click: function () {
-                    alert('Going to the profile page ...');
+                    window.alert('Going to the profile page ...');
                 }
             },
             {
@@ -94,11 +96,11 @@
                 buttonClass: 'btn btn-danger',
                 icon: 'icon-cogs',
                 click: function () {
-                    alert('Going to the administration page ...');
+                    window.alert('Going to the administration page ...');
                 }
             }
         ]);
-    };
+    }
 
     function setupSidebarItems(sidebarService) {
         sidebarService.setItems([
@@ -160,7 +162,7 @@
                         titleTranslationId: 'sidebar.items.level-2',
                         icon: 'icon-leaf',
                         click: function () {
-                            alert('Going to the level2 page ...');
+                            window.alert('Going to the level2 page ...');
                             sidebarService.setSelected('multi-level-menu/level-2');
                         }
                     },
@@ -174,7 +176,7 @@
                                 titleTranslationId: 'sidebar.items.level-3',
                                 icon: 'icon-plus',
                                 click: function () {
-                                    alert('Going to the Level 3 page ...');
+                                    window.alert('Going to the Level 3 page ...');
                                     sidebarService.setSelected('multi-level-menu/level-2-with-sub/level-3');
                                 }
                             },
@@ -183,7 +185,7 @@
                                 titleTranslationId: 'sidebar.items.next-level-3',
                                 icon: 'icon-eye-open',
                                 click: function () {
-                                    alert('Going to the Next Level 3 page ...');
+                                    window.alert('Going to the Next Level 3 page ...');
                                     sidebarService.setSelected('multi-level-menu/level-2-with-sub/next-level-3');
                                 }
                             }
@@ -192,5 +194,5 @@
                 ]
             }
         ]);
-    };
+    }
 })();

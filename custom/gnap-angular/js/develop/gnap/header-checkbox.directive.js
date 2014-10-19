@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc header checkbox directive that checks/unchecks row checkboxes based on it's state
  * @file header-checkbox.directive.js
@@ -15,7 +17,7 @@
             link: link
         };
 
-        function link(scope, element, attrs) {
+        function link(scope, element) {
 
             var columnIndex = getCheckboxColumnIndex(element);
 
@@ -27,9 +29,9 @@
             // when all checkboxes in a row have the same checked state
             // the header checkbox should be updated to those checked states
             handleRowCheckboxClicks(element, columnIndex);
-        };
+        }
 
-        function handleHeaderCheckboxClicks(element, columnIndex) {
+        function handleHeaderCheckboxClicks(element) {
 
             element.click(function () {
 
@@ -39,9 +41,9 @@
                        //.find('tr td:eq(' + columnIndex + ') input[type=checkbox]')
                        .prop('checked', element.is(':checked'));
             });
-        };
+        }
 
-        function handleRowCheckboxClicks(element, columnIndex) {
+        function handleRowCheckboxClicks(element) {
 
             // find all checkboxes (only in td)
             var rowCheckboxes = element.closest('table')
@@ -53,16 +55,16 @@
 
                 // are all checkboxes checked?
                 var allChecked = rowCheckboxes.not(':checked')
-                                              .length == 0;
+                                              .length === 0;
 
                 element.prop('checked', allChecked);
             });
-        };
+        }
 
         function getCheckboxColumnIndex(element) {
             return element.closest('th')
                           .prevAll()
                           .length;
-        };
-    };
+        }
+    }
 })();

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc masked input 
  * @file masked-input.directive.js
@@ -17,6 +19,6 @@
 
         function link(scope, element, attrs) {
             element.mask(attrs['gnapMaskedInput']);
-        };
-    };
+        }
+    }
 })();

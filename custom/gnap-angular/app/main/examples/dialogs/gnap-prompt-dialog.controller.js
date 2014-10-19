@@ -1,19 +1,21 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
         .controller('gnap-prompt-dialog', GnapPromptDialogController);
 
-    GnapPromptDialogController.$inject = [];
+    GnapPromptDialogController.$inject = ['$window'];
 
-    function GnapPromptDialogController() {
+    function GnapPromptDialogController($window) {
         var vm = this;
 
         vm.accept = function (name) {
-            alert('Hello ' + name);
+            $window.alert('Hello ' + name);
         };
 
         vm.cancel = function () {
-            alert('You cancelled!');
+            $window.alert('You cancelled!');
         };
-    };
+    }
 })();

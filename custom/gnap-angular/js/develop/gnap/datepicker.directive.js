@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc Date picker
  * @file datepicker.directive.js
@@ -61,11 +63,12 @@
                 $event.stopPropagation();
                 scope.opened = !scope.opened;
             };
-        };
-    };
+        }
+    }
 
     function gnapDatepickerDayTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/datepicker/day.html",
             "<div class=\"datepicker datepicker-days\">\n" +
             "  <table role=\"grid\" aria-labelledby=\"{{uniqueId}}-title\" aria-activedescendant=\"{{activeDateId}}\" class=\"table-condensed\">\n" +
@@ -90,10 +93,12 @@
             "    </tbody>\n" +
             "  </table>\n" +
             "</div>");
-    };
+        /* jshint ignore:end */
+    }
 
     function gnapDatepickerMonthTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/datepicker/month.html",
             "<div class=\"datepicker datepicker-months\">\n" +
             "  <table role=\"grid\" aria-labelledby=\"{{uniqueId}}-title\" aria-activedescendant=\"{{activeDateId}}\" class=\"table-condensed\">\n" +
@@ -113,10 +118,12 @@
             "    </tbody>\n" +
             "  </table>\n" +
             "</div>");
-    };
+        /* jshint ignore:end */
+    }
 
     function gnapDatepickerYearTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/datepicker/year.html",
             "<div class=\"datepicker datepicker-years\">\n" +
             "  <table role=\"grid\" aria-labelledby=\"{{uniqueId}}-title\" aria-activedescendant=\"{{activeDateId}}\" class=\"table-condensed\">\n" +
@@ -136,5 +143,6 @@
             "    </tbody>\n" +
             "  </table>\n" +
             "</div>");
-    };
+        /* jshint ignore:end */
+    }
 })();

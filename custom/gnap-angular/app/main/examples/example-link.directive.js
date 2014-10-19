@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc shows link to more info about an example
  * @file example-link.directive.js
@@ -58,6 +60,6 @@
                 }
                 element.attr('href', url);
             }
-        };
-    };
+        }
+    }
 })();
