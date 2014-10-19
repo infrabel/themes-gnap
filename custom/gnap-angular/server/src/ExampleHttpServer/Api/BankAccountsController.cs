@@ -5,12 +5,12 @@ using System.Web.Http;
 
 namespace ExampleHttpServer.Api
 {
-    public class DomainsController : ApiController
+    public class BankAccountsController : ApiController
     {
         [Authorize]
         public IEnumerable<dynamic> GetAll()
         {
-            return JsonConvert.DeserializeObject<IEnumerable<dynamic>>(File.ReadAllText(@"Api\Domains.json"));
+            return JsonConvert.DeserializeObject<IEnumerable<dynamic>>(File.ReadAllText(@"Api\BankAccounts.json"));
         }
     }
 }
