@@ -11,12 +11,14 @@
         vm.credentials = {
             username: '',
             password: '',
-            remember: true
+            remember: false
         };
+
         vm.login = login;
 
         function login() {
             var newToken = new Token({ username: vm.credentials.username, password: vm.credentials.password });
+
             newToken.$save().then(
                 function (token) { // success
                     // store token
@@ -36,5 +38,4 @@
                 });
         };
     };
-    
 })();

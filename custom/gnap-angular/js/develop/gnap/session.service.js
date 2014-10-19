@@ -11,8 +11,7 @@
 
     function sessionService(tokenManagerService) {
 
-        var user = {
-        };
+        var user = {};
 
         readUserInformationFromToken();
 
@@ -33,15 +32,15 @@
         };
 
         function readUserInformationFromToken() {
-
             // clear user object
             for (var member in user) delete user[member];
 
             var token = tokenManagerService.getParsedToken();
             if (token) {
+                user.isAuthenticated = true;
+
                 user.username = token.unique_name;
                 user.name = token.given_name + ' ' + token.family_name;
-                user.isAuthenticated = true;
 
                 // copy all claims to the user object
                 for (member in token) user[member] = token[member];

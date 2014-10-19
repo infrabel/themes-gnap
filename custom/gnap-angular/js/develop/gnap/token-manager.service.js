@@ -39,9 +39,9 @@
         };
 
         function parseToken(token) {
-            var segments = token.split(".");
+            var segments = token.split('.');
             if (segments.length !== 3) {
-                throw new Error("Invalid JWT");
+                throw new Error('Invalid JWT');
             }
             var claims = segments[1];
             return angular.fromJson(decodeURIComponent(escape(window.atob(claims))));
