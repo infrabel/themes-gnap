@@ -1,4 +1,6 @@
-﻿/**
+﻿'use strict';
+
+/**
  * @desc service that manages JWT tokens
  * @file token-manager.service.js
  */
@@ -20,15 +22,15 @@
 
         function setToken(token) {
             localStorageService.set('token', token);
-        };
+        }
 
         function clearToken() {
             localStorageService.remove('token');
-        };
+        }
 
         function getToken() {
             return localStorageService.get('token');
-        };
+        }
 
         function getParsedToken() {
             var token = getToken();
@@ -36,7 +38,7 @@
                 return parseToken(token);
             }
             return null;
-        };
+        }
 
         function parseToken(token) {
             var segments = token.split('.');
@@ -44,7 +46,9 @@
                 throw new Error('Invalid JWT');
             }
             var claims = segments[1];
+
+            /* global escape */
             return angular.fromJson(decodeURIComponent(escape(window.atob(claims))));
-        };
-    };
+        }
+    }
 })();

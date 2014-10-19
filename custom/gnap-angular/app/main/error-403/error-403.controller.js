@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -6,6 +8,5 @@
     Error403Controller.$inject = [];
 
     function Error403Controller() {
-
-    };
+    }
 })();

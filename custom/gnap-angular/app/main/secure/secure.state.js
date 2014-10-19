@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -29,7 +31,7 @@
 
     function stateConfiguration($stateProvider) {
         $stateProvider.state(stateSettings.name, stateSettings.state);
-    };
+    }
 
     onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -38,7 +40,7 @@
 
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
         sidebarService.setSelected(stateSettings.sidebarKey);
-    };
+    }
 
     onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -47,12 +49,12 @@
 
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
-    };
+    }
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
         stateSettings.state.resolve.translations = refreshTranslations;
-    };
+    }
 
     refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
 

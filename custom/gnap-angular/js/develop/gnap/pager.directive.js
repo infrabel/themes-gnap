@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc allows for lists to be paged
  * @file pager.directive.js
@@ -27,21 +29,24 @@
                 currentPage: '=',
                 maxSize: '='
             },
-            template: '<div pagination max-size="maxSize" boundary-links="true" previous-text="&lt;i class=&quot;icon-angle-left&quot;&gt;&lt;/i&gt;" ng-model="currentPage" total-items="totalItems" next-text="&lt;i class=&quot;icon-angle-right&quot;&gt;&lt;/i&gt;" first-text="&lt;i class=&quot;icon-double-angle-left&quot;&gt;&lt;/i&gt;" last-text="&lt;i class=&quot;icon-double-angle-right&quot;&gt;&lt;/i&gt;"></div>'
+            template: '<div pagination max-size="maxSize" boundary-links="true" previous-text="&lt;i class=&quot;icon-angle-left&quot;&gt;&lt;/i&gt;" ng-model="currentPage" total-items="totalItems" next-text="&lt;i class=&quot;icon-angle-right&quot;&gt;&lt;/i&gt;" first-text="&lt;i class=&quot;icon-double-angle-left&quot;&gt;&lt;/i&gt;" last-text="&lt;i class=&quot;icon-double-angle-right&quot;&gt;&lt;/i&gt;"></div>' /* jshint ignore:line */
         };
-    };
+    }
 
     function gnapPagerTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/pagination/pager.html",
             "<ul class=\"pager\">\n" +
             "  <li ng-class=\"{disabled: noPrevious(), previous: align}\"><a href ng-click=\"selectPage(page - 1)\"><span ng-bind-html=\"getText('previous')\"></span></a></li>\n" +
             "  <li ng-class=\"{disabled: noNext(), next: align}\"><a href ng-click=\"selectPage(page + 1)\"><span ng-bind-html=\"getText('next')\"></span></a></li>\n" +
             "</ul>");
-    };
+        /* jshint ignore:end */
+    }
 
     function gnapPaginationTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/pagination/pagination.html",
             "<ul class=\"pagination\">\n" +
             "  <li ng-if=\"boundaryLinks\" ng-class=\"{disabled: noPrevious()}\"><a href ng-click=\"selectPage(1)\"><span ng-bind-html=\"getText('first')\"></span></a></li>\n" +
@@ -50,5 +55,6 @@
             "  <li ng-if=\"directionLinks\" ng-class=\"{disabled: noNext()}\"><a href ng-click=\"selectPage(page + 1)\"><span ng-bind-html=\"getText('next')\"></span></a></li>\n" +
             "  <li ng-if=\"boundaryLinks\" ng-class=\"{disabled: noNext()}\"><a href ng-click=\"selectPage(totalPages)\"><span ng-bind-html=\"getText('last')\"></span></a></li>\n" +
             "</ul>");
-    };
+        /* jshint ignore:end */
+    }
 })();

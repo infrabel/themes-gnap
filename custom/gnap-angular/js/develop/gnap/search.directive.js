@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc displays a search box
  * @file search.directive.js
@@ -24,10 +26,11 @@
             },
             templateUrl: 'template/gnap/search/search.html'
         };
-    };
+    }
 
     function gnapSearchTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/gnap/search/search.html",
             "<div class=\"nav-search\" id=\"nav-search\">\n" +
             "    <form class=\"form-search\" ng-submit=\'handler()\'>\n" +
@@ -38,5 +41,6 @@
             "    <\/form>\n" +
             "<\/div>\n" +
             "");
-    };
+        /* jshint ignore:end */
+    }
 })();

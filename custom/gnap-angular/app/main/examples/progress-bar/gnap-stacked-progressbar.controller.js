@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -24,5 +26,5 @@
             value: 25,
             type: 'error'
         });
-    };
+    }
 })();

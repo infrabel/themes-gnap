@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap', ['gnap.tpls',
@@ -22,7 +24,7 @@
 
     function localStorageConfiguration(localStorageServiceProvider) {
         localStorageServiceProvider.setPrefix('gnap');
-    };
+    }
 
     // configure the datepicker to look more like the ace one
     angular
@@ -35,5 +37,5 @@
         datepickerConfig.showWeeks = false;
         datepickerConfig.startingDay = '1';
         datepickerConfig.formatMonth = 'MMM';
-    };
+    }
 })();
