@@ -6,7 +6,6 @@
     UnauthorizedController.$inject = ['employees'];
 
     function UnauthorizedController(employees) {
-        
+        console.log(employees);
     };
-    
 })();

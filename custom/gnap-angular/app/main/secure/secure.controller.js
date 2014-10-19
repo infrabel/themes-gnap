@@ -8,5 +8,4 @@
     function SecureController(bankAccounts) {
         console.log(bankAccounts);
     };
-    
 })();

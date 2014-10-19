@@ -28,14 +28,16 @@
         $stateProvider.state(stateSettings.name, stateSettings.state);
     };
 
-    onEnter.$inject = [];
+    onEnter.$inject = ['titleService'];
 
-    function onEnter() {
+    function onEnter(titleService) {
+        titleService.setTitle(stateSettings.title);
     };
 
-    onExit.$inject = [];
+    onExit.$inject = ['titleService'];
 
-    function onExit() {
+    function onExit(titleService) {
+        titleService.clearTitle();
     };
 
     if (stateSettings.translations) {
