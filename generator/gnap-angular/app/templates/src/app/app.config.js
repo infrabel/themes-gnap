@@ -8,8 +8,10 @@
         .config(translationConfiguration)
         .config(localeConfiguration)
         .config(titleConfiguration)
+        .config(authConfiguration)
         .run(localeInitalization)
-        .run(select2Initialization);
+        .run(select2Initialization)
+        .run(handleStateChangeError);
 
     var defaultPage = '/getting-started';
 
@@ -69,5 +71,40 @@
 
     function localeInitalization(localeService) {
         localeService.initialize(supportedLanguages);
+    }
+
+    authConfiguration.$inject = ['$httpProvider'];
+
+    function authConfiguration($httpProvider) {
+        $httpProvider.interceptors.push('authenticationInterceptor');
+    }
+
+    handleStateChangeError.$inject = ['$rootScope', '$state', '$location', 'sessionService'];
+
+    function handleStateChangeError($rootScope, $state, $location, sessionService) {
+        $rootScope.$on('$stateChangeError',
+            function (event, toState, toParams, fromState, fromParams, error) {
+
+                // unauthorized
+                if (error.status === 401) {
+                    event.preventDefault();
+
+                    // end the current session
+                    sessionService.abandonSession();
+
+                    // go to login screen (only once!)
+                    if (toState.name !== 'public.login') {
+                        $location.url('/login').search({ 'redirect_state': toState.name });
+                    }
+                }
+
+                // forbidden
+                if (error.status === 403) {
+                    event.preventDefault();
+
+                    // redirect to 'forbidden' error page
+                    $state.go('main.error-403');
+                }
+            });
     }
 })();
