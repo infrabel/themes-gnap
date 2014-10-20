@@ -129,17 +129,30 @@
         <script src="node_modules/<%= themeName %>/js/develop/gnap/locale-selector.directive.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/gnap/locale.service.js"></script>
         <script src="node_modules/<%= themeName %>/js/develop/gnap/partial-loader-error-handler.service.js"></script>
+        <script src="node_modules/<%= themeName %>/js/develop/gnap/authentication.interceptor.js"></script>
+        <script src="node_modules/<%= themeName %>/js/develop/gnap/token-manager.service.js"></script>
+        <script src="node_modules/<%= themeName %>/js/develop/gnap/token.resource.js"></script>
+        <script src="node_modules/<%= themeName %>/js/develop/gnap/session.service.js"></script>
         <!-- endbuild -->
 
         <!-- build:js app/js/app.js -->
         <script src="app/app.module.js"></script>
         <script src="app/app.config.js"></script>
-
+        
         <script src="app/main/getting-started/getting-started.state.js"></script>
         <script src="app/main/getting-started/getting-started.controller.js"></script>
+        
+        <script src="app/main/error-403/error-403.state.js"></script>
+        <script src="app/main/error-403/error-403.controller.js"></script>
 
         <script src="app/main/main.state.js"></script>
         <script src="app/main/main.controller.js"></script>
+        
+        <script src="app/public/public.state.js"></script>
+        <script src="app/public/public.controller.js"></script>
+
+        <script src="app/public/login/login.state.js"></script>
+        <script src="app/public/login/login.controller.js"></script>
 
         <script src="app/main/session-dropdown.directive.js"></script>
         <!-- endbuild -->

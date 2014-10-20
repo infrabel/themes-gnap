@@ -302,6 +302,9 @@
     <Content Include="generator\gnap-angular\app\index.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\app.config.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\app.module.js" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\main\error-403\error-403.controller.js" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\main\error-403\error-403.html" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\main\error-403\error-403.state.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\getting-started\getting-started.controller.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\getting-started\getting-started.html" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\getting-started\getting-started.state.js" />
@@ -310,6 +313,12 @@
     <Content Include="generator\gnap-angular\app\templates\src\app\main\main.state.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\session-dropdown.directive.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\session-dropdown.html" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\public\login\login.controller.js" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\public\login\login.html" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\public\login\login.state.js" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\public\public.controller.js" />
+    <None Include="generator\gnap-angular\app\templates\src\app\public\public.html" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\public\public.state.js" />
     <Content Include="generator\gnap-angular\app\templates\src\css\app.css" />
     <Content Include="generator\gnap-angular\app\templates\src\index.html" />
     <Content Include="generator\gnap-angular\state\index.js" />

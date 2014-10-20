@@ -1,0 +1,60 @@
+<div class="login-container">
+    <div class="center">
+        <h3 class="theme_color">
+            <i class="team-logo-login"></i>
+            <%= appTitle %>
+        </h3>
+    </div>
+
+    <div class="space-6"></div>
+
+    <div class="position-relative">
+        <div id="login-box" class="login-box visible widget-box no-border">
+            <div class="widget-body">
+                <div class="widget-main">
+                    <h4 class="header theme_color lighter bigger">
+                        <i class="icon-key theme_color"></i>
+                        Please Enter Your Information
+                    </h4>
+
+                    <div class="space-6"></div>
+
+                    <form ng-submit="vm.login()">
+                        <div alert type="danger" ng-show="vm.invalidCredentials">Invalid username/password combination.</div>
+                        <fieldset>
+                            <label class="block clearfix">
+                                <span class="block input-icon input-icon-right">
+                                    <input type="text" ng-model="vm.credentials.username" class="form-control" placeholder="Username" required />
+                                    <i class="icon-user"></i>
+                                </span>
+                            </label>
+
+                            <label class="block clearfix">
+                                <span class="block input-icon input-icon-right">
+                                    <input type="password" ng-model="vm.credentials.password" class="form-control" placeholder="Password" required />
+                                    <i class="icon-lock"></i>
+                                </span>
+                            </label>
+
+                            <div class="space"></div>
+
+                            <div class="clearfix">
+                                <label class="inline">
+                                    <input type="checkbox" ng-model="vm.credentials.remember" class="ace" />
+                                    <span class="lbl"> Remember Me</span>
+                                </label>
+
+                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                                    <i class="icon-key"></i>
+                                    Login
+                                </button>
+                            </div>
+
+                            <div class="space-4"></div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
