@@ -105,8 +105,8 @@
     function setupSidebarItems(sidebarService) {
         sidebarService.setItems([
             {
-                key: 'getting-started',
-                titleTranslationId: 'sidebar.items.getting-started',
+                key: 'main.getting-started',
+                titleTranslationId: 'sidebar.items.main.getting-started',
                 icon: 'icon-fire',
                 state: 'main.getting-started'
             }// ======= yeoman sidebar hook =======
