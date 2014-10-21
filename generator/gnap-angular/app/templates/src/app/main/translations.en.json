@@ -10,7 +10,7 @@
             "administration": "Administration"
         },
         "items": {
-            "getting-started": "Getting Started"
+            "main.getting-started": "Getting Started"
         }
     }
 }
