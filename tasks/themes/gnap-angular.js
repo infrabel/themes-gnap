@@ -2,8 +2,10 @@
     grunt.registerTask('build-gnap-angular', 'Builds GNaP theme Angular additions', function () {
         grunt.task.run(['build-gnap',
                         'build-angular',
+                        'build-base64',
                         'clean:gnap-angular_build',
                         'copy:gnap-angular_angular_js_to_build',
+                        'copy:gnap-angular_base64_js_to_build',
                         'copy:gnap-angular_angular_css_to_build',
                         'copy:gnap-angular_angular_images_to_build',
                         'copy:gnap-angular_custom_to_build',
