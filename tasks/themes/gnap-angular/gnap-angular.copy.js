@@ -8,6 +8,13 @@
         dest: './build/gnap-angular/js/develop/'
     },
 
+    'gnap-angular_base64_js_to_build': {
+        expand: true,
+        cwd: './deploy/base64/',
+        src: ['*.js'],
+        dest: './build/gnap-angular/js/develop/base64/'
+    },
+
     'gnap-angular_angular_css_to_build': {
         expand: true,
         cwd: './deploy/angular/',
