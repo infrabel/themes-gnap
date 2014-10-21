@@ -6,19 +6,18 @@
         .config(stateConfiguration);
 
     var stateSettings = {
-        name: 'main.error-403',
+        name: 'main.forbidden',
         state: {
             url: '/forbidden',
-            templateUrl: 'app/main/error-403/error-403.html',
-            controller: 'Error403Controller as vm'
+            templateUrl: 'app/main/forbidden/forbidden.html',
+            controller: 'ForbiddenController as vm'
         },
         title: {
-            text: 'Error 403'
+            text: 'Forbidden'
         },
         breadcrumb: {
-            title: 'Error 403'
-        },
-        sidebarKey: 'error-403'
+            title: 'Forbidden'
+        }
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -30,21 +29,19 @@
         $stateProvider.state(stateSettings.name, stateSettings.state);
     }
 
-    onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
+    onEnter.$inject = ['titleService', 'breadcrumbsService'];
 
-    function onEnter(titleService, breadcrumbsService, sidebarService) {
+    function onEnter(titleService, breadcrumbsService) {
         titleService.appendTitle(stateSettings.title);
 
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
-        sidebarService.setSelected(stateSettings.sidebarKey);
     }
 
-    onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
+    onExit.$inject = ['titleService', 'breadcrumbsService'];
 
-    function onExit(titleService, breadcrumbsService, sidebarService) {
+    function onExit(titleService, breadcrumbsService) {
         titleService.removeLastTitle();
 
         breadcrumbsService.removeLastBreadcrumb();
-        sidebarService.clearSelected();
     }
 })();
