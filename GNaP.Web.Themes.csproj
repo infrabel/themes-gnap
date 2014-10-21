@@ -302,9 +302,9 @@
     <Content Include="generator\gnap-angular\app\index.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\app.config.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\app.module.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\error-403\error-403.controller.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\error-403\error-403.html" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\error-403\error-403.state.js" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\main\forbidden\forbidden.controller.js" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\main\forbidden\forbidden.html" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\main\forbidden\forbidden.state.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\getting-started\getting-started.controller.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\getting-started\getting-started.html" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\getting-started\getting-started.state.js" />
@@ -2682,6 +2682,7 @@
     <Content Include="raw\angular\i18n\angular-locale_zu-za.js" />
     <Content Include="raw\angular\i18n\angular-locale_zu.js" />
     <Content Include="raw\angular\version.txt" />
+    <Content Include="raw\base64\base64.js" />
     <Content Include="raw\bootstrap\.gitattributes" />
     <Content Include="raw\bootstrap\.gitignore" />
     <Content Include="raw\bootstrap\dist\css\bootstrap-theme.css" />
@@ -3034,7 +3035,9 @@
     <Content Include="tasks\ace.js" />
     <Content Include="tasks\highlight.js" />
     <Content Include="tasks\angular.js" />
+    <Content Include="tasks\options\base64.copy.js" />
     <Content Include="tasks\options\select2.copy.js" />
+    <Content Include="tasks\base64.js" />
     <Content Include="tasks\select2.js" />
     <Content Include="tasks\options\ace.clean.js" />
     <Content Include="tasks\options\ace.copy.js" />
@@ -3812,6 +3815,8 @@
     <None Include="raw\angular\docs\img\tutorial\tutorial_05.pptx" />
     <None Include="raw\angular\errors.json" />
     <None Include="raw\angular\version.json" />
+    <None Include="raw\base64\LICENSE" />
+    <None Include="raw\base64\README.md" />
     <None Include="raw\bootstrap\.editorconfig" />
     <None Include="raw\bootstrap\.travis.yml" />
     <None Include="raw\bootstrap\bower.json" />
