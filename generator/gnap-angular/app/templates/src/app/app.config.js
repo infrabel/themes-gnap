@@ -103,7 +103,7 @@
                     event.preventDefault();
 
                     // redirect to 'forbidden' error page
-                    $state.go('main.error-403');
+                    $state.go('main.forbidden');
                 }
             });
     }

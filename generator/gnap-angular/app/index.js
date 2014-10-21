@@ -123,10 +123,10 @@ var GNaPGenerator = yeoman.generators.Base.extend({
             self.src.copy('src/app/main/getting-started/getting-started.html', 'src/app/main/getting-started/getting-started.html');
             self.template('src/app/main/getting-started/getting-started.state.js', 'src/app/main/getting-started/getting-started.state.js', { appName: self.appName });
 
-            self.dest.mkdir('src/app/main/error-403');
-            self.template('src/app/main/error-403/error-403.controller.js', 'src/app/main/error-403/error-403.controller.js', { appName: self.appName });
-            self.src.copy('src/app/main/error-403/error-403.html', 'src/app/main/error-403/error-403.html');
-            self.template('src/app/main/error-403/error-403.state.js', 'src/app/main/error-403/error-403.state.js', { appName: self.appName });
+            self.dest.mkdir('src/app/main/forbidden');
+            self.template('src/app/main/forbidden/forbidden.controller.js', 'src/app/main/forbidden/forbidden.controller.js', { appName: self.appName });
+            self.src.copy('src/app/main/forbidden/forbidden.html', 'src/app/main/forbidden/forbidden.html');
+            self.template('src/app/main/forbidden/forbidden.state.js', 'src/app/main/forbidden/forbidden.state.js', { appName: self.appName });
 
             self.dest.mkdir('src/app/public');
             self.template('src/app/public/public.controller.js', 'src/app/public/public.controller.js', { appName: self.appName });
