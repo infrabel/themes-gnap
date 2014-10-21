@@ -13,16 +13,16 @@
 
     function AuthenticationInterceptor($q, $location, tokenManagerService) {
         return {
-            request: function (config) {
+            request: function (request) {
                 var token = tokenManagerService.getToken();
 
                 // put session token in authorization header
                 if (token) {
-                    config.headers = config.headers || {};
-                    config.headers.Authorization = 'Bearer ' + token;
+                    request.headers = request.headers || {};
+                    request.headers.Authorization = 'Bearer ' + token;
                 }
 
-                return config;
+                return request;
             }
         };
     }

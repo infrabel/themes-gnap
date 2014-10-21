@@ -42,13 +42,32 @@
 
         function parseToken(token) {
             var segments = token.split('.');
+
             if (segments.length !== 3) {
                 throw new Error('Invalid JWT');
             }
-            var claims = segments[1];
 
-            /* global escape */
-            return angular.fromJson(decodeURIComponent(escape(window.atob(claims))));
+            var decoded = urlBase64Decode(segments[1]);
+            if (!decoded) {
+                throw new Error('Cannot decode the token');
+            }
+
+            return angular.fromJson(decoded);
+        }
+
+        function urlBase64Decode(str) {
+            var output = str.replace('-', '+').replace('_', '/');
+
+            switch (output.length % 4) {
+                case 0: { break; }
+                case 2: { output += '=='; break; }
+                case 3: { output += '='; break; }
+                default: {
+                    throw 'Illegal base64url string!';
+                }
+            }
+
+            return window.atob(output); // polifyll https://github.com/davidchambers/Base64.js
         }
     }
 })();
