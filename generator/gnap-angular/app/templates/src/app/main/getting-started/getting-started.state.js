@@ -18,7 +18,7 @@
         breadcrumb: {
             title: 'Getting Started'
         },
-        sidebarKey: 'getting-started'
+        sidebarKey: 'main.getting-started'
     };
 
     stateSettings.state.onEnter = onEnter;

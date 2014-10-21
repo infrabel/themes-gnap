@@ -10,7 +10,7 @@
             "administration": "Administratie"
         },
         "items": {
-            "getting-started": "Aan de slag"
+            "main.getting-started": "Aan de slag"
         }
     }
 }
