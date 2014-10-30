@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -26,23 +28,29 @@
 
     function stateConfiguration($stateProvider) {
         $stateProvider.state(stateSettings.name, stateSettings.state);
-    };
+    }
 
-    onEnter.$inject = [];
+    onEnter.$inject = ['titleService'];
 
-    function onEnter() {
-    };
+    function onEnter(titleService) {
+        titleService.setTitle(stateSettings.title);
+    }
 
-    onExit.$inject = [];
+    onExit.$inject = ['titleService'];
 
-    function onExit() {
-    };
+    function onExit(titleService) {
+        titleService.clearTitle();
+    }
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
-        stateSettings.state.resolve.translations = function ($translatePartialLoader, $translate) {
-            $translatePartialLoader.addPart(stateSettings.translations);
-            return $translate.refresh();
-        };
-    };
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
+    }
 })();

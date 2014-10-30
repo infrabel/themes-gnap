@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc Date range
  * @file daterange.directive.js
@@ -10,10 +12,11 @@
 
     function gnapDaterange() {
 
-        function link($scope, element, attrs) {
+        function link($scope) {
             $scope.formatDate = function (date) {
-                if (date == undefined)
+                if (date === undefined) {
                     return '';
+                }
 
                 var yy = date.getFullYear();
                 var mm = date.getMonth() + 1;
@@ -30,29 +33,31 @@
             };
 
             $scope.onDateBeginChanged = function (date) {
-                if (date > $scope.dateEnd || $scope.displayDateEnd == undefined) {
+                if (date > $scope.dateEnd || $scope.displayDateEnd === undefined) {
                     $scope.dateEnd = date;
                     $scope.displayDateEnd = $scope.formatDate($scope.dateEnd);
                 }
 
                 $scope.displayDateStart = $scope.formatDate(date);
 
-                if ($scope.displayDateEnd == undefined)
+                if ($scope.displayDateEnd === undefined) {
                     $scope.displayDateEnd = '';
+                }
 
                 $scope.displayRange = $scope.displayDateStart + ' - ' + $scope.displayDateEnd;
             };
 
             $scope.onDateEndChanged = function (date) {
-                if (date < $scope.dateBegin || $scope.displayDateStart == undefined) {
+                if (date < $scope.dateBegin || $scope.displayDateStart === undefined) {
                     $scope.dateBegin = date;
                     $scope.displayDateStart = $scope.formatDate($scope.dateBegin);
                 }
 
                 $scope.displayDateEnd = $scope.formatDate(date);
 
-                if ($scope.displayDateStart == undefined)
+                if ($scope.displayDateStart === undefined) {
                     $scope.displayDateStart = '';
+                }
 
                 $scope.displayRange = $scope.displayDateStart + ' - ' + $scope.displayDateEnd;
             };
@@ -87,7 +92,7 @@
                 $scope.dateBegin = $scope.oldStartDate;
                 $scope.dateEnd = $scope.oldEndDate;
             };
-        };
+        }
 
         return {
             restrict: 'AE',
@@ -142,5 +147,5 @@
             '</span>',
             link: link
         };
-    };
+    }
 })();

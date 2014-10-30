@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc A choice toggle implementation
  * @file choice-toggle.directive.js
@@ -20,22 +22,22 @@
             link: link
         };
 
-        function link(scope, element, attrs) {
+        function link(scope, element) {
             var labelNode = angular.element(element[0].childNodes[0].childNodes[1]);
             var inputNode = angular.element(element[0].childNodes[0].childNodes[0]);
 
-            if (scope.lang == 'nl' || scope.lang == 'fr' || scope.lang == 'en') {
+            if (scope.lang === 'nl' || scope.lang === 'fr' || scope.lang === 'en') {
                 labelNode.addClass(scope.lang);
                 inputNode.addClass('ace-switch-7');
             } else {
                 inputNode.addClass('ace-switch-6');
             }
 
-            if (scope.choice == true) {
+            if (scope.choice === true) {
                 inputNode.attr('checked', 'checked');
             } else {
                 inputNode.removeAttr('checked');
             }
-        };
+        }
     }
 })();

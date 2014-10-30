@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -6,7 +8,6 @@
     UnauthorizedController.$inject = ['employees'];
 
     function UnauthorizedController(employees) {
-        
-    };
-    
+        console.log(employees);
+    }
 })();

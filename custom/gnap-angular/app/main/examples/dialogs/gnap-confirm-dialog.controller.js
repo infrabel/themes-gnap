@@ -1,19 +1,21 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
         .controller('gnap-confirm-dialog', GnapConfirmDialogController);
 
-    GnapConfirmDialogController.$inject = [];
+    GnapConfirmDialogController.$inject = ['$window'];
 
-    function GnapConfirmDialogController() {
+    function GnapConfirmDialogController($window) {
         var vm = this;
 
         vm.confirm = function () {
-            alert('You were sure!');
+            $window.alert('You were sure!');
         };
 
         vm.cancel = function () {
-            alert('You weren\'t sure!');
+            $window.alert('You weren\'t sure!');
         };
-    };
+    }
 })();

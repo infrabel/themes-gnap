@@ -20,7 +20,6 @@ namespace ExampleHttpServer.Api
         }
     }
 
-    
     public class Credentials
     {
         public string Username { get; set; }

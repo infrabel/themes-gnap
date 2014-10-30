@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -23,5 +25,5 @@
         vm.done = function () {
             ngProgressLite.done();
         };
-    };
+    }
 })();
