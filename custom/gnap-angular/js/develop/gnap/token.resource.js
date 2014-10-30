@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap')
@@ -7,5 +9,5 @@
 
     function Token($resource) {
         return $resource('/api/tokens');
-    };
+    }
 })();

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc service that keeps track of the current breadcrumbs
  * @file breadcrumbs.service.js
@@ -32,10 +34,10 @@
             }
 
             breadcrumbs.crumbs.push(value);
-        };
+        }
 
         function removeLastBreadcrumb() {
             breadcrumbs.crumbs.pop();
-        };
-    };
+        }
+    }
 })();

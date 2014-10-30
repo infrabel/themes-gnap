@@ -1,6 +1,7 @@
 {
     "search": "Search ...",
     "welcome": "Welcome",
+    "login": "Login",
     "sidebar": {
         "shortcuts": {
             "statistics": "Statistics",
@@ -9,7 +10,7 @@
             "administration": "Administration"
         },
         "items": {
-            "getting-started": "Getting Started"
+            "main.getting-started": "Getting Started"
         }
     }
 }

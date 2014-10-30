@@ -1,9 +1,12 @@
+'use strict';
+/* global hljs */
+
 /**
  * @desc applies code syntax coloring
  * @file highlight.directive.js
  * @example <code gnap-highlight class="html">html code here</code>
  */
-(function () {
+(function (hljs) {
     angular
         .module('gnap')
         .directive('gnapHighlight', gnapHighlight);
@@ -22,10 +25,8 @@
             var snippet = element.text();
 
             $timeout(function () {
-                element.html((language)
-                    ? hljs.highlight(language, snippet).value
-                    : hljs.highlightAuto(snippet).value);
+                element.html((language) ? hljs.highlight(language, snippet).value : hljs.highlightAuto(snippet).value);
             }, 0);
-        };
-    };
-})();
+        }
+    }
+})(hljs);

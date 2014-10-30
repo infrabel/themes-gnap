@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc displays a sidebar toggle button
  * @file sidebar-toggler.directive.js
@@ -30,15 +32,17 @@
             scope.toggleMenu = function () {
                 sidebarService.toggleMenu();
             };
-        };
-    };
+        }
+    }
 
     function gnapSidebarTogglerTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/gnap/sidebar/sidebar-toggler.html",
             "<a class=\"menu-toggler\" ng-class=\"{display: settings.visible}\" ng-click=\"toggleMenu()\">\n" +
             "    <span class=\"menu-text\"><\/span>\n" +
             "<\/a>\n" +
             "");
-    };
+        /* jshint ignore:end */
+    }
 })();

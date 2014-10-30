@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc Page Title
  * @file title.directive
@@ -23,21 +25,23 @@
         function link(scope) {
             // get the current title and link them to the scope
             scope.buildTitle = buildTitle;
-        };
+        }
 
         function buildTitle() {
             var title = '';
 
-            if (titleService.prefix._text)
+            if (titleService.prefix._text) {
                 title += titleService.prefix._text + ' ';
+            }
 
             title += joinTitleParts(titleService.title.parts);
 
-            if (titleService.suffix._text)
+            if (titleService.suffix._text) {
                 title += ' ' + titleService.suffix._text;
+            }
 
             return title;
-        };
+        }
 
         function joinTitleParts(parts) {
             var out = [];
@@ -47,6 +51,6 @@
             }
 
             return out.join(' ' + titleService.separator + ' ');
-        };
-    };
+        }
+    }
 })();

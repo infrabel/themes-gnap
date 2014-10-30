@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc Alert
  * @file alert.directive.js
@@ -12,6 +14,7 @@
 
     function gnapAlertTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/alert/alert.html",
             "<div class=\"alert\" ng-class=\"{'alert-{{type || 'warning'}}': true, 'alert-dismissable': closeable}\" role=\"alert\">\n" +
             "    <button ng-show=\"closeable\" type=\"button\" class=\"close\" ng-click=\"close()\">\n" +
@@ -21,5 +24,6 @@
             "    <div ng-transclude></div>\n" +
             "</div>\n" +
             "");
-    };
+        /* jshint ignore:end */
+    }
 })();

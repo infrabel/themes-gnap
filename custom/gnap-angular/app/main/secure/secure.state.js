@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -10,9 +12,7 @@
             templateUrl: 'app/main/secure/secure.html',
             controller: 'SecureController as vm',
             resolve: {
-                bankAccounts: function(BankAccount) {
-                    return BankAccount.query().$promise;
-                }
+                bankAccounts: resolveBankAccounts
             }
         },
         title: {
@@ -31,7 +31,7 @@
 
     function stateConfiguration($stateProvider) {
         $stateProvider.state(stateSettings.name, stateSettings.state);
-    };
+    }
 
     onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -40,7 +40,7 @@
 
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
         sidebarService.setSelected(stateSettings.sidebarKey);
-    };
+    }
 
     onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
@@ -49,13 +49,23 @@
 
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
-    };
+    }
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
-        stateSettings.state.resolve.translations = function ($translatePartialLoader, $translate) {
-            $translatePartialLoader.addPart(stateSettings.translations);
-            return $translate.refresh();
-        };
-    };
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
+    }
+
+    resolveBankAccounts.$inject = ['BankAccount'];
+
+    function resolveBankAccounts(BankAccount) {
+        return BankAccount.query().$promise;
+    }
 })();

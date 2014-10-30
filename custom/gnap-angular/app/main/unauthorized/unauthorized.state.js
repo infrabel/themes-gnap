@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -10,9 +12,7 @@
             templateUrl: 'app/main/unauthorized/unauthorized.html',
             controller: 'UnauthorizedController as vm',
             resolve: {
-                employees: function(Employee) {
-                    return Employee.query().$promise;
-                }
+                employees: resolveEmployees
             }
         },
         title: {
@@ -31,23 +31,33 @@
 
     function stateConfiguration($stateProvider) {
         $stateProvider.state(stateSettings.name, stateSettings.state);
-    };
+    }
 
     onEnter.$inject = [];
 
     function onEnter() {
-    };
+    }
 
     onExit.$inject = [];
 
     function onExit() {
-    };
+    }
 
     if (stateSettings.translations) {
         stateSettings.state.resolve = stateSettings.state.resolve || {};
-        stateSettings.state.resolve.translations = function ($translatePartialLoader, $translate) {
-            $translatePartialLoader.addPart(stateSettings.translations);
-            return $translate.refresh();
-        };
-    };
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
+    }
+
+    resolveEmployees.$inject = ['Employee'];
+
+    function resolveEmployees(Employee) {
+        return Employee.query().$promise;
+    }
 })();
