@@ -1,4 +1,6 @@
-﻿/**
+﻿'use strict';
+
+/**
  * @desc detects which language should be chosen
  * @file language-negotiation.service.js
  */
@@ -33,7 +35,7 @@
 
             // a preferred language could not be detected
             return null;
-        };
+        }
 
         function detectLanguage() {
             var nav = window.navigator;
@@ -43,27 +45,30 @@
                     nav.systemLanguage ||
                     nav.userLanguage
             ) || '');
-        };
+        }
 
         function isRegional(language) {
             return language.indexOf('-') > 0;
-        };
+        }
 
         function findLanguage(knownLanguages, language) {
-            for (var knownLanguageIndex in knownLanguages) {
+            //for (var knownLanguageIndex in knownLanguages) {
+            for (var knownLanguageIndex = 0; knownLanguageIndex < knownLanguages.length; knownLanguageIndex++) {
                 var knownLanguage = knownLanguages[knownLanguageIndex];
 
-                if (knownLanguage == language)
+                if (knownLanguage === language) {
                     return knownLanguage;
+                }
             }
             return null;
-        };
+        }
 
         function getParentLanguage(language) {
-            if (!isRegional(language))
+            if (!isRegional(language)) {
                 throw language + ' is not a regional language';
+            }
 
             return language.substring(0, language.indexOf('-'));
-        };
-    };
+        }
+    }
 })();

@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -6,5 +8,5 @@
     ExamplesController.$inject = [];
 
     function ExamplesController() {
-    };
+    }
 })();

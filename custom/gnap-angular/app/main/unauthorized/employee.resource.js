@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -7,5 +9,5 @@
 
     function Employee($resource) {
         return $resource('/api/employees');
-    };
+    }
 })();

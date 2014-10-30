@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -30,7 +32,7 @@
 
         titleServiceProvider.setPrefix({ text: 'GNaP &raquo;' });
         titleServiceProvider.setSuffix({ text: '' });
-    };
+    }
 
     tooltipConfiguration.$inject = ['$tooltipProvider'];
 
@@ -38,13 +40,13 @@
         $tooltipProvider.options({
             appendToBody: true
         });
-    };
+    }
 
     urlRouterConfiguration.$inject = ['$urlRouterProvider'];
 
     function urlRouterConfiguration($urlRouterProvider) {
         $urlRouterProvider.otherwise(defaultPage);
-    };
+    }
 
     translationConfiguration.$inject = ['$translateProvider'];
 
@@ -54,26 +56,26 @@
             urlTemplate: '{part}/translations.{lang}.json', // if not local, e.g.: https://server/translations/{lang}/{part}
             loadFailureHandler: 'partialLoaderErrorHandler'
         });
-    };
+    }
 
     localeConfiguration.$inject = ['tmhDynamicLocaleProvider'];
 
     function localeConfiguration(tmhDynamicLocaleProvider) {
         tmhDynamicLocaleProvider.localeLocationPattern('js/angular/i18n/angular-locale_{{locale}}.min.js');
-    };
+    }
 
     select2Initialization.$inject = ['uiSelect2Config'];
 
     function select2Initialization(uiSelect2Config) {
         uiSelect2Config.allowClear = true;
-        uiSelect2Config.shouldFocusInput = function () { return false; }
-    };
+        uiSelect2Config.shouldFocusInput = function () { return false; };
+    }
 
     localeInitalization.$inject = ['localeService'];
 
     function localeInitalization(localeService) {
         localeService.initialize(supportedLanguages);
-    };
+    }
 
     loadDefaultTranslations.$inject = ['$translate', '$translatePartialLoader'];
 
@@ -86,25 +88,24 @@
 
     function authConfiguration($httpProvider) {
         $httpProvider.interceptors.push('authenticationInterceptor');
-    };
+    }
 
     handleStateChangeError.$inject = ['$rootScope', '$state', '$location', 'sessionService', 'unhandledErrorChannel'];
 
     function handleStateChangeError($rootScope, $state, $location, sessionService, unhandledErrorChannel) {
         $rootScope.$on('$stateChangeError',
             function (event, toState, toParams, fromState, fromParams, error) {
-                
+
                 // unauthorized
                 if (error.status === 401) {
                     event.preventDefault();
 
                     // end the current session
                     sessionService.abandonSession();
-                    
+
                     // go to login screen (only once!)
-                    if (toState.name != "public.login") {
-                        var redirectState = toState.name;
-                        $location.url('/login').search({ redirect_state: redirectState });
+                    if (toState.name !== 'public.login') {
+                        $location.url('/login').search({ 'redirect_state': toState.name });
                     }
                 }
 

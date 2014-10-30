@@ -1,5 +1,4 @@
-﻿using System.Net.Http.Formatting;
-using System.Web.Http;
+﻿using System.Web.Http;
 using ExampleHttpServer.Properties;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.Security;
@@ -7,7 +6,6 @@ using Microsoft.Owin.Security.Jwt;
 using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.StaticFiles.ContentTypes;
 using Owin;
-using ExampleHttpServer.Auth;
 
 namespace ExampleHttpServer.Bootstrap
 {
@@ -32,12 +30,12 @@ namespace ExampleHttpServer.Bootstrap
             var issuer = Settings.Default.Issuer;
             var audience = Settings.Default.Audience;
             var tokenSigningKey = Settings.Default.TokenSigningKey;
-            
+
             builder.UseJwtBearerAuthentication(
                 new JwtBearerAuthenticationOptions
                 {
                     AuthenticationMode = AuthenticationMode.Active,
-                    AllowedAudiences = new[] {audience},
+                    AllowedAudiences = new[] { audience },
                     IssuerSecurityTokenProviders = new IIssuerSecurityTokenProvider[]
                                                    {
                                                        new SymmetricKeyIssuerSecurityTokenProvider(issuer, tokenSigningKey)

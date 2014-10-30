@@ -1,4 +1,6 @@
-﻿/**
+﻿'use strict';
+
+/**
  * @desc locale selector
  * @file locale-selector.directive.js
  */
@@ -29,11 +31,12 @@
             scope.setLocale = function (locale) {
                 localeService.setCurrentLocale(locale);
             };
-        };
-    };
+        }
+    }
 
     function gnapLocaleSelectorTemplate($templateCache) {
 
+        /* jshint ignore:start */
         $templateCache.put("template/gnap/locale-selector/locale-selector.html",
             "<a data-toggle=\"dropdown\" class=\"dropdown-toggle\">\n" +
             "    <span>\n" +
@@ -50,5 +53,6 @@
             "    <\/li>\n" +
             "<\/ul>\n" +
             "");
-    };
+        /* jshint ignore:end */
+    }
 })();

@@ -1,13 +1,15 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
         .controller('gnap-custom-dialog', GnapCustomDialogController)
         .controller('gnap-custom-dialog-instance', GnapCustomDialogInstanceController);
 
-    GnapCustomDialogController.$inject = ['$modal'];
+    GnapCustomDialogController.$inject = ['$window', '$modal'];
     GnapCustomDialogInstanceController.$inject = ['$modalInstance', 'items'];
 
-    function GnapCustomDialogController($modal) {
+    function GnapCustomDialogController($window, $modal) {
         var vm = this;
 
         vm.items = ['item1', 'item2', 'item3'];
@@ -24,12 +26,12 @@
             });
 
             modalInstance.result.then(function (result) {
-                alert('You selected: ' + result);
+                $window.alert('You selected: ' + result);
             }, function () {
-                alert('You dismissed the dialog!');
+                $window.alert('You dismissed the dialog!');
             });
         };
-    };
+    }
 
     function GnapCustomDialogInstanceController($modalInstance, items) {
         var vm = this;
@@ -47,5 +49,5 @@
         vm.cancel = function () {
             $modalInstance.dismiss('cancel');
         };
-    };
+    }
 })();

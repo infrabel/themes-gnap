@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -18,5 +20,5 @@
         vm.closeAlert = function (index) {
             vm.alerts.splice(index, 1);
         };
-    };
+    }
 })();
