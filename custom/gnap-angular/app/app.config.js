@@ -122,7 +122,7 @@
                     unhandledErrorChannel.errorOccurred(error);
                 }
             });
-    };
+    }
 
     fourOhFourConfiguration.$inject = ['$urlRouterProvider'];
 
@@ -146,7 +146,7 @@
                 $delegate(exception, cause);
                 $injector.get('unhandledErrorChannel').errorOccurred(exception);
             };
-        };
-    };
+        }
+    }
 
 })();

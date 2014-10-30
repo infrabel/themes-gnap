@@ -11,7 +11,7 @@
 
     function unhandledErrorChannel($rootScope) {
 
-        var UNHANDLED_ERROR_OCCURRED_MESSAGE = "ERROR_OCCURRED_MESSAGE";
+        var UNHANDLED_ERROR_OCCURRED_MESSAGE = 'ERROR_OCCURRED_MESSAGE';
 
         var errorOccurred = function (error) {
             $rootScope.$broadcast(UNHANDLED_ERROR_OCCURRED_MESSAGE,
@@ -30,5 +30,5 @@
             errorOccurred: errorOccurred,
             onErrorOccurred: onErrorOccurred
         };
-    };
+    }
 })();

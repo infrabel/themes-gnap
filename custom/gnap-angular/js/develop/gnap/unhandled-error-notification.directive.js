@@ -13,7 +13,7 @@
 
         function link(scope) {
             unhandledErrorChannel.onErrorOccurred(scope, onErrorOccurred);
-        };
+        }
 
         function onErrorOccurred(error) {
             $translate(['gnap.error-notification-title', 'gnap.error-notification-text']).then(function (translations) {
@@ -24,11 +24,11 @@
                     text: translations['gnap.error-notification-text']
                 });
             });
-        };
+        }
 
         return {
             restrict: 'A',
             link: link
         };
-    };
+    }
 })();
