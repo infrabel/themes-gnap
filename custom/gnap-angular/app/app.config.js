@@ -51,7 +51,6 @@
     translationConfiguration.$inject = ['$translateProvider'];
 
     function translationConfiguration($translateProvider) {
-        // use the partial loading functionality
         $translateProvider.useLoader('$translatePartialLoader', {
             urlTemplate: '{part}/translations.{lang}.json', // if not local, e.g.: https://server/translations/{lang}/{part}
             loadFailureHandler: 'partialLoaderErrorHandler'
@@ -130,7 +129,7 @@
         // when there is an empty route, redirect to /about
         $urlRouterProvider.when('', '/about');
 
-        // when no matching route foundm redirect to error 404
+        // when no matching route found redirect to error 404
         $urlRouterProvider.otherwise('/error-404');
     }
 
