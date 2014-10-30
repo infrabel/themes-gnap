@@ -11,7 +11,8 @@
         .config(errorHandlingConfiguration)
         .run(localeInitalization)
         .run(select2Initialization)
-        .run(handleStateChangeError);
+        .run(handleStateChangeError)
+        .run(loadDefaultTranslations);
 
     var defaultPage = '/about';
 
@@ -48,6 +49,7 @@
     translationConfiguration.$inject = ['$translateProvider'];
 
     function translationConfiguration($translateProvider) {
+        // use the partial loading functionality
         $translateProvider.useLoader('$translatePartialLoader', {
             urlTemplate: '{part}/translations.{lang}.json', // if not local, e.g.: https://server/translations/{lang}/{part}
             loadFailureHandler: 'partialLoaderErrorHandler'
@@ -73,15 +75,22 @@
         localeService.initialize(supportedLanguages);
     };
 
+    loadDefaultTranslations.$inject = ['$translate', '$translatePartialLoader'];
+
+    function loadDefaultTranslations($translate, $translatePartialLoader) {
+        $translatePartialLoader.addPart('js/gnap');
+        $translate.refresh();
+    }
+
     authConfiguration.$inject = ['$httpProvider'];
 
     function authConfiguration($httpProvider) {
         $httpProvider.interceptors.push('authenticationInterceptor');
     };
 
-    handleStateChangeError.$inject = ['$rootScope', '$state', '$location', 'sessionService'];
+    handleStateChangeError.$inject = ['$rootScope', '$state', '$location', 'sessionService', 'unhandledErrorChannel'];
 
-    function handleStateChangeError($rootScope, $state, $location, sessionService) {
+    function handleStateChangeError($rootScope, $state, $location, sessionService, unhandledErrorChannel) {
         $rootScope.$on('$stateChangeError',
             function (event, toState, toParams, fromState, fromParams, error) {
                 
@@ -100,11 +109,16 @@
                 }
 
                 // forbidden
-                if (error.status === 403) {
+                else if (error.status === 403) {
                     event.preventDefault();
-                    
+
                     // redirect to 'forbidden' error page
                     $state.go('main.error-403');
+                }
+
+                // any other case
+                else {
+                    unhandledErrorChannel.errorOccurred(error);
                 }
             });
     };
@@ -112,6 +126,10 @@
     fourOhFourConfiguration.$inject = ['$urlRouterProvider'];
 
     function fourOhFourConfiguration($urlRouterProvider) {
+        // when there is an empty route, redirect to /about
+        $urlRouterProvider.when('', '/about');
+
+        // when no matching route foundm redirect to error 404
         $urlRouterProvider.otherwise('/error-404');
     }
 
@@ -120,21 +138,14 @@
     function errorHandlingConfiguration($provide) {
         $provide.decorator('$exceptionHandler', extendExceptionHandler);
 
-        extendExceptionHandler.$inject = ['$delegate', 'notification'];
+        extendExceptionHandler.$inject = ['$delegate', '$injector'];
 
-        function extendExceptionHandler($delegate, notification) {
+        function extendExceptionHandler($delegate, $injector) {
             return function (exception, cause) {
                 $delegate(exception, cause);
-                /**
-                 * TODO: log errors to remote web server + show localized error message
-                 */
-                notification.show({
-                    title: 'Something went wrong ...',
-                    text: 'Onze excuses hiervoor.',
-                    type: 'error'
-                });
+                $injector.get('unhandledErrorChannel').errorOccurred(exception);
             };
-        }
+        };
     };
 
 })();
