@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -11,20 +13,23 @@
         vm.credentials = {
             username: '',
             password: '',
-            remember: true
+            remember: false
         };
+
         vm.login = login;
 
         function login() {
             var newToken = new Token({ username: vm.credentials.username, password: vm.credentials.password });
+
             newToken.$save().then(
                 function (token) { // success
                     // store token
                     sessionService.beginSession(token.Token);
 
                     // redirect back to the referrer or to the app root
-                    if ($location.search().redirect_state) {
-                        $state.go($location.search().redirect_state);
+                    var redirectState = $location.search().redirect_state; /* jshint ignore:line*/
+                    if (redirectState) {
+                        $state.go(redirectState);
                     } else {
                         $location.path('/');
                     }
@@ -34,7 +39,6 @@
                         vm.invalidCredentials = true;
                     }
                 });
-        };
-    };
-    
+        }
+    }
 })();

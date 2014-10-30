@@ -1,4 +1,6 @@
-﻿/**
+﻿'use strict';
+
+/**
  * @desc service that manages JWT tokens
  * @file token-manager.service.js
  */
@@ -19,16 +21,16 @@
         };
 
         function setToken(token) {
-            localStorageService.set('gnap-token', token);
-        };
+            localStorageService.set('token', token);
+        }
 
         function clearToken() {
-            localStorageService.remove('gnap-token');
-        };
+            localStorageService.remove('token');
+        }
 
         function getToken() {
-            return localStorageService.get('gnap-token');
-        };
+            return localStorageService.get('token');
+        }
 
         function getParsedToken() {
             var token = getToken();
@@ -36,15 +38,36 @@
                 return parseToken(token);
             }
             return null;
-        };
+        }
 
         function parseToken(token) {
-            var segments = token.split(".");
+            var segments = token.split('.');
+
             if (segments.length !== 3) {
-                throw new Error("Invalid JWT");
+                throw new Error('Invalid JWT');
             }
-            var claims = segments[1];
-            return angular.fromJson(decodeURIComponent(escape(window.atob(claims))));
-        };
-    };
+
+            var decoded = urlBase64Decode(segments[1]);
+            if (!decoded) {
+                throw new Error('Cannot decode the token');
+            }
+
+            return angular.fromJson(decoded);
+        }
+
+        function urlBase64Decode(str) {
+            var output = str.replace('-', '+').replace('_', '/');
+
+            switch (output.length % 4) {
+                case 0: { break; }
+                case 2: { output += '=='; break; }
+                case 3: { output += '='; break; }
+                default: {
+                    throw 'Illegal base64url string!';
+                }
+            }
+
+            return window.atob(output); // polifyll https://github.com/davidchambers/Base64.js
+        }
+    }
 })();

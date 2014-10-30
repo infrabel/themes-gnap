@@ -1,11 +1,13 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
         .controller('gnap-buttons', GnapButtonsController);
 
-    GnapButtonsController.$inject = [];
+    GnapButtonsController.$inject = ['$window'];
 
-    function GnapButtonsController() {
+    function GnapButtonsController($window) {
         var vm = this;
 
         vm.status = {
@@ -13,15 +15,15 @@
         };
 
         vm.primary = function () {
-            alert('You clicked a primary button');
+            $window.alert('You clicked a primary button');
         };
 
         vm.save = function () {
-            alert('You clicked a save button');
+            $window.alert('You clicked a save button');
         };
 
         vm.cancel = function () {
-            alert('You clicked a cancel button');
+            $window.alert('You clicked a cancel button');
         };
 
         vm.action1 = function () {
@@ -38,5 +40,5 @@
             // do something here
             vm.status.isopen = false;
         };
-    };
+    }
 })();

@@ -1,6 +1,7 @@
 {
     "search": "Zoeken ...",
     "welcome": "Welkom",
+    "login": "Aanmelden",
     "sidebar": {
         "shortcuts": {
             "statistics": "Statistieken",
@@ -9,7 +10,7 @@
             "administration": "Administratie"
         },
         "items": {
-            "getting-started": "Aan de slag"
+            "main.getting-started": "Aan de slag"
         }
     }
 }

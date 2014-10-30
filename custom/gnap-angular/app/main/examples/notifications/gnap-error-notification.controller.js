@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
     angular
         .module('gnap-example-app')
@@ -19,5 +21,5 @@
         vm.remove = function () {
             notification.removeAll();
         };
-    };
+    }
 })();

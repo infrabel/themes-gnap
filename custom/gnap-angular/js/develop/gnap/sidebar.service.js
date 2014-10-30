@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc service for interacting with the sidebar
  * @file sidebar.service.js
@@ -34,12 +36,12 @@
         function setItems(value) {
             resolveTranslations(value);
             settings.items = value;
-        };
+        }
 
         function setShortcuts(value) {
             resolveTranslations(value);
             settings.shortcuts = value;
-        };
+        }
 
         function clearItems() {
             settings.items = [];
@@ -47,16 +49,16 @@
 
         function clearShortcuts() {
             settings.shortcuts = [];
-        };
+        }
 
         function toggleMenu() {
             settings.visible = !settings.visible;
-        };
+        }
 
         function toggleCollapsed() {
             settings.collapsed = !settings.collapsed;
             localStorageService.set('sidebar-collapsed', settings.collapsed);
-        };
+        }
 
         function toggleSubmenu(parent) {
             var currentOpenState = parent.open;
@@ -64,7 +66,7 @@
             collapseSameLevelSubmenus(parent);
 
             parent.open = !currentOpenState;
-        };
+        }
 
         function collapseSameLevelSubmenus(item) {
             var siblings = findSiblings(item);
@@ -72,7 +74,7 @@
             for (var siblingIndex = 0; siblingIndex < siblings.length; siblingIndex++) {
                 siblings[siblingIndex].open = false;
             }
-        };
+        }
 
         function findSiblings(item) {
             if (isRootMenuItem(item)) {
@@ -105,36 +107,39 @@
             }
 
             return [];
-        };
+        }
 
         function hasChild(parent, child) {
-            if (!parent.items)
+            if (!parent.items) {
                 return false;
+            }
 
             for (var childIndex = 0; childIndex < parent.items.length; childIndex++) {
-                if (parent.items[childIndex].key == child.key) {
+                if (parent.items[childIndex].key === child.key) {
                     return true;
                 }
             }
             return false;
-        };
+        }
 
         function isRootMenuItem(item) {
             for (var rootItemIndex = 0; rootItemIndex < settings.items.length; rootItemIndex++) {
-                if (settings.items[rootItemIndex].key == item.key) {
+                if (settings.items[rootItemIndex].key === item.key) {
                     return true;
                 }
             }
             return false;
-        };
+        }
 
         function setSelected(path) {
             // parse the path into an array
+            /* jshint laxbreak:true */
             var parsedPath = path == null
                                 ? []
                                 : ((path instanceof Array)
                                     ? path
                                     : path.split('/'));
+            /* jshint laxbreak:false */
 
             // find the item to set as active
             updateActiveState(settings.items, parsedPath);
@@ -147,9 +152,9 @@
                     item.active = false;
                     item.open = false;
 
-                    if (item.key == pathSegments[0]) {
+                    if (item.key === pathSegments[0]) {
 
-                        if (pathSegments.length == 1) {
+                        if (pathSegments.length === 1) {
                             // last item in the path segments
                             item.active = true;
                         } else if (item.items) {
@@ -163,11 +168,11 @@
                     }
                 }
             }
-        };
+        }
 
         function clearSelected() {
             setSelected(null);
-        };
+        }
 
         function resolveTranslations(items) {
             for (var itemIndex = 0; itemIndex < items.length; itemIndex++) {
@@ -186,6 +191,6 @@
                     resolveTranslations(item.items);
                 }
             }
-        };
-    };
+        }
+    }
 })();

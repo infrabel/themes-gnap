@@ -1,4 +1,6 @@
-﻿/**
+﻿'use strict';
+
+/**
  * @desc service that handles i18n
  * @file locale.service.js
  */
@@ -31,50 +33,49 @@
             }
 
             // get the current locale
-            var currentLocale = this.getCurrentLocale();
+            var currentLocale = getCurrentLocale();
 
             // set current language for translation
             $translate.use(currentLocale.name);
 
             // set current locale (ngLocale)
             tmhDynamicLocale.set(currentLocale.name);
-        };
+        }
 
         function getLocales() {
             return locales;
-        };
+        }
 
         function setCurrentLocale(value) {
             // store locale
             localStorageService.set('locale', value);
             $window.location.reload();
-        };
+        }
 
         function getCurrentLocale() {
             // read locale from local storage or detect it
-            var locale = localStorageService.get('locale')
-                || languageNegotiationService.getPreferredLanguage(locales.map(function (l) { return l.name; }));
+            var locale = localStorageService.get('locale') || languageNegotiationService.getPreferredLanguage(locales.map(function (l) { return l.name; }));
 
             if (locale) {
-                return findLocale(function (l) { return l.name == locale; });
+                return findLocale(function (l) { return l.name === locale; });
             }
 
             // return default
             return getDefaultLocale();
-        };
+        }
 
         function getDefaultLocale() {
             return findLocale(function (locale) { return locale.default; });
-        };
+        }
 
         function findLocale(predicate) {
-            for (var localeIndex in locales) {
+            for (var localeIndex = 0; localeIndex < locales.length; localeIndex++) {
                 var locale = locales[localeIndex];
                 if (predicate(locale)) {
                     return locale;
                 }
             }
             return null;
-        };
-    };
+        }
+    }
 })();
