@@ -1,5 +1,8 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="gnap-example-app">
+<html lang="en"
+      ng-app="gnap-example-app"
+      gnap-global-error-handler
+      gnap-unhandled-error-notification>
 <head>
     <meta charset="utf-8" />
     <title gnap-title></title>
@@ -32,7 +35,6 @@
         <link rel="stylesheet" href="css/ace-ie.min.css" />
         <link rel="stylesheet" href="css/ie8.min.css" />
     <![endif]-->
-
     <!--[if lt IE 9]>
         <script src="js/html5shiv.min.js"></script>
         <script src="js/respond.min.js"></script>
@@ -120,7 +122,9 @@
     <script src="js/gnap/token-manager.service.min.js"></script>
     <script src="js/gnap/token.resource.min.js"></script>
     <script src="js/gnap/session.service.min.js"></script>
-    <script src="js/gnap/exception-handler.decorator.min.js"></script>
+    <script src="js/gnap/global-error-handler.directive.min.js"></script>
+    <script src="js/gnap/unhandled-error.channel.min.js"></script>
+    <script src="js/gnap/unhandled-error-notification.directive.min.js"></script>
 
     <!-- companion app js -->
     <script src="app/app.module.js"></script>
@@ -134,7 +138,7 @@
 
     <script src="app/main/error-403/error-403.state.js"></script>
     <script src="app/main/error-403/error-403.controller.js"></script>
-    
+
     <script src="app/main/error-404/error-404.state.js"></script>
     <script src="app/main/error-404/error-404.controller.js"></script>
 
@@ -146,15 +150,15 @@
 
     <script src="app/main/typography/typography.state.js"></script>
     <script src="app/main/typography/typography.controller.js"></script>
-    
+
     <script src="app/main/secure/secure.state.js"></script>
     <script src="app/main/secure/secure.controller.js"></script>
     <script src="app/main/secure/bank-account.resource.js"></script>
-    
+
     <script src="app/main/unauthorized/unauthorized.state.js"></script>
     <script src="app/main/unauthorized/unauthorized.controller.js"></script>
     <script src="app/main/unauthorized/employee.resource.js"></script>
-    
+
     <script src="app/public/public.state.js"></script>
     <script src="app/public/public.controller.js"></script>
 
