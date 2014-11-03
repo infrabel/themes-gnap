@@ -103,8 +103,7 @@ module.exports = function(grunt) {
                     src: [
                         './dist/app/css/*.css',
                         './dist/vendor/css/*.css',
-                        './dist/app/js/*.js',
-                        './dist/vendor/js/*.js'
+                        './dist/app/js/*.js'
                     ]
                 }
             }
@@ -149,16 +148,8 @@ module.exports = function(grunt) {
                             './fonts/*.*',
                             './images/*.*',
                             './images/**/*.*',
-                            './js/gnap/*.json'
-                        ]
-                    },
-                    {
-                        expand: true,
-                        dot: true,
-                        cwd: 'node_modules/<%= themeName %>/js/angular/i18n',
-                        dest: './dist/vendor/js/angular/i18n',
-                        src: [
-                            './*.js'
+                            './js/gnap/*.json',
+                            './js/angular/i18n/*.js'
                         ]
                     }
                 ]
@@ -176,6 +167,7 @@ module.exports = function(grunt) {
                     }
                 ]
             },
+
             dist: {
                 src: ['./dist/index.html', './dist/app/js/app.js', './dist/vendor/js/vendor.js', './dist/vendor/css/*.css'],
                 overwrite: true,
