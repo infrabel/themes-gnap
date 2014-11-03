@@ -16,7 +16,7 @@
         var locales = [
             { name: 'nl', title: 'Nederlands' },
             { name: 'fr', title: 'Français' },
-            { name: 'en', title: 'English', default: true }
+            { name: 'en', title: 'English', 'default': true }
         ];
 
         return {
@@ -65,7 +65,7 @@
         }
 
         function getDefaultLocale() {
-            return findLocale(function (locale) { return locale.default; });
+            return findLocale(function (locale) { return locale['default']; });
         }
 
         function findLocale(predicate) {
