@@ -9,7 +9,7 @@
 
 // in case of IE 8, highlightJS is not loaded, so check here on hljs === undefined
 if (typeof hljs !== 'undefined') {
-    (function(hljs) {
+    (function (hljs) {
         angular
             .module('gnap')
             .directive('gnapHighlight', gnapHighlight);
@@ -29,7 +29,7 @@ if (typeof hljs !== 'undefined') {
                     var language = attrs['gnapHighlight'];
                     var snippet = element.text();
 
-                    $timeout(function() {
+                    $timeout(function () {
                         element.html((language) ? hljs.highlight(language, snippet).value : hljs.highlightAuto(snippet).value);
                     }, 0);
                 }
