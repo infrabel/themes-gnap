@@ -256,6 +256,9 @@
     <Content Include="custom\gnap-angular\css\develop\app.css" />
     <Content Include="custom\gnap-angular\css\develop\gnap.css" />
     <Content Include="custom\gnap-angular\js\develop\gnap\authentication.interceptor.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\unhandled-error-notification.directive.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\unhandled-error.channel.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\global-error-handler.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\token-manager.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\session.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\token.resource.js" />
@@ -3134,6 +3137,9 @@
     <None Include="custom\gnap-angular\app\main\translations.en.json" />
     <None Include="custom\gnap-angular\app\main\translations.fr.json" />
     <None Include="custom\gnap-angular\app\main\translations.nl.json" />
+    <None Include="custom\gnap-angular\js\develop\gnap\translations.en.json" />
+    <None Include="custom\gnap-angular\js\develop\gnap\translations.fr.json" />
+    <None Include="custom\gnap-angular\js\develop\gnap\translations.nl.json" />
     <None Include="custom\gnap-angular\start-server.cmd" />
     <None Include="custom\gnap\html\app\data\pages\about.json" />
     <None Include="custom\ace\html\app\data\pages\examples.json" />
