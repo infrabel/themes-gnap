@@ -42,7 +42,9 @@ module.exports = function(grunt) {
                     middleware: function(connect) {
                         return [
                             connect.static('./src'),
-                            connect().use('/node_modules', connect.static('./node_modules'))
+                            connect().use('/node_modules', connect.static('./node_modules')),
+                            connect().use('/js/gnap', connect.static('./node_modules/<%= themeName %>/js/gnap')),
+                            connect().use('/js/angular', connect.static('./node_modules/<%= themeName %>/js/angular'))
                         ];
                     }
                 }
@@ -101,7 +103,8 @@ module.exports = function(grunt) {
                     src: [
                         './dist/app/css/*.css',
                         './dist/vendor/css/*.css',
-                        './dist/app/js/*.js'
+                        './dist/app/js/*.js',
+                        './dist/vendor/js/*.js'
                     ]
                 }
             }
@@ -145,7 +148,8 @@ module.exports = function(grunt) {
                         src: [
                             './fonts/*.*',
                             './images/*.*',
-                            './images/**/*.*'
+                            './images/**/*.*',
+                            './js/gnap/*.json'
                         ]
                     },
                     {
@@ -163,17 +167,17 @@ module.exports = function(grunt) {
 
         replace: {
             translations: {
-                src: ['./dist/app/js/app.js'],
+                src: ['./dist/vendor/js/vendor.js'],
                 overwrite: true,
                 replacements: [
                     {
-                        from: '{part}/translations.{lang}.json',
+                        from: '{part}/translations.{lang}.json', // TODO: In the future this should probably come from a replace token
                         to: '{part}/translations.{lang}.json?<%%= grunt.task.current.args[0] %>'
                     }
                 ]
             },
             dist: {
-                src: ['./dist/index.html', './dist/app/js/app.js', './dist/vendor/css/*.css'],
+                src: ['./dist/index.html', './dist/app/js/app.js', './dist/vendor/js/vendor.js', './dist/vendor/css/*.css'],
                 overwrite: true,
                 replacements: [
                     {
@@ -205,8 +209,12 @@ module.exports = function(grunt) {
                         to: 'url(../images',
                     },
                     {
-                        from: 'node_modules/<%= themeName %>/js/angular/i18n',
+                        from: 'js/angular/i18n',
                         to: 'vendor/js/angular/i18n',
+                    },
+                    {
+                        from: 'addPart("js/gnap")',
+                        to: 'addPart("vendor/js/gnap")',
                     }
                 ]
             }
@@ -251,7 +259,12 @@ module.exports = function(grunt) {
                 files: [
                     {
                         dest: '.tmp/translations.json',
-                        src: ['./dist/app/**/translations.en.json', './dist/app/**/translations.fr.json', './dist/app/**/translations.nl.json']
+                        src: ['./dist/vendor/**/translations.en.json',
+                              './dist/vendor/**/translations.fr.json',
+                              './dist/vendor/**/translations.nl.json',
+                              './dist/app/**/translations.en.json', 
+                              './dist/app/**/translations.fr.json', 
+                              './dist/app/**/translations.nl.json']
                     }
                 ]
             }
