@@ -19,7 +19,7 @@
     var defaultPage = '/about';
 
     var supportedLanguages = [
-        { name: 'nl', title: 'Nederlands', default: true },
+        { name: 'nl', title: 'Nederlands', 'default': true },
         { name: 'fr', title: 'Français' },
         { name: 'en', title: 'English' }
     ];

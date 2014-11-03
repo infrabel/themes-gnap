@@ -256,6 +256,7 @@
     <Content Include="custom\gnap-angular\css\develop\app.css" />
     <Content Include="custom\gnap-angular\css\develop\gnap.css" />
     <Content Include="custom\gnap-angular\js\develop\gnap\authentication.interceptor.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\pollyfills.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\unhandled-error-notification.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\unhandled-error.channel.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\global-error-handler.directive.js" />
