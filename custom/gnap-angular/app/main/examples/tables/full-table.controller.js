@@ -22,7 +22,7 @@
             $window.alert('Going to the edit \'' + domain.domain + '\' page ...');
         };
 
-        vm.delete = function (domain) {
+        vm['delete'] = function (domain) {
             $window.alert('Logic to delete \'' + domain.domain + '\' should be executed now ...');
         };
     }
