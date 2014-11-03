@@ -69,7 +69,9 @@
     <script src="js/bootstrap-wysiwyg.min.js"></script>
     <script src="js/bootbox.min.js"></script>
     <script src="js/select2/select2.min.js"></script>
-    <script src="js/highlight/highlight.pack.min.js"></script>
+    <!--[if !(IE)|(gte IE 9)]>
+        <script src="js/highlight/highlight.pack.min.js"></script>
+    <![endif]-->
 
     <script src="js/ace.min.js"></script>
     <script src="js/ace-extra.min.js"></script>
@@ -94,6 +96,7 @@
     <script src="js/angular-dynamic-locale/tmhDynamicLocale.min.js"></script>
 
     <!-- gnap angular -->
+    <script src="js/gnap/pollyfills.min.js"></script>
     <script src="js/gnap/gnap.min.js"></script>
     <script src="js/gnap/title.service.min.js"></script>
     <script src="js/gnap/title.directive.min.js"></script>
