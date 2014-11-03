@@ -78,8 +78,7 @@
     <script src="node_modules/<%= themeName %>/js/develop/bootstrap-wysiwyg.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/bootbox.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/select2/select2.js"></script>
-    <script src="node_modules/<%= themeName %>/js/develop/highlight/highlight.pack.js"></script>
-
+    
     <script src="node_modules/<%= themeName %>/js/develop/ace.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/ace-extra.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/ace-elements.js"></script>
@@ -101,11 +100,11 @@
     <script src="node_modules/<%= themeName %>/js/develop/angular-translate/angular-translate.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/angular-translate/loader-partial.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/angular-dynamic-locale/tmhDynamicLocale.js"></script>
-
+    
+    <script src="node_modules/<%= themeName %>/js/develop/gnap/pollyfills.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/gnap/gnap.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/gnap/title.service.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/gnap/title.directive.js"></script>
-    <script src="node_modules/<%= themeName %>/js/develop/gnap/highlight.directive.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/gnap/alert.directive.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/gnap/breadcrumbs.service.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/gnap/breadcrumbs.directive.js"></script>
@@ -135,6 +134,14 @@
     <script src="node_modules/<%= themeName %>/js/develop/gnap/unhandled-error.channel.js"></script>
     <script src="node_modules/<%= themeName %>/js/develop/gnap/unhandled-error-notification.directive.js"></script>
     <!-- endbuild -->
+    
+    <!-- build:js(.) vendor/js/highlight.js -->
+    <!--[if !(IE)|(gte IE 9)]>
+        <script src="node_modules/<%= themeName %>/js/develop/highlight/highlight.pack.js"></script>
+        <script src="node_modules/<%= themeName %>/js/develop/gnap/highlight.directive.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+    
     <!-- build:js app/js/app.js -->
     <script src="app/app.module.js"></script>
     <script src="app/app.config.js"></script>
