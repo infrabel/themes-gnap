@@ -6,27 +6,34 @@
  * @file highlight.directive.js
  * @example <code gnap-highlight class="html">html code here</code>
  */
-(function (hljs) {
-    angular
-        .module('gnap')
-        .directive('gnapHighlight', gnapHighlight);
 
-    gnapHighlight.$inject = ['$timeout'];
+// in case of IE 8, highlightJS is not loaded, so check here on hljs === undefined
+if (typeof hljs !== 'undefined') {
+    (function(hljs) {
+        angular
+            .module('gnap')
+            .directive('gnapHighlight', gnapHighlight);
 
-    function gnapHighlight($timeout) {
+        gnapHighlight.$inject = ['$timeout'];
 
-        return {
-            restrict: 'A',
-            link: link
-        };
+        function gnapHighlight($timeout) {
 
-        function link(scope, element, attrs) {
-            var language = attrs['gnapHighlight'];
-            var snippet = element.text();
+            return {
+                restrict: 'A',
+                link: link
+            };
 
-            $timeout(function () {
-                element.html((language) ? hljs.highlight(language, snippet).value : hljs.highlightAuto(snippet).value);
-            }, 0);
+            function link(scope, element, attrs) {
+
+                if (hljs) {
+                    var language = attrs['gnapHighlight'];
+                    var snippet = element.text();
+
+                    $timeout(function() {
+                        element.html((language) ? hljs.highlight(language, snippet).value : hljs.highlightAuto(snippet).value);
+                    }, 0);
+                }
+            }
         }
-    }
-})(hljs);
+    })(hljs);
+}
