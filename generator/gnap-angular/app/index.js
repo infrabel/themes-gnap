@@ -128,6 +128,11 @@ var GNaPGenerator = yeoman.generators.Base.extend({
             self.src.copy('src/app/main/forbidden/forbidden.html', 'src/app/main/forbidden/forbidden.html');
             self.template('src/app/main/forbidden/forbidden.state.js', 'src/app/main/forbidden/forbidden.state.js', { appName: self.appName });
 
+            self.dest.mkdir('src/app/main/notfound');
+            self.template('src/app/main/notfound/notfound.controller.js', 'src/app/main/notfound/notfound.controller.js', { appName: self.appName });
+            self.src.copy('src/app/main/notfound/notfound.html', 'src/app/main/notfound/notfound.html');
+            self.template('src/app/main/notfound/notfound.state.js', 'src/app/main/notfound/notfound.state.js', { appName: self.appName });
+
             self.dest.mkdir('src/app/public');
             self.template('src/app/public/public.controller.js', 'src/app/public/public.controller.js', { appName: self.appName });
             self.src.copy('src/app/public/public.html', 'src/app/public/public.html');

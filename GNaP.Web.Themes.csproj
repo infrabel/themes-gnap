@@ -314,6 +314,9 @@
     <Content Include="generator\gnap-angular\app\templates\src\app\main\main.controller.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\main.html" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\main.state.js" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\main\notfound\notfound.controller.js" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\main\notfound\notfound.html" />
+    <Content Include="generator\gnap-angular\app\templates\src\app\main\notfound\notfound.state.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\session-dropdown.directive.js" />
     <Content Include="generator\gnap-angular\app\templates\src\app\main\session-dropdown.html" />
     <Content Include="generator\gnap-angular\app\templates\src\app\public\login\login.controller.js" />
