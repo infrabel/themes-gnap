@@ -17,7 +17,6 @@
 
         function onErrorOccurred(error) {
             $translate(['gnap.error-notification-title', 'gnap.error-notification-text']).then(function (translations) {
-                console.log(translations);
                 notification.show({
                     type: 'error',
                     title: translations['gnap.error-notification-title'],
