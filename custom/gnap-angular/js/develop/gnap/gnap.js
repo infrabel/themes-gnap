@@ -35,7 +35,7 @@
 
     // TODO: These languages need to come from a provider, issue #92
     var supportedLanguages = [
-        { name: 'nl', title: 'Nederlands', default: true },
+        { name: 'nl', title: 'Nederlands', 'default': true },
         { name: 'fr', title: 'Français' },
         { name: 'en', title: 'English' }
     ];
