@@ -3,23 +3,12 @@
 (function () {
     angular
         .module('gnap-example-app')
-        .config(tooltipConfiguration)
         .config(urlRouterConfiguration)
-        .config(translationConfiguration)
-        .config(localeConfiguration)
         .config(titleConfiguration)
         .config(authConfiguration)
-        .run(localeInitalization)
-        .run(select2Initialization)
         .run(handleStateChangeError);
 
     var defaultPage = '/about';
-
-    var supportedLanguages = [
-        { name: 'nl', title: 'Nederlands', default: true },
-        { name: 'fr', title: 'Français' },
-        { name: 'en', title: 'English' }
-    ];
 
     titleConfiguration.$inject = ['titleServiceProvider'];
 
@@ -31,46 +20,14 @@
         titleServiceProvider.setSuffix({ text: '' });
     }
 
-    tooltipConfiguration.$inject = ['$tooltipProvider'];
-
-    function tooltipConfiguration($tooltipProvider) {
-        $tooltipProvider.options({
-            appendToBody: true
-        });
-    }
-
     urlRouterConfiguration.$inject = ['$urlRouterProvider'];
 
     function urlRouterConfiguration($urlRouterProvider) {
-        $urlRouterProvider.otherwise(defaultPage);
-    }
+        // when there is an empty route, redirect to the default page
+        $urlRouterProvider.when('', defaultPage);
 
-    translationConfiguration.$inject = ['$translateProvider'];
-
-    function translationConfiguration($translateProvider) {
-        $translateProvider.useLoader('$translatePartialLoader', {
-            urlTemplate: '{part}/translations.{lang}.json', // if not local, e.g.: https://server/translations/{lang}/{part}
-            loadFailureHandler: 'partialLoaderErrorHandler'
-        });
-    }
-
-    localeConfiguration.$inject = ['tmhDynamicLocaleProvider'];
-
-    function localeConfiguration(tmhDynamicLocaleProvider) {
-        tmhDynamicLocaleProvider.localeLocationPattern('js/angular/i18n/angular-locale_{{locale}}.min.js');
-    }
-
-    select2Initialization.$inject = ['uiSelect2Config'];
-
-    function select2Initialization(uiSelect2Config) {
-        uiSelect2Config.allowClear = true;
-        uiSelect2Config.shouldFocusInput = function () { return false; };
-    }
-
-    localeInitalization.$inject = ['localeService'];
-
-    function localeInitalization(localeService) {
-        localeService.initialize(supportedLanguages);
+        // when no matching route found redirect to error 404
+        $urlRouterProvider.otherwise('/error-404');       
     }
 
     authConfiguration.$inject = ['$httpProvider'];
@@ -79,9 +36,9 @@
         $httpProvider.interceptors.push('authenticationInterceptor');
     }
 
-    handleStateChangeError.$inject = ['$rootScope', '$state', '$location', 'sessionService'];
+    handleStateChangeError.$inject = ['$rootScope', '$state', '$location', 'sessionService', 'unhandledErrorChannel'];
 
-    function handleStateChangeError($rootScope, $state, $location, sessionService) {
+    function handleStateChangeError($rootScope, $state, $location, sessionService, unhandledErrorChannel) {
         $rootScope.$on('$stateChangeError',
             function (event, toState, toParams, fromState, fromParams, error) {
 
@@ -99,11 +56,16 @@
                 }
 
                 // forbidden
-                if (error.status === 403) {
+                else if (error.status === 403) {
                     event.preventDefault();
 
                     // redirect to 'forbidden' error page
                     $state.go('main.error-403');
+                }
+
+                // any other case
+                else {
+                    unhandledErrorChannel.errorOccurred(error);
                 }
             });
     }
