@@ -24,7 +24,8 @@
 
     function urlRouterConfiguration($urlRouterProvider) {
         // when there is an empty route, redirect to the default page
-        $urlRouterProvider.when('', defaultPage);
+        $urlRouterProvider.when('', defaultPage)
+                          .when('/', defaultPage);
 
         // when no matching route found redirect to error 404
         $urlRouterProvider.otherwise('/error-404');       
