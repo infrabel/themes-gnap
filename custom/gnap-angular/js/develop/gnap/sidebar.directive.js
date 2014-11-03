@@ -27,7 +27,7 @@
             link: link
         };
 
-        function link(scope, element, attrs) {
+        function link(scope) {
             scope.settings = sidebarService.settings;
 
             // handles sidebar item selection
