@@ -152,6 +152,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         self.log(clc.green('   create') + ' theme (' + clc.cyan(self.themeName) + ')');
         self.npmInstall([self.themeName], {}, function() {
             self.npmInstall(['grunt',
+                             'grunt-autoprefixer',
                              'grunt-contrib-clean',
                              'grunt-contrib-concat',
                              'grunt-contrib-connect',
