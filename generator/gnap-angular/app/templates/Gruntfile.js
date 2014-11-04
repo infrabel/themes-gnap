@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         // npm update caniuse-db
         autoprefixer: {
             options: {
-                browsers: ['> 1%', 'last 2 versions', 'ie 8', 'ie 9']
+                browsers: ['> 0%', 'last 2 versions', 'ie 8', 'ie 9']
             },
             dist: {
                 files: [{
