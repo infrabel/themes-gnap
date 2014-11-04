@@ -310,7 +310,7 @@ module.exports = function(grunt) {
         }
 
         if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
+            return grunt.task.run(['dist', 'connect:dist:keepalive']);
         }
 
         grunt.task.run([
@@ -331,7 +331,7 @@ module.exports = function(grunt) {
         grunt.task.run(['replace:translations:' + translationHash]);
     });
 
-    grunt.registerTask('build', [
+    grunt.registerTask('dist', [
         'clean:dist',
         'useminPrepare',
         'copy:css',
