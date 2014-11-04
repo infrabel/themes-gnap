@@ -3084,6 +3084,7 @@
     <Content Include="tasks\themes\gnap-angular\gnap-angular.nugetpack.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.rename.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.compress.js" />
+    <Content Include="tasks\options\ace.autoprefixer.js" />
     <Content Include="tasks\themes\gnap\gnap.imagemin.js" />
     <Content Include="tasks\themes\gnap\gnap.clean.js" />
     <Content Include="tasks\themes\gnap\gnap.copy.js" />
