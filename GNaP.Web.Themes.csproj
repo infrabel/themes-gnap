@@ -644,7 +644,7 @@
     <Content Include="raw\ace\assets\js\uncompressed\markdown\bootstrap-markdown.js" />
     <Content Include="raw\ace\assets\js\uncompressed\markdown\markdown.js" />
     <Content Include="raw\ace\assets\js\uncompressed\markdown\to-markdown.js" />
-    <Content Include="raw\ace\assets\js\uncompressed\respond.src.js" />
+    <Content Include="raw\ace\assets\js\uncompressed\respond.js" />
     <Content Include="raw\ace\assets\js\uncompressed\select2.js" />
     <Content Include="raw\ace\assets\js\uncompressed\spin.js" />
     <Content Include="raw\ace\assets\js\uncompressed\x-editable\ace-editable.js" />
