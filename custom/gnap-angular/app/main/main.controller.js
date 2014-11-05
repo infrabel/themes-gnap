@@ -8,6 +8,7 @@
     MainController.$inject = ['$window'];
 
     function MainController($window) {
+        /* jshint validthis: true */
         var vm = this;
 
         vm.search = function() {

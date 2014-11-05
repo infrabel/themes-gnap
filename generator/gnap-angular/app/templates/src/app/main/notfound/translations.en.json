@@ -1,0 +1,15 @@
+{
+    "main.notfound":  {
+        "title": "Page Not Found",
+        "breadcrumb": "Page Not Found",
+        "text": {
+            "We looked everywhere but we couldn't find it!": "We looked everywhere but we couldn't find it!",
+            "Try one of the following:": "Try one of the following:",
+            "Re-check the url for typos": "Re-check the url for typos",
+            "Read the faq": "Read the faq",
+            "Tell us about it": "Tell us about it",
+            "Go Back": "Go Back",
+            "Home": "Home"
+        }
+    }
+}

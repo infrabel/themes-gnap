@@ -1,0 +1,13 @@
+{
+    "public.login":  {
+        "title": "Login",
+        "text": {
+            "Please Enter Your Information": "Please Enter Your Information",
+            "Invalid username/password combination.": "Invalid username/password combination.",
+            "Username": "Username",
+            "Password": "Password",
+            "Remember Me": "Remember Me",
+            "Login": "Login"
+        }
+    }
+}
