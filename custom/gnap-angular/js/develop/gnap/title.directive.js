@@ -47,7 +47,9 @@
             var out = [];
 
             for (var i = 0; i < parts.length; i++) {
-                out.push(parts[i]._text);
+                if (parts[i]._text !== '') {
+                    out.push(parts[i]._text);
+                }
             }
 
             return out.join(' ' + titleService.separator + ' ');
