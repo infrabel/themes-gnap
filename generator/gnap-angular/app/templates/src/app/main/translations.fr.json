@@ -1,7 +1,11 @@
 {
-    "search": "Recherche ...",
-    "welcome": "Bienvenu",
-    "login": "Connexion",
+    "main":  {
+        "breadcrumb": "Home",
+        "search": "Recherche ...",
+        "welcome": "Bienvenu",
+        "login": "Connexion",
+        "logout": "Déconnexion"
+    },
     "sidebar": {
         "shortcuts": {
             "statistics": "Statistiques",
