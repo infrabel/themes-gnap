@@ -10,15 +10,16 @@
         state: {
             url: '/getting-started',
             templateUrl: 'app/main/getting-started/getting-started.html',
-            controller: 'GettingStartedController as vm'
+            controller: 'MainGettingStartedController as vm'
         },
         title: {
-            text: 'Getting Started'
+            textTranslationId: 'main.getting-started.title'
         },
         breadcrumb: {
-            title: 'Getting Started'
+            titleTranslationId: 'main.getting-started.breadcrumb'
         },
-        sidebarKey: 'main.getting-started'
+        sidebarKey: 'main.getting-started',
+        translations: 'app/main/getting-started'
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -46,5 +47,17 @@
 
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
+    }
+
+    if (stateSettings.translations) {
+        stateSettings.state.resolve = stateSettings.state.resolve || {};
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
     }
 })();

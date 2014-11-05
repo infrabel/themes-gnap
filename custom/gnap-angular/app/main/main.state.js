@@ -10,7 +10,7 @@
         state: {
             abstract: true,
             templateUrl: 'app/main/main.html',
-            controller: 'MainController as vm'
+            controller: 'MainController as main'
         },
         title: {
             text: 'Home'

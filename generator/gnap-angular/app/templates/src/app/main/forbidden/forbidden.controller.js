@@ -3,10 +3,10 @@
 (function () {
     angular
         .module('<%= appName %>')
-        .controller('ForbiddenController', ForbiddenController);
+        .controller('MainForbiddenController', MainForbiddenController);
 
-    ForbiddenController.$inject = [];
+    MainForbiddenController.$inject = [];
 
-    function ForbiddenController() {
+    function MainForbiddenController() {
     }
 })();
