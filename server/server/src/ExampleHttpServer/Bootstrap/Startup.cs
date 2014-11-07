@@ -14,7 +14,6 @@ namespace ExampleHttpServer.Bootstrap
     internal class Startup
     {
         private readonly string _staticFilesRoot;
-        private static readonly string[] DefaultDocuments = new[] {"index.html", "about.html"};
 
         public Startup(string staticFilesRoot)
         {
