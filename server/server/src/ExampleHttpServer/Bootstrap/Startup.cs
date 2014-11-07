@@ -63,8 +63,6 @@ namespace ExampleHttpServer.Bootstrap
 
             // static file server
             builder.UseFileServer(options);
-
-            
         }
 
         private static void ConfigureWebApi(IAppBuilder builder)
