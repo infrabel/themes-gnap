@@ -44,7 +44,7 @@
             <link rel="stylesheet" href="node_modules/<%= themeName %>/css/develop/ie8.css" />
         <![endif]-->
         <!-- endbuild -->
-        <!-- build:css(.) vendor/css/vendor-ie.css -->
+        <!-- build:js(.) vendor/js/vendor-ie.js -->
         <!--[if lt IE 9]>
             <script src="node_modules/<%= themeName %>/js/develop/html5shiv.js"></script>
             <script src="node_modules/<%= themeName %>/js/develop/respond.js"></script>
@@ -139,10 +139,10 @@
         <!-- endbuild -->
     
         <!-- build:js(.) vendor/js/highlight.js -->
-        <!--[if !(IE)|(gte IE 9)]>
+        <!--[if !(IE)|(gte IE 9)]><!-->
             <script src="node_modules/<%= themeName %>/js/develop/highlight/highlight.pack.js"></script>
             <script src="node_modules/<%= themeName %>/js/develop/gnap/highlight.directive.js"></script>
-        <![endif]-->
+        <!--<![endif]-->
         <!-- endbuild -->
     
         <!-- build:js app/js/app.js -->
