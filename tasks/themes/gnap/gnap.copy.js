@@ -77,5 +77,19 @@
     gnap_readme: {
         src: './npm/README.md',
         dest: './deploy/vendor/gnap-theme-gnap/README.md'
+    },
+
+    gnap_server: {
+        expand: true,
+        cwd: './server/server/release',
+        src: ['**/*.*'],
+        dest: './deploy/gnap/server/'
+    },
+
+    gnap_server_batch: {
+        expand: true,
+        cwd: './server/',
+        src: ['start-server.cmd'],
+        dest: './deploy/gnap/'
     }
 };
