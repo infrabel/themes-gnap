@@ -3,6 +3,8 @@ using System.Web.Http;
 
 namespace ExampleHttpServer.Api
 {
+    using Properties;
+
     public class TokensController : ApiController
     {
         [AllowAnonymous]
@@ -11,7 +13,7 @@ namespace ExampleHttpServer.Api
             if (credentials == null)
                 return BadRequest("Missing credentials.");
 
-            if (!(credentials.Username == "john" && credentials.Password == "1234"))
+            if (!(credentials.Username == Settings.Default.DummyUser && credentials.Password == Settings.Default.DummyPass))
                 return BadRequest("Invalid credentials.");
 
             var token = new JwtTokenService().GenerateToken(credentials.Username);
