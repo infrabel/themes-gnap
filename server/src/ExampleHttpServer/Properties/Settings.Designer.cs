@@ -49,5 +49,23 @@ namespace ExampleHttpServer.Properties {
                 return ((string)(this["TokenSigningKey"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("john")]
+        public string DummyUser {
+            get {
+                return ((string)(this["DummyUser"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1234")]
+        public string DummyPass {
+            get {
+                return ((string)(this["DummyPass"]));
+            }
+        }
     }
 }

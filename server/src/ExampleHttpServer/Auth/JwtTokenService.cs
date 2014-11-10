@@ -9,6 +9,7 @@ namespace ExampleHttpServer.Auth
     public class JwtTokenService
     {
         private static readonly JwtSecurityTokenHandler TokenHandler = new JwtSecurityTokenHandler();
+
         private readonly string _issuer;
         private readonly string _audience;
         private readonly byte[] _tokenSigningKey;

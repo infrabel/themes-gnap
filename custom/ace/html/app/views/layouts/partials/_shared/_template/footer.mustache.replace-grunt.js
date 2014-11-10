@@ -6,7 +6,7 @@
         [
             {
                 from: '<script src="{{{path.assets}}}/js/ace.min.js"></script>',
-                to: '<script src="{{{path.assets}}}/js/ace.min.js"></script>\n\t<!--[if !(IE)|(gte IE 9)]>\n<script src="{{{path.assets}}}/js/highlight/highlight.pack.min.js"></script>\n<![endif]-->'
+                to: '<script src="{{{path.assets}}}/js/ace.min.js"></script>\n\t<!--[if !(IE)|(gte IE 9)]><!-->\n<script src="{{{path.assets}}}/js/highlight/highlight.pack.min.js"></script>\n<!--<![endif]-->'
             },
             {
                 from: '<script src="{{{path.assets}}}/js/ace.min.js"></script>',
