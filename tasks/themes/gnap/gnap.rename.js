@@ -19,6 +19,10 @@
                 dest: './build/ace/js/develop/jquery.js'
             },
             {
+                src: './build/ace/js/respond.src.min.js',
+                dest: './build/ace/js/respond.min.js'
+            },
+            {
                 src: './build/ace/js/develop/respond.src.js',
                 dest: './build/ace/js/develop/respond.js'
             }
