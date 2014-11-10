@@ -4,8 +4,8 @@ node_modules/
 build/
 deploy/
 server/**/packages/
-server/**/obj/
-server/**/bin/
+server/release/**/*.xml
+server/release/**/*.pdb
 
 *.suo
 *.user
