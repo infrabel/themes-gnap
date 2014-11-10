@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.IO;
+using System.Threading.Tasks;
+using System.Web.Http;
 using ExampleHttpServer.Properties;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.Security;
@@ -51,8 +53,11 @@ namespace ExampleHttpServer.Bootstrap
             var options = new FileServerOptions
             {
                 EnableDirectoryBrowsing = true,
+                EnableDefaultFiles = true,
                 FileSystem = new PhysicalFileSystem(_staticFilesRoot)
             };
+
+            options.DefaultFilesOptions.DefaultFileNames.Add("about.html");
 
             options.StaticFileOptions.ContentTypeProvider = contentTypeProvider;
 
