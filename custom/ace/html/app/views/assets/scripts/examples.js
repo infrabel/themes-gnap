@@ -1,6 +1,7 @@
 jQuery(function ($) {
     // Used for code highlighting
-    hljs.initHighlightingOnLoad();
+    if (typeof hljs !== 'undefined')
+        hljs.initHighlightingOnLoad();
 
     // User for dialogs
     $('#bootbox-alert').on(ace.click_event, function () {
