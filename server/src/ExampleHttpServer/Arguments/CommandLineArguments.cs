@@ -16,8 +16,8 @@ namespace ExampleHttpServer.Arguments
         [HelpOption]
         public static string GetUsage()
         {
-            return HelpText.AutoBuild(new CommandLineArguments(),
-              current => HelpText.DefaultParsingErrorsHandler(new CommandLineArguments(), current));
+            return HelpText.AutoBuild(new CommandLineArguments(), 
+                                      current => HelpText.DefaultParsingErrorsHandler(new CommandLineArguments(), current));
         }
 
         public static bool Parse(string[] args)
@@ -28,6 +28,7 @@ namespace ExampleHttpServer.Arguments
                 // command line args not valid
                 return false;
             }
+
             Parsed = options;
             return true;
         }
