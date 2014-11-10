@@ -25,6 +25,8 @@
                         'replace:gnap_develop',
                         'deploy-ace',
                         'copy:gnap_deploy_ace',
+                        'copy:gnap_server',
+                        'copy:gnap_server_batch',
                         'clean:gnap_deploy'
         ]);
     });

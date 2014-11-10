@@ -3,7 +3,9 @@ obj/
 node_modules/
 build/
 deploy/
-custom/**/packages/
+server/**/packages/
+server/**/obj/
+server/**/bin/
 
 *.suo
 *.user

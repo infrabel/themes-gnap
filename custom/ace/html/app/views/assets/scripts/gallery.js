@@ -1,6 +1,7 @@
 jQuery(function ($) {
     // Used for code highlighting
-    hljs.initHighlightingOnLoad();
+    if (typeof hljs !== 'undefined')
+        hljs.initHighlightingOnLoad();
 
     var colorbox_params = {
         reposition: true,
