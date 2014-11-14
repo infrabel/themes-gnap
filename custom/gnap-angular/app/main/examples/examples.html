@@ -1312,4 +1312,23 @@
             @@include('form-controls/sizing-examples.html')
         </form>
     </div> <!-- form tab -->
+    
+    <div tab heading="Validation" id="validation" class="tab-pane" ng-controller="gnap-validation as vm">
+        <h3 class="header smaller">
+            Validation Example
+        </h3>
+        <form gnap-submit='save()'>
+            <gnap-form-group for="form.firstName">
+                <label class="control-label" for="firstName">First Name</label>
+                <input ng-model="vm.firstName" type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter the first name" required>
+
+                <gnap-validation-messages for="form.firstName">
+                    <gnap-validation-message when="required">Enter the first name</gnap-validation-message>
+                </gnap-validation-messages>
+            </gnap-form-group>
+
+        </form>
+        @@include('validation/validation-example.html')
+    </div> <!-- validation tab -->
+
 </div> <!-- tabset -->
