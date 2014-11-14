@@ -16,7 +16,7 @@
         return {
             restrict: 'E',
             controller: controller,
-            require: 'gnapValidationMessages',
+            require: ['^form', 'gnapValidationMessages'],
             link: link
         };
 
@@ -54,9 +54,13 @@
                     }
                 });
 
-                //todo: fix this
-                //renderElementClasses(found);
-                
+                /*
+                if (found) {
+                    $animate.setClass(element, 'ng-active', 'ng-inactive');
+                } else {
+                    $animate.setClass(element, 'ng-inactive', 'ng-active');
+                }*/
+
                 function truthyVal(value) {
                     return value !== null && value !== false && value;
                 }
@@ -68,34 +72,29 @@
             };
         }
 
-        function link($scope, element, $attrs, ctrl) {
-            ctrl.renderElementClasses = function (bool) {
-                if (bool) {
-                    $animate.setClass(element, 'ng-active', 'ng-inactive');
-                } else {
-                    $animate.setClass(element, 'ng-inactive', 'ng-active');
-                }
-            };
-
+        function link($scope, element, $attrs, ctrls) {
+            var form = ctrls[0];
+            var ctrl = ctrls[1];
+            
             //JavaScript treats empty strings as false, but ng-message-multiple by itself is an empty string
             var multiple = angular.isString($attrs.gnapValidationMessagesMultiple) ||
                            angular.isString($attrs.multiple);
 
-            var cachedValues, watchAttr = $attrs.gnapValidationMessages || $attrs['for']; //for is a reserved keyword
+            var watchAttr = $attrs.gnapValidationMessages || $attrs['for']; //for is a reserved keyword
 
-            $scope.$watch('form.$submitted', function (submitted) {
+            $scope.$watch(function () {
+                return form.$submitted;
+            }, function (submitted) {
                 if (submitted) {
-                    var values = $scope.$eval(watchAttr + '.$error');
-                    ctrl.renderMessages(values, multiple);
+                    ctrl.renderMessages(form[watchAttr].$error, multiple);
                 }
             });
 
-            $scope.$watchCollection(watchAttr + '.$error', function (values) {
-
-                cachedValues = values;
-
-                if ($scope.$eval(watchAttr + '.$dirty')) {
-                    ctrl.renderMessages(values, multiple);
+            $scope.$watch(function () {
+                return form[watchAttr].$invalid;
+            }, function () {
+                if (form[watchAttr].$dirty) {
+                    ctrl.renderMessages(form[watchAttr].$error, multiple);
                 }
             });
         }
