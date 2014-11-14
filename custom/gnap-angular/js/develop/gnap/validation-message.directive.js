@@ -17,7 +17,7 @@
             require: '^gnapValidationMessages',
             transclude: 'element',
             terminal: true,
-            restrict: 'E',
+            restrict: 'A',
             link: link
         };
 

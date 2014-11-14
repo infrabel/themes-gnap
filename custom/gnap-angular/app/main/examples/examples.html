@@ -1317,16 +1317,30 @@
         <h3 class="header smaller">
             Validation Example
         </h3>
-        <form gnap-submit='save()'>
-            <div show-validity-for="firstName" class="form-group">
+        <form gnap-submit='vm.save()'>
+            <div gnap-show-validity for="firstName" class="form-group">
                 <label class="control-label" for="firstName">First Name</label>
                 <input ng-model="vm.firstName" type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter the first name" required>
-
-                <gnap-validation-messages for="firstName">
-                    <gnap-validation-message when="required">Enter the first name</gnap-validation-message>
-                </gnap-validation-messages>
+                <div gnap-validation-messages for="firstName">
+                    <div gnap-validation-message when="required">Enter the first name</div>
+                </div>
             </div>
-
+            <div gnap-show-validity for="lastName" class="form-group">
+                <label class="control-label" for="lastName">Last Name</label>
+                <input ng-model="vm.lastName" type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter the last name" required>
+                <div gnap-validation-messages for="lastName">
+                    <div gnap-validation-message when="required">Enter the last name</div>
+                </div>
+            </div>
+            <div gnap-show-validity for="username" class="form-group">
+                <label class="control-label" for="username">Username</label>
+                <input ng-model="vm.username" type="text" class="form-control" id="username" name="username" placeholder="Enter the username" required gnap-validate="vm.validateUsername()">
+                <div gnap-validation-messages for="username">
+                    <div gnap-validation-message when="required">Enter the username</div>
+                    <div gnap-validation-message when="unique">The username entered is not unique</div>
+                </div>
+            </div>
+            <button class="btn btn-primary">Save</button>
         </form>
         @@include('validation/validation-example.html')
     </div> <!-- validation tab -->

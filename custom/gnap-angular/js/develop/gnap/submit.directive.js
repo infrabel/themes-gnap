@@ -38,7 +38,7 @@
                     form.$submitted = true;
 
                     // if form is valid, execute the submission handler function and reset form submission state  
-                    if (!form.validating) {
+                    if (!form.$validating) {
                         if (form.$valid) {
                             fn($scope, { $event: event });
                             form.$submitted = false;
