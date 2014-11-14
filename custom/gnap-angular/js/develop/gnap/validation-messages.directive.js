@@ -14,7 +14,7 @@
 
     function gnapValidationMessages($compile, $animate) {
         return {
-            restrict: 'E',
+            restrict: 'A',
             controller: controller,
             require: ['^form', 'gnapValidationMessages'],
             link: link

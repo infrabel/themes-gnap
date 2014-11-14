@@ -5,9 +5,39 @@
         .module('gnap-example-app')
         .controller('gnap-validation', GnapValidationController);
 
-    GnapValidationController.$inject = [];
+    GnapValidationController.$inject = ['$q', 'notification'];
 
-    function GnapValidationController() {
+    function GnapValidationController($q, notification) {
         var vm = this;
+
+        vm.save = function() {
+            notification.show({
+                type: 'success',
+                title: 'User Saved',
+                text: 'The user account was successfully created.'
+            });
+        };
+
+        vm.validateUsername = function() {
+            if (angular.isUndefined(vm.username)) {
+                return {
+                    unique: true
+                };
+            }
+
+            var uniqueDeferred = $q.defer();
+
+            setTimeout(function() {
+                if (vm.username === 'test') {
+                    uniqueDeferred.resolve(false);
+                } else {
+                    uniqueDeferred.resolve(true);
+                }
+            }, 2500);
+
+            return {
+                unique: uniqueDeferred.promise
+            };
+        };
     }
 })();
