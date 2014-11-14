@@ -1318,14 +1318,14 @@
             Validation Example
         </h3>
         <form gnap-submit='save()'>
-            <gnap-form-group for="form.firstName">
+            <div show-validity-for="firstName" class="form-group">
                 <label class="control-label" for="firstName">First Name</label>
                 <input ng-model="vm.firstName" type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter the first name" required>
 
-                <gnap-validation-messages for="form.firstName">
+                <gnap-validation-messages for="firstName">
                     <gnap-validation-message when="required">Enter the first name</gnap-validation-message>
                 </gnap-validation-messages>
-            </gnap-form-group>
+            </div>
 
         </form>
         @@include('validation/validation-example.html')
