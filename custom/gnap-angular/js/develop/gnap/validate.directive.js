@@ -20,12 +20,10 @@
         };
 
         function link($scope, element, $attrs, controllers) {
-
             var model = controllers[0];
             var form = controllers[1];
 
             $scope.$watch($attrs.ngModel, function() {
-
                 // get a hold of the function that handles the custom validation
                 var fn = $parse($attrs.gnapValidate);
 
