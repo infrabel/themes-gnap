@@ -1,0 +1,14 @@
+{
+    "main.getting-started":  {
+        "title": "Commencer",
+        "breadcrumb": "Commencer",
+        "application-ready-title": "Votre application est prête!",
+        "application-ready-description": "L'application a été créée avec succès et est prête à recevoir du contenu.",
+        "commands-title": "Commandes",
+        "commands-serve-dist": "Pour voir la version distribuable de votre site, exécutez:",
+        "commands-dist": "Pour construire la version distribuable de votre site, exécutez:",
+        "advice-title": "Besoin de conseils?",
+        "advice-question": "Avez-vous besoin d'assistance ou avez-vous des questions?",
+        "advice-github": "Visitez notre page Github pour plus d'informations."
+    }
+}

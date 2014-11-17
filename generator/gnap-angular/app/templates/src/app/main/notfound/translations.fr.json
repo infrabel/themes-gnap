@@ -1,0 +1,15 @@
+{
+    "main.notfound": {
+        "title": "Page introuvable",
+        "breadcrumb": "Page introuvable",
+        "text": {
+            "We looked everywhere but we couldn't find it!": "Nous avons regardé partout mais nous n'avons pas pu la trouver!",
+            "Try one of the following:": "Essayez ceci:",
+            "Re-check the url for typos": "Vérifiez la syntaxe de l'url pour les fautes de frappes",
+            "Read the faq": "Lisez la faq",
+            "Tell us about it": "Parlez nous en",
+            "Go Back": "Retour",
+            "Home": "Accueil"
+        }
+    }
+}

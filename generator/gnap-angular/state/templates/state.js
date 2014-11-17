@@ -16,7 +16,7 @@
             textTranslationId: '<%= stateName %>.title'
         },
         breadcrumb: {
-            titleTranslationId: '<%= stateName %>.title'
+            titleTranslationId: '<%= stateName %>.breadcrumb'
         },
         sidebarKey: '<%= stateName %>',
         translations: '<%= generatedPath %>'

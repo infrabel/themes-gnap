@@ -10,14 +10,15 @@
         state: {
             url: '/forbidden',
             templateUrl: 'app/main/forbidden/forbidden.html',
-            controller: 'ForbiddenController as vm'
+            controller: 'MainForbiddenController as vm'
         },
         title: {
-            text: 'Forbidden'
+            textTranslationId: 'main.forbidden.title'
         },
         breadcrumb: {
-            title: 'Forbidden'
-        }
+            titleTranslationId: 'main.forbidden.breadcrumb'
+        },
+        translations: 'app/main/forbidden'
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -43,5 +44,17 @@
         titleService.removeLastTitle();
 
         breadcrumbsService.removeLastBreadcrumb();
+    }
+
+    if (stateSettings.translations) {
+        stateSettings.state.resolve = stateSettings.state.resolve || {};
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
     }
 })();

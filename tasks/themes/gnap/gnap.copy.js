@@ -81,8 +81,8 @@
 
     gnap_server: {
         expand: true,
-        cwd: './server/server/release',
-        src: ['**/*.*'],
+        cwd: './server/release/',
+        src: ['**/*.dll', '**/*.exe', '**/*.config', '**/*.json'],
         dest: './deploy/gnap/server/'
     },
 
