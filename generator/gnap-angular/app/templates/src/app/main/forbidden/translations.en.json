@@ -1,0 +1,15 @@
+{
+    "main.forbidden":  {
+        "title": "Forbidden",
+        "breadcrumb": "Forbidden",
+        "text": {
+            "You are not authorized to access this page!": "You are not authorized to access this page!",
+            "Try one of the following:": "Try one of the following:",
+            "Login using different credentials": "Login using different credentials",
+            "Read the faq": "Read the faq",
+            "Tell us about it": "Tell us about it",
+            "Go Back": "Go Back",
+            "Home": "Home"
+        }
+    }
+}

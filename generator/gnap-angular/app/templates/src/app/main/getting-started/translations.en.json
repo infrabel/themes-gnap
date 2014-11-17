@@ -1,0 +1,14 @@
+{
+    "main.getting-started":  {
+        "title": "Getting Started",
+        "breadcrumb": "Getting Started",
+        "application-ready-title": "Your application is ready!",
+        "application-ready-description": "This application has been successfully created and is ready for content to be added.",
+        "commands-title": "Commands",
+        "commands-serve-dist": "To view the distributable version of your site, run:",
+        "commands-dist": "To build the distributable version of your site, run:",
+        "advice-title": "Need advice?",
+        "advice-question": "Do you need advice or have questions?",
+        "advice-github": "Visit our Github page for more information."
+    }
+}

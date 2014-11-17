@@ -10,14 +10,15 @@
         state: {
             url: '/notfound',
             templateUrl: 'app/main/notfound/notfound.html',
-            controller: 'NotFoundController as vm'
+            controller: 'MainNotFoundController as vm'
         },
         title: {
-            text: 'Not Found'
+            textTranslationId: 'main.notfound.title'
         },
         breadcrumb: {
-            title: 'Not Found'
-        }
+            titleTranslationId: 'main.notfound.breadcrumb'
+        },
+        translations: 'app/main/notfound'
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -43,5 +44,17 @@
         titleService.removeLastTitle();
 
         breadcrumbsService.removeLastBreadcrumb();
+    }
+
+    if (stateSettings.translations) {
+        stateSettings.state.resolve = stateSettings.state.resolve || {};
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
     }
 })();

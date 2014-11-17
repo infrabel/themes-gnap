@@ -122,16 +122,25 @@ var GNaPGenerator = yeoman.generators.Base.extend({
             self.template('src/app/main/getting-started/getting-started.controller.js', 'src/app/main/getting-started/getting-started.controller.js', { appName: self.appName });
             self.src.copy('src/app/main/getting-started/getting-started.html', 'src/app/main/getting-started/getting-started.html');
             self.template('src/app/main/getting-started/getting-started.state.js', 'src/app/main/getting-started/getting-started.state.js', { appName: self.appName });
+            self.src.copy('src/app/main/getting-started/translations.en.json', 'src/app/main/getting-started/translations.en.json');
+            self.src.copy('src/app/main/getting-started/translations.fr.json', 'src/app/main/getting-started/translations.fr.json');
+            self.src.copy('src/app/main/getting-started/translations.nl.json', 'src/app/main/getting-started/translations.nl.json');
 
             self.dest.mkdir('src/app/main/forbidden');
             self.template('src/app/main/forbidden/forbidden.controller.js', 'src/app/main/forbidden/forbidden.controller.js', { appName: self.appName });
             self.src.copy('src/app/main/forbidden/forbidden.html', 'src/app/main/forbidden/forbidden.html');
             self.template('src/app/main/forbidden/forbidden.state.js', 'src/app/main/forbidden/forbidden.state.js', { appName: self.appName });
+            self.src.copy('src/app/main/forbidden/translations.en.json', 'src/app/main/forbidden/translations.en.json');
+            self.src.copy('src/app/main/forbidden/translations.fr.json', 'src/app/main/forbidden/translations.fr.json');
+            self.src.copy('src/app/main/forbidden/translations.nl.json', 'src/app/main/forbidden/translations.nl.json');
 
             self.dest.mkdir('src/app/main/notfound');
             self.template('src/app/main/notfound/notfound.controller.js', 'src/app/main/notfound/notfound.controller.js', { appName: self.appName });
             self.src.copy('src/app/main/notfound/notfound.html', 'src/app/main/notfound/notfound.html');
             self.template('src/app/main/notfound/notfound.state.js', 'src/app/main/notfound/notfound.state.js', { appName: self.appName });
+            self.src.copy('src/app/main/notfound/translations.en.json', 'src/app/main/notfound/translations.en.json');
+            self.src.copy('src/app/main/notfound/translations.fr.json', 'src/app/main/notfound/translations.fr.json');
+            self.src.copy('src/app/main/notfound/translations.nl.json', 'src/app/main/notfound/translations.nl.json');
 
             self.dest.mkdir('src/app/public');
             self.template('src/app/public/public.controller.js', 'src/app/public/public.controller.js', { appName: self.appName });
@@ -142,6 +151,11 @@ var GNaPGenerator = yeoman.generators.Base.extend({
             self.template('src/app/public/login/login.controller.js', 'src/app/public/login/login.controller.js', { appName: self.appName });
             self.template('src/app/public/login/login.html', 'src/app/public/login/login.html', { appTitle: self.appTitle });
             self.template('src/app/public/login/login.state.js', 'src/app/public/login/login.state.js', { appName: self.appName });
+            self.src.copy('src/app/public/login/translations.en.json', 'src/app/public/login/translations.en.json');
+            self.src.copy('src/app/public/login/translations.fr.json', 'src/app/public/login/translations.fr.json');
+            self.src.copy('src/app/public/login/translations.nl.json', 'src/app/public/login/translations.nl.json');
+
+            self.dest.mkdir('src/vendor');
         }
     },
 
@@ -152,6 +166,7 @@ var GNaPGenerator = yeoman.generators.Base.extend({
         self.log(clc.green('   create') + ' theme (' + clc.cyan(self.themeName) + ')');
         self.npmInstall([self.themeName], {}, function() {
             self.npmInstall(['grunt',
+                             'grunt-autoprefixer',
                              'grunt-contrib-clean',
                              'grunt-contrib-concat',
                              'grunt-contrib-connect',

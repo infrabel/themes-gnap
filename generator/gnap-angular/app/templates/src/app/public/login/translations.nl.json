@@ -1,0 +1,13 @@
+{
+    "public.login":  {
+        "title": "Aanmelden",
+        "text": {
+            "Please Enter Your Information": "Uw aanmeldingsgegevens",
+            "Invalid username/password combination.": "Ongeldige gebruikersnaam/wachtwoord.",
+            "Username": "Gebruikersnaam",
+            "Password": "Wachtwoord",
+            "Remember Me": "Onthouden",
+            "Login": "Aanmelden"
+        }
+    }
+}

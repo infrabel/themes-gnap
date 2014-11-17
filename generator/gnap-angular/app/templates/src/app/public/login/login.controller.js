@@ -3,11 +3,11 @@
 (function () {
     angular
         .module('<%= appName %>')
-        .controller('LoginController', LoginController);
+        .controller('PublicLoginController', PublicLoginController);
 
-    LoginController.$inject = ['$location', '$state', 'sessionService', 'Token'];
+    PublicLoginController.$inject = ['$location', '$state', 'sessionService', 'Token'];
 
-    function LoginController($location, $state, sessionService, Token) {
+    function PublicLoginController($location, $state, sessionService, Token) {
         var vm = this;
 
         vm.credentials = {
