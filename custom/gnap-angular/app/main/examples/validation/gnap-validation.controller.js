@@ -27,6 +27,7 @@
 
             var uniqueDeferred = $q.defer();
 
+            // simulate remote call
             setTimeout(function() {
                 if (vm.username === 'test') {
                     uniqueDeferred.resolve(false);
