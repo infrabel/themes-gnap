@@ -10,9 +10,9 @@
         .module('gnap')
         .directive('gnapValidationMessages', gnapValidationMessages);
 
-    gnapValidationMessages.$inject = ['$compile', '$animate'];
+    gnapValidationMessages.$inject = [];
 
-    function gnapValidationMessages($compile, $animate) {
+    function gnapValidationMessages() {
         return {
             restrict: 'A',
             controller: controller,
@@ -53,13 +53,6 @@
                         message.detach();
                     }
                 });
-
-                /*
-                if (found) {
-                    $animate.setClass(element, 'ng-active', 'ng-inactive');
-                } else {
-                    $animate.setClass(element, 'ng-inactive', 'ng-active');
-                }*/
 
                 function truthyVal(value) {
                     return value !== null && value !== false && value;
