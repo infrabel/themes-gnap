@@ -1,0 +1,14 @@
+{
+    "main.getting-started":  {
+        "title": "Aan de slag",
+        "breadcrumb": "Aan de slag",
+        "application-ready-title": "Je toepassing is klaar!",
+        "application-ready-description": "De toepassing is succesvol aangemaakt. Je kan nu starten met het toevoegen van inhoud.",
+        "commands-title": "Operaties",
+        "commands-serve-dist": "Om de distribueerbare versie van uw site te bekijken, typ:",
+        "commands-dist": "Om de distribueerbare versie van uw site te maken, typ:",
+        "advice-title": "Advies nodig?",
+        "advice-question": "Heb je ondersteuning nodig of vragen?",
+        "advice-github": "Bezoek onze Github pagina voor meer informatie."
+    }
+}

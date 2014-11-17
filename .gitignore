@@ -3,9 +3,10 @@ obj/
 node_modules/
 build/
 deploy/
+/packages/
 server/**/packages/
-server/**/obj/
-server/**/bin/
+server/release/**/*.xml
+server/release/**/*.pdb
 
 *.suo
 *.user

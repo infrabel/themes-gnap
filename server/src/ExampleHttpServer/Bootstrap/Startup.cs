@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.Threading.Tasks;
-using System.Web.Http;
+﻿using System.Web.Http;
 using ExampleHttpServer.Properties;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.Security;
@@ -61,19 +59,17 @@ namespace ExampleHttpServer.Bootstrap
 
             options.StaticFileOptions.ContentTypeProvider = contentTypeProvider;
 
-            // static file server
             builder.UseFileServer(options);
         }
 
         private static void ConfigureWebApi(IAppBuilder builder)
         {
-            // API
             var config = new HttpConfiguration();
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-                );
+
+            config.Routes.MapHttpRoute(name: "DefaultApi",
+                                       routeTemplate: "api/{controller}/{id}",
+                                       defaults: new { id = RouteParameter.Optional });
+
             builder.UseWebApi(config);
         }
     }

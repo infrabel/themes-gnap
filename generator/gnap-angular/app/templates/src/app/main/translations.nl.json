@@ -1,7 +1,11 @@
 {
-    "search": "Zoeken ...",
-    "welcome": "Welkom",
-    "login": "Aanmelden",
+    "main":  {
+        "breadcrumb": "Home",
+        "search": "Zoeken ...",
+        "welcome": "Welkom",
+        "login": "Aanmelden",
+        "logout": "Afmelden"
+    },
     "sidebar": {
         "shortcuts": {
             "statistics": "Statistieken",

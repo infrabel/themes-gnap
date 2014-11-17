@@ -16,11 +16,16 @@ module.exports = function(grunt) {
                     livereloadOnError: false
                 }
             },
+            css: {
+                files: ['./src/css/**/*.css'],
+                tasks: ['copy:css', 'autoprefixer']
+            },
             livereload: {
                 files: [
                     './src/index.html',
                     './src/app/**/*.html',
-                    './src/app/**/*.json'
+                    './src/app/**/*.json',
+                    './.tmp/css/**/*.css'
                 ],
                 options: {
                     livereload: '<%%= connect.options.livereload %>',
@@ -41,6 +46,7 @@ module.exports = function(grunt) {
                 options: {
                     middleware: function(connect) {
                         return [
+                            connect().use('/css', connect.static('./.tmp/css')),
                             connect.static('./src'),
                             connect().use('/node_modules', connect.static('./node_modules')),
                             connect().use('/js/gnap', connect.static('./node_modules/<%= themeName %>/js/gnap')),
@@ -54,6 +60,22 @@ module.exports = function(grunt) {
                     base: './dist',
                     livereload: false
                 }
+            }
+        },
+
+        // https://github.com/postcss/autoprefixer#browsers
+        // npm update caniuse-db
+        autoprefixer: {
+            options: {
+                browsers: ['> 0%', 'last 2 versions', 'ie 8', 'ie 9']
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '.tmp/css/',
+                    src: '**/*.css',
+                    dest: '.tmp/css/'
+                }]
             }
         },
 
@@ -103,8 +125,7 @@ module.exports = function(grunt) {
                     src: [
                         './dist/app/css/*.css',
                         './dist/vendor/css/*.css',
-                        './dist/app/js/*.js',
-                        './dist/vendor/js/*.js'
+                        './dist/app/js/*.js'
                     ]
                 }
             }
@@ -127,6 +148,13 @@ module.exports = function(grunt) {
         },
 
         copy: {
+            css: {
+                expand: true,
+                dot: true,
+                cwd: './src/css/',
+                dest: '.tmp/css/',
+                src: '**/*.css'
+            },
             dist: {
                 files: [
                     {
@@ -149,16 +177,8 @@ module.exports = function(grunt) {
                             './fonts/*.*',
                             './images/*.*',
                             './images/**/*.*',
-                            './js/gnap/*.json'
-                        ]
-                    },
-                    {
-                        expand: true,
-                        dot: true,
-                        cwd: 'node_modules/<%= themeName %>/js/angular/i18n',
-                        dest: './dist/vendor/js/angular/i18n',
-                        src: [
-                            './*.js'
+                            './js/gnap/*.json',
+                            './js/angular/i18n/*.js'
                         ]
                     }
                 ]
@@ -176,6 +196,7 @@ module.exports = function(grunt) {
                     }
                 ]
             },
+
             dist: {
                 src: ['./dist/index.html', './dist/app/js/app.js', './dist/vendor/js/vendor.js', './dist/vendor/css/*.css'],
                 overwrite: true,
@@ -289,11 +310,13 @@ module.exports = function(grunt) {
         }
 
         if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
+            return grunt.task.run(['dist', 'connect:dist:keepalive']);
         }
 
         grunt.task.run([
             'clean:server',
+            'copy:css',
+            'autoprefixer',
             'connect:livereload',
             'watch'
         ]);
@@ -308,9 +331,11 @@ module.exports = function(grunt) {
         grunt.task.run(['replace:translations:' + translationHash]);
     });
 
-    grunt.registerTask('build', [
+    grunt.registerTask('dist', [
         'clean:dist',
         'useminPrepare',
+        'copy:css',
+        'autoprefixer',
         'concat:generated',
         'cssmin:generated',
         'uglify:generated',

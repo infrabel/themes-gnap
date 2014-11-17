@@ -1,0 +1,15 @@
+{
+    "main.forbidden":  {
+        "title": "Verboden",
+        "breadcrumb": "Verboden",
+        "text": {
+            "You are not authorized to access this page!": "U hebt geen rechten om deze pagina te openen!",
+            "Try one of the following:": "Probeer een van volgende:",
+            "Login using different credentials": "Meld aan met een andere gebruiker",
+            "Read the faq": "Lees de handleiding",
+            "Tell us about it": "Laat ons iets weten",
+            "Go Back": "Terug",
+            "Home": "Home"
+        }
+    }
+}
