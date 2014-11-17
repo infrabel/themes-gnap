@@ -1325,6 +1325,7 @@
                     <div gnap-validation-message when="required">Enter the first name</div>
                 </div>
             </div>
+
             <div gnap-show-validity for="lastName" class="form-group">
                 <label class="control-label" for="lastName">Last Name</label>
                 <input ng-model="vm.lastName" type="text" class="form-control" id="lastName" name="lastName" required>
@@ -1332,6 +1333,7 @@
                     <div gnap-validation-message when="required">Enter the last name</div>
                 </div>
             </div>
+
             <div gnap-show-validity for="username" class="form-group">
                 <label class="control-label" for="username">Username</label>
                 <input ng-model="vm.username" type="text" class="form-control" id="username" name="username" required gnap-validate="vm.validateUsername()">
@@ -1340,6 +1342,7 @@
                     <div gnap-validation-message when="unique">The username entered is not unique</div>
                 </div>
             </div>
+
             <button class="btn btn-primary">Save</button>
         </form>
         @@include('validation/validation-example.html')
