@@ -56,3 +56,9 @@ ul[datepicker-popup-wrap] div[datepicker] {
 .datepicker table tr td.year {
     width: 17%;
 }
+
+.validating {
+    background-image: url('../images/loading.gif')!important;
+    background-position: right 7px center!important;
+    background-repeat: no-repeat!important;
+}

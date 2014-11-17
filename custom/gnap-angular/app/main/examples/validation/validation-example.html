@@ -1,0 +1,78 @@
+<div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+      <pre><code gnap-highlight>&lt;form gnap-submit=&#39;vm.save()&#39;&gt;
+    &lt;div gnap-show-validity for=&quot;firstName&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;firstName&quot;&gt;First Name&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.firstName&quot; type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;firstName&quot; name=&quot;firstName&quot; required&gt;
+        &lt;div gnap-validation-messages for=&quot;firstName&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;required&quot;&gt;Enter the first name&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div gnap-show-validity for=&quot;lastName&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;lastName&quot;&gt;Last Name&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.lastName&quot; type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;lastName&quot; name=&quot;lastName&quot; required&gt;
+        &lt;div gnap-validation-messages for=&quot;lastName&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;required&quot;&gt;Enter the last name&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div gnap-show-validity for=&quot;username&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;username&quot;&gt;Username&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.username&quot; type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;username&quot; name=&quot;username&quot; required gnap-validate=&quot;vm.validateUsername()&quot;&gt;
+        &lt;div gnap-validation-messages for=&quot;username&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;required&quot;&gt;Enter the username&lt;/div&gt;
+            &lt;div gnap-validation-message when=&quot;unique&quot;&gt;The username entered is not unique&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;button class=&quot;btn btn-primary&quot;&gt;Save&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+      <pre><code gnap-highlight>
+(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-validation&#39;, GnapValidationController);
+
+    GnapValidationController.$inject = [&#39;$q&#39;, &#39;notification&#39;];
+
+    function GnapValidationController($q, notification) {
+        var vm = this;
+
+        vm.save = function() {
+            notification.show({
+                type: &#39;success&#39;,
+                title: &#39;User Saved&#39;,
+                text: &#39;The user account was successfully created.&#39;
+            });
+        };
+
+        vm.validateUsername = function() {
+            if (angular.isUndefined(vm.username)) {
+                return {
+                    unique: true
+                };
+            }
+            
+            // simulate remote call
+            var uniqueDeferred = $q.defer();
+            setTimeout(function() {
+                if (vm.username === &#39;test&#39;) {
+                    uniqueDeferred.resolve(false);
+                } else {
+                    uniqueDeferred.resolve(true);
+                }
+            }, 2500);
+
+            return {
+                unique: uniqueDeferred.promise
+            };
+        };
+    }
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
