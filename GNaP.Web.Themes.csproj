@@ -58,6 +58,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
     <Content Include="custom\ace\css\develop\ace-fonts.css.replace-grunt.js" />
@@ -204,6 +207,8 @@
     <Content Include="custom\gnap-angular\app\main\examples\tables\full-table.html" />
     <Content Include="custom\gnap-angular\app\main\examples\tables\standard-table.controller.js" />
     <Content Include="custom\gnap-angular\app\main\examples\tables\standard-table.html" />
+    <Content Include="custom\gnap-angular\app\main\examples\validation\gnap-validation.controller.js" />
+    <Content Include="custom\gnap-angular\app\main\examples\validation\validation-example.html" />
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.controller.js" />
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.html" />
     <Content Include="custom\gnap-angular\app\main\getting-started\getting-started.state.js" />
@@ -252,9 +257,11 @@
     <Content Include="custom\gnap-angular\js\develop\gnap\pollyfills.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\search.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\session.service.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\show-validity.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\sidebar.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\sidebar.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\sidebar-toggler.directive.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\submit.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\timepicker.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\title.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\title.service.js" />
@@ -262,6 +269,9 @@
     <Content Include="custom\gnap-angular\js\develop\gnap\token-manager.service.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\unhandled-error.channel.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\unhandled-error-notification.directive.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\validate.directive.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\validation-message.directive.js" />
+    <Content Include="custom\gnap-angular\js\develop\gnap\validation-messages.directive.js" />
     <Content Include="custom\gnap-angular\js\develop\gnap\wysiwyg.directive.js" />
     <Content Include="docs\Architecture.png" />
     <Content Include="docs\ArchitectureSmall.png" />
@@ -4012,17 +4022,11 @@
     <None Include="server\src\ExampleHttpServer\Api\BankAccounts.json" />
     <None Include="server\src\ExampleHttpServer\app.config" />
     <None Include="server\src\ExampleHttpServer\packages.config" />
-    <None Include="server\src\ExampleHttpServer\Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
-    </None>
+    <None Include="server\src\ExampleHttpServer\Properties\Settings.settings" />
     <None Include="server\start-server.cmd" />
     <None Include="versions\gnap.json" />
     <None Include="versions\gnap-angular.json" />
     <None Include="versions\sample.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
