@@ -12,11 +12,8 @@
             templateUrl: 'app/main/main.html',
             controller: 'MainController as vm'
         },
-        title: {
-            text: 'Home'
-        },
         breadcrumb: {
-            title: 'Home',
+            titleTranslationId: 'main.breadcrumb',
             url: '/'
         },
         translations: 'app/main'
@@ -34,7 +31,7 @@
     onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
     function onEnter(titleService, breadcrumbsService, sidebarService) {
-        titleService.setTitle(stateSettings.title);
+        titleService.clearTitle();
 
         setupSidebarShortcuts(sidebarService);
         setupSidebarItems(sidebarService);

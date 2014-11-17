@@ -3,10 +3,10 @@
 (function () {
     angular
         .module('<%= appName %>')
-        .controller('NotFoundController', NotFoundController);
+        .controller('MainNotFoundController', MainNotFoundController);
 
-    NotFoundController.$inject = [];
+    MainNotFoundController.$inject = [];
 
-    function NotFoundController() {
+    function MainNotFoundController() {
     }
 })();
