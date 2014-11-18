@@ -27,9 +27,10 @@
             scope: {
                 totalItems: '=',
                 currentPage: '=',
-                maxSize: '='
+                maxSize: '=',
+                itemsPerPage: '='
             },
-            template: '<div pagination max-size="maxSize" boundary-links="true" previous-text="&lt;i class=&quot;icon-angle-left&quot;&gt;&lt;/i&gt;" ng-model="currentPage" total-items="totalItems" next-text="&lt;i class=&quot;icon-angle-right&quot;&gt;&lt;/i&gt;" first-text="&lt;i class=&quot;icon-double-angle-left&quot;&gt;&lt;/i&gt;" last-text="&lt;i class=&quot;icon-double-angle-right&quot;&gt;&lt;/i&gt;"></div>' /* jshint ignore:line */
+            template: '<div pagination max-size="maxSize" items-per-page="itemsPerPage" boundary-links="true" previous-text="&lt;i class=&quot;icon-angle-left&quot;&gt;&lt;/i&gt;" ng-model="currentPage" total-items="totalItems" next-text="&lt;i class=&quot;icon-angle-right&quot;&gt;&lt;/i&gt;" first-text="&lt;i class=&quot;icon-double-angle-left&quot;&gt;&lt;/i&gt;" last-text="&lt;i class=&quot;icon-double-angle-right&quot;&gt;&lt;/i&gt;"></div>' /* jshint ignore:line */
         };
     }
 
