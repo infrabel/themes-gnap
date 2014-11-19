@@ -7,7 +7,9 @@
             "Username": "Nom d'utilisateur",
             "Password": "Mot de passe",
             "Remember Me": "Se rappeler de moi",
-            "Login": "Connexion"
+            "Login": "Connexion",
+            "Enter your username": "",
+            "Enter your password": ""
         }
     }
 }

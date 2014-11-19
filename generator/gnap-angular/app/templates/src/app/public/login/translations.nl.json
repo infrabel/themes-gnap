@@ -7,7 +7,9 @@
             "Username": "Gebruikersnaam",
             "Password": "Wachtwoord",
             "Remember Me": "Onthouden",
-            "Login": "Aanmelden"
+            "Login": "Aanmelden",
+            "Enter your username": "Geef uw gebruikersnaam",
+            "Enter your password": "Geef uw wachtwoord"
         }
     }
 }
