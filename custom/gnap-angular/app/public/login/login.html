@@ -19,22 +19,28 @@
 
                     <div class="space-6"></div>
 
-                    <form ng-submit="vm.login()">
+                    <form gnap-submit="vm.login()">
                         <div alert type="danger" ng-show="vm.invalidCredentials">Invalid username/password combination.</div>
                         <fieldset>
-                            <label class="block clearfix">
+                            <div gnap-show-validity for="username" class="block clearfix">
                                 <span class="block input-icon input-icon-right">
-                                    <input type="text" ng-model="vm.credentials.username" class="form-control" placeholder="Username" required />
+                                    <input type="text" ng-model="vm.credentials.username" class="form-control" placeholder="Username" id="username" name="username" required />
                                     <i class="icon-user"></i>
                                 </span>
-                            </label>
+                                <div gnap-validation-messages for="username">
+                                    <div gnap-validation-message when="required">Enter your username</div>
+                                </div>
+                            </div>
 
-                            <label class="block clearfix">
+                            <div gnap-show-validity for="password" class="block clearfix">
                                 <span class="block input-icon input-icon-right">
-                                    <input type="password" ng-model="vm.credentials.password" class="form-control" placeholder="Password" required />
+                                    <input type="password" ng-model="vm.credentials.password" class="form-control" placeholder="Password" id="password" name="password" required />
                                     <i class="icon-lock"></i>
                                 </span>
-                            </label>
+                                <div gnap-validation-messages for="password">
+                                    <div gnap-validation-message when="required">Enter your password</div>
+                                </div>
+                            </div>
 
                             <div class="space"></div>
 
