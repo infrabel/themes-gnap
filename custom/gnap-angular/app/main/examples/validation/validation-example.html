@@ -19,10 +19,29 @@
 
     &lt;div gnap-show-validity for=&quot;username&quot; class=&quot;form-group&quot;&gt;
         &lt;label class=&quot;control-label&quot; for=&quot;username&quot;&gt;Username&lt;/label&gt;
-        &lt;input ng-model=&quot;vm.username&quot; type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;username&quot; name=&quot;username&quot; required gnap-validate=&quot;vm.validateUsername()&quot;&gt;
+        &lt;input ng-model=&quot;vm.username&quot; type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;username&quot; name=&quot;username&quot; required ng-minlength=&quot;4&quot; maxlength=&quot;8&quot; gnap-validate=&quot;vm.validateUsername()&quot;&gt;
         &lt;div gnap-validation-messages for=&quot;username&quot;&gt;
             &lt;div gnap-validation-message when=&quot;required&quot;&gt;Enter the username&lt;/div&gt;
             &lt;div gnap-validation-message when=&quot;unique&quot;&gt;The username entered is not unique&lt;/div&gt;
+            &lt;div gnap-validation-message when=&quot;minlength&quot;&gt;The username must be at least 4 characters in length&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div gnap-show-validity for=&quot;email&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;email&quot;&gt;Email&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.email&quot; type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+        &lt;div gnap-validation-messages for=&quot;email&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;email&quot;&gt;Enter a valid email address&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div gnap-show-validity for=&quot;age&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;age&quot;&gt;Age&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.age&quot; type=&quot;number&quot; class=&quot;form-control&quot; id=&quot;age&quot; name=&quot;age&quot; min=&quot;0&quot; max=&quot;100&quot; /&gt;
+        &lt;div gnap-validation-messages for=&quot;age&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;number&quot;&gt;Enter a valid age&lt;/div&gt;
+            &lt;div gnap-validation-message when=&quot;min&quot;&gt;Age must be a number greater than 0&lt;/div&gt;
+            &lt;div gnap-validation-message when=&quot;max&quot;&gt;Age must be a number less than or equal to 100&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 
