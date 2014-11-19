@@ -7,7 +7,9 @@
             "Username": "Username",
             "Password": "Password",
             "Remember Me": "Remember Me",
-            "Login": "Login"
+            "Login": "Login",
+            "Enter your username": "Enter your username",
+            "Enter your password": "Enter your password"
         }
     }
 }
