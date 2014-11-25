@@ -11,7 +11,7 @@
     },
 
     'gnap-angular_packagejson': {
-        src: ['./deploy/vendor/gnap-theme-gnap-angular/package.json', './deploy/vendor/gnap-theme-gnap-angular/package.json'],
+        src: ['./deploy/vendor/gnap-theme-gnap-angular/package.json'],
         overwrite: true,
         replacements: [
             {
