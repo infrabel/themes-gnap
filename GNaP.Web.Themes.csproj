@@ -114,7 +114,6 @@
     <Content Include="custom\gnap\images\favicon.ico" />
     <Content Include="custom\gnap\images\loading.gif" />
     <Content Include="custom\gnap\images\logo.png" />
-    <Content Include="custom\gnap\images\logo-black.png" />
     <Content Include="custom\gnap\images\logo-login.png" />
     <Content Include="custom\gnap-angular\app\app.config.js" />
     <Content Include="custom\gnap-angular\app\app.module.js" />
@@ -277,6 +276,7 @@
     <Content Include="docs\ArchitectureSmall.png" />
     <Content Include="docs\Custom.png" />
     <Content Include="docs\Dark.png" />
+    <Content Include="docs\npm.txt" />
     <Content Include="docs\Raw.png" />
     <Content Include="docs\Tasks.png" />
     <Content Include="docs\Themes.png" />
