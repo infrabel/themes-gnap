@@ -1,6 +1,0 @@
-{
-    "<%= stateName %>":  {
-        "title": "<%= stateTitle %>",
-        "breadcrumb": "<%= stateTitle %>"
-    }
-}
