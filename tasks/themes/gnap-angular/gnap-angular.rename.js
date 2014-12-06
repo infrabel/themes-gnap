@@ -11,8 +11,8 @@
     'gnap-angular_release': {
         files: [
             {
-                src: './releases/GNaP.Themes.Web.GNaP.Angular/gnap-angular.zip',
-                dest: './releases/GNaP.Themes.Web.GNaP.Angular/gnap-theme-gnap-angular-<%= grunt.task.current.args[0] %>.zip',
+                src: './releases/gnap-theme-gnap-angular/gnap-angular.zip',
+                dest: './releases/gnap-theme-gnap-angular/gnap-theme-gnap-angular-<%= grunt.task.current.args[0] %>.zip',
             }
         ]
     }
