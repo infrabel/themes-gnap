@@ -7,8 +7,8 @@
     <ProjectGuid>{401F32E5-ECED-4C75-B736-4D639B12FF6A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GNaP.Web.Themes</RootNamespace>
-    <AssemblyName>GNaP.Web.Themes</AssemblyName>
+    <RootNamespace>themes_gnap</RootNamespace>
+    <AssemblyName>themes-gnap</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -37,9 +37,7 @@
   <ItemGroup>
     <Folder Include="build\" />
     <Folder Include="deploy\" />
-    <Folder Include="nuget\packages\" />
     <Folder Include="raw\ace\mustache\app\views\pages\partials\_shared\" />
-    <Folder Include="releases\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="server\src\ExampleHttpServer\Api\BankAccountsController.cs" />
@@ -56,9 +54,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitattributes" />
@@ -280,37 +275,6 @@
     <Content Include="docs\Raw.png" />
     <Content Include="docs\Tasks.png" />
     <Content Include="docs\Themes.png" />
-    <Content Include="generator\gnap-angular\.gitattributes" />
-    <Content Include="generator\gnap-angular\.gitignore" />
-    <Content Include="generator\gnap-angular\app\index.js" />
-    <Content Include="generator\gnap-angular\app\templates\Gruntfile.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\app.config.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\app.module.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\forbidden\forbidden.controller.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\forbidden\forbidden.html" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\forbidden\forbidden.state.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\getting-started\getting-started.controller.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\getting-started\getting-started.html" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\getting-started\getting-started.state.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\main.controller.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\main.html" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\main.state.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\notfound\notfound.controller.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\notfound\notfound.html" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\notfound\notfound.state.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\session-dropdown.directive.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\main\session-dropdown.html" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\public\login\login.controller.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\public\login\login.html" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\public\login\login.state.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\public\public.controller.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\app\public\public.state.js" />
-    <Content Include="generator\gnap-angular\app\templates\src\css\app.css" />
-    <Content Include="generator\gnap-angular\app\templates\src\index.html" />
-    <Content Include="generator\gnap-angular\state\index.js" />
-    <Content Include="generator\gnap-angular\state\templates\controller.js" />
-    <Content Include="generator\gnap-angular\state\templates\state.html" />
-    <Content Include="generator\gnap-angular\state\templates\state.js" />
     <Content Include="Gruntfile.js" />
     <Content Include="raw\ace\assets\avatars\avatar.png" />
     <Content Include="raw\ace\assets\avatars\avatar1.png" />
@@ -3217,29 +3181,8 @@
     <None Include="custom\gnap-angular\js\develop\gnap\translations.en.json" />
     <None Include="custom\gnap-angular\js\develop\gnap\translations.fr.json" />
     <None Include="custom\gnap-angular\js\develop\gnap\translations.nl.json" />
-    <None Include="generator\gnap-angular\app\templates\_package.json" />
-    <None Include="generator\gnap-angular\app\templates\editorconfig" />
-    <None Include="generator\gnap-angular\app\templates\jshintrc" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\forbidden\translations.en.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\forbidden\translations.fr.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\forbidden\translations.nl.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\getting-started\translations.en.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\getting-started\translations.fr.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\getting-started\translations.nl.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\notfound\translations.en.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\notfound\translations.fr.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\notfound\translations.nl.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\translations.en.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\translations.fr.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\main\translations.nl.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\public\login\translations.en.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\public\login\translations.fr.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\public\login\translations.nl.json" />
-    <None Include="generator\gnap-angular\app\templates\src\app\public\public.html" />
-    <None Include="generator\gnap-angular\package.json" />
-    <None Include="generator\gnap-angular\README.md" />
-    <None Include="generator\gnap-angular\state\templates\translations.json" />
     <None Include="LICENSE" />
+    <None Include="npm\GNaP.Web.Themes.Sample.json" />
     <None Include="npm\GNaP.Web.Themes.GNaP.Angular.json" />
     <None Include="npm\GNaP.Web.Themes.GNaP.json" />
     <None Include="npm\README.md" />

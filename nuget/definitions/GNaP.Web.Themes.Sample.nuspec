@@ -5,13 +5,16 @@
     <version>0.0.0</version>
     <title>GNaP.Themes.Web.Sample</title>
 
-    <authors>NDCC</authors>
-    <owners>NDCC</owners>
+    <authors>infrabel</authors>
+    <owners>infrabel</owners>
+    
     <summary>Example layout to demonstrate Grunt build</summary>
     <description>Example layout to show workflow using Grunt build.</description>
-    <projectUrl>https://github.com/infrabel/GNaP.Web.Themes</projectUrl>
     <copyright>BSD (3-Clause) - Infrabel</copyright>
-    <licenseUrl>https://github.com/infrabel/GNaP.Web.Themes/blob/master/LICENSE</licenseUrl>
+
+    <projectUrl>https://github.com/infrabel/themes-gnap</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/infrabel/themes-gnap/master/icon.png</iconUrl>
+    <licenseUrl>https://github.com/infrabel/themes-gnap/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
     <tags>gnap ui theme sample</tags>

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNaP.Web.Themes", "GNaP.Web.Themes.csproj", "{401F32E5-ECED-4C75-B736-4D639B12FF6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "themes-gnap", "themes-gnap.csproj", "{401F32E5-ECED-4C75-B736-4D639B12FF6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleHttpServer", "server\src\ExampleHttpServer\ExampleHttpServer.csproj", "{EE954C65-1687-418C-8C15-A7CB3E64935A}"
 EndProject
