@@ -30,7 +30,7 @@
         files: [
             {
                 src: './releases/GNaP.Themes.Web.Sample/sample.zip',
-                dest: './releases/GNaP.Themes.Web.Sample/GNaP.Themes.Web.Sample.<%= grunt.task.current.args[0] %>.zip',
+                dest: './releases/GNaP.Themes.Web.Sample/gnap-theme-sample-<%= grunt.task.current.args[0] %>.zip',
             }
         ]
     }
