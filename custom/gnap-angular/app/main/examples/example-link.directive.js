@@ -43,12 +43,12 @@
                         }
                     case 'gnap-theme':
                         {
-                            url = 'https://github.com/infrabel/GNaP.Web.Themes';
+                            url = 'https://github.com/infrabel/themes-gnap';
                             break;
                         }
                     case 'gnap-theme-angular':
                         {
-                            url = 'https://github.com/infrabel/GNaP.Web.Themes';
+                            url = 'https://github.com/infrabel/themes-gnap';
                             break;
                         }
 
