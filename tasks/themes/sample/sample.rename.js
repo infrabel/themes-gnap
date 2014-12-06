@@ -29,8 +29,8 @@
     sample_release: {
         files: [
             {
-                src: './releases/GNaP.Themes.Web.Sample/sample.zip',
-                dest: './releases/GNaP.Themes.Web.Sample/gnap-theme-sample-<%= grunt.task.current.args[0] %>.zip',
+                src: './releases/gnap-theme-sample/sample.zip',
+                dest: './releases/gnap-theme-sample/gnap-theme-sample-<%= grunt.task.current.args[0] %>.zip',
             }
         ]
     }
