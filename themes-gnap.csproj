@@ -3188,9 +3188,9 @@
     <None Include="npm\GNaP.Web.Themes.GNaP.Angular.json" />
     <None Include="npm\GNaP.Web.Themes.GNaP.json" />
     <None Include="npm\README.md" />
-    <None Include="nuget\definitions\GNaP.Web.Themes.GNaP.Angular.nuspec" />
-    <None Include="nuget\definitions\GNaP.Web.Themes.GNaP.nuspec" />
-    <None Include="nuget\definitions\GNaP.Web.Themes.Sample.nuspec" />
+    <None Include="nuget\GNaP.Web.Themes.GNaP.Angular.nuspec" />
+    <None Include="nuget\GNaP.Web.Themes.GNaP.nuspec" />
+    <None Include="nuget\GNaP.Web.Themes.Sample.nuspec" />
     <None Include="package.json" />
     <None Include="raw\ace\assets\css\less\ace.less" />
     <None Include="raw\ace\assets\css\less\ace-nav.less" />
