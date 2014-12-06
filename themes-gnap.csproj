@@ -3060,6 +3060,8 @@
     <Content Include="tasks\themes\gnap-angular\gnap-angular.semver.js" />
     <Content Include="tasks\themes\gnap-angular\gnap-angular.uglify.js" />
     <Content Include="tasks\themes\sample.js" />
+    <Content Include="tasks\themes\sample\sample.publish.js" />
+    <Content Include="tasks\themes\sample\sample.replace.js" />
     <Content Include="tasks\themes\sample\sample.clean.js" />
     <Content Include="tasks\themes\sample\sample.compress.js" />
     <Content Include="tasks\themes\sample\sample.copy.js" />
