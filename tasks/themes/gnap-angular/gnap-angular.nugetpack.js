@@ -1,6 +1,6 @@
 ﻿module.exports = {
     'gnap-angular': {
-        src: './nuget/GNaP.Web.Themes.GNaP.Angular.nuspec',
+        src: './nuget/GNaP.Themes.Web.GNaP.Angular.nuspec',
         dest: './nuget/GNaP.Themes.Web.GNaP.Angular',
 
         options: {

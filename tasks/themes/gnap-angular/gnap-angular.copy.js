@@ -60,7 +60,7 @@
     },
 
     'gnap-angular_packagejson': {
-        src: './npm/GNaP.Web.Themes.GNaP.Angular.json',
+        src: './npm/GNaP.Themes.Web.GNaP.Angular.json',
         dest: './deploy/vendor/gnap-theme-gnap-angular/package.json'        
     },
 
