@@ -41,8 +41,8 @@
     gnap_release: {
         files: [
             {
-                src: './releases/GNaP.Themes.Web.GNaP/gnap.zip',
-                dest: './releases/GNaP.Themes.Web.GNaP/gnap-theme-gnap-<%= grunt.task.current.args[0] %>.zip',
+                src: './releases/gnap-theme-gnap/gnap.zip',
+                dest: './releases/gnap-theme-gnap/gnap-theme-gnap-<%= grunt.task.current.args[0] %>.zip',
             }
         ]
     }
