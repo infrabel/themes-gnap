@@ -24,6 +24,7 @@
     <file src="fonts\**\*.*" target="content\vendor\gnap-theme-gnap\fonts" />
     <file src="js\**\*.*" target="content\vendor\gnap-theme-gnap\js" />
     <file src="images\**\*.*" target="content\vendor\gnap-theme-gnap\images" />
+    <file src="server\**\*.*" target="content\vendor\gnap-theme-gnap\server" />
     <file src="*" target="content\vendor\gnap-theme-gnap" />
   </files>
 </package>
