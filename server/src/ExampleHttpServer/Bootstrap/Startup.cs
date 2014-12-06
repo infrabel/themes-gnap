@@ -9,6 +9,10 @@ using Owin;
 
 namespace ExampleHttpServer.Bootstrap
 {
+    using System;
+    using System.Security.Claims;
+    using GNaP.Owin.Authentication.Jwt;
+
     internal class Startup
     {
         private readonly string _staticFilesRoot;
@@ -30,6 +34,30 @@ namespace ExampleHttpServer.Bootstrap
             var issuer = Settings.Default.Issuer;
             var audience = Settings.Default.Audience;
             var tokenSigningKey = Settings.Default.TokenSigningKey;
+
+            builder.UseJwtTokenIssuer(new JwtTokenIssuerOptions
+            {
+                Issuer = issuer,
+                Audience = audience,
+                TokenSigningKey = tokenSigningKey,
+                IssuerPath = "api/tokens",
+                Authenticate = (username, password) =>
+                {
+                    // Dummy example authentication check
+                    if (!(username == Settings.Default.DummyUser && password == Settings.Default.DummyPass))
+                        return null;
+
+                    return new[]
+                    {
+                        new Claim(ClaimTypes.AuthenticationInstant, DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")),
+                        new Claim(ClaimTypes.AuthenticationMethod, AuthenticationTypes.Password),
+                        new Claim(ClaimTypes.Name, username),
+                        new Claim(ClaimTypes.GivenName, "John"),
+                        new Claim(ClaimTypes.Surname, "Doe"),
+                        new Claim(ClaimTypes.Email, "john@doe.com")
+                    };
+                }
+            });
 
             builder.UseJwtBearerAuthentication(
                 new JwtBearerAuthenticationOptions
