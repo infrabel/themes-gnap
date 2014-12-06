@@ -1,6 +1,6 @@
 ﻿module.exports = {
     gnap: {
-        src: './nuget/GNaP.Web.Themes.GNaP.nuspec',
+        src: './nuget/GNaP.Themes.Web.GNaP.nuspec',
         dest: './nuget/GNaP.Themes.Web.GNaP',
 
         options: {
