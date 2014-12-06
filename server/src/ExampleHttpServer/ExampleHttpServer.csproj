@@ -38,6 +38,9 @@
     <Reference Include="CommandLine">
       <HintPath>..\..\..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
     </Reference>
+    <Reference Include="GNaP.Owin.Authentication.Jwt">
+      <HintPath>..\..\..\packages\GNaP.Owin.Authentication.Jwt.1.0.0.0\lib\net45\GNaP.Owin.Authentication.Jwt.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin">
       <HintPath>..\..\..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
@@ -97,9 +100,7 @@
   <ItemGroup>
     <Compile Include="Api\EmployeesController.cs" />
     <Compile Include="Arguments\CommandLineArguments.cs" />
-    <Compile Include="Auth\JwtTokenService.cs" />
     <Compile Include="Bootstrap\Startup.cs" />
-    <Compile Include="Api\TokensController.cs" />
     <Compile Include="Api\BankAccountsController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
