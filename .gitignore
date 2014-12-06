@@ -34,3 +34,9 @@ libpeerconnection.log
 npm-debug.log
 /tmp/
 /scripts/bower/bower-*
+
+# NuGet Packages
+/nuget/**/*.nupkg
+
+# Zip releases
+/releases/**/*.zip

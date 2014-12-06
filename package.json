@@ -1,8 +1,8 @@
 {
-  "name": "GNaP.Web.Themes",
+  "name": "themes-gnap",
   "version": "1.0.0",
   "description": "Base GNaP Theme",
-  "author": "Infrabel, NDCC",
+  "author": "Infrabel",
   "keywords": [
     "ui",
     "gnap"

@@ -1,5 +1,5 @@
-GNaP.Web.Themes
-===============
+themes-gnap
+===========
 
 We prefer to standardize on a common layout for all our projects. 
 
@@ -11,13 +11,13 @@ To maintain these packages, we've setup a [Grunt.js](http://gruntjs.com/) build 
 
  * We make modifications on the raw files to integrate our custom look and feel.
 
- * We package up the end result into a NuGet package, ready to be pushed to our internal NuGet feed.
+ * We package up the end result for distribution into a NuGet package, an npm package and a zip file.
 
 The themes we provide using this build are intended to be consumed by any technology and are not geared towards .NET specifically.
 
 ## Architecture
 
-![GNaP.Web.Themes Architecture](https://raw.githubusercontent.com/infrabel/GNaP.Web.Themes/master/docs/ArchitectureSmall.png)
+![themes-gnap architecture](https://raw.githubusercontent.com/infrabel/themes-gnap/master/docs/ArchitectureSmall.png)
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ The themes we provide using this build are intended to be consumed by any techno
  * Run ```npm install & pushd raw\ace\mustache\js\ & npm install & popd``` to install all required packages.
  * Run ```grunt bake:gnap``` to build an example theme.
  * Have a look in the ```deploy``` folder to see the result.
- * [Read the documentation](https://github.com/infrabel/GNaP.Web.Themes/wiki) to learn more about the ```taste``` and ```produce``` commands.
+ * [Read the documentation](https://github.com/infrabel/themes-gnap/wiki) to learn more about the ```taste``` and ```produce``` commands.
 
 ## Copyright
 
@@ -43,6 +43,6 @@ Copyright © 2014 Infrabel and contributors.
 
 ## License
 
-GNaP.Web.Themes is licensed under [BSD (3-Clause)](http://choosealicense.com/licenses/bsd-3-clause/ "Read more about the BSD (3-Clause) License"). Refer to [LICENSE](https://github.com/infrabel/GNaP.Web.Themes/blob/master/LICENSE) for more information.
+themes-gnap is licensed under [BSD (3-Clause)](http://choosealicense.com/licenses/bsd-3-clause/ "Read more about the BSD (3-Clause) License"). Refer to [LICENSE](https://github.com/infrabel/themes-gnap/blob/master/LICENSE) for more information.
 
-The GNaP theme uses ```Ace - Responsive Admin Template``` as it's base theme, which is licensed under [Extended License](https://github.com/infrabel/GNaP.Web.Themes/blob/master/custom/ace/LICENSE-Ace), our license covers redistribution and usage by you. However, if you would like to show your support to the original author, you can [buy a Single application license here](https://wrapbootstrap.com/theme/ace-responsive-admin-template-WB0B30DGR?ref=cc), it's quite cheap after all.
+The GNaP theme uses ```Ace - Responsive Admin Template``` as it's base theme, which is licensed under [Extended License](https://github.com/infrabel/themes-gnap/blob/master/custom/ace/LICENSE-Ace), our license covers redistribution and usage by you. However, if you would like to show your support to the original author, you can [buy a Single application license here](https://wrapbootstrap.com/theme/ace-responsive-admin-template-WB0B30DGR?ref=cc), it's quite cheap after all.

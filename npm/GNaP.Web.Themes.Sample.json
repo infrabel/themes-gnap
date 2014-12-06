@@ -1,12 +1,13 @@
 {
-    "name": "gnap-theme-gnap",
+    "name": "gnap-theme-sample",
     "version": "0.0.0",
-    "description": "Standard layout for GNaP applications. This package can be used by all technologies.",
+    "description": "Example layout to demonstrate Grunt build.",
     "main": "start-server.cmd",
     "keywords": [
         "gnap",
         "ui",
-        "theme"
+        "theme",
+        "sample"
     ],
     "repository": {
         "type": "git",

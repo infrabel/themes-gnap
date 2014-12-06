@@ -5,13 +5,16 @@
     <version>0.0.0</version>
     <title>GNaP.Themes.Web.GNaP.Angular</title>
 
-    <authors>NDCC</authors>
-    <owners>NDCC</owners>
-    <summary>Standard layout for applications intended for NDCC</summary>
-    <description>Standard layout for applications intended for NDCC. This package can be used by all technologies.</description>
-    <projectUrl>https://github.com/infrabel/GNaP.Web.Themes</projectUrl>
+    <authors>infrabel</authors>
+    <owners>infrabel</owners>
+    
+    <summary>Standard layout for GNaP applications using Angular</summary>
+    <description>Modification of Ace Admin for GNaP applications. This package can be used by all technologies.</description>
     <copyright>BSD (3-Clause) - Infrabel</copyright>
-    <licenseUrl>https://github.com/infrabel/GNaP.Web.Themes/blob/master/LICENSE</licenseUrl>
+
+    <projectUrl>https://github.com/infrabel/themes-gnap</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/infrabel/themes-gnap/master/icon.png</iconUrl>
+    <licenseUrl>https://github.com/infrabel/themes-gnap/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
     <tags>gnap ui theme angular</tags>
