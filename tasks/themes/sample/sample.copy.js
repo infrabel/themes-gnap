@@ -32,5 +32,15 @@
         cwd: './deploy/jquery/',
         src: ['*.*', '**/*.*'],
         dest: './deploy/sample/js/'
+    },
+
+    sample_packagejson: {
+        src: './npm/GNaP.Web.Themes.Sample.json',
+        dest: './deploy/vendor/gnap-theme-sample/package.json'
+    },
+
+    sample_readme: {
+        src: './npm/README.md',
+        dest: './deploy/vendor/gnap-theme-sample/README.md'
     }
 };

@@ -36,6 +36,10 @@
                         'rename:sample_package',
                         'compress:sample',
                         'rename:sample_release:' + version,
-                        'nugetpack:sample']);
+                        'nugetpack:sample',
+                        'copy:sample_packagejson',
+                        'copy:sample_readme',
+                        'replace:sample_packagejson:' + version,
+                        'publish:sample_publish']);
     });
 };
