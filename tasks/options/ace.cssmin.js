@@ -28,15 +28,4 @@
             return dest + folder + filename + '.min.css';
         }
     }
-
-    //combine_vendor_css: {
-    //    files: {
-    //        './build/ace/css/vendor.css': [
-    //            './build/ace/css/develop/*.css',
-    //            '!./build/ace/css/develop/ace*.css',
-    //            '!./build/ace/css/develop/ie8.css',
-    //            '!./build/ace/css/develop/font-awesome-ie7.css'
-    //        ]
-    //    }
-    //}
 };

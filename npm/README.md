@@ -1,1 +1,1 @@
-Readme at https://github.com/infrabel/GNaP.Web.Themes
+Readme at https://github.com/infrabel/themes-gnap
