@@ -24,7 +24,7 @@
             newToken.$save().then(
                 function (token) { // success
                     // store token
-                    sessionService.beginSession(token.Token);
+                    sessionService.beginSession(token.token);
 
                     // redirect back to the referrer or to the app root
                     var redirectState = $location.search().redirect_state; /* jshint ignore:line*/
