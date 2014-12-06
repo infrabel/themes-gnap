@@ -1,6 +1,6 @@
 ﻿module.exports = {
     sample: {
-        src: './nuget/GNaP.Web.Themes.Sample.nuspec',
+        src: './nuget/GNaP.Themes.Web.Sample.nuspec',
         dest: './nuget/GNaP.Themes.Web.Sample',
 
         options: {
