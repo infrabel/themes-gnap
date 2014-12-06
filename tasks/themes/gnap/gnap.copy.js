@@ -70,7 +70,7 @@
     },
 
     gnap_packagejson: {
-        src: './npm/GNaP.Web.Themes.GNaP.json',
+        src: './npm/GNaP.Themes.Web.GNaP.json',
         dest: './deploy/vendor/gnap-theme-gnap/package.json'        
     },
 

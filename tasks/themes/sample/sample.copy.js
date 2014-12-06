@@ -35,7 +35,7 @@
     },
 
     sample_packagejson: {
-        src: './npm/GNaP.Web.Themes.Sample.json',
+        src: './npm/GNaP.Themes.Web.Sample.json',
         dest: './deploy/vendor/gnap-theme-sample/package.json'
     },
 
