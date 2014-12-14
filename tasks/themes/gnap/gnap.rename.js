@@ -42,7 +42,7 @@
         files: [
             {
                 src: './releases/gnap-theme-gnap/gnap.zip',
-                dest: './releases/gnap-theme-gnap/gnap-theme-gnap-<%= grunt.task.current.args[0] %>.zip',
+                dest: './releases/gnap-theme-gnap/gnap-theme-gnap-<%= grunt.task.current.args[0] %>.zip'
             }
         ]
     }
