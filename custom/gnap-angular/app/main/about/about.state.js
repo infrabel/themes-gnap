@@ -10,15 +10,15 @@
         state: {
             url: '/about',
             templateUrl: 'app/main/about/about.html',
-            controller: 'AboutController as vm'
+            controller: 'MainAboutController as vm'
         },
         title: {
-            textTranslationId: 'about'
+            textTranslationId: 'main.about.title'
         },
         breadcrumb: {
-            titleTranslationId: 'about'
+            titleTranslationId: 'main.about.breadcrumb'
         },
-        sidebarKey: 'about',
+        sidebarKey: 'main.about',
         translations: 'app/main/about'
     };
 

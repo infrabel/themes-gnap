@@ -1,7 +1,11 @@
 {
-    "search": "Zoeken ...",
-    "welcome": "Welkom",
-    "login": "Aanmelden",
+    "main":  {
+        "breadcrumb": "Home",
+        "search": "Zoeken ...",
+        "welcome": "Welkom",
+        "login": "Aanmelden",
+        "logout": "Afmelden"
+    },
     "sidebar": {
         "shortcuts": {
             "statistics": "Statistieken",
@@ -10,19 +14,19 @@
             "administration": "Administratie"
         },
         "items": {
-            "about": "Over",
-            "getting-started": "Aan de slag",
-            "examples": "Voorbeelden",
-            "typography": "Typografie",
-            "error-404": "Error 404",
-            "error-500": "Error 500",
-            "secure": "Beveiligd",
-            "unauthorized": "Niet geautoriseerd",
-            "multi-level-menu": "Multi Level Menu",
-            "level-2": "Level 2",
-            "level-2-with-sub": "Level 2 With Sub",
-            "level-3": "Level 3",
-            "next-level-3": "Next Level 3"
+            "main.about": "Over",
+            "main.getting-started": "Aan de slag",
+            "main.examples": "Voorbeelden",
+            "main.typography": "Typografie",
+            "main.notfound": "Error 404",
+            "main.internalerror": "Error 500",
+            "main.secure": "Beveiligd",
+            "main.unauthorized": "Niet geautoriseerd",
+            "main.multi-level-menu": "Multi Level Menu",
+            "main.multi-level-menu.level-2": "Level 2",
+            "main.multi-level-menu.level-2-with-sub": "Level 2 With Sub",
+            "main.multi-level-menu.level-2-with-sub.level-3": "Level 3",
+            "main.multi-level-menu.level-2-with-sub.next-level-3": "Next Level 3"
         }
     }
 }

@@ -12,11 +12,8 @@
             templateUrl: 'app/main/main.html',
             controller: 'MainController as main'
         },
-        title: {
-            text: 'Home'
-        },
         breadcrumb: {
-            title: 'Home',
+            titleTranslationId: 'main.breadcrumb',
             url: '/'
         },
         translations: 'app/main'
@@ -34,7 +31,7 @@
     onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
     function onEnter(titleService, breadcrumbsService, sidebarService) {
-        titleService.setTitle(stateSettings.title);
+        titleService.clearTitle();
 
         setupSidebarShortcuts(sidebarService);
         setupSidebarItems(sidebarService);
@@ -105,60 +102,60 @@
     function setupSidebarItems(sidebarService) {
         sidebarService.setItems([
             {
-                key: 'about',
+                key: 'main.about',
                 titleTranslationId: 'sidebar.items.about',
                 icon: 'icon-lightbulb',
                 state: 'main.about'
             },
             {
-                key: 'getting-started',
+                key: 'main.getting-started',
                 titleTranslationId: 'sidebar.items.getting-started',
                 icon: 'icon-fire',
                 state: 'main.getting-started'
             },
             {
-                key: 'examples',
+                key: 'main.examples',
                 titleTranslationId: 'sidebar.items.examples',
                 icon: 'icon-heart',
                 state: 'main.examples'
             },
             {
-                key: 'typography',
+                key: 'main.typography',
                 titleTranslationId: 'sidebar.items.typography',
                 icon: 'icon-text-width',
                 state: 'main.typography'
             },
             {
-                key: 'error-404',
-                titleTranslationId: 'sidebar.items.error-404',
+                key: 'main.notfound',
+                titleTranslationId: 'sidebar.items.notfound',
                 icon: 'icon-circle',
-                state: 'main.error-404'
+                state: 'main.notfound'
             },
             {
-                key: 'error-500',
-                titleTranslationId: 'sidebar.items.error-500',
+                key: 'main.internalerror',
+                titleTranslationId: 'sidebar.items.internalerror',
                 icon: 'icon-circle-blank',
-                state: 'main.error-500'
+                state: 'main.internalerror'
             },
             {
-                key: 'secure',
+                key: 'main.secure',
                 titleTranslationId: 'sidebar.items.secure',
                 icon: 'icon-lock',
                 state: 'main.secure'
             },
             {
-                key: 'unauthorized',
+                key: 'main.unauthorized',
                 titleTranslationId: 'sidebar.items.unauthorized',
                 icon: 'icon-ban-circle',
                 state: 'main.unauthorized'
             },
             {
-                key: 'multi-level-menu',
+                key: 'main.multi-level-menu',
                 titleTranslationId: 'sidebar.items.multi-level-menu',
                 icon: 'icon-globe',
                 items: [
                     {
-                        key: 'level-2',
+                        key: 'main.multi-level-menu.level-2',
                         titleTranslationId: 'sidebar.items.level-2',
                         icon: 'icon-leaf',
                         click: function () {
@@ -167,12 +164,12 @@
                         }
                     },
                     {
-                        key: 'level-2-with-sub',
+                        key: 'main.multi-level-menu.level-2-with-sub',
                         titleTranslationId: 'sidebar.items.level-2-with-sub',
                         icon: 'icon-pencil',
                         items: [
                             {
-                                key: 'level-3',
+                                key: 'main.multi-level-menu.level-2-with-sub.level-3',
                                 titleTranslationId: 'sidebar.items.level-3',
                                 icon: 'icon-plus',
                                 click: function () {
@@ -181,7 +178,7 @@
                                 }
                             },
                             {
-                                key: 'next-level-3',
+                                key: 'main.multi-level-menu.level-2-with-sub.next-level-3',
                                 titleTranslationId: 'sidebar.items.next-level-3',
                                 icon: 'icon-eye-open',
                                 click: function () {

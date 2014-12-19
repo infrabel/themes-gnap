@@ -1,3 +1,13 @@
 .example {
   margin: 10px 0 10px 0;
 }
+
+.website-created {
+    text-align: center;
+}
+
+.website-created strong {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 5px;
+}

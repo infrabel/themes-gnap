@@ -3,11 +3,11 @@
 (function () {
     angular
         .module('gnap-example-app')
-        .controller('TypographyController', TypographyController);
+        .controller('MainTypographyController', MainTypographyController);
 
-    TypographyController.$inject = [];
+    MainTypographyController.$inject = [];
 
-    function TypographyController() {
+    function MainTypographyController() {
         var vm = this;
 
         vm.isHorizontalList = false;

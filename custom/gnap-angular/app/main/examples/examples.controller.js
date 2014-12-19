@@ -3,10 +3,10 @@
 (function () {
     angular
         .module('gnap-example-app')
-        .controller('ExamplesController', ExamplesController);
+        .controller('MainExamplesController', MainExamplesController);
 
-    ExamplesController.$inject = [];
+    MainExamplesController.$inject = [];
 
-    function ExamplesController() {
+    function MainExamplesController() {
     }
 })();

@@ -10,15 +10,16 @@
         state: {
             url: '/typography',
             templateUrl: 'app/main/typography/typography.html',
-            controller: 'TypographyController as vm'
+            controller: 'MainTypographyController as vm'
         },
         title: {
-            text: 'Typography'
+            textTranslationId: 'main.typography.title'
         },
         breadcrumb: {
-            title: 'Typography'
+            titleTranslationId: 'main.typography.breadcrumb'
         },
-        sidebarKey: 'typography'
+        sidebarKey: 'main.typography',
+        translations: 'app/main/typography'
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -46,5 +47,17 @@
 
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
+    }
+
+    if (stateSettings.translations) {
+        stateSettings.state.resolve = stateSettings.state.resolve || {};
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
     }
 })();
