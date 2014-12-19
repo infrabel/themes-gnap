@@ -1,0 +1,15 @@
+{
+    "public.login":  {
+        "title": "Connexion",
+        "text": {
+            "Please Enter Your Information": "Connectez-vous",
+            "Invalid username/password combination.": "Nom d'utilisateur/Mot de passe invalide.",
+            "Username": "Nom d'utilisateur",
+            "Password": "Mot de passe",
+            "Remember Me": "Se rappeler de moi",
+            "Login": "Connexion",
+            "Enter your username": "Veuillez introduire votre nom d'utilisateur",
+            "Enter your password": "Veuillez introduire votre mot de passe"
+        }
+    }
+}

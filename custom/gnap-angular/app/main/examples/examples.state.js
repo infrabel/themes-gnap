@@ -10,15 +10,16 @@
         state: {
             url: '/examples',
             templateUrl: 'app/main/examples/examples.html',
-            controller: 'ExamplesController as vm'
+            controller: 'MainExamplesController as vm'
         },
         title: {
-            text: 'Examples'
+            textTranslationId: 'main.examples.title'
         },
         breadcrumb: {
-            title: 'Examples'
+            titleTranslationId: 'main.examples.breadcrumb'
         },
-        sidebarKey: 'examples'
+        sidebarKey: 'main.examples',
+        translations: 'app/main/examples'
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -46,5 +47,17 @@
 
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
+    }
+
+    if (stateSettings.translations) {
+        stateSettings.state.resolve = stateSettings.state.resolve || {};
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
     }
 })();

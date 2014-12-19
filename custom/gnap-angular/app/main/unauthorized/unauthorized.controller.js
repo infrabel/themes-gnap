@@ -3,11 +3,11 @@
 (function () {
     angular
         .module('gnap-example-app')
-        .controller('UnauthorizedController', UnauthorizedController);
+        .controller('MainUnauthorizedController', MainUnauthorizedController);
 
-    UnauthorizedController.$inject = ['employees'];
+    MainUnauthorizedController.$inject = ['employees'];
 
-    function UnauthorizedController(employees) {
+    function MainUnauthorizedController(employees) {
         console.log(employees);
     }
 })();

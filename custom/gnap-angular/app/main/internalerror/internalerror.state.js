@@ -6,19 +6,20 @@
         .config(stateConfiguration);
 
     var stateSettings = {
-        name: 'main.error-404',
+        name: 'main.internalerror',
         state: {
-            url: '/error-404',
-            templateUrl: 'app/main/error-404/error-404.html',
-            controller: 'Error404Controller as vm'
+            url: '/internalerror',
+            templateUrl: 'app/main/internalerror/internalerror.html',
+            controller: 'MainInternalErrorController as vm'
         },
         title: {
-            text: 'Error 404'
+            textTranslationId: 'main.internalerror.title'
         },
         breadcrumb: {
-            title: 'Error 404'
+            titleTranslationId: 'main.internalerror.breadcrumb'
         },
-        sidebarKey: 'error-404'
+        sidebarKey: 'main.internalerror',
+        translations: 'app/main/internalerror'
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -46,5 +47,17 @@
 
         breadcrumbsService.removeLastBreadcrumb();
         sidebarService.clearSelected();
+    }
+
+    if (stateSettings.translations) {
+        stateSettings.state.resolve = stateSettings.state.resolve || {};
+        stateSettings.state.resolve.translations = refreshTranslations;
+    }
+
+    refreshTranslations.$inject = ['$translatePartialLoader', '$translate'];
+
+    function refreshTranslations($translatePartialLoader, $translate) {
+        $translatePartialLoader.addPart(stateSettings.translations);
+        return $translate.refresh();
     }
 })();
