@@ -103,87 +103,87 @@
         sidebarService.setItems([
             {
                 key: 'main.about',
-                titleTranslationId: 'sidebar.items.about',
+                titleTranslationId: 'sidebar.items.main.about',
                 icon: 'icon-lightbulb',
                 state: 'main.about'
             },
             {
                 key: 'main.getting-started',
-                titleTranslationId: 'sidebar.items.getting-started',
+                titleTranslationId: 'sidebar.items.main.getting-started',
                 icon: 'icon-fire',
                 state: 'main.getting-started'
             },
             {
                 key: 'main.examples',
-                titleTranslationId: 'sidebar.items.examples',
+                titleTranslationId: 'sidebar.items.main.examples',
                 icon: 'icon-heart',
                 state: 'main.examples'
             },
             {
                 key: 'main.typography',
-                titleTranslationId: 'sidebar.items.typography',
+                titleTranslationId: 'sidebar.items.main.typography',
                 icon: 'icon-text-width',
                 state: 'main.typography'
             },
             {
                 key: 'main.notfound',
-                titleTranslationId: 'sidebar.items.notfound',
+                titleTranslationId: 'sidebar.items.main.notfound',
                 icon: 'icon-circle',
                 state: 'main.notfound'
             },
             {
                 key: 'main.internalerror',
-                titleTranslationId: 'sidebar.items.internalerror',
+                titleTranslationId: 'sidebar.items.main.internalerror',
                 icon: 'icon-circle-blank',
                 state: 'main.internalerror'
             },
             {
                 key: 'main.secure',
-                titleTranslationId: 'sidebar.items.secure',
+                titleTranslationId: 'sidebar.items.main.secure',
                 icon: 'icon-lock',
                 state: 'main.secure'
             },
             {
                 key: 'main.unauthorized',
-                titleTranslationId: 'sidebar.items.unauthorized',
+                titleTranslationId: 'sidebar.items.main.unauthorized',
                 icon: 'icon-ban-circle',
                 state: 'main.unauthorized'
             },
             {
                 key: 'main.multi-level-menu',
-                titleTranslationId: 'sidebar.items.multi-level-menu',
+                titleTranslationId: 'sidebar.items.main.multi-level-menu',
                 icon: 'icon-globe',
                 items: [
                     {
                         key: 'main.multi-level-menu.level-2',
-                        titleTranslationId: 'sidebar.items.level-2',
+                        titleTranslationId: 'sidebar.items.main.multi-level-menu.level-2',
                         icon: 'icon-leaf',
                         click: function () {
                             window.alert('Going to the level2 page ...');
-                            sidebarService.setSelected('multi-level-menu/level-2');
+                            sidebarService.setSelected('main.multi-level-menu/main.multi-level-menu.level-2');
                         }
                     },
                     {
                         key: 'main.multi-level-menu.level-2-with-sub',
-                        titleTranslationId: 'sidebar.items.level-2-with-sub',
+                        titleTranslationId: 'sidebar.items.main.multi-level-menu.level-2-with-sub',
                         icon: 'icon-pencil',
                         items: [
                             {
                                 key: 'main.multi-level-menu.level-2-with-sub.level-3',
-                                titleTranslationId: 'sidebar.items.level-3',
+                                titleTranslationId: 'sidebar.items.main.multi-level-menu.level-2-with-sub.level-3',
                                 icon: 'icon-plus',
                                 click: function () {
                                     window.alert('Going to the Level 3 page ...');
-                                    sidebarService.setSelected('multi-level-menu/level-2-with-sub/level-3');
+                                    sidebarService.setSelected('main.multi-level-menu/main.multi-level-menu.level-2-with-sub/main.multi-level-menu.level-2-with-sub.level-3');
                                 }
                             },
                             {
                                 key: 'main.multi-level-menu.level-2-with-sub.next-level-3',
-                                titleTranslationId: 'sidebar.items.next-level-3',
+                                titleTranslationId: 'sidebar.items.main.multi-level-menu.level-2-with-sub.next-level-3',
                                 icon: 'icon-eye-open',
                                 click: function () {
                                     window.alert('Going to the Next Level 3 page ...');
-                                    sidebarService.setSelected('multi-level-menu/level-2-with-sub/next-level-3');
+                                    sidebarService.setSelected('main.multi-level-menu/main.multi-level-menu.level-2-with-sub/main.multi-level-menu.level-2-with-sub.next-level-3');
                                 }
                             }
                         ]
