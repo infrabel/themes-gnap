@@ -10,18 +10,19 @@
         state: {
             url: '/unauthorized',
             templateUrl: 'app/main/unauthorized/unauthorized.html',
-            controller: 'UnauthorizedController as vm',
+            controller: 'MainUnauthorizedController as vm',
             resolve: {
                 employees: resolveEmployees
             }
         },
         title: {
-            text: 'Unauthorized'
+            textTranslationId: 'main.unauthorized.title'
         },
         breadcrumb: {
-            title: 'Unauthorized'
+            titleTranslationId: 'main.unauthorized.breadcrumb'
         },
-        sidebarKey: 'Unauthorized'
+        sidebarKey: 'main.unauthorized',
+        translations: 'app/main/unauthorized'
     };
 
     stateSettings.state.onEnter = onEnter;
@@ -33,14 +34,22 @@
         $stateProvider.state(stateSettings.name, stateSettings.state);
     }
 
-    onEnter.$inject = [];
+    onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onEnter() {
+    function onEnter(titleService, breadcrumbsService, sidebarService) {
+        titleService.appendTitle(stateSettings.title);
+
+        breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
+        sidebarService.setSelected(stateSettings.sidebarKey);
     }
 
-    onExit.$inject = [];
+    onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onExit() {
+    function onExit(titleService, breadcrumbsService, sidebarService) {
+        titleService.removeLastTitle();
+
+        breadcrumbsService.removeLastBreadcrumb();
+        sidebarService.clearSelected();
     }
 
     if (stateSettings.translations) {

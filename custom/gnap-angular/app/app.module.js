@@ -2,7 +2,8 @@
 
 (function () {
     angular
-        .module('gnap-example-app', ['gnap',
-                                     'ngSanitize',
-                                     'ngResource']);
+        .module('gnap-example-app',
+                ['gnap',
+                 'ngSanitize',
+                 'ngResource']);
 })();

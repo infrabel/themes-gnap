@@ -10,18 +10,19 @@
         state: {
             url: '/secure',
             templateUrl: 'app/main/secure/secure.html',
-            controller: 'SecureController as vm',
+            controller: 'MainSecureController as vm',
             resolve: {
                 bankAccounts: resolveBankAccounts
             }
         },
         title: {
-            text: 'Secure'
+            textTranslationId: 'main.secure.title'
         },
         breadcrumb: {
-            title: 'Secure'
+            titleTranslationId: 'main.secure.breadcrumb'
         },
-        sidebarKey: 'secure'
+        sidebarKey: 'main.secure',
+        translations: 'app/main/secure'
     };
 
     stateSettings.state.onEnter = onEnter;

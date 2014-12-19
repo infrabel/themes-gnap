@@ -1,0 +1,15 @@
+{
+    "main.forbidden":  {
+        "title": "Interdit",
+        "breadcrumb": "Interdit",
+        "text": {
+            "You are not authorized to access this page!": "Vous n'�tes pas autoris� � acc�der � cette page!",
+            "Try one of the following:": "Essayez ceci:",
+            "Login using different credentials": "Connectez vous avec un autre compte",
+            "Read the faq": "Lisez la faq",
+            "Tell us about it": "Parlez nous en",
+            "Go Back": "Retour",
+            "Home": "Accueil"
+        }
+    }
+}
