@@ -1,8 +1,8 @@
-﻿using CommandLine;
-using CommandLine.Text;
-
-namespace ExampleHttpServer.Arguments
+﻿namespace ExampleHttpServer.Arguments
 {
+    using CommandLine;
+    using CommandLine.Text;
+
     public class CommandLineArguments
     {
         [Option('p', "port", DefaultValue = 9000, HelpText = "The port at which the server will be listening")]
@@ -16,7 +16,7 @@ namespace ExampleHttpServer.Arguments
         [HelpOption]
         public static string GetUsage()
         {
-            return HelpText.AutoBuild(new CommandLineArguments(), 
+            return HelpText.AutoBuild(new CommandLineArguments(),
                                       current => HelpText.DefaultParsingErrorsHandler(new CommandLineArguments(), current));
         }
 

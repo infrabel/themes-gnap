@@ -1,17 +1,16 @@
-﻿using System.Web.Http;
-using ExampleHttpServer.Properties;
-using Microsoft.Owin.FileSystems;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.Jwt;
-using Microsoft.Owin.StaticFiles;
-using Microsoft.Owin.StaticFiles.ContentTypes;
-using Owin;
-
-namespace ExampleHttpServer.Bootstrap
+﻿namespace ExampleHttpServer.Bootstrap
 {
     using System;
     using System.Security.Claims;
     using GNaP.Owin.Authentication.Jwt;
+    using System.Web.Http;
+    using Properties;
+    using Microsoft.Owin.FileSystems;
+    using Microsoft.Owin.Security;
+    using Microsoft.Owin.Security.Jwt;
+    using Microsoft.Owin.StaticFiles;
+    using Microsoft.Owin.StaticFiles.ContentTypes;
+    using Owin;
 
     internal class Startup
     {

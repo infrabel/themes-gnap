@@ -56,7 +56,7 @@
                     }
                 }
 
-                    // forbidden
+                // forbidden
                 else if (error.status === 403) {
                     event.preventDefault();
 
@@ -64,7 +64,7 @@
                     $state.go('main.forbidden');
                 }
 
-                    // any other case
+                // any other case
                 else {
                     unhandledErrorChannel.errorOccurred(error);
                 }

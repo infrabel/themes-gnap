@@ -18,6 +18,6 @@
                 from: '0.0.0',
                 to: '<%= grunt.task.current.args[0] %>'
             }
-        ]     
+        ]
     }
 };
