@@ -1,0 +1,15 @@
+{
+    "main.notfound":  {
+        "title": "Pagina Niet Gevonden",
+        "breadcrumb": "Pagina Niet Gevonden",
+        "text": {
+            "We looked everywhere but we couldn't find it!": "We hebben overal gezocht maar konden de pagina niet vinden!",
+            "Try one of the following:": "Probeer een van volgende:",
+            "Re-check the url for typos": "Controleer het adres op typfouten",
+            "Read the faq": "Lees de handleiding",
+            "Tell us about it": "Laat ons iets weten",
+            "Go Back": "Terug",
+            "Home": "Home"
+        }
+    }
+}

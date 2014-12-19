@@ -1,7 +1,30 @@
 <div class="page-header">
-    <h1>Getting Started</h1>
+    <h1>{{ 'main.getting-started.title' | translate }}</h1>
 </div>
 
-<p>
-    Hi!
-</p>
+<div class="alert alert-success website-created">
+    <strong>
+        <i class="icon-rocket"></i>
+        {{ 'main.getting-started.application-ready-title' | translate }}
+    </strong>
+    <p>
+        {{ 'main.getting-started.application-ready-description' | translate }}
+    </p>
+</div>
+
+<div class="widget-box">
+    <div class="widget-header widget-header-flat">
+        <h4 class="smaller">
+            <i class="icon-road smaller-80"></i>
+            {{ 'main.getting-started.advice-title' | translate }}
+        </h4>
+    </div>
+    <div class="widget-body">
+        <div class="widget-main">
+            <p>
+                {{ 'main.getting-started.advice-question' | translate }}
+                <a href="http://infrabel.github.io/docs-gnap/">{{ 'main.getting-started.advice-github' | translate }}</a>
+            </p>
+        </div>
+    </div>
+</div>

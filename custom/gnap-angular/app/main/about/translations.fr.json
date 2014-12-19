@@ -1,3 +1,6 @@
 {
-    "about": "À propos"
+    "main.about": {
+        "title": "À propos",
+        "breadcrumb": "À propos"
+    }
 }

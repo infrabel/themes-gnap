@@ -1,3 +1,6 @@
 {
-    "about": "Over"
+    "main.about": {
+        "title": "Over",
+        "breadcrumb": "Over"
+    }
 }

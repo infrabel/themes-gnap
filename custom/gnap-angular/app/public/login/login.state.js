@@ -10,15 +10,12 @@
         state: {
             url: '/login',
             templateUrl: 'app/public/login/login.html',
-            controller: 'LoginController as vm'
+            controller: 'PublicLoginController as vm'
         },
         title: {
-            text: 'Login'
+            textTranslationId: 'public.login.title'
         },
-        breadcrumb: {
-            title: 'Login'
-        },
-        sidebarKey: 'login'
+        translations: 'app/public/login'
     };
 
     stateSettings.state.onEnter = onEnter;

@@ -28,7 +28,7 @@
                           .when('/', defaultPage);
 
         // when no matching route found redirect to error 404
-        $urlRouterProvider.otherwise('/error-404');       
+        $urlRouterProvider.otherwise('/notfound');
     }
 
     authConfiguration.$inject = ['$httpProvider'];
@@ -56,15 +56,15 @@
                     }
                 }
 
-                // forbidden
+                    // forbidden
                 else if (error.status === 403) {
                     event.preventDefault();
 
                     // redirect to 'forbidden' error page
-                    $state.go('main.error-403');
+                    $state.go('main.forbidden');
                 }
 
-                // any other case
+                    // any other case
                 else {
                     unhandledErrorChannel.errorOccurred(error);
                 }
