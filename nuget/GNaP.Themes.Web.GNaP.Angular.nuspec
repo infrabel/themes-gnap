@@ -7,7 +7,7 @@
 
     <authors>infrabel</authors>
     <owners>infrabel</owners>
-    
+
     <summary>Standard layout for GNaP applications using Angular</summary>
     <description>Modification of Ace Admin for GNaP applications. This package can be used by all technologies.</description>
     <copyright>BSD (3-Clause) - Infrabel</copyright>

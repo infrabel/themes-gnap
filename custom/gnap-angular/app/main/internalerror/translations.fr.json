@@ -1,6 +1,6 @@
 {
     "main.internalerror":  {
-        "title": "Error 500",
+        "title": "Quelque chose se est mal passé",
         "breadcrumb": "Error 500"
     }
 }

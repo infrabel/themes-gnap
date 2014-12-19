@@ -1,10 +1,10 @@
-﻿using ExampleHttpServer.Arguments;
-using ExampleHttpServer.Bootstrap;
-using Microsoft.Owin.Hosting;
-using System;
-
-namespace ExampleHttpServer
+﻿namespace ExampleHttpServer
 {
+    using Arguments;
+    using Bootstrap;
+    using Microsoft.Owin.Hosting;
+    using System;
+
     class Program
     {
         static void Main(string[] args)

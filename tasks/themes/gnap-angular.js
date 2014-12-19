@@ -24,7 +24,7 @@
                         'cleanempty:gnap-angular_empty_deploy'
         ]);
     });
-    
+
     grunt.registerTask('package-test-gnap-angular', 'Builds GNaP theme Angular additions test NuGet package', function () {
         grunt.task.run(['semver:gnap-angular:bump:patch',
                         'package-gnap-angular']);

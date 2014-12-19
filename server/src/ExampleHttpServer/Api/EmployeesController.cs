@@ -1,8 +1,8 @@
-﻿using System.Net;
-using System.Web.Http;
-
-namespace ExampleHttpServer.Api
+﻿namespace ExampleHttpServer.Api
 {
+    using System.Net;
+    using System.Web.Http;
+
     public class EmployeesController : ApiController
     {
         [Authorize]
