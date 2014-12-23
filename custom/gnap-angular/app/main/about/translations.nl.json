@@ -1,27 +1,27 @@
 {
-    "main.about":{
-        "title":"title",
-        "breadcrumb":"breadcrumb",
-        "text":{
-            "Hello and welcome to the GNaP graphical charter which contains rules regarding the graphic identity of GNaP for usage within GNaP developed (web) applications. It guarantees consistency across applications by defining the overall graphics, iconography, typography and ergonomic guidelines that should be followed.":"Hallo en welkom tot het GNaP grafische charter die de grafische identiteit van GNaP bevat voor gebruik binnen met GNaP ontwikkelde (web) applicaties. Dit garandeert consistentie over applicaties heen door guidelines te voorzien met betrekking tot algemene graphics, iconografie, typografie en ergonomie die gevolgd moeten worden.",
-            "In here you will find commonly used graphical elements for usage within your (web) application. It has been organised as follows:":"Je vind hier algemeen gebruikte grafische elementen voor gebruik binnen jouw (web) applicatie. Deze zijn als volgt georganiseerd:",
-            "Examples":"Voorbeelden",
-            "Showcases a collection of commonly used controls including Buttons, Progress Bar, Alerts, Pagination, Icons, Labels, Tables, Sections, Notifications and Form controls.":"Showcaset een verzameling van vaakgebruikte controls waaronder Buttons, Progress Bar, Alerts, Pagination, Icons, Labels, Tables, Sections, Notifications en Form controls.",
-            "Typography":"Typografie",
-            "Illustrates all possible text styles, lists and other font related information.":"Illustreert alle mogelijke tekst stijlen, lijsten en andere informatie met betrekking tot lettertypes.",
-            "Error 404":"Error 404",
-            "Demonstrates the not found page.":"Demonstreert de \"niet gevonden\" pagina.",
-            "Error 500":"Error 500",
-            "Shows the error page to use in case of an application error.":"Demonstreert de foutpagina in geval van een applicatiefout.",
-            "Login":"Login",
-            "Presents a login page in case your project does not use Windows Integrated Authentication.":"Toont een login pagina in het geval jouw project geen Windows Integrated Authentication gebruikt.",
-            "Multi Level Menu":"Multi Level Menu",
-            "Exposes an example to demonstrate nesting of menu items.":"Toont een voorbeeld van geneste menu items.",
-            "With an approach aimed at crafting this theme to provide an optimal viewing experience - easy reading and navigation with a minimum of resizing, panning and scrolling - across a wide range of devices (from smart phones via tablets to more classical computers), we can call it truly responsive.":"Met het oog op het creëren van dit thema met een optimale kijkervaring - comfortabel lezen en navigatie met een minimum aan verkleinen, pannen en scrollen - over een breed scala aan devices (van smartphones en tablets naar klassiekere computers), kunnen we dit echt responsive noemen.",
-            "In case you need one or more interface elements which are not present in this graphical charter, you can":"Indien je een of meerdere interface elementen nodig hebt die niet in dit grafisch charter aanwezig zijn kan je",
-            "contact us (dotnet@infrabel.be)":"ons contacteren(dotnet@infrabel.be)",
-            "and we will have a look at it together with you. Also, if you would have any question with regards on how to use this graphical charter, feel free to":"en zullen we dit samen bekijken. Indien je andere vragen hebt kan je ook gerust",
-            "as well":""
+    "main.about": {
+        "title": "title",
+        "breadcrumb": "breadcrumb",
+        "text": {
+            "Hello and welcome to the GNaP graphical charter which contains rules regarding the graphic identity of GNaP for usage within GNaP developed (web) applications. It guarantees consistency across applications by defining the overall graphics, iconography, typography and ergonomic guidelines that should be followed.": "Hallo en welkom tot het GNaP grafische charter die de grafische identiteit van GNaP bevat voor gebruik binnen met GNaP ontwikkelde (web) applicaties. Dit garandeert consistentie over applicaties heen door guidelines te voorzien met betrekking tot algemene graphics, iconografie, typografie en ergonomie die gevolgd moeten worden.",
+            "In here you will find commonly used graphical elements for usage within your (web) application. It has been organised as follows:": "Je vind hier algemeen gebruikte grafische elementen voor gebruik binnen jouw (web) applicatie. Deze zijn als volgt georganiseerd:",
+            "Examples": "Voorbeelden",
+            "Showcases a collection of commonly used controls including Buttons, Progress Bar, Alerts, Pagination, Icons, Labels, Tables, Sections, Notifications and Form controls.": "Showcaset een verzameling van vaakgebruikte controls waaronder Buttons, Progress Bar, Alerts, Pagination, Icons, Labels, Tables, Sections, Notifications en Form controls.",
+            "Typography": "Typografie",
+            "Illustrates all possible text styles, lists and other font related information.": "Illustreert alle mogelijke tekst stijlen, lijsten en andere informatie met betrekking tot lettertypes.",
+            "Error 404": "Error 404",
+            "Demonstrates the not found page.": "Demonstreert de \"niet gevonden\" pagina.",
+            "Error 500": "Error 500",
+            "Shows the error page to use in case of an application error.": "Demonstreert de foutpagina in geval van een applicatiefout.",
+            "Login": "Login",
+            "Presents a login page in case your project does not use Windows Integrated Authentication.": "Toont een login pagina in het geval jouw project geen Windows Integrated Authentication gebruikt.",
+            "Multi Level Menu": "Multi Level Menu",
+            "Exposes an example to demonstrate nesting of menu items.": "Toont een voorbeeld van geneste menu items.",
+            "With an approach aimed at crafting this theme to provide an optimal viewing experience - easy reading and navigation with a minimum of resizing, panning and scrolling - across a wide range of devices (from smart phones via tablets to more classical computers), we can call it truly responsive.": "Met het oog op het creëren van dit thema met een optimale kijkervaring - comfortabel lezen en navigatie met een minimum aan verkleinen, pannen en scrollen - over een breed scala aan devices (van smartphones en tablets naar klassiekere computers), kunnen we dit echt responsive noemen.",
+            "In case you need one or more interface elements which are not present in this graphical charter, you can": "Indien je een of meerdere interface elementen nodig hebt die niet in dit grafisch charter aanwezig zijn kan je",
+            "contact us (dotnet@infrabel.be)": "ons contacteren(dotnet@infrabel.be)",
+            "and we will have a look at it together with you. Also, if you would have any question with regards on how to use this graphical charter, feel free to": "en zullen we dit samen bekijken. Indien je andere vragen hebt kan je ook gerust",
+            "as well": ""
         }
     }
 }
