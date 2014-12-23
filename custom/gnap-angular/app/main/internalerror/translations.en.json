@@ -1,14 +1,14 @@
 {
-    "main.internalerror":{
-        "title":"Internal error",
-        "breadcrumb":"Internal error",
-        "text":{
-            "But we are working  on it!":"But we are working  on it!",
-            "Meanwhile, try one of the following:":"Meanwhile, try one of the following:",
-            "Read the faq":"Read the faq",
-            "Give us more info on how this specific error occurred!":"Give us more info on how this specific error occurred!",
-            "Go Back":"Go Back",
-            "Home":"Home"
+    "main.internalerror": {
+        "title": "Internal error",
+        "breadcrumb": "Internal error",
+        "text": {
+            "But we are working  on it!": "But we are working  on it!",
+            "Meanwhile, try one of the following:": "Meanwhile, try one of the following:",
+            "Read the faq": "Read the faq",
+            "Give us more info on how this specific error occurred!": "Give us more info on how this specific error occurred!",
+            "Go Back": "Go Back",
+            "Home": "Home"
         }
     }
 }

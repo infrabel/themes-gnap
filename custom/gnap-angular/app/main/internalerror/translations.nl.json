@@ -1,14 +1,14 @@
 {
-    "main.internalerror":{
-        "title":"Interne fout",
-        "breadcrumb":"Interne fout",
-        "text":{
-            "But we are working  on it!":"Maar we zijn er reeds mee bezig!",
-            "Meanwhile, try one of the following:":"Ondertussen, probeer een van volgende zaken:",
-            "Read the faq":"Lees de faq",
-            "Give us more info on how this specific error occurred!":"Geef ons meer informatie over hoe deze fout is opgetreden!",
-            "Go Back":"Terug",
-            "Home":"Home"
+    "main.internalerror": {
+        "title": "Interne fout",
+        "breadcrumb": "Interne fout",
+        "text": {
+            "But we are working  on it!": "Maar we zijn er reeds mee bezig!",
+            "Meanwhile, try one of the following:": "Ondertussen, probeer een van volgende zaken:",
+            "Read the faq": "Lees de faq",
+            "Give us more info on how this specific error occurred!": "Geef ons meer informatie over hoe deze fout is opgetreden!",
+            "Go Back": "Terug",
+            "Home": "Home"
         }
     }
 }
