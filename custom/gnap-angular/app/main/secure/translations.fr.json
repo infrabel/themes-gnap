@@ -1,6 +1,9 @@
 {
-    "main.secure": {
-        "title": "Sécurisé",
-        "breadcrumb": "Sécurisé"
+  "main.secure": {
+    "title": "title",
+    "breadcrumb": "breadcrumb",
+    "text": {
+      "Example page that retrieves data from a secured Web API": "Example page that retrieves data from a secured Web API"
     }
+  }
 }

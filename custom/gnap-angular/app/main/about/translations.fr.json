@@ -1,6 +1,27 @@
 {
-    "main.about": {
-        "title": "À propos",
-        "breadcrumb": "À propos"
+  "main.about": {
+    "title": "title",
+    "breadcrumb": "breadcrumb",
+    "text": {
+      "Hello and welcome to the GNaP graphical charter which contains rules regarding the graphic identity of GNaP for usage within GNaP developed (web) applications. It guarantees consistency across applications by defining the overall graphics, iconography, typography and ergonomic guidelines that should be followed.": "Hello and welcome to the GNaP graphical charter which contains rules regarding the graphic identity of GNaP for usage within GNaP developed (web) applications. It guarantees consistency across applications by defining the overall graphics, iconography, typography and ergonomic guidelines that should be followed.",
+      "In here you will find commonly used graphical elements for usage within your (web) application. It has been organised as follows:": "In here you will find commonly used graphical elements for usage within your (web) application. It has been organised as follows:",
+      "Examples": "Examples",
+      "Showcases a collection of commonly used controls including Buttons, Progress Bar, Alerts, Pagination, Icons, Labels, Tables, Sections, Notifications and Form controls.": "Showcases a collection of commonly used controls including Buttons, Progress Bar, Alerts, Pagination, Icons, Labels, Tables, Sections, Notifications and Form controls.",
+      "Typography": "Typography",
+      "Illustrates all possible text styles, lists and other font related information.": "Illustrates all possible text styles, lists and other font related information.",
+      "Error 404": "Error 404",
+      "Demonstrates the not found page.": "Demonstrates the not found page.",
+      "Error 500": "Error 500",
+      "Shows the error page to use in case of an application error.": "Shows the error page to use in case of an application error.",
+      "Login": "Login",
+      "Presents a login page in case your project does not use Windows Integrated Authentication.": "Presents a login page in case your project does not use Windows Integrated Authentication.",
+      "Multi Level Menu": "Multi Level Menu",
+      "Exposes an example to demonstrate nesting of menu items.": "Exposes an example to demonstrate nesting of menu items.",
+      "With an approach aimed at crafting this theme to provide an optimal viewing experience - easy reading and navigation with a minimum of resizing, panning and scrolling - across a wide range of devices (from smart phones via tablets to more classical computers), we can call it truly responsive.": "With an approach aimed at crafting this theme to provide an optimal viewing experience - easy reading and navigation with a minimum of resizing, panning and scrolling - across a wide range of devices (from smart phones via tablets to more classical computers), we can call it truly responsive.",
+      "In case you need one or more interface elements which are not present in this graphical charter, you can": "In case you need one or more interface elements which are not present in this graphical charter, you can",
+      "contact us (dotnet@infrabel.be)": "contact us (dotnet@infrabel.be)",
+      "and we will have a look at it together with you. Also, if you would have any question with regards on how to use this graphical charter, feel free to": "and we will have a look at it together with you. Also, if you would have any question with regards on how to use this graphical charter, feel free to",
+      "as well": "as well"
     }
+  }
 }
