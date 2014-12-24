@@ -2,7 +2,7 @@
 
 (function () {
     angular
-       .module('gnap-example-app')
+        .module('gnap-example-app')
         .config(stateConfiguration);
 
     var stateSettings = {
@@ -18,6 +18,7 @@
         breadcrumb: {
             titleTranslationId: 'main.notfound.breadcrumb'
         },
+        sidebarKey: 'main.notfound',
         translations: 'app/main/notfound'
     };
 
@@ -30,20 +31,22 @@
         $stateProvider.state(stateSettings.name, stateSettings.state);
     }
 
-    onEnter.$inject = ['titleService', 'breadcrumbsService'];
+    onEnter.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onEnter(titleService, breadcrumbsService) {
+    function onEnter(titleService, breadcrumbsService, sidebarService) {
         titleService.appendTitle(stateSettings.title);
 
         breadcrumbsService.addBreadcrumb(stateSettings.breadcrumb);
+        sidebarService.setSelected(stateSettings.sidebarKey);
     }
 
-    onExit.$inject = ['titleService', 'breadcrumbsService'];
+    onExit.$inject = ['titleService', 'breadcrumbsService', 'sidebarService'];
 
-    function onExit(titleService, breadcrumbsService) {
+    function onExit(titleService, breadcrumbsService, sidebarService) {
         titleService.removeLastTitle();
 
         breadcrumbsService.removeLastBreadcrumb();
+        sidebarService.clearSelected();
     }
 
     if (stateSettings.translations) {

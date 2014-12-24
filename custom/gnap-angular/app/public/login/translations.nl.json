@@ -9,7 +9,8 @@
             "Remember Me": "Onthouden",
             "Login": "Aanmelden",
             "Enter your username": "Geef uw gebruikersnaam",
-            "Enter your password": "Geef uw wachtwoord"
+            "Enter your password": "Geef uw wachtwoord",
+            "For this demo you can login with": "Demo gegevens:"
         }
     }
 }
