@@ -9,7 +9,8 @@
             "Remember Me": "Se rappeler de moi",
             "Login": "Connexion",
             "Enter your username": "Veuillez introduire votre nom d'utilisateur",
-            "Enter your password": "Veuillez introduire votre mot de passe"
+            "Enter your password": "Veuillez introduire votre mot de passe",
+            "For this demo you can login with": "Démo connexion"
         }
     }
 }

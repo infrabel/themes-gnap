@@ -9,7 +9,8 @@
             "Remember Me": "Remember Me",
             "Login": "Login",
             "Enter your username": "Enter your username",
-            "Enter your password": "Enter your password"
+            "Enter your password": "Enter your password",
+            "For this demo you can login with": "For this demo you can login with"
         }
     }
 }
