@@ -1,12 +1,12 @@
 {
     "main.internalerror": {
-        "title": "Internal error",
-        "breadcrumb": "Internal error",
+        "title": "Erreur interne",
+        "breadcrumb": "Erreur interne",
         "text": {
-            "But we are working  on it!": "But we are working  on it!",
-            "Meanwhile, try one of the following:": "Meanwhile, try one of the following:",
+            "But we are working  on it!": "Mais nous y travaillons!",
+            "Meanwhile, try one of the following:": "Pendant ce temps, essayez l'une des options suivantes:",
             "Read the faq": "Lisez la faq",
-            "Give us more info on how this specific error occurred!": "Give us more info on how this specific error occurred!",
+            "Give us more info on how this specific error occurred!": "Donnez-nous plus d'informations sur cette erreur!",
             "Go Back": "Retour",
             "Home": "Accueil"
         }
