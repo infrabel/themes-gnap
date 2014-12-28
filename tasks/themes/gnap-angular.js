@@ -1,6 +1,7 @@
 ﻿module.exports = function (grunt) {
     grunt.registerTask('build-gnap-angular', 'Builds GNaP theme Angular additions', function () {
-        grunt.task.run(['build-gnap',
+        grunt.task.run(['gnap-angular_checkutf8',
+                        'build-gnap',
                         'build-angular',
                         'build-base64',
                         'clean:gnap-angular_build',

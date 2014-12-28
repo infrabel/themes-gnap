@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @desc service that handles i18n

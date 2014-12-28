@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @desc  A custom submit directive that invokes a given function only if the form is valid on submit.

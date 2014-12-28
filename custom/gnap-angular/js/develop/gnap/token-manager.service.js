@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @desc service that manages JWT tokens

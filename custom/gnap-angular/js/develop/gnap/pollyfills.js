@@ -1,4 +1,4 @@
-﻿/* jshint ignore:start */
+/* jshint ignore:start */
 // ignore jshint because these pollyfills were copied from MDN:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim

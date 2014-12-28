@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @desc Directive that adds the 'has-error' class if the associated input field is invalid.

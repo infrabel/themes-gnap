@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @desc Container for the validation message directives. Implementation based on ngMessages: https://docs.angularjs.org/api/ngMessages/directive/ngMessages.
