@@ -3033,6 +3033,7 @@
     <Content Include="tasks\produce.js" />
     <Content Include="tasks\select2.js" />
     <Content Include="tasks\taste.js" />
+    <Content Include="tasks\themes\gnap-angular\gnap-angular.encoding.js" />
     <Content Include="tasks\themes\gnap.js" />
     <Content Include="tasks\themes\gnap\gnap.clean.js" />
     <Content Include="tasks\themes\gnap\gnap.compress.js" />
