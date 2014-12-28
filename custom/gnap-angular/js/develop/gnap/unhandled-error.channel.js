@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @desc Channel service that lets consumers subscribe and publish for unhandled error events
  * @file error.channel.js
  */
