@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @desc  A custom validation directive. The handling function can retrieve a key-value pair in the form of a JSON object 

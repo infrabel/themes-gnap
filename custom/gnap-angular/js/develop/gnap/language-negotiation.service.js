@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @desc detects which language should be chosen
