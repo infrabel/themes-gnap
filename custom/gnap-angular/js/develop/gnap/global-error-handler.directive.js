@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @desc handles unhandled global errors
  * @file gloabl-error-handler.directive.js
  */

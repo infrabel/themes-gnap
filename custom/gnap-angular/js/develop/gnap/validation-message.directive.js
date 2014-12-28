@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @desc A directive containing a message for a specified validation rule. Implementation based on ngMessages: https://docs.angularjs.org/api/ngMessages/directive/ngMessages.
