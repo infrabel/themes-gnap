@@ -1,9 +1,0 @@
-*               text=auto
-
-*.html          text diff=html
-*.css           text
-*.js            text
-
-# Dont touch anything in the raw folder
-raw/*.*         -text
-raw/**/*.*      -text

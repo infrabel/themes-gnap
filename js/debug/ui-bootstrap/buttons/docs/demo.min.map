@@ -1,0 +1,1 @@
+{"version":3,"file":"demo.min.js","sources":["..\\..\\..\\develop\\ui-bootstrap\\buttons\\docs\\demo.js"],"names":["angular","module","controller","$scope","singleModel","radioModel","checkModel","left","middle","right"],"mappings":"AAAAA,QAAQC,OAAO,qBAAqBC,WAAW,cAAe,SAAUC,GACtEA,EAAOC,YAAc,EAErBD,EAAOE,WAAa,SAEpBF,EAAOG,YACLC,MAAM,EACNC,QAAQ,EACRC,OAAO"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"script.min.js","sources":["..\\..\\..\\..\\develop\\angular\\docs\\examples\\example-example84\\script.js"],"names":["angular","module","controller","$scope","name","directive","restrict","transclude","templateUrl"],"mappings":"AAAEA,QAAQC,OAAO,gCACZC,WAAW,cAAe,SAAU,SAASC,GAC5CA,EAAOC,KAAO,YAEfC,UAAU,WAAY,WACrB,OACEC,SAAU,IACVC,YAAY,EACZC,YAAa"}

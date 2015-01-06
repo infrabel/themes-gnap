@@ -1,0 +1,1 @@
+{"version":3,"file":"script.min.js","sources":["..\\..\\..\\..\\develop\\angular\\docs\\examples\\example-example102\\script.js"],"names":["angular","module","controller","$scope","username","sayHello","greeting"],"mappings":"AAAEA,QAAQC,OAAO,mBACZC,WAAW,gBAAiB,SAAU,SAASC,GAC9CA,EAAOC,SAAW,QAElBD,EAAOE,SAAW,WAChBF,EAAOG,SAAW,SAAWH,EAAOC,SAAW"}

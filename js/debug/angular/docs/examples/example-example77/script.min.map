@@ -1,0 +1,1 @@
+{"version":3,"file":"script.min.js","sources":["..\\..\\..\\..\\develop\\angular\\docs\\examples\\example-example77\\script.js"],"names":["angular","module","controller","$scope","customer","name","address","directive","template"],"mappings":"AAAEA,QAAQC,OAAO,0BACZC,WAAW,cAAe,SAAU,SAASC,GAC5CA,EAAOC,UACLC,KAAM,QACNC,QAAS,wBAGZC,UAAU,aAAc,WACvB,OACEC,SAAU"}

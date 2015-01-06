@@ -1,0 +1,1 @@
+{"version":3,"file":"script.min.js","sources":["..\\..\\..\\..\\develop\\angular\\docs\\examples\\example-example104\\script.js"],"names":["angular","module","controller","$scope","count","$on"],"mappings":"AAAEA,QAAQC,OAAO,mBACZC,WAAW,mBAAoB,SAAU,SAASC,GACjDA,EAAOC,MAAQ,EACfD,EAAOE,IAAI,UAAW,WACpBF,EAAOC"}

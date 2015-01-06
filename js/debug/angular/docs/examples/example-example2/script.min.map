@@ -1,0 +1,1 @@
+{"version":3,"file":"script.min.js","sources":["..\\..\\..\\..\\develop\\angular\\docs\\examples\\example-example2\\script.js"],"names":["ScrollCtrl","$scope","$location","$anchorScroll","gotoBottom","hash"],"mappings":"AAAE,QAASA,YAAWC,EAAQC,EAAWC,GACrCF,EAAOG,WAAa,WAGlBF,EAAUG,KAAK,UAGfF"}

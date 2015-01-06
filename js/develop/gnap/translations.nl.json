@@ -1,0 +1,8 @@
+{
+    "gnap": {
+        "error-notification-title": "Oeps ...",
+        "error-notification-text": "Er is een onverwachte fout opgetreden.",
+        "validation-error-notification-title": "Er zijn één of meerdere validatiefouten",
+        "validation-error-notification-text": "Gelieve deze te corrigeren en de operatie opnieuw te proberen"
+    }
+}
