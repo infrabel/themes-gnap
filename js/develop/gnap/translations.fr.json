@@ -1,0 +1,8 @@
+{
+    "gnap": {
+        "error-notification-title": "Oops ...",
+        "error-notification-text": "Une erreur inattendue s'est produite.",
+        "validation-error-notification-title": "Il existe une ou plusieurs erreurs de validation",
+        "validation-error-notification-text": "S'il vous plaît corriger les erreurs et relancez votre opération"
+    }
+}

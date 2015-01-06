@@ -1,0 +1,1 @@
+{"version":3,"file":"script.min.js","sources":["..\\..\\..\\..\\develop\\angular\\docs\\examples\\example-$filter\\script.js"],"names":["angular","module","controller","$scope","$filter","originalText","filteredText"],"mappings":"AAACA,QAAQC,OAAO,oBACdC,WAAW,WAAY,SAASC,EAAQC,GACvCD,EAAOE,aAAe,QACtBF,EAAOG,aAAeF,EAAQ,aAAaD,EAAOE"}

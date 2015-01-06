@@ -1,9 +1,0 @@
-{
- "title" : "About"
- ,
- "description" : "Graphical charter for GNaP"
- ,
- "scripts" : ["prettify"]
- ,
- "styles" : ["prettify"]
-}

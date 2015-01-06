@@ -1,0 +1,20 @@
+.btn-group {
+    margin-right: 2px;
+}
+
+input[type=checkbox].ace.ace-switch.ace-switch-7, input[type=checkbox].ace.ace-switch {
+    width: auto;
+    height: auto;
+}
+
+label {
+    vertical-align: top;
+}
+
+.lbl {
+    vertical-align: top;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin-top: 3px;
+}

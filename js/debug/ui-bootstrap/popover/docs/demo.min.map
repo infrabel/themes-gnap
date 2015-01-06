@@ -1,0 +1,1 @@
+{"version":3,"file":"demo.min.js","sources":["..\\..\\..\\develop\\ui-bootstrap\\popover\\docs\\demo.js"],"names":["angular","module","controller","$scope","dynamicPopover","dynamicPopoverTitle"],"mappings":"AAAAA,QAAQC,OAAO,qBAAqBC,WAAW,kBAAmB,SAAUC,GAC1EA,EAAOC,eAAiB,gBACxBD,EAAOE,oBAAsB"}

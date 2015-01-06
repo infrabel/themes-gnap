@@ -1,0 +1,9 @@
+/* To change the width of the sidebar, change the below values to your desired width */
+.sidebar,
+.sidebar:before {
+    width: 190px;
+}
+
+.main-content {
+    margin-left: 190px;
+}

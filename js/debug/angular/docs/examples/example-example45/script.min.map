@@ -1,0 +1,1 @@
+{"version":3,"file":"script.min.js","sources":["..\\..\\..\\..\\develop\\angular\\docs\\examples\\example-example45\\script.js"],"names":["angular","module","controller","$scope","items","selection"],"mappings":"AAAEA,QAAQC,OAAO,iBAAkB,cAC9BC,WAAW,qBAAsB,SAAU,SAASC,GACnDA,EAAOC,OAAS,WAAY,OAAQ,SACpCD,EAAOE,UAAYF,EAAOC,MAAM"}

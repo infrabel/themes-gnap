@@ -1,0 +1,1 @@
+{"version":3,"file":"app.min.js","sources":["..\\..\\..\\..\\develop\\angular\\docs\\examples\\example-example74\\app.js"],"names":["myApp","angular","module","controller","$scope","customSpice","spice","spicy"],"mappings":"AAAE,GAAIA,OAAQC,QAAQC,OAAO,eAE3BF,OAAMG,WAAW,mBAAoB,SAAU,SAASC,GACpDA,EAAOC,YAAc,SACrBD,EAAOE,MAAQ,OAEfF,EAAOG,MAAQ,SAASD,GACpBF,EAAOE,MAAQA"}

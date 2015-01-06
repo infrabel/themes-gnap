@@ -1,0 +1,2761 @@
+<div class="page-header">
+    <h1>
+        {{ 'main.examples.title' | translate }}
+    </h1>
+</div>
+
+<div tabset>
+    <div tab heading="Buttons" id="buttons" class="tab-pane active" ng-controller="gnap-buttons as vm">
+        <h3 class="header smaller">
+            Basic Buttons
+        </h3>
+        <button class="btn btn-primary" ng-click="vm.primary()">Primary</button>
+        <button class="btn btn-primary" ng-click="vm.primary()">
+            <i class="icon-cog"></i>
+            Primary
+        </button>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-buttons as vm&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.primary()&quot;&gt;Primary&lt;/button&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.primary()&quot;&gt;
+        &lt;i class=&quot;icon-cog&quot;&gt;&lt;/i&gt;
+        Primary
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-buttons&#39;, GnapButtonsController);
+
+    GnapButtonsController.$inject = [];
+
+    function GnapButtonsController() {
+        var vm = this;
+
+        vm.primary = function () {
+            alert(&#39;You clicked a primary button&#39;);
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#buttons"></a>
+
+        <h3 class="header smaller">
+            Form Example
+        </h3>
+        <button class="btn btn-primary" ng-click="vm.save()">Save</button>
+        <button class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-buttons as vm&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.save()&quot;&gt;Save&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.cancel()&quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-buttons&#39;, GnapButtonsController);
+
+    GnapButtonsController.$inject = [];
+
+    function GnapButtonsController() {
+        var vm = this;
+
+        vm.save = function () {
+            alert(&#39;You clicked a save button&#39;);
+        };
+    
+        vm.cancel = function () {
+            alert(&#39;You clicked a cancel button&#39;);
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#buttons"></a>
+
+        <h3 class="header smaller">
+            Tooltips (hover over these)
+        </h3>
+        <button class="btn btn-primary" tooltip="This is a default tooltip!">Default tooltip</button>
+        <button class="btn btn-primary" tooltip="This is a tooltip on the left!" tooltip-placement="left">Left tooltip</button>
+        <button class="btn btn-primary" tooltip="This is a tooltip on the right!" tooltip-placement="right">Right tooltip</button>
+        <button class="btn btn-primary" tooltip="This is a tooltip on top!" tooltip-placement="top">Top tooltip</button>
+        <button class="btn btn-primary" tooltip="This is a tooltip at the bottom!" tooltip-placement="bottom">Bottom tooltip</button>
+        <pre class="example"><code gnap-highlight>&lt;button class=&quot;btn btn-primary&quot; tooltip=&quot;This is a default tooltip!&quot;&gt;Default tooltip&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary&quot; tooltip=&quot;This is a tooltip on the left!&quot; tooltip-placement=&quot;left&quot;&gt;Left tooltip&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary&quot; tooltip=&quot;This is a tooltip on the right!&quot; tooltip-placement=&quot;right&quot;&gt;Right tooltip&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary&quot; tooltip=&quot;This is a tooltip on top!&quot; tooltip-placement=&quot;top&quot;&gt;Top tooltip&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary&quot; tooltip=&quot;This is a tooltip at the bottom!&quot; tooltip-placement=&quot;bottom&quot;&gt;Bottom tooltip&lt;/button&gt;</code></pre>
+
+<a example-link source="ui-bootstrap"></a>
+
+        <h3 class="header smaller">
+            Various Sizes
+        </h3>
+        <button class="btn btn-primary btn-minier">Tiny</button>
+        <button class="btn btn-primary btn-xs">Mini</button>
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+        <pre class="example"><code gnap-highlight>&lt;button class=&quot;btn btn-primary btn-minier&quot;&gt;Tiny&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary btn-xs&quot;&gt;Mini&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary btn-sm&quot;&gt;Small&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary&quot;&gt;Default&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary btn-lg&quot;&gt;Large&lt;/button&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#buttons-sizes"></a>
+
+        <h3 class="header smaller">
+            Disabled Buttons
+        </h3>
+        <button class="btn btn-primary disabled">Disabled Primary</button>
+        <button class="btn btn-default disabled">Disabled Default</button>
+        <pre class="example"><code gnap-highlight>&lt;button class=&quot;btn btn-primary disabled&quot;&gt;Disabled Primary&lt;/button&gt;
+&lt;button class=&quot;btn btn-default disabled&quot;&gt;Disabled Default&lt;/button&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#buttons-disabled"></a>
+
+        <h3 class="header smaller">
+            Dropdown Button
+        </h3>
+    <div class="btn-group" dropdown is-open="vm.status.isopen">
+        <button type="button" class="btn btn-primary dropdown-toggle">
+            Action
+            <i class="icon-angle-down icon-on-right"></i>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li>
+                <a ng-click="vm.action1()">Action</a>
+            </li>
+            <li>
+                <a ng-click="vm.action2()">Another action</a>
+            </li>
+            <li>
+                <a ng-click="vm.action3()">Something else here</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="a link to somewhere else">Separated link</a>
+            </li>
+        </ul>
+    </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-buttons as vm&quot;&gt;
+    &lt;div class=&quot;btn-group&quot; dropdown is-open=&quot;vm.status.isopen&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary dropdown-toggle&quot;&gt;
+            Action
+            &lt;i class=&quot;icon-angle-down icon-on-right&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+        &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+            &lt;li&gt;
+                &lt;a ng-click=&quot;vm.action1()&quot;&gt;Action&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a ng-click=&quot;vm.action2()&quot;&gt;Another action&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a ng-click=&quot;vm.action3()&quot;&gt;Something else here&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;a link to somewhere else&quot;&gt;Separated link&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-buttons&#39;, GnapButtonsController);
+
+    GnapButtonsController.$inject = [];
+
+    function GnapButtonsController() {
+        var vm = this;
+
+        vm.status = {
+            isopen: false
+        };
+
+        vm.action1 = function () {
+            // do something here
+            vm.status.isopen = false;
+        };
+
+        vm.action2 = function () {
+            // do something here
+            vm.status.isopen = false;
+        };
+
+        vm.action3 = function () {
+            // do something here
+            vm.status.isopen = false;
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="ui-bootstrap"></a>
+
+        <h3 class="header smaller">
+            Grouped Buttons
+        </h3>
+        <div class="btn-group">
+            <button class="btn btn-primary">Save</button>
+            <button class="btn btn-primary">Update</button>
+            <button class="btn btn-primary">Delete</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-primary">Ok</button>
+            <button class="btn btn-default">Cancel</button>
+        </div>
+        <pre class="example"><code gnap-highlight>&lt;div class=&quot;btn-group&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot;&gt;Save&lt;/button&gt;
+    &lt;button class=&quot;btn btn-primary&quot;&gt;Update&lt;/button&gt;
+    &lt;button class=&quot;btn btn-primary&quot;&gt;Delete&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;btn-group&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot;&gt;Ok&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/components/#btn-groups"></a>
+    </div> <!-- buttons tab -->
+
+    <div tab heading="Progress Bar" id="progressbar" class="tab-pane">
+        <h3 class="header smaller">
+            Progress Bar
+        </h3>
+        <div ng-controller="gnap-progressbar as vm">
+            <div class="form-group">
+                <input type="text" ng-model="vm.progress">
+            </div>
+            <div progressbar class="progress-small progress-striped active" value="vm.progress"></div>
+            <div progressbar class="progress-small progress-striped" value="vm.workLeft"></div>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane in active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-progressbar as vm&quot;&gt;                        
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;Progress&lt;/label&gt;
+        &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;vm.progress&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div progressbar class=&quot;progress-small progress-striped active&quot; value=&quot;vm.progress&quot;&gt;&lt;/div&gt;
+    &lt;div progressbar class=&quot;progress-small progress-striped&quot; value=&quot;vm.workLeft&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-progressbar&#39;, GnapProgressbarController);
+
+    GnapProgressbarController.$inject = [&#39;$scope&#39;];
+
+    function GnapProgressbarController($scope) {
+        var vm = this;
+
+        vm.progress = 40;
+
+        $scope.$watch(&#39;vm.progress&#39;, function (progress) { vm.workLeft = 100 - progress; });
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="ui-bootstrap"></a>
+
+        <h3>
+            Stacked
+        </h3>
+        <div ng-controller="gnap-stacked-progressbar as vm">
+            <input ng-repeat="bar in vm.collection track by $index" type="text" ng-model="bar.value">
+            <hr>
+            <div progress class="progress-small progress-striped active">
+                <div bar ng-repeat="bar in vm.collection track by $index" value="bar.value" type="{{bar.type}}">
+                    <span>{{bar.value}}%</span>
+                </div>
+            </div>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane in active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-stacked-progressbar as vm&quot;&gt;
+    &lt;input ng-repeat=&quot;bar in vm.collection track by $index&quot; type=&quot;text&quot; ng-model=&quot;bar.value&quot;&gt;
+    &lt;hr&gt;
+    &lt;div progress class=&quot;progress-small progress-striped active&quot;&gt;
+        &lt;div bar ng-repeat=&quot;bar in vm.collection track by $index&quot; value=&quot;bar.value&quot; type=&quot;&#123;&#123;bar.type&#125;&#125;&quot;&gt;
+            &lt;span&gt;&#123;&#123;bar.value&#125;&#125;%&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-stacked-progressbar&#39;, GnapStackedProgressbarController);
+
+    GnapStackedProgressbarController.$inject = [];
+
+    function GnapStackedProgressbarController() {
+        var vm = this;
+
+        vm.collection = [];
+
+        vm.collection.push({
+            value: 20,
+            type: &#39;success&#39;
+        });
+
+        vm.collection.push({
+            value: 15,
+            type: &#39;warning&#39;
+        });
+
+        vm.collection.push({
+            value: 25,
+            type: &#39;error&#39;
+        });
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="ui-bootstrap"></a>
+    </div> <!-- progress bar tab -->
+
+    <div tab heading="Dialogs" id="dialogs" class="tab-pane">
+        <h3 class="header smaller">
+            Alert Dialog
+        </h3>
+        <button class="btn btn-primary" ng-bootbox-alert="Alert message!">Click Me!</button>
+        <pre class="example"><code gnap-highlight>&lt;button class=&quot;btn btn-primary&quot; ng-bootbox-alert=&quot;Alert message!&quot;&gt;Click Me!&lt;/button&gt;</code></pre>
+
+<a example-link source="ngBootbox"></a>
+
+        <h3 class="header smaller">
+            Confirm Dialog
+        </h3>
+        <div ng-controller="gnap-confirm-dialog as vm">
+            <button class="btn btn-primary"
+                    ng-bootbox-confirm="Are you sure you want to confirm this?"
+                    ng-bootbox-confirm-action="vm.confirm()"
+                    ng-bootbox-confirm-action-cancel="vm.cancel()">
+                Click Me!
+            </button>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-confirm-dialog as vm&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot;
+            ng-bootbox-confirm=&quot;Are you sure you want to confirm this?&quot;
+            ng-bootbox-confirm-action=&quot;vm.confirm()&quot;
+            ng-bootbox-confirm-action-cancel=&quot;vm.cancel()&quot;&gt;
+        Click Me!
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-confirm-dialog&#39;, GnapConfirmDialogController);
+
+    GnapConfirmDialogController.$inject = [];
+
+    function GnapConfirmDialogController() {
+        var vm  = this;
+
+        vm.confirm = function () {
+            alert(&#39;You were sure!&#39;);
+        };
+
+        vm.cancel = function () {
+            alert(&#39;You weren\&#39;t sure!&#39;);
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="ngBootbox"></a>
+
+        <h3 class="header smaller">
+            Prompt Dialog
+        </h3>
+        <div ng-controller="gnap-prompt-dialog as vm">
+            <button class="btn btn-primary"
+                    ng-bootbox-prompt="Please type in your name"
+                    ng-bootbox-prompt-action="vm.accept(result)"
+                    ng-bootbox-prompt-action-cancel="vm.cancel()">
+                Click Me!
+            </button>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-prompt-dialo as vmg&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot;
+            ng-bootbox-prompt=&quot;Please type in your name&quot;
+            ng-bootbox-prompt-action=&quot;vm.accept(result)&quot;
+            ng-bootbox-prompt-action-cancel=&quot;vm.cancel()&quot;&gt;
+        Prompt
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-prompt-dialog&#39;, GnapPromptDialogController);
+
+    GnapPromptDialogController.$inject = [];
+
+    function GnapPromptDialogController() {
+        var vm = this;
+
+        vm.accept = function (name) {
+            alert(&#39;Hello &#39; + name);
+        };
+
+        vm.cancel = function () {
+            alert(&#39;You cancelled!&#39;);
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="ngBootbox"></a>
+
+        <h3 class="header smaller">
+            Custom Dialog
+        </h3>
+        <div ng-controller="gnap-custom-dialog as vm">
+            <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">I am a modal!</h3>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li ng-repeat="item in vm.items">
+                            <a ng-click="vm.selected.item = item">{{ item }}</a>
+                        </li>
+                    </ul>
+                    Selected: <b>{{ vm.selected.item }}</b>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="vm.ok()">OK</button>
+                    <button class="btn btn-warning" ng-click="vm.cancel()">Cancel</button>
+                </div>
+            </script>
+            <button class="btn btn-primary" ng-click="vm.open()">Click Me!</button>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-custom-dialog as vm&quot;&gt;
+    &lt;script type=&quot;text/ng-template&quot; id=&quot;myModalContent.html&quot;&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;
+            &lt;h3 class=&quot;modal-title&quot;&gt;I am a modal!&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+            &lt;ul&gt;
+                &lt;li ng-repeat=&quot;item in vm.items&quot;&gt;
+                    &lt;a ng-click=&quot;vm.selected.item = item&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+           Selected: &lt;b&gt;&#123;&#123; vm.selected.item &#125;&#125;&lt;/b&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-footer&quot;&gt;
+            &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.ok()&quot;&gt;OK&lt;/button&gt;
+            &lt;button class=&quot;btn btn-warning&quot; ng-click=&quot;vm.cancel()&quot;&gt;Cancel&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/script&gt;
+
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.open()&quot;&gt;click Me!&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-custom-dialog&#39;, GnapCustomDialogController)
+        .controller(&#39;gnap-custom-dialog-instance&#39;, GnapCustomDialogInstanceController);
+
+    GnapCustomDialogController.$inject = [&#39;$modal&#39;];
+    GnapCustomDialogInstanceController.$inject = [&#39;$modalInstance&#39;, &#39;items&#39;];
+
+    function GnapCustomDialogController($modal) {
+        var vm = this;
+
+        vm.items = [&#39;item1&#39;, &#39;item2&#39;, &#39;item3&#39;];
+
+        vm.open = function (size) {
+            var modalInstance = $modal.open({
+                templateUrl: &#39;myModalContent.html&#39;,
+                controller: &#39;gnap-custom-dialog-instance as vm&#39;,
+                resolve: {
+                    items: function () {
+                        return vm.items;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (result) {
+                alert(&#39;You selected: &#39; + result);
+            }, function () {
+                alert(&#39;You dismissed the dialog!&#39;);
+            });
+        };
+    };
+
+    function GnapCustomDialogInstanceController($modalInstance, items) {
+        var vm = this;
+
+        vm.items = items;
+
+        vm.selected = {
+            item: vm.items[0]
+        };
+
+        vm.ok = function () {
+            $modalInstance.close(vm.selected.item);
+        };
+
+        vm.cancel = function () {
+            $modalInstance.dismiss(&#39;cancel&#39;);
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="ngBootbox"></a>
+    </div> <!-- dialogs tab -->
+
+    <div tab heading="Alerts" id="alerts" class="tab-pane">
+        <h3 class="header smaller">
+            Alerts
+        </h3>
+        <div ng-controller="gnap-alerts as vm">
+            <div alert ng-repeat="alert in vm.alerts" type="{{alert.type}}" close="vm.closeAlert($index)"><span ng-bind-html="alert.msg"></span></div>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-alerts as vm&quot;&gt;
+    &lt;div alert ng-repeat=&quot;alert in vm.alerts&quot; type=&quot;&#123;&#123;alert.type&#125;&#125;&quot; close=&quot;vm.closeAlert($index)&quot;&gt;&lt;span ng-bind-html=&quot;alert.msg&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-alerts&#39;, GnapAlertsController);
+
+    GnapAlertsController.$inject = [&#39;$sce&#39;];
+
+    function GnapAlertsController($sce) {
+        var vm = this;
+
+        vm.alerts = [
+            { type: &#39;danger&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Oh snap!&lt;/b&gt; Change a few things up and try submitting again.&#39;) },
+            { type: &#39;success&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Well done!&lt;/b&gt; You successfully read this important alert message.&#39;) },
+            { type: &#39;warning&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Warning!&lt;/b&gt; Best check your self, you\&#39;re not looking too good.&#39;) },
+            { type: &#39;info&#39;, msg: $sce.trustAsHtml(&#39;&lt;b&gt;Heads up!&lt;/b&gt; This alert needs your attention, but it\&#39;s not super important.&#39;) }
+        ];
+
+        vm.closeAlert = function (index) {
+            vm.alerts.splice(index, 1);
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="ui-bootstrap"></a>
+    </div> <!-- alerts tab -->
+
+    <div tab heading="Pagination" id="pagination" class="tab-pane" ng-controller="gnap-pagination as vm">
+        <h3 class="header smaller">
+            Previous / Next Pagination
+        </h3>
+        <div gnap-pager max-size="0" items-per-page="10" total-items="vm.totalItems" current-page="vm.currentPage"></div>
+        <div tabset class="example">
+    <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-pagination as vm&quot;&gt;
+    &lt;div gnap-pager max-size=&quot;0&quot; items-per-page=&quot;10&quot; total-items=&quot;vm.totalItems&quot; current-page=&quot;vm.currentPage&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-pagination&#39;, GnapPaginationController);
+
+    GnapPaginationController.$inject = [];
+
+    function GnapPaginationController() {
+        var vm = this;
+
+        vm.totalItems = 164;
+        vm.currentPage = 4;
+    };
+})();</code></pre>
+    </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+
+        <h3 class="header smaller">
+            Full Pagination
+        </h3>
+        <div gnap-pager max-size="5" items-per-page="10"  total-items="vm.totalItems" current-page="vm.currentPage"></div>
+        <div tabset class="example">
+    <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-pagination as vm&quot;&gt;
+    &lt;div gnap-pager max-size=&quot;5&quot; items-per-page=&quot;10&quot; total-items=&quot;vm.totalItems&quot; current-page=&quot;vm.currentPage&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-pagination&#39;, GnapPaginationController);
+
+    GnapPaginationController.$inject = [];
+
+    function GnapPaginationController() {
+        var vm = this;
+
+        vm.totalItems = 164;
+        vm.currentPage = 4;
+    };
+})();</code></pre>
+    </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+
+        
+    </div>  <!-- pagination tab -->
+
+    <div tab heading="Icons" id="icons" class="tab-pane">
+        <h3 class="header smaller">
+            Loading Icon
+        </h3>
+        <img src="images/loading.gif" alt="Loading..." />
+        <pre class="example"><code gnap-highlight>&lt;img src=&quot;images/loading.gif&quot; alt=&quot;Loading...&quot; /&gt;</code></pre>
+
+        <h3 class="header smaller">
+            361 Scalable FontAwesome Icons
+            <small>
+                <a href="http://fontawesome.io/3.2.1/icons/" target="_blank">
+                    (see all icons <i class="icon-external-link"></i>)
+                </a>
+            </small>
+        </h3>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="icon-adjust"></i>
+                        icon-adjust
+                    </li>
+
+                    <li>
+                        <i class="icon-asterisk"></i>
+                        icon-asterisk
+                    </li>
+
+                    <li>
+                        <i class="icon-ban-circle"></i>
+                        icon-ban-circle
+                    </li>
+
+                    <li>
+                        <i class="icon-bar-chart"></i>
+                        icon-bar-chart
+                    </li>
+
+                    <li>
+                        <i class="icon-barcode"></i>
+                        icon-barcode
+                    </li>
+
+                    <li>
+                        <i class="icon-beaker"></i>
+                        icon-beaker
+                    </li>
+
+                    <li>
+                        <i class="icon-beer"></i>
+                        icon-beer
+                    </li>
+
+                    <li>
+                        <i class="icon-bell"></i>
+                        icon-bell
+                    </li>
+
+                    <li>
+                        <i class="icon-bell-alt"></i>
+                        icon-bell-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-bolt"></i>
+                        icon-bolt
+                    </li>
+
+                    <li>
+                        <i class="icon-book"></i>
+                        icon-book
+                    </li>
+
+                    <li>
+                        <i class="icon-bookmark"></i>
+                        icon-bookmark
+                    </li>
+
+                    <li>
+                        <i class="icon-bookmark-empty"></i>
+                        icon-bookmark-empty
+                    </li>
+
+                    <li>
+                        <i class="icon-briefcase"></i>
+                        icon-briefcase
+                    </li>
+
+                    <li>
+                        <i class="icon-bullhorn"></i>
+                        icon-bullhorn
+                    </li>
+
+                    <li>
+                        <i class="icon-calendar"></i>
+                        icon-calendar
+                    </li>
+
+                    <li>
+                        <i class="icon-camera"></i>
+                        icon-camera
+                    </li>
+
+                    <li>
+                        <i class="icon-camera-retro"></i>
+                        icon-camera-retro
+                    </li>
+
+                    <li>
+                        <i class="icon-certificate"></i>
+                        icon-certificate
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="icon-check"></i>
+                        icon-check
+                    </li>
+
+                    <li>
+                        <i class="icon-check-empty"></i>
+                        icon-check-empty
+                    </li>
+
+                    <li>
+                        <i class="icon-circle"></i>
+                        icon-circle
+                    </li>
+
+                    <li>
+                        <i class="icon-circle-blank"></i>
+                        icon-circle-blank
+                    </li>
+
+                    <li>
+                        <i class="icon-cloud"></i>
+                        icon-cloud
+                    </li>
+
+                    <li>
+                        <i class="icon-cloud-download"></i>
+                        icon-cloud-download
+                    </li>
+
+                    <li>
+                        <i class="icon-cloud-upload"></i>
+                        icon-cloud-upload
+                    </li>
+
+                    <li>
+                        <i class="icon-coffee"></i>
+                        icon-coffee
+                    </li>
+
+                    <li>
+                        <i class="icon-cog"></i>
+                        icon-cog
+                    </li>
+
+                    <li>
+                        <i class="icon-cogs"></i>
+                        icon-cogs
+                    </li>
+
+                    <li>
+                        <i class="icon-comment"></i>
+                        icon-comment
+                    </li>
+
+                    <li>
+                        <i class="icon-comment-alt"></i>
+                        icon-comment-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-comments"></i>
+                        icon-comments
+                    </li>
+
+                    <li>
+                        <i class="icon-comments-alt"></i>
+                        icon-comments-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-credit-card"></i>
+                        icon-credit-card
+                    </li>
+
+                    <li>
+                        <i class="icon-dashboard"></i>
+                        icon-dashboard
+                    </li>
+
+                    <li>
+                        <i class="icon-desktop"></i>
+                        icon-desktop
+                    </li>
+
+                    <li>
+                        <i class="icon-download"></i>
+                        icon-download
+                    </li>
+
+                    <li>
+                        <i class="icon-download-alt"></i>
+                        icon-download-alt
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="icon-edit"></i>
+                        icon-edit
+                    </li>
+
+                    <li>
+                        <i class="icon-envelope"></i>
+                        icon-envelope
+                    </li>
+
+                    <li>
+                        <i class="icon-envelope-alt"></i>
+                        icon-envelope-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-exchange"></i>
+                        icon-exchange
+                    </li>
+
+                    <li>
+                        <i class="icon-exclamation-sign"></i>
+                        icon-exclamation-sign
+                    </li>
+
+                    <li>
+                        <i class="icon-external-link"></i>
+                        icon-external-link
+                    </li>
+
+                    <li>
+                        <i class="icon-eye-close"></i>
+                        icon-eye-close
+                    </li>
+
+                    <li>
+                        <i class="icon-eye-open"></i>
+                        icon-eye-open
+                    </li>
+
+                    <li>
+                        <i class="icon-facetime-video"></i>
+                        icon-facetime-video
+                    </li>
+
+                    <li>
+                        <i class="icon-fighter-jet"></i>
+                        icon-fighter-jet
+                    </li>
+
+                    <li>
+                        <i class="icon-film"></i>
+                        icon-film
+                    </li>
+
+                    <li>
+                        <i class="icon-filter"></i>
+                        icon-filter
+                    </li>
+
+                    <li>
+                        <i class="icon-fire"></i>
+                        icon-fire
+                    </li>
+
+                    <li>
+                        <i class="icon-flag"></i>
+                        icon-flag
+                    </li>
+
+                    <li>
+                        <i class="icon-folder-close"></i>
+                        icon-folder-close
+                    </li>
+
+                    <li>
+                        <i class="icon-folder-open"></i>
+                        icon-folder-open
+                    </li>
+
+                    <li>
+                        <i class="icon-folder-close-alt"></i>
+                        icon-folder-close-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-folder-open-alt"></i>
+                        icon-folder-open-alt
+                    </li>
+
+                    <li>
+                        <i class="icon-food"></i>
+                        icon-food
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="icon-gift"></i>
+                        icon-gift
+                    </li>
+
+                    <li>
+                        <i class="icon-glass"></i>
+                        icon-glass
+                    </li>
+
+                    <li>
+                        <i class="icon-globe"></i>
+                        icon-globe
+                    </li>
+
+                    <li>
+                        <i class="icon-group"></i>
+                        icon-group
+                    </li>
+
+                    <li>
+                        <i class="icon-hdd"></i>
+                        icon-hdd
+                    </li>
+
+                    <li>
+                        <i class="icon-headphones"></i>
+                        icon-headphones
+                    </li>
+
+                    <li>
+                        <i class="icon-heart"></i>
+                        icon-heart
+                    </li>
+
+                    <li>
+                        <i class="icon-heart-empty"></i>
+                        icon-heart-empty
+                    </li>
+
+                    <li>
+                        <i class="icon-home"></i>
+                        icon-home
+                    </li>
+
+                    <li>
+                        <i class="icon-inbox"></i>
+                        icon-inbox
+                    </li>
+
+                    <li>
+                        <i class="icon-info-sign"></i>
+                        icon-info-sign
+                    </li>
+
+                    <li>
+                        <i class="icon-key"></i>
+                        icon-key
+                    </li>
+
+                    <li>
+                        <i class="icon-leaf"></i>
+                        icon-leaf
+                    </li>
+
+                    <li>
+                        <i class="icon-laptop"></i>
+                        icon-laptop
+                    </li>
+
+                    <li>
+                        <i class="icon-legal"></i>
+                        icon-legal
+                    </li>
+
+                    <li>
+                        <i class="icon-lemon"></i>
+                        icon-lemon
+                    </li>
+
+                    <li>
+                        <i class="icon-lightbulb"></i>
+                        icon-lightbulb
+                    </li>
+
+                    <li>
+                        <i class="icon-lock"></i>
+                        icon-lock
+                    </li>
+
+                    <li>
+                        <i class="icon-unlock"></i>
+                        icon-unlock
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <pre class="example"><code gnap-highlight>&lt;i class=&quot;icon-unlock&quot;&gt;&lt;/i&gt;</code></pre>
+    </div> <!-- icons tab -->
+
+    <div tab heading="Labels" id="labels" class="tab-pane">
+        <h3 class="header smaller">
+            Standard Labels
+        </h3>
+        <span class="label label-primary">Default</span>
+        <span class="label label-success arrowed">Success</span>
+        <pre class="example"><code gnap-highlight>&lt;span class=&quot;label label-primary&quot;&gt;Default&lt;/span&gt;
+&lt;span class=&quot;label label-success arrowed&quot;&gt;Success&lt;/span&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/components/#labels"></a>
+
+        <h3 class="header smaller">
+            Indicators
+        </h3>
+        <span class="badge badge-primary">1</span>
+        <span class="badge badge-success">2</span>
+        <span class="badge badge-warning">4</span>
+        <span class="badge badge-danger">6</span>
+        <span class="badge badge-info">8</span>
+        <pre class="example"><code gnap-highlight>&lt;span class=&quot;badge badge-primary&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;badge badge-success&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;badge badge-warning&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;badge badge-danger&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;badge badge-info&quot;&gt;8&lt;/span&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/components/#badges"></a>
+
+        <h3 class="header smaller">
+            Variations
+        </h3>
+        <span class="label label-warning">
+            <i class="icon-warning-sign bigger-120"></i>
+            Warning
+        </span>
+        <span class="label label-lg label-pink arrowed-right">Large</span>
+        <span class="label label-lg label-purple arrowed">Purple</span>
+        <pre class="example"><code gnap-highlight>&lt;span class=&quot;label label-warning&quot;&gt;
+    &lt;i class=&quot;icon-warning-sign bigger-120&quot;&gt;&lt;/i&gt;
+    Warning
+&lt;/span&gt;
+&lt;span class=&quot;label label-lg label-pink arrowed-right&quot;&gt;Large&lt;/span&gt;
+&lt;span class=&quot;label label-lg label-purple arrowed&quot;&gt;Purple&lt;/span&gt;</code></pre>
+
+<a example-link source="gnap-theme"></a>
+    </div> <!-- indidcators tab -->
+
+    <div tab heading="Tables" id="tables" class="tab-pane">
+        <h3 class="header smaller">
+            Standard Table
+        </h3>
+        <div class="table-responsive" ng-controller="gnap-standard-table as vm">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Price</th>
+                        <th class="hidden-480">Clicks</th>
+                        <th>
+                            <i class="icon-time bigger-110 hidden-480"></i>
+                            Update
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="domain in vm.domains">
+                        <td>
+                            <a ng-click="vm.view(domain)">{{ domain.domain }}</a>
+                        </td>
+                        <td>{{ domain.price }}</td>
+                        <td class="hidden-480">{{ domain.clicks }}</td>
+                        <td>{{ domain.update }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div tabset class="example">
+    <div tab heading="HTML" class="tab-pane in active">
+<pre><code gnap-highlight>&lt;div class=&quot;table-responsive&quot; ng-controller=&quot;gnap-standard-table as vm&quot;&gt;
+    &lt;table class=&quot;table table-striped table-bordered table-hover&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Domain&lt;/th&gt;
+                &lt;th&gt;Price&lt;/th&gt;
+                &lt;th class=&quot;hidden-480&quot;&gt;Clicks&lt;/th&gt;
+                &lt;th&gt;
+                    &lt;i class=&quot;icon-time bigger-110 hidden-480&quot;&gt;&lt;/i&gt;
+                    Update
+                &lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr ng-repeat=&quot;domain in vm.domains&quot;&gt;
+                &lt;td&gt;
+                    &lt;a ng-click=&quot;vm.view(domain)&quot;&gt;{{ domain.domain }}&lt;/a&gt;
+                &lt;/td&gt;
+                &lt;td&gt;{{ domain.price }}&lt;/td&gt;
+                &lt;td class=&quot;hidden-480&quot;&gt;{{ domain.clicks }}&lt;/td&gt;
+                &lt;td&gt;{{ domain.update }}&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div tab heading="Controller" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-standard-table&#39;, GnapStandardTableController);
+
+    GnapStandardTableController.$inject = [&#39;Domain&#39;];
+
+    function GnapStandardTableController(Domain) {
+        var vm = this;
+
+        Domain.query(function(domains) {
+            vm.domains = domains;
+        });
+    
+        vm.view = function (domain) {
+            alert('Going to the view \'' + domain.domain + '\' page ...');
+        };
+    };
+})();</code></pre>
+    </div>
+    <div tab heading="Resource" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .factory(&#39;Domain&#39;, Domain);
+
+    Domain.$inject = [&#39;$resource&#39;];
+
+    function Domain($resource) {
+        return $resource(&#39;app/main/examples/tables/domains.json&#39;);
+    };
+})();</code></pre>
+    </div>
+    <div tab heading="Data" class="tab-pane">
+<pre><code gnap-highlight>[
+    {
+        "domain": "app.com",
+        "price": "$45",
+        "clicks": "3,330",
+        "update": "Feb 12",
+        "status": "Expiring"
+    },
+    {
+        "domain": "base.com",
+        "price": "$35",
+        "clicks": "2,595",
+        "update": "Feb 18",
+        "status": "Registered"
+    },
+    {
+        "domain": "max.com",
+        "price": "$60",
+        "clicks": "4,400",
+        "update": "Mar 11",
+        "status": "Expiring"
+    },
+    {
+        "domain": "best.com",
+        "price": "$75",
+        "clicks": "6,500",
+        "update": "Apr 03",
+        "status": "Flagged"
+    },
+    {
+        "domain": "pro.com",
+        "price": "$55",
+        "clicks": "4,250",
+        "update": "Jan 21",
+        "status": "Flagged"
+    }
+]</code></pre>
+    </div>
+</div>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#tables"></a>
+
+        <h3 class="header smaller">
+            Full Table
+        </h3>
+        <div class="table-header">
+            A Table Title
+        </div>
+        <div class="table-responsive" ng-controller="gnap-full-table as vm">
+            <table datatable class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="center">
+                            <label>
+                                <input type="checkbox" gnap-header-checkbox class="ace" />
+                                <span class="lbl"></span>
+                            </label>
+                        </th>
+                        <th>Domain</th>
+                        <th>Price</th>
+                        <th class="hidden-480">Clicks</th>
+                        <th>
+                            <i class="icon-time bigger-110 hidden-480"></i>
+                            Update
+                        </th>
+                        <th class="hidden-480">Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="domain in vm.domains">
+                        <td class="center">
+                            <label>
+                                <input type="checkbox" class="ace" />
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <a ng-click="vm.view(domain)">{{ domain.domain }}</a>
+                        </td>
+                        <td>{{ domain.price }}</td>
+                        <td class="hidden-480">{{ domain.clicks }}</td>
+                        <td>{{ domain.update }}</td>
+                        <td class="hidden-480">{{ domain.status }}</td>
+                        <td>
+                            <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                <a class="blue" ng-click="vm.view(domain)">
+                                    <i class="icon-zoom-in bigger-130"></i>
+                                </a>
+                                <a class="green" ng-click="vm.edit(domain)">
+                                    <i class="icon-pencil bigger-130"></i>
+                                </a>
+                                <a class="red" ng-bootbox-confirm="Can I delete it ?" ng-bootbox-confirm-action="vm.delete(domain)">
+                                    <i class="icon-trash bigger-130"></i>
+                                </a>
+                            </div>
+                            <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                <div class="inline position-relative">
+                                    <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon-caret-down icon-only bigger-120"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-only-icon pull-right dropdown-caret dropdown-close">
+                                        <li>
+                                            <a tooltip="View" ng-click="vm.view(domain)">
+                                                <span>
+                                                    <i class="icon-zoom-in bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tooltip="Edit" ng-click="vm.edit(domain)">
+                                                <span>
+                                                    <i class="icon-edit bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a ng-bootbox-confirm="Can I delete it ?" ng-bootbox-confirm-action="vm.delete(domain)">
+                                                <span tooltip="Delete">
+                                                    <i class="icon-trash bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div tabset class="example">
+    <div tab heading="HTML" class="tab-pane in active">
+<pre><code gnap-highlight>&lt;div class=&quot;table-header&quot;&gt;
+    A Table Title
+&lt;/div&gt;
+&lt;div class=&quot;table-responsive&quot; ng-controller=&quot;gnap-full-table as vm&quot;&gt;
+    &lt;table datatable class=&quot;table table-striped table-bordered table-hover&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th class=&quot;center&quot;&gt;
+                    &lt;label&gt;
+                        &lt;input type=&quot;checkbox&quot; gnap-header-checkbox class=&quot;ace&quot; /&gt;
+                        &lt;span class=&quot;lbl&quot;&gt;&lt;/span&gt;
+                    &lt;/label&gt;
+                &lt;/th&gt;
+                &lt;th&gt;Domain&lt;/th&gt;
+                &lt;th&gt;Price&lt;/th&gt;
+                &lt;th class=&quot;hidden-480&quot;&gt;Clicks&lt;/th&gt;
+                &lt;th&gt;
+                    &lt;i class=&quot;icon-time bigger-110 hidden-480&quot;&gt;&lt;/i&gt;
+                    Update
+                &lt;/th&gt;
+                &lt;th class=&quot;hidden-480&quot;&gt;Status&lt;/th&gt;
+                &lt;th&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr ng-repeat=&quot;domain in vm.domains&quot;&gt;
+                &lt;td class=&quot;center&quot;&gt;
+                    &lt;label&gt;
+                        &lt;input type=&quot;checkbox&quot; class=&quot;ace&quot; /&gt;
+                        &lt;span class=&quot;lbl&quot;&gt;&lt;/span&gt;
+                    &lt;/label&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;a ng-click=&quot;vm.view(domain)&quot;&gt;{{ domain.domain }}&lt;/a&gt;
+                &lt;/td&gt;
+                &lt;td&gt;{{ domain.price }}&lt;/td&gt;
+                &lt;td class=&quot;hidden-480&quot;&gt;{{ domain.clicks }}&lt;/td&gt;
+                &lt;td&gt;{{ domain.update }}&lt;/td&gt;
+                &lt;td class=&quot;hidden-480&quot;&gt;{{ domain.status }}&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class=&quot;visible-md visible-lg hidden-sm hidden-xs action-buttons&quot;&gt;
+                        &lt;a class=&quot;blue&quot; ng-click=&quot;vm.view(domain)&quot;&gt;
+                            &lt;i class=&quot;icon-zoom-in bigger-130&quot;&gt;&lt;/i&gt;
+                        &lt;/a&gt;
+                        &lt;a class=&quot;green&quot; ng-click=&quot;vm.edit(domain)&quot;&gt;
+                            &lt;i class=&quot;icon-pencil bigger-130&quot;&gt;&lt;/i&gt;
+                        &lt;/a&gt;
+                        &lt;a class=&quot;red&quot; ng-bootbox-confirm=&quot;Can I delete it ?&quot; ng-bootbox-confirm-action=&quot;vm.delete(domain)&quot;&gt;
+                            &lt;i class=&quot;icon-trash bigger-130&quot;&gt;&lt;/i&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;visible-xs visible-sm hidden-md hidden-lg&quot;&gt;
+                        &lt;div class=&quot;inline position-relative&quot;&gt;
+                            &lt;button class=&quot;btn btn-minier btn-primary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                                &lt;i class=&quot;icon-caret-down icon-only bigger-120&quot;&gt;&lt;/i&gt;
+                            &lt;/button&gt;
+                            &lt;ul class=&quot;dropdown-menu dropdown-only-icon pull-right dropdown-caret dropdown-close&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a tooltip=&quot;View&quot; ng-click=&quot;vm.view(domain)&quot;&gt;
+                                        &lt;span&gt;
+                                            &lt;i class=&quot;icon-zoom-in bigger-120&quot;&gt;&lt;/i&gt;
+                                        &lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a tooltip=&quot;Edit&quot; ng-click=&quot;vm.edit(domain)&quot;&gt;
+                                        &lt;span&gt;
+                                            &lt;i class=&quot;icon-edit bigger-120&quot;&gt;&lt;/i&gt;
+                                        &lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a ng-bootbox-confirm=&quot;Can I delete it ?&quot; ng-bootbox-confirm-action=&quot;vm.delete(domain)&quot;&gt;
+                                        &lt;span tooltip=&quot;Delete&quot;&gt;
+                                            &lt;i class=&quot;icon-trash bigger-120&quot;&gt;&lt;/i&gt;
+                                        &lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div tab heading="Controller" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-full-table&#39;, GnapFullTableController);
+
+    GnapFullTableController.$inject = [&#39;Domain&#39;];
+
+    function GnapFullTableController(Domain) {
+        var vm = this;
+
+        Domain.query(function(domains) {
+            vm.domains = domains;
+        });
+
+        vm.view = function(domain) {
+            alert(&#39;Going to the view \&#39;&#39; + domain.domain + &#39;\&#39; page ...&#39;);
+        };
+
+        vm.edit = function(domain) {
+            alert(&#39;Going to the edit \&#39;&#39; + domain.domain + &#39;\&#39; page ...&#39;);
+        };
+
+        vm[&#39;delete&#39;] = function(domain) {
+            alert(&#39;Logic to delete \&#39;&#39; + domain.domain + &#39;\&#39; should be executed now ...&#39;);
+        }
+    };
+})();</code></pre>
+    </div>
+    <div tab heading="Resource" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .factory(&#39;Domain&#39;, Domain);
+
+    Domain.$inject = [&#39;$resource&#39;];
+
+    function Domain($resource) {
+        return $resource(&#39;app/main/examples/tables/domains.json&#39;);
+    };
+})();</code></pre>
+    </div>
+    <div tab heading="Data" class="tab-pane">
+<pre><code gnap-highlight>[
+    {
+        "domain": "app.com",
+        "price": "$45",
+        "clicks": "3,330",
+        "update": "Feb 12",
+        "status": "Expiring"
+    },
+    {
+        "domain": "base.com",
+        "price": "$35",
+        "clicks": "2,595",
+        "update": "Feb 18",
+        "status": "Registered"
+    },
+    {
+        "domain": "max.com",
+        "price": "$60",
+        "clicks": "4,400",
+        "update": "Mar 11",
+        "status": "Expiring"
+    },
+    {
+        "domain": "best.com",
+        "price": "$75",
+        "clicks": "6,500",
+        "update": "Apr 03",
+        "status": "Flagged"
+    },
+    {
+        "domain": "pro.com",
+        "price": "$55",
+        "clicks": "4,250",
+        "update": "Jan 21",
+        "status": "Flagged"
+    }
+]</code></pre>
+    </div>
+</div>
+
+<a example-link source="angular-datatables" href="http://l-lin.github.io/angular-datatables"></a>
+    </div> <!-- tables tab -->
+
+    <div tab heading="Sections" id="sections" class="tab-pane">
+        <h3 class="header smaller">
+            Tabs
+        </h3>
+        <div tabset>
+            <div tab heading="Home">
+                <p>
+                    Here is an example of the basic tabs that we have to use
+                </p>
+            </div>
+            <div tab heading="Messages">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis neque id leo tincidunt, vel interdum tortor egestas. Quisque at massa sit amet nisl placerat euismod sit amet non leo. Suspendisse egestas, leo id scelerisque euismod, massa sapien feugiat mi, at pulvinar lorem est sit amet est.</p>
+            </div>
+        </div>
+        <pre class="example"><code gnap-highlight>&lt;div tabset&gt;
+    &lt;div tab heading=&quot;Home&quot;&gt;
+        &lt;p&gt;
+            Here is an example of the basic tabs that we have to use
+        &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div tab heading=&quot;Messages&quot;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis neque id leo tincidunt, vel interdum tortor egestas. Quisque at massa sit amet nisl placerat euismod sit amet non leo. Suspendisse egestas, leo id scelerisque euismod, massa sapien feugiat mi, at pulvinar lorem est sit amet est.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<a example-link source="ui-bootstrap"></a>
+
+        <h3 class="header smaller">
+            Container
+        </h3>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="widget-box">
+                    <div class="widget-header widget-header-flat">
+                        <h4 class="smaller">
+                            <i class="icon-quote-left smaller-80"></i>
+                            Some Group
+                        </h4>
+                    </div>
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            This is some grouped content
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pre class="example"><code gnap-highlight>&lt;div class=&quot;widget-box&quot;&gt;
+  &lt;div class=&quot;widget-header widget-header-flat&quot;&gt;
+    &lt;h4 class=&quot;smaller&quot;&gt;
+      &lt;i class=&quot;icon-quote-left smaller-80&quot;&gt;&lt;/i&gt;
+      Some Group
+    &lt;/h4&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;widget-body&quot;&gt;
+    &lt;div class=&quot;widget-main&quot;&gt;
+      This is some grouped content
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<a example-link source="gnap-theme"></a>
+
+        <h3 class="header smaller">
+            Collapsable Container
+        </h3>
+        <div class="row">
+            <div class="col-sm-6">
+                <div ng-controller="gnap-collapse as vm">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-flat">
+                            <h5>Some Group</h5>
+                            <div class="widget-toolbar">
+                                <a>
+                                    <i class="icon-cog"></i>
+                                </a>
+                                <a>
+                                    <i class="icon-refresh"></i>
+                                </a>
+                                <a ng-click="vm.isCollapsed = !vm.isCollapsed">
+                                    <i ng-class="{true:'icon-chevron-down', false:'icon-chevron-up'}[vm.isCollapsed]"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="widget-body" collapse="vm.isCollapsed">
+                            <div class="widget-main">
+                                <p class="alert alert-info">
+                                    Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+                                </p>
+                                <p class="alert alert-success">
+                                    Raw denim you probably haven't heard of them jean shorts Austin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-collapse as vm&quot;&gt;
+  &lt;div class=&quot;widget-box&quot;&gt;
+    &lt;div class=&quot;widget-header widget-header-flat&quot;&gt;
+      &lt;h5&gt;Some Group&lt;/h5&gt;
+
+      &lt;div class=&quot;widget-toolbar&quot;&gt;
+        &lt;a&gt;
+          &lt;i class=&quot;icon-cog&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+
+        &lt;a&gt;
+          &lt;i class=&quot;icon-refresh&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+
+        &lt;a ng-click=&quot;vm.isCollapsed = !vm.isCollapsed&quot;&gt;
+          &lt;i ng-class=&quot;&#123;true:&#39;icon-chevron-down&#39;, false:&#39;icon-chevron-up&#39;&#125;[vm.isCollapsed]&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;widget-body&quot; collapse=&quot;vm.isCollapsed&quot;&gt;
+      &lt;div class=&quot;widget-main&quot;&gt;
+        &lt;p class=&quot;alert alert-info&quot;&gt;
+          Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+        &lt;/p&gt;
+        &lt;p class=&quot;alert alert-success&quot;&gt;
+          Raw denim you probably haven&#39;t heard of them jean shorts Austin.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+  <pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-collapse&#39;, GnapCollapseController);
+
+    GnapCollapseController.$inject = [];
+
+    function GnapCollapseController() {
+        var vm = this;
+
+        vm.isCollapsed = false;
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+
+        <h3 class="header smaller">
+            Collapsable Container With Buttons
+        </h3>
+        <div class="row">
+            <div class="col-sm-8">
+                <div ng-controller="gnap-collapse as vm">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-flat">
+                            <h5>Some Group</h5>
+
+                            <div class="widget-toolbar">
+                                <a ng-click="vm.isCollapsed = !vm.isCollapsed">
+                                    <i class="1 bigger-125" ng-class="{true:'icon-chevron-down', false:'icon-chevron-up'}[vm.isCollapsed]"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="widget-body" collapse="vm.isCollapsed">
+                            <div class="widget-main">
+                                <p class="alert alert-info">
+                                    Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+                                </p>
+                                <p class="alert alert-success">
+                                    Raw denim you probably haven't heard of them jean shorts Austin.
+                                </p>
+                            </div>
+                            <div class="widget-toolbox padding-8 clearfix">
+                                <button class="btn btn-xs btn-danger pull-left">
+                                    <i class="icon-remove"></i>
+                                    <span class="bigger-110">I don't accept</span>
+                                </button>
+                                <button class="btn btn-xs btn-success pull-right">
+                                    <span class="bigger-110">I accept</span>
+                                    <i class="icon-arrow-right icon-on-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-collapse as vm&quot;&gt;
+  &lt;div class=&quot;widget-box&quot;&gt;
+    &lt;div class=&quot;widget-header widget-header-flat&quot;&gt;
+      &lt;h5&gt;Some Group&lt;/h5&gt;
+
+      &lt;div class=&quot;widget-toolbar&quot;&gt;
+        &lt;a ng-click=&quot;vm.isCollapsed = !vm.isCollapsed&quot;&gt;
+          &lt;i class=&quot;1 bigger-125&quot; ng-class=&quot;&#123;true:&#39;icon-chevron-down&#39;, false:&#39;icon-chevron-up&#39;&#125;[vm.isCollapsed]&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;widget-body&quot; collapse=&quot;vm.isCollapsed&quot;&gt;
+      &lt;div class=&quot;widget-main&quot;&gt;
+        &lt;p class=&quot;alert alert-info&quot;&gt;
+          Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+        &lt;/p&gt;
+        &lt;p class=&quot;alert alert-success&quot;&gt;
+          Raw denim you probably haven&#39;t heard of them jean shorts Austin.
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;widget-toolbox padding-8 clearfix&quot;&gt;
+        &lt;button class=&quot;btn btn-xs btn-danger pull-left&quot;&gt;
+          &lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;
+          &lt;span class=&quot;bigger-110&quot;&gt;I don&#39;t accept&lt;/span&gt;
+        &lt;/button&gt;
+
+        &lt;button class=&quot;btn btn-xs btn-success pull-right&quot;&gt;
+          &lt;span class=&quot;bigger-110&quot;&gt;I accept&lt;/span&gt;
+
+          &lt;i class=&quot;icon-arrow-right icon-on-right&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+  <pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-collapse&#39;, GnapCollapseController);
+
+    GnapCollapseController.$inject = [];
+
+    function GnapCollapseController() {
+        var vm = this;
+
+        vm.isCollapsed = false;
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+    </div> <!-- sections tab -->
+
+    <div tab heading="Notifications" id="notifications" class="tab-pane">
+        <h3 class="header smaller">
+            Default Notification
+        </h3>
+        <div ng-controller="gnap-default-notification as vm">
+            <button class="btn btn-primary" ng-click="vm.notify()">Click Me!</button>
+            <button class="btn btn-default" ng-click="vm.remove()">Remove Notification</button>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-default-notification as vm&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.notify()&quot;&gt;Click Me!&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.remove()&quot;&gt;Remove Notification&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-default-notification&#39;, GnapDefaultNotificationController);
+
+    GnapDefaultNotificationController.$inject = [&#39;notification&#39;];
+
+    function GnapDefaultNotificationController(notification) {
+        var vm = this;
+
+        vm.notify = function () {
+            notification.show({
+                title: &#39;This is a default notification&#39;,
+                text: &#39;This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.&#39;
+            });
+        };
+
+        vm.remove = function () {
+            notification.removeAll();
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+
+        <h3 class="header smaller">
+            Success Notification
+        </h3>
+        <div ng-controller="gnap-success-notification as vm">
+            <button class="btn btn-primary" ng-click="vm.notify()">Click Me!</button>
+            <button class="btn btn-default" ng-click="vm.remove()">Remove Notification</button>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-success-notification&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;notify()&quot;&gt;Click Me!&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;remove()&quot;&gt;Remove Notification&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-success-notification&#39;, GnapSuccessNotificationController);
+
+    GnapSuccessNotificationController.$inject = [&#39;$scope&#39;, &#39;notification&#39;];
+
+    function GnapSuccessNotificationController($scope, notification) {
+        $scope.notify = function () {
+            notification.show({
+                type: &#39;success&#39;,
+                title: &#39;This is a success notification&#39;,
+                text: &#39;This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.&#39;
+            });
+        };
+
+        $scope.remove = function () {
+            notification.removeAll();
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+
+        <h3 class="header smaller">
+            Error Notification
+        </h3>
+        <div ng-controller="gnap-error-notification as vm">
+            <button class="btn btn-primary" ng-click="vm.notify()">Click Me!</button>
+            <button class="btn btn-default" ng-click="vm.remove()">Remove Notification</button>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-error-notification as vm&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.notify()&quot;&gt;Click Me!&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.remove()&quot;&gt;Remove Notification&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-error-notification&#39;, GnapErrorNotificationController);
+
+    GnapErrorNotificationController.$inject = [&#39;notification&#39;];
+
+    function GnapErrorNotificationController(notification) {
+        var vm = this;
+
+        vm.notify = function () {
+            notification.show({
+                type: &#39;error&#39;,
+                title: &#39;This is an error notification&#39;,
+                text: &#39;This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et, nascetur ridiculus mus.&#39;
+            });
+        };
+
+        vm.remove = function () {
+            notification.removeAll();
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+    </div> <!-- notifications tab -->
+    
+    <div tab heading="Progress Indicator" id="progressindicator" class="tab-pane">
+        <h3 class="header smaller">
+            Progress Indicator
+        </h3>
+        <div ng-controller="gnap-progress as vm">
+            <button class="btn btn-primary" ng-click="vm.start()">Start!</button>
+            <button class="btn btn-default" ng-click="vm.set40()">Set 40%</button>
+            <button class="btn btn-default" ng-click="vm.increment()">Increment</button>
+            <button class="btn btn-default" ng-click="vm.done()">Done</button>
+        </div>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-progress as vm&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;vm.start()&quot;&gt;Start!&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.set40()&quot;&gt;Set 40%&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.increment()&quot;&gt;Increment&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; ng-click=&quot;vm.done()&quot;&gt;Done&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-progress&#39;, GnapProgressController);
+
+    GnapProgressController.$inject = [&#39;ngProgressLite&#39;];
+
+    function GnapProgressController(ngProgressLite) {
+        var vm = this;
+
+        vm.start = function () {
+            ngProgressLite.start();
+        };
+
+        vm.set40 = function () {
+            ngProgressLite.set(0.4);
+        };
+
+        vm.increment = function () {
+            ngProgressLite.inc();
+        };
+
+        vm.done = function () {
+            ngProgressLite.done();
+        };
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="ngprogress-lite"></a>
+    </div> <!-- progress tab -->
+
+    <div tab heading="Form controls" id="forms" class="tab-pane">
+        <form class="form-horizontal" role="form">
+            <h3 class="header smaller">
+                Common Input Controls
+            </h3>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Text Field</label>
+                <div class="col-sm-9">
+                    <input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-5" />
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;input type=&quot;text&quot; placeholder=&quot;Username&quot; /&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#forms"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-2">Password Field</label>
+                <div class="col-sm-9">
+                    <input type="password" id="form-field-2" placeholder="Password" class="col-xs-10 col-sm-5" />
+                    <span class="help-inline col-xs-12 col-sm-7">
+                        <span class="middle">Inline help text</span>
+                    </span>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#forms"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-input-readonly">Readonly field</label>
+                <div class="col-sm-9">
+                    <input type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" readonly="readonly" />
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;input type=&quot;text&quot; value=&quot;This text field is readonly!&quot; readonly=&quot;readonly&quot; /&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#forms-control-readonly"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-input-disabled">Disabled field</label>
+                <div class="col-sm-9">
+                    <input type="text" class="col-xs-10 col-sm-5" id="form-input-disabled" value="This text field is disabled!" disabled="disabled" />
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;input type=&quot;text&quot; value=&quot;This text field is disabled!&quot; disabled=&quot;disabled&quot; /&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#forms-control-disabled"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Input with Icon</label>
+                <div class="col-sm-9">
+                    <span class="input-icon col-xs-10 col-sm-5">
+                        <input type="text" id="form-field-icon-1" />
+                        <i class="icon-user theme_color"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right"></label>
+                <div class="col-sm-9">
+                    <span class="input-icon input-icon-right col-xs-10 col-sm-5">
+                        <input type="text" id="form-field-icon-2" />
+                        <i class="icon-lock theme_color"></i>
+                    </span>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;span class=&quot;input-icon&quot;&gt;
+    &lt;input type=&quot;text&quot; /&gt;
+    &lt;i class=&quot;icon-user theme_color&quot;&gt;&lt;/i&gt;
+&lt;/span&gt;
+
+&lt;span class=&quot;input-icon input-icon-right&quot;&gt;
+    &lt;input type=&quot;text&quot; /&gt;
+    &lt;i class=&quot;icon-lock theme_color&quot;&gt;&lt;/i&gt;
+&lt;/span&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/components/#input-groups"></a>
+
+            <div class="form-group" ng-controller="gnap-dropdown as vm">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-select-3">Dropdown</label>
+                <div class="col-sm-9">
+                    <select ui-select2 ng-model="vm.mydropdown" class="col-xs-10 col-sm-5" id="form-field-select-3">
+                        <option value="">&nbsp;</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
+            </div>
+            <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-dropdown as vm&quot;&gt;
+    &lt;select ui-select2 ng-model=&quot;vm.mydropdown&quot; class=&quot;col-xs-10 col-sm-5&quot;&gt;
+        &lt;option value=&quot;&quot;&gt;&amp;nbsp;&lt;/option&gt;
+        &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;                                   
+        &lt;option value=&quot;AK&quot;&gt;Alqska&lt;/option&gt;   
+        ...
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-dropdown&#39;, GnapDropdownController);
+
+    function GnapDropdownController() {
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="angular-select2"></a>
+
+            <div class="form-group" ng-controller="gnap-multiple-dropdown as vm">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-select-4">Multiple</label>
+                <div class="col-sm-9">
+                    <select ui-select2 ng-model="vm.mydropdown" multiple="multiple" class="col-xs-10 col-sm-5" id="form-field-select-4">
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
+            </div>
+            <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-multiple-dropdown as vm&quot;&gt;
+    &lt;select ui-select2 ng-model=&quot;vm.mydropdown&quot; multiple=&quot;multiple&quot; class=&quot;col-xs-10 col-sm-5&quot;&gt;
+        &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;                                   
+        &lt;option value=&quot;AK&quot;&gt;Alqska&lt;/option&gt;   
+        ...
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-multiple-dropdown&#39;, GnapMultipleDropdownController);
+
+    function GnapMultipleDropdownController() {
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="angular-select2"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Checkbox</label>
+                <div class="col-sm-9">
+                    <div class="checkbox">
+                        <label>
+                            <input name="form-field-checkbox" class="ace ace-checkbox-2" type="checkbox" />
+                            <span class="lbl"> Choice #1</span>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input name="form-field-checkbox" class="ace ace-checkbox-2" type="checkbox" />
+                            <span class="lbl"> Choice #2</span>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label class="block">
+                            <input name="form-field-checkbox" disabled="" type="checkbox" class="ace" />
+                            <span class="lbl"> Disabled</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;div class=&quot;checkbox&quot;&gt;
+    &lt;label&gt;
+        &lt;input name=&quot;form-field-checkbox&quot; class=&quot;ace ace-checkbox-2&quot; type=&quot;checkbox&quot; /&gt;
+        &lt;span class=&quot;lbl&quot;&gt; Choice #1&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;checkbox&quot;&gt;
+    &lt;label&gt;
+        &lt;input name=&quot;form-field-checkbox&quot; class=&quot;ace ace-checkbox-2&quot; type=&quot;checkbox&quot; /&gt;
+        &lt;span class=&quot;lbl&quot;&gt; Choice #2&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;checkbox&quot;&gt;
+    &lt;label class=&quot;block&quot;&gt;
+        &lt;input name=&quot;form-field-checkbox&quot; disabled=&quot;disabled&quot; type=&quot;checkbox&quot; class=&quot;ace&quot; /&gt;
+        &lt;span class=&quot;lbl&quot;&gt; Disabled&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+
+<a example-link source="gnap-theme"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Radio</label>
+                <div class="col-sm-9">
+                    <div class="radio">
+                        <label>
+                            <input name="form-field-radio" type="radio" class="ace" />
+                            <span class="lbl"> Option #1</span>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input name="form-field-radio" type="radio" class="ace" />
+                            <span class="lbl"> Option #2</span>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input disabled="" name="form-field-radio" type="radio" class="ace" />
+                            <span class="lbl"> Disabled</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;div class=&quot;radio&quot;&gt;
+    &lt;label&gt;
+        &lt;input name=&quot;form-field-radio&quot; type=&quot;radio&quot; class=&quot;ace&quot; /&gt;
+        &lt;span class=&quot;lbl&quot;&gt; Option #1&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;radio&quot;&gt;
+    &lt;label&gt;
+        &lt;input name=&quot;form-field-radio&quot; type=&quot;radio&quot; class=&quot;ace&quot; /&gt;
+        &lt;span class=&quot;lbl&quot;&gt; Option #2&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;radio&quot;&gt;
+    &lt;label&gt;
+        &lt;input disabled=&quot;&quot; name=&quot;form-field-radio&quot; type=&quot;radio&quot; class=&quot;ace&quot; /&gt;
+        &lt;span class=&quot;lbl&quot;&gt; Disabled&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+
+<a example-link source="gnap-theme"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Default textarea</label>
+                <div class="col-sm-9">
+                    <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <textarea class="form-control" id="form-field-8" placeholder="Default Text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;textarea class=&quot;form-control&quot; placeholder=&quot;Default Text&quot;&gt;&lt;/textarea&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#forms"></a>
+
+            <h3 class="header smaller">
+                Specialized Input Controls
+            </h3>
+            <div class="form-group" ng-controller="gnap-date-picker as vm">
+                <label class="col-sm-3 control-label no-padding-right">Date Picker</label>
+                <div class="col-sm-9">
+                    <div class="input-group col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <span gnap-datepicker date="vm.date" icon-position="right"></span>
+                    </div>
+                </div>
+            </div>
+            <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-date-picker as vm&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Date Picker&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;div class=&quot;input-group col-xs-10 col-sm-5 no-padding-left no-padding-right&quot;&gt;
+            &lt;span gnap-datepicker date=&quot;vm.date&quot; icon-position=&quot;right&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-date-picker&#39;, GnapDatepickerController);
+
+    GnapDatepickerController.$inject = [];
+
+    function GnapDatepickerController() {
+        var vm = this;
+
+        vm.date = new Date();
+    };
+})();</code></pre>
+  </div>
+</div>   
+
+<a example-link source="gnap-theme"></a>
+
+            <div class="form-group" ng-controller="gnap-date-range-picker as vm">
+                <label class="col-sm-3 control-label no-padding-right">Date Range</label>
+                <div class="col-sm-9">
+                    <span gnap-daterange date-begin="vm.range.dateStart" date-end="vm.range.dateEnd" icon-position="{{vm.iconPosition}}"></span>
+                </div>
+            </div>
+            <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-date-range-picker as vm&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Date Range&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;span gnap-date-range date-begin=&quot;vm.range.dateStart&quot; date-end=&quot;vm.range.dateEnd&quot; icon-position=&quot;&#123;&#123;vm.iconPosition&#125;&#125;&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-date-range-picker&#39;, GnapDaterangepickerController);
+
+    GnapDaterangepickerController.$inject = [];
+
+    function GnapDaterangepickerController() {
+        var vm = this;
+
+        vm.range = {
+            dateStart: new Date(2014, 0, 7),
+            dateEnd: new Date(2014, 7, 14)
+        };
+
+        vm.iconPosition = &#39;left&#39;;
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+
+            <div class="form-group" ng-controller="gnap-time-picker as vm">
+                <label class="col-sm-3 control-label no-padding-right">Time Picker</label>
+                <div class="col-sm-9">
+                    <span gnap-timepicker time="vm.sometime" icon-position="right"></span>
+                </div>
+            </div>
+            <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div class=&quot;form-group&quot; ng-controller=&quot;gnap-time-picker as vm&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Time Picker&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;span gnap-timepicker time=&quot;vm.sometime&quot; icon-position=&quot;right&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-time-picker&#39;, GnapTimepickerController);
+
+    GnapTimepickerController.$inject = [];
+
+    function GnapTimepickerController() {
+        var vm = this;
+
+        vm.sometime = new Date(2014, 1, 1, 10, 30, 0);
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+
+            <div ng-controller="gnap-choice-toggle as vm">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">Choice toggle</label>
+                    <div class="col-sm-9">
+                        <span gnap-choice-toggle choice="vm.value"></span>
+                        <span gnap-choice-toggle lang="en" choice="vm.value"></span>
+                        <span gnap-choice-toggle lang="fr" choice="vm.value"></span>
+                        <span gnap-choice-toggle lang="nl" choice="vm.value"></span>
+                    </div>
+                </div>
+            </div>
+            <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-choice-toggle as vm&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Choice toggle directive&lt;/label&gt;
+        &lt;div class=&quot;col-sm-9&quot;&gt;
+            &lt;span gnap-choice-toggle choice=&quot;vm.value&quot;&gt;&lt;/span&gt;
+            &lt;span gnap-choice-toggle lang=&quot;fr&quot; choice=&quot;vm.value&quot;&gt;&lt;/span&gt;
+            &lt;span gnap-choice-toggle lang=&quot;en&quot; choice=&quot;vm.value&quot;&gt;&lt;/span&gt;
+           &lt;span gnap-choice-toggle lang=&quot;nl&quot; choice=&quot;vm.value&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+<pre><code gnap-highlight>(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-choice-toggle&#39;, GnapChoiceToggleController);
+
+    GnapChoiceToggleController.$inject = [];
+
+    function GnapChoiceToggleController() {
+        var vm = this;
+
+        vm.value = true;
+    };
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">File input</label>
+                <div class="col-sm-9">
+                    <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <input type="file" id="id-input-file-2" />
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>Todo</code></pre>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Multiple File input</label>
+                <div class="col-sm-9">
+                    <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <input multiple="" type="file" id="id-input-file-3" />
+                        <label>
+                            <input type="checkbox" name="file-format" id="id-file-format" class="ace" />
+                            <span class="lbl"> Allow only images</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>Todo</code></pre>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Masked field</label>
+                <div class="col-sm-9">
+                    <input gnap-masked-input="a*-999-a999" class="col-xs-10 col-sm-5" type="text" id="form-field-mask-3" />
+                    <span class="help-inline col-xs-12 col-sm-7">
+                        a*-999-a999
+                    </span>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;input type=&quot;text&quot; gnap-masked-input=&quot;a*-999-a999&quot; /&gt;
+&lt;span class=&quot;help-inline&quot;&gt;a*-999-a999&lt;/span&gt;</code></pre>
+
+<a example-link source="gnap-theme"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Textarea with character limit</label>
+                <div class="col-sm-9">
+                    <div class="col-xs-10 col-sm-5 no-padding-left no-padding-right">
+                        <textarea class="form-control" id="form-field-9" gnap-input-limiter="200"></textarea>
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;textarea gnap-input-limiter=&quot;200&quot;&gt;&lt;/textarea&gt;</code></pre>
+
+<a example-link source="gnap-theme"></a>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">WYSIWYG</label>
+                <div class="col-sm-9">
+                    <div gnap-wysiwyg></div>
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;div gnap-wysiwyg&gt;&lt;/div&gt;</code></pre>
+
+<a example-link source="gnap-theme"></a>
+
+            <h3 class="header smaller">
+                Sizing Examples
+            </h3>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Full width</label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="text" placeholder="no input class" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Mini</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-mini" type="text" placeholder=".input-mini" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Small</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-small" type="text" placeholder=".input-small" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Medium</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-medium" type="text" placeholder=".input-medium" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Large</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-large" type="text" placeholder=".input-large" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Extra large</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-xlarge" type="text" placeholder=".input-xlarge" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Extra extra large</label>
+                <div class="col-sm-9">
+                    <input class="form-control input-xxlarge" type="text" placeholder=".input-xxlarge" />
+                </div>
+            </div>
+            <pre class="example"><code gnap-highlight>&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Full width&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;input class=&quot;form-control&quot; type=&quot;text&quot; placeholder=&quot;no input class&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Mini&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;input class=&quot;form-control input-mini&quot; type=&quot;text&quot; placeholder=&quot;.input-mini&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Small&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;input class=&quot;form-control input-small&quot; type=&quot;text&quot; placeholder=&quot;.input-small&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Medium&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;input class=&quot;form-control input-medium&quot; type=&quot;text&quot; placeholder=&quot;.input-medium&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Large&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;input class=&quot;form-control input-large&quot; type=&quot;text&quot; placeholder=&quot;.input-large&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Extra large&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;input class=&quot;form-control input-xlarge&quot; type=&quot;text&quot; placeholder=&quot;.input-xlarge&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;col-sm-3 control-label no-padding-right&quot;&gt;Extra extra large&lt;/label&gt;
+    &lt;div class=&quot;col-sm-9&quot;&gt;
+        &lt;input class=&quot;form-control input-xxlarge&quot; type=&quot;text&quot; placeholder=&quot;.input-xxlarge&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<a example-link source="bootstrap" href="http://getbootstrap.com/css/#forms-control-sizes"></a>
+        </form>
+    </div> <!-- form tab -->
+    
+    <div tab heading="Validation" id="validation" class="tab-pane" ng-controller="gnap-validation as vm">
+        <h3 class="header smaller">
+            Validation Example
+        </h3>
+        <form gnap-submit='vm.save()'>
+            <div gnap-show-validity for="firstName" class="form-group">
+                <label class="control-label" for="firstName">First Name</label>
+                <input ng-model="vm.firstName" type="text" class="form-control" id="firstName" name="firstName" required>
+                <div gnap-validation-messages for="firstName">
+                    <div gnap-validation-message when="required">Enter the first name</div>
+                </div>
+            </div>
+
+            <div gnap-show-validity for="lastName" class="form-group">
+                <label class="control-label" for="lastName">Last Name</label>
+                <input ng-model="vm.lastName" type="text" class="form-control" id="lastName" name="lastName" required>
+                <div gnap-validation-messages for="lastName">
+                    <div gnap-validation-message when="required">Enter the last name</div>
+                </div>
+            </div>
+
+            <div gnap-show-validity for="username" class="form-group">
+                <label class="control-label" for="username">Username</label>
+                <input ng-model="vm.username" type="text" class="form-control" id="username" name="username" required ng-minlength="4" maxlength="8" gnap-validate="vm.validateUsername()">
+                <div gnap-validation-messages for="username">
+                    <div gnap-validation-message when="required">Enter the username</div>
+                    <div gnap-validation-message when="unique">The username entered is not unique</div>
+                    <div gnap-validation-message when="minlength">The username must be at least 4 characters in length</div>
+                </div>
+            </div>
+
+            <div gnap-show-validity for="email" class="form-group">
+                <label class="control-label" for="email">Email</label>
+                <input ng-model="vm.email" type="email" class="form-control" id="email" name="email">
+                <div gnap-validation-messages for="email">
+                    <div gnap-validation-message when="email">Enter a valid email address</div>
+                </div>
+            </div>
+
+            <div gnap-show-validity for="age" class="form-group">
+                <label class="control-label" for="age">Age</label>
+                <input ng-model="vm.age" type="number" class="form-control" id="age" name="age" min="0" max="100" />
+                <div gnap-validation-messages for="age">
+                    <div gnap-validation-message when="number">Enter a valid age</div>
+                    <div gnap-validation-message when="min">Age must be a number greater than 0</div>
+                    <div gnap-validation-message when="max">Age must be a number less than or equal to 100</div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary">Save</button>
+        </form>
+        <div tabset class="example">
+  <div tab heading="HTML" class="tab-pane active">
+      <pre><code gnap-highlight>&lt;form gnap-submit=&#39;vm.save()&#39;&gt;
+    &lt;div gnap-show-validity for=&quot;firstName&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;firstName&quot;&gt;First Name&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.firstName&quot; type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;firstName&quot; name=&quot;firstName&quot; required&gt;
+        &lt;div gnap-validation-messages for=&quot;firstName&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;required&quot;&gt;Enter the first name&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div gnap-show-validity for=&quot;lastName&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;lastName&quot;&gt;Last Name&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.lastName&quot; type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;lastName&quot; name=&quot;lastName&quot; required&gt;
+        &lt;div gnap-validation-messages for=&quot;lastName&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;required&quot;&gt;Enter the last name&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div gnap-show-validity for=&quot;username&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;username&quot;&gt;Username&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.username&quot; type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;username&quot; name=&quot;username&quot; required ng-minlength=&quot;4&quot; maxlength=&quot;8&quot; gnap-validate=&quot;vm.validateUsername()&quot;&gt;
+        &lt;div gnap-validation-messages for=&quot;username&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;required&quot;&gt;Enter the username&lt;/div&gt;
+            &lt;div gnap-validation-message when=&quot;unique&quot;&gt;The username entered is not unique&lt;/div&gt;
+            &lt;div gnap-validation-message when=&quot;minlength&quot;&gt;The username must be at least 4 characters in length&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div gnap-show-validity for=&quot;email&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;email&quot;&gt;Email&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.email&quot; type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+        &lt;div gnap-validation-messages for=&quot;email&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;email&quot;&gt;Enter a valid email address&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div gnap-show-validity for=&quot;age&quot; class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;age&quot;&gt;Age&lt;/label&gt;
+        &lt;input ng-model=&quot;vm.age&quot; type=&quot;number&quot; class=&quot;form-control&quot; id=&quot;age&quot; name=&quot;age&quot; min=&quot;0&quot; max=&quot;100&quot; /&gt;
+        &lt;div gnap-validation-messages for=&quot;age&quot;&gt;
+            &lt;div gnap-validation-message when=&quot;number&quot;&gt;Enter a valid age&lt;/div&gt;
+            &lt;div gnap-validation-message when=&quot;min&quot;&gt;Age must be a number greater than 0&lt;/div&gt;
+            &lt;div gnap-validation-message when=&quot;max&quot;&gt;Age must be a number less than or equal to 100&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;button class=&quot;btn btn-primary&quot;&gt;Save&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+  </div>
+  <div tab heading="JavaScript" class="tab-pane">
+      <pre><code gnap-highlight>
+(function () {
+    angular
+        .module(&#39;gnap-example-app&#39;)
+        .controller(&#39;gnap-validation&#39;, GnapValidationController);
+
+    GnapValidationController.$inject = [&#39;$q&#39;, &#39;notification&#39;];
+
+    function GnapValidationController($q, notification) {
+        var vm = this;
+
+        vm.save = function() {
+            notification.show({
+                type: &#39;success&#39;,
+                title: &#39;User Saved&#39;,
+                text: &#39;The user account was successfully created.&#39;
+            });
+        };
+
+        vm.validateUsername = function() {
+            if (angular.isUndefined(vm.username)) {
+                return {
+                    unique: true
+                };
+            }
+            
+            // simulate remote call
+            var uniqueDeferred = $q.defer();
+            setTimeout(function() {
+                if (vm.username === &#39;test&#39;) {
+                    uniqueDeferred.resolve(false);
+                } else {
+                    uniqueDeferred.resolve(true);
+                }
+            }, 2500);
+
+            return {
+                unique: uniqueDeferred.promise
+            };
+        };
+    }
+})();</code></pre>
+  </div>
+</div>
+
+<a example-link source="gnap-theme"></a>
+
+    </div> <!-- validation tab -->
+
+</div> <!-- tabset -->

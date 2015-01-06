@@ -1,0 +1,1 @@
+{"version":3,"file":"token.resource.min.js","sources":["..\\develop\\gnap\\token.resource.js"],"names":["Token","$resource","angular","module","factory","$inject"],"mappings":"AAAA,cAEA,WAOI,QAASA,GAAMC,GACX,MAAOA,GAAU,eAPrBC,QACKC,OAAO,QACPC,QAAQ,QAASJ,GAEtBA,EAAMK,SAAW"}

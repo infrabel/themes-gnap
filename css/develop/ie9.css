@@ -1,0 +1,10 @@
+/*Target IE 9, 10 and 11*/
+@media screen and (min-width:0\0) {
+    .ace-file-multiple {
+        margin-bottom: -20px;
+    }
+
+    .ace-file-multiple .file-label {
+        top: -20px;
+    }
+}

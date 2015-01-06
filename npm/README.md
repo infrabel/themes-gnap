@@ -1,1 +1,0 @@
-Readme at https://github.com/infrabel/themes-gnap

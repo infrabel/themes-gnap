@@ -1,0 +1,1 @@
+{"version":3,"file":"demo.min.js","sources":["..\\..\\..\\develop\\ui-bootstrap\\tooltip\\docs\\demo.js"],"names":["angular","module","controller","$scope","dynamicTooltip","dynamicTooltipText","htmlTooltip"],"mappings":"AAAAA,QAAQC,OAAO,qBAAqBC,WAAW,kBAAmB,SAAUC,GAC1EA,EAAOC,eAAiB,gBACxBD,EAAOE,mBAAqB,UAC5BF,EAAOG,YAAc"}
