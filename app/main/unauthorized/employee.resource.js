@@ -8,6 +8,6 @@
     Employee.$inject = ['$resource'];
 
     function Employee($resource) {
-        return $resource('/api/employees');
+        return $resource('http://example-gnap.azurewebsites.net/api/employees');
     }
 })();
