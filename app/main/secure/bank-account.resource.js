@@ -8,6 +8,6 @@
     BankAccount.$inject = ['$resource'];
 
     function BankAccount($resource) {
-        return $resource('/api/bankaccounts');
+        return $resource('http://example-gnap.azurewebsites.net/api/bankaccounts');
     }
 })();

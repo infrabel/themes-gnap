@@ -8,6 +8,6 @@
     Token.$inject = ['$resource'];
 
     function Token($resource) {
-        return $resource('/api/tokens');
+        return $resource('http://example-gnap.azurewebsites.net/api/tokens');
     }
 })();
