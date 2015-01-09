@@ -1,12 +1,11 @@
-﻿using Microsoft.Owin.Cors;
-
-namespace ExampleHttpServer.Core.Bootstrap
+﻿namespace ExampleHttpServer.Core.Bootstrap
 {
     using Properties;
     using System;
     using System.Security.Claims;
     using GNaP.Owin.Authentication.Jwt;
     using System.Web.Http;
+    using Microsoft.Owin.Cors;
     using Microsoft.Owin.FileSystems;
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.Jwt;
@@ -27,7 +26,7 @@ namespace ExampleHttpServer.Core.Bootstrap
         {
             _staticFilesRoot = staticFilesRoot;
         }
-        
+
         public void Configuration(IAppBuilder builder)
         {
             ConfigureCors(builder);

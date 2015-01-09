@@ -38,22 +38,8 @@
     <Folder Include="build\" />
     <Folder Include="deploy\" />
     <Folder Include="raw\ace\mustache\app\views\pages\partials\_shared\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="server\src\ExampleHttpServer\Api\BankAccountsController.cs" />
-    <Compile Include="server\src\ExampleHttpServer\Api\EmployeesController.cs" />
-    <Compile Include="server\src\ExampleHttpServer\Api\TokensController.cs" />
-    <Compile Include="server\src\ExampleHttpServer\Arguments\CommandLineArguments.cs" />
-    <Compile Include="server\src\ExampleHttpServer\Auth\JwtTokenService.cs" />
-    <Compile Include="server\src\ExampleHttpServer\Bootstrap\Startup.cs" />
-    <Compile Include="server\src\ExampleHttpServer\Program.cs" />
-    <Compile Include="server\src\ExampleHttpServer\Properties\AssemblyInfo.cs" />
-    <Compile Include="server\src\ExampleHttpServer\Properties\Settings.Designer.cs" />
-    <Compile Include="server\src\ExampleHttpServer\Properties\Settings1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
+    <Folder Include="server\release\" />
+    <Folder Include="server\src\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitattributes" />
@@ -2982,26 +2968,6 @@
     <Content Include="raw\ui-select2\src\select2.js" />
     <Content Include="raw\ui-select2\test\karma.conf.js" />
     <Content Include="raw\ui-select2\test\select2Spec.js" />
-    <Content Include="server\release\CommandLine.dll" />
-    <Content Include="server\release\ExampleHttpServer.exe" />
-    <Content Include="server\release\Microsoft.Owin.Diagnostics.dll" />
-    <Content Include="server\release\Microsoft.Owin.dll" />
-    <Content Include="server\release\Microsoft.Owin.FileSystems.dll" />
-    <Content Include="server\release\Microsoft.Owin.Host.HttpListener.dll" />
-    <Content Include="server\release\Microsoft.Owin.Hosting.dll" />
-    <Content Include="server\release\Microsoft.Owin.Security.dll" />
-    <Content Include="server\release\Microsoft.Owin.Security.Jwt.dll" />
-    <Content Include="server\release\Microsoft.Owin.Security.OAuth.dll" />
-    <Content Include="server\release\Microsoft.Owin.StaticFiles.dll" />
-    <Content Include="server\release\Newtonsoft.Json.dll" />
-    <Content Include="server\release\Owin.dll" />
-    <Content Include="server\release\System.IdentityModel.Tokens.Jwt.dll" />
-    <Content Include="server\release\System.Net.Http.Formatting.dll" />
-    <Content Include="server\release\System.Web.Http.dll" />
-    <Content Include="server\release\System.Web.Http.Owin.dll" />
-    <Content Include="server\src\ExampleHttpServer.sln" />
-    <Content Include="server\src\ExampleHttpServer\ExampleHttpServer.csproj" />
-    <Content Include="server\src\ExampleHttpServer\gnap.ico" />
     <Content Include="tasks\ace.js" />
     <Content Include="tasks\angular.js" />
     <Content Include="tasks\bake.js" />
@@ -3990,12 +3956,6 @@
     <None Include="raw\ui-select2\package.json" />
     <None Include="raw\ui-select2\README.md" />
     <None Include="README.md" />
-    <None Include="server\release\Api\BankAccounts.json" />
-    <None Include="server\release\ExampleHttpServer.exe.config" />
-    <None Include="server\src\ExampleHttpServer\Api\BankAccounts.json" />
-    <None Include="server\src\ExampleHttpServer\app.config" />
-    <None Include="server\src\ExampleHttpServer\packages.config" />
-    <None Include="server\src\ExampleHttpServer\Properties\Settings.settings" />
     <None Include="server\start-server.cmd" />
     <None Include="versions\gnap.json" />
     <None Include="versions\gnap-angular.json" />
