@@ -1,4 +1,4 @@
-﻿namespace ExampleHttpServer.Arguments
+﻿namespace ExampleHttpServer.SelfHost.Arguments
 {
     using CommandLine;
     using CommandLine.Text;
