@@ -1,10 +1,11 @@
-﻿namespace ExampleHttpServer.Bootstrap
+﻿namespace ExampleHttpServer.Core.Bootstrap
 {
+    using Properties;
     using System;
     using System.Security.Claims;
     using GNaP.Owin.Authentication.Jwt;
     using System.Web.Http;
-    using Properties;
+    using Microsoft.Owin.Cors;
     using Microsoft.Owin.FileSystems;
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.Jwt;
@@ -12,20 +13,31 @@
     using Microsoft.Owin.StaticFiles.ContentTypes;
     using Owin;
 
-    internal class Startup
+    public class Startup
     {
         private readonly string _staticFilesRoot;
+
+        public Startup()
+            : this(@"\")
+        {
+        }
 
         public Startup(string staticFilesRoot)
         {
             _staticFilesRoot = staticFilesRoot;
         }
 
-        public void Configure(IAppBuilder builder)
+        public void Configuration(IAppBuilder builder)
         {
+            ConfigureCors(builder);
             ConfigureAuth(builder);
             ConfigureWebApi(builder);
             ConfigureStaticFileServer(builder);
+        }
+
+        private void ConfigureCors(IAppBuilder builder)
+        {
+            builder.UseCors(CorsOptions.AllowAll);
         }
 
         private static void ConfigureAuth(IAppBuilder builder)
