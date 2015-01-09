@@ -71,7 +71,7 @@
 
     gnap_packagejson: {
         src: './npm/GNaP.Themes.Web.GNaP.json',
-        dest: './deploy/vendor/gnap-theme-gnap/package.json'        
+        dest: './deploy/vendor/gnap-theme-gnap/package.json'
     },
 
     gnap_readme: {
@@ -82,7 +82,7 @@
     gnap_server: {
         expand: true,
         cwd: './server/release/',
-        src: ['**/*.dll', '**/*.exe', '**/*.config', '**/*.json'],
+        src: ['**/*.dll', '**/*.exe', '**/*.config'],
         dest: './deploy/gnap/server/'
     },
 
