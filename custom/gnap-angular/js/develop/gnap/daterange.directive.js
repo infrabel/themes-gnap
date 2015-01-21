@@ -14,7 +14,7 @@
 
         function link($scope) {
             $scope.formatDate = function (date) {
-                if (date === undefined) {
+                if (typeof date === 'undefined') {
                     return '';
                 }
 
