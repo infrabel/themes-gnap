@@ -134,7 +134,7 @@
         function setSelected(path) {
             // parse the path into an array
             /* jshint laxbreak:true */
-            var parsedPath = path == null
+            var parsedPath = path === null
                                 ? []
                                 : ((path instanceof Array)
                                     ? path
