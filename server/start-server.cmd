@@ -5,5 +5,5 @@ explorer.exe http://localhost:%PORT%/
 
 ECHO Starting server at http://localhost:%PORT%/
 pushd server
-ExampleHttpServer.exe -p %PORT% -r ..\
+ExampleHttpServer.SelfHost.exe -p %PORT% -r ..\
 popd

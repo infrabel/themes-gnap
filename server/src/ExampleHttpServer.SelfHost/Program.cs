@@ -1,7 +1,7 @@
-﻿namespace ExampleHttpServer
+﻿namespace ExampleHttpServer.SelfHost
 {
     using Arguments;
-    using Bootstrap;
+    using Core.Bootstrap;
     using Microsoft.Owin.Hosting;
     using System;
 
@@ -21,7 +21,9 @@
             var baseAddress = BuildBaseAddress();
             var root = CommandLineArguments.Parsed.Root;
 
-            WebApp.Start(baseAddress, new Startup(root).Configure);
+            var startup = new Startup(root);
+
+            WebApp.Start(baseAddress, startup.Configuration);
 
             Console.WriteLine("Listening at " + baseAddress);
             Console.ReadLine();
