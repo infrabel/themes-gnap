@@ -16,13 +16,13 @@
             var form = ctrl; // controller is form
 
             // watch for invalid state changes
-            $scope.$watch(function () { return form[attrs.for].$invalid; }, updateHasErrorClass);
+            $scope.$watch(function () { return form[attrs['for']].$invalid; }, updateHasErrorClass);
 
             // watch for the submit status to change
             $scope.$watch(function () { return form.$submitted; }, updateHasErrorClass);
 
             function updateHasErrorClass() {
-                if (form[attrs.for].$invalid && (form[attrs.for].$dirty || form.$submitted)) {
+                if (form[attrs['for']].$invalid && (form[attrs['for']].$dirty || form.$submitted)) {
                     element.addClass('has-error');
                 } else {
                     element.removeClass('has-error');

@@ -1,4 +1,4 @@
-﻿namespace ExampleHttpServer.Api
+﻿namespace ExampleHttpServer.Core.Api
 {
     using System.Net;
     using System.Web.Http;
