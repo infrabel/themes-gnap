@@ -83,8 +83,8 @@
                 }
             });
 
-            $scope.$watch(function () {
-                return form[watchAttr].$invalid;
+            $scope.$watchCollection(function () {
+                return form[watchAttr].$error;
             }, function () {
                 if (form[watchAttr].$dirty) {
                     ctrl.renderMessages(form[watchAttr].$error, multiple);
