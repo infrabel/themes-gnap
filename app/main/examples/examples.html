@@ -71,7 +71,7 @@
         vm.save = function () {
             alert(&#39;You clicked a save button&#39;);
         };
-    
+
         vm.cancel = function () {
             alert(&#39;You clicked a cancel button&#39;);
         };
@@ -248,7 +248,7 @@
         </div>
         <div tabset class="example">
   <div tab heading="HTML" class="tab-pane in active">
-<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-progressbar as vm&quot;&gt;                        
+<pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-progressbar as vm&quot;&gt;
     &lt;div class=&quot;form-group&quot;&gt;
         &lt;label class=&quot;control-label&quot;&gt;Progress&lt;/label&gt;
         &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;vm.progress&quot;&gt;&lt;/div&gt;
@@ -648,7 +648,7 @@
 
 <a example-link source="gnap-theme"></a>
 
-        
+
     </div>  <!-- pagination tab -->
 
     <div tab heading="Icons" id="icons" class="tab-pane">
@@ -1183,7 +1183,7 @@
         Domain.query(function(domains) {
             vm.domains = domains;
         });
-    
+
         vm.view = function (domain) {
             alert('Going to the view \'' + domain.domain + '\' page ...');
         };
@@ -1891,7 +1891,7 @@
 
 <a example-link source="gnap-theme"></a>
     </div> <!-- notifications tab -->
-    
+
     <div tab heading="Progress Indicator" id="progressindicator" class="tab-pane">
         <h3 class="header smaller">
             Progress Indicator
@@ -2086,8 +2086,8 @@
 <pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-dropdown as vm&quot;&gt;
     &lt;select ui-select2 ng-model=&quot;vm.mydropdown&quot; class=&quot;col-xs-10 col-sm-5&quot;&gt;
         &lt;option value=&quot;&quot;&gt;&amp;nbsp;&lt;/option&gt;
-        &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;                                   
-        &lt;option value=&quot;AK&quot;&gt;Alqska&lt;/option&gt;   
+        &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;
+        &lt;option value=&quot;AK&quot;&gt;Alqska&lt;/option&gt;
         ...
     &lt;/select&gt;
 &lt;/div&gt;</code></pre>
@@ -2167,8 +2167,8 @@
   <div tab heading="HTML" class="tab-pane active">
 <pre><code gnap-highlight>&lt;div ng-controller=&quot;gnap-multiple-dropdown as vm&quot;&gt;
     &lt;select ui-select2 ng-model=&quot;vm.mydropdown&quot; multiple=&quot;multiple&quot; class=&quot;col-xs-10 col-sm-5&quot;&gt;
-        &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;                                   
-        &lt;option value=&quot;AK&quot;&gt;Alqska&lt;/option&gt;   
+        &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;
+        &lt;option value=&quot;AK&quot;&gt;Alqska&lt;/option&gt;
         ...
     &lt;/select&gt;
 &lt;/div&gt;</code></pre>
@@ -2328,7 +2328,7 @@
     };
 })();</code></pre>
   </div>
-</div>   
+</div>
 
 <a example-link source="gnap-theme"></a>
 
@@ -2606,7 +2606,7 @@
 <a example-link source="bootstrap" href="http://getbootstrap.com/css/#forms-control-sizes"></a>
         </form>
     </div> <!-- form tab -->
-    
+
     <div tab heading="Validation" id="validation" class="tab-pane" ng-controller="gnap-validation as vm">
         <h3 class="header smaller">
             Validation Example
@@ -2644,6 +2644,19 @@
                 <div gnap-validation-messages for="email">
                     <div gnap-validation-message when="email">Enter a valid email address</div>
                 </div>
+            </div>
+
+            <div class="form-group">
+                <div data-ng-repeat="alt in vm.alternativeEmails" data-ng-form="altEmailForm">
+                    <div gnap-show-validity for="altEmailForm.alt.email">
+                        <label class="control-label" for="email">Alternative email {{$index + 1}}</label>
+                        <input ng-model="alt." type="email" class="form-control" name="altEmailForm.alt.email">
+                        <div gnap-validation-messages for="altEmailForm.alt.email">
+                            <div gnap-validation-message when="email">Enter a valid email address</div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" data-ng-click="vm.addAlternativeEmail()"><i class="icon-plus"></i>&nbsp;Add</button>
             </div>
 
             <div gnap-show-validity for="age" class="form-group">
@@ -2695,6 +2708,19 @@
         &lt;/div&gt;
     &lt;/div&gt;
 
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;div data-ng-repeat=&quot;alt in vm.alternativeEmails&quot; data-ng-form=&quot;altEmailForm&quot;&gt;
+            &lt;div gnap-show-validity for=&quot;altEmailForm.alt.email&quot;&gt;
+                &lt;label class=&quot;control-label&quot; for=&quot;email&quot;&gt;Alternative email {{$index + 1}}&lt;/label&gt;
+                &lt;input ng-model=&quot;alt.&quot; type=&quot;email&quot; class=&quot;form-control&quot; name=&quot;altEmailForm.alt.email&quot;&gt;
+                &lt;div gnap-validation-messages for=&quot;altEmailForm.alt.email&quot;&gt;
+                    &lt;div gnap-validation-message when=&quot;email&quot;&gt;Enter a valid email address&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-ng-click=&quot;vm.addAlternativeEmail()&quot;&gt;&lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt;&amp;nbsp;Add&lt;/button&gt;
+    &lt;/div&gt;
+
     &lt;div gnap-show-validity for=&quot;age&quot; class=&quot;form-group&quot;&gt;
         &lt;label class=&quot;control-label&quot; for=&quot;age&quot;&gt;Age&lt;/label&gt;
         &lt;input ng-model=&quot;vm.age&quot; type=&quot;number&quot; class=&quot;form-control&quot; id=&quot;age&quot; name=&quot;age&quot; min=&quot;0&quot; max=&quot;100&quot; /&gt;
@@ -2719,6 +2745,7 @@
 
     function GnapValidationController($q, notification) {
         var vm = this;
+        vm.alternativeEmails = [{email: ''}];
 
         vm.save = function() {
             notification.show({
@@ -2734,7 +2761,7 @@
                     unique: true
                 };
             }
-            
+
             // simulate remote call
             var uniqueDeferred = $q.defer();
             setTimeout(function() {
@@ -2748,6 +2775,10 @@
             return {
                 unique: uniqueDeferred.promise
             };
+        };
+
+        vm.addAlternativeEmail = function() {
+            vm.alternativeEmails.push({email: ''});
         };
     }
 })();</code></pre>
