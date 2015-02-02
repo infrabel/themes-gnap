@@ -68,15 +68,29 @@
         function link($scope, element, $attrs, ctrls) {
             var form = ctrls[0];
             var ctrl = ctrls[1];
-            
+
             //JavaScript treats empty strings as false, but ng-message-multiple by itself is an empty string
             var multiple = angular.isString($attrs.gnapValidationMessagesMultiple) ||
                            angular.isString($attrs.multiple);
 
             var watchAttr = $attrs.gnapValidationMessages || $attrs['for']; //for is a reserved keyword
 
+            //Get the form controller from the validation-messages
+            var elementParent = element.parent();
+            var parentFormController = elementParent.controller('form');
+            var lastFormController = parentFormController;
+
+            // Get the parent form of the form
+            while(elementParent != null && lastFormController != null) {
+                elementParent = elementParent.parent();
+                lastFormController = elementParent.controller('form');
+                if(lastFormController != null) {
+                  parentFormController = lastFormController;
+                }
+            }
+
             $scope.$watch(function () {
-                return form.$submitted;
+                return parentFormController.$submitted;
             }, function (submitted) {
                 if (submitted) {
                     ctrl.renderMessages(form[watchAttr].$error, multiple);
