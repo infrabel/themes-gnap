@@ -9,6 +9,7 @@
 
     function GnapValidationController($q, notification) {
         var vm = this;
+        vm.alternativeEmails = [{email: ''}];
 
         vm.save = function() {
             notification.show({
@@ -39,6 +40,10 @@
             return {
                 unique: uniqueDeferred.promise
             };
+        };
+
+        vm.addAlternativeEmail = function() {
+            vm.alternativeEmails.push({email: ''});
         };
     }
 })();
