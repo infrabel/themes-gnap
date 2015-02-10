@@ -24,7 +24,7 @@
             },
             template:
             '<span>' +
-              '<div class="input-group bootstrap-timepicker col-xs-10 col-sm-5 no-padding-left no-padding-right">' +
+              '<div class="input-group bootstrap-timepicker">' +
                 '<span ng-show="iconPosition==\'left\'" class="input-group-addon" ng-click="toggle($event)">' +
                   '<i class="icon-time bigger-110"></i>' +
                 '</span>' +
