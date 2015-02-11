@@ -14,8 +14,8 @@
         vm.search = function() {
             $window.alert('Searching for ' + vm.keywords);
         };
-		
-		vm.scrollToTop = function() {            
+
+        vm.scrollToTop = function() {            
             $location.hash('main-container');
             $anchorScroll();
         };
