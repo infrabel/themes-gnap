@@ -1,11 +1,11 @@
-'use strict';
-
 /**
  * @desc displays a sidebar
  * @file sidebar.directive.js
  * @example <div gnap-sidebar></div>
  */
 (function () {
+    'use strict';
+
     angular
         .module('gnap')
         .directive('gnapSidebar', gnapSidebar)
@@ -106,7 +106,8 @@
             "\n" +
             "    <ul class=\"nav nav-list\">\n" +
             "        <li ng-repeat=\'levelOneItem in settings.items\'\n" +
-            "            ng-class=\"{open: levelOneItem.open, active: levelOneItem.active}\">\n" +
+            "            ng-class=\"{open: levelOneItem.open, active: levelOneItem.active}\"\n" +
+            "            ng-hide=\"levelOneItem.visible === false\">\n" +
             "            <a ng-click=\'select(levelOneItem)\'\n" +
             "               ng-class=\"{\'dropdown-toggle\': levelOneItem.items}\">\n" +
             "                <i class=\"{{ levelOneItem.icon }}\"><\/i>\n" +
@@ -115,7 +116,8 @@
             "            <\/a>\n" +
             "            <ul class=\"submenu\" ng-show=\"levelOneItem.open\">\n" +
             "                <li ng-repeat=\'levelTwoItem in levelOneItem.items\'\n" +
-            "                    ng-class=\'{open: levelTwoItem.open, active: levelTwoItem.active}\'>\n" +
+            "                    ng-class=\'{open: levelTwoItem.open, active: levelTwoItem.active}\'\n" +
+            "                    ng-hide=\"levelTwoItem.visible === false\">\n" +
             "                    <a ng-click=\'select(levelTwoItem)\'\n" +
             "                       ng-class=\"{\'dropdown-toggle\': levelTwoItem.items}\">\n" +
             "                        <i class=\"{{ levelTwoItem.icon }}\"><\/i>\n" +
@@ -124,7 +126,8 @@
             "                    <\/a>\n" +
             "                    <ul class=\"submenu\" ng-show=\"levelTwoItem.open\">\n" +
             "                        <li ng-repeat=\'levelThreeItem in levelTwoItem.items\'\n" +
-            "                            ng-class=\"{active: levelThreeItem.active}\">\n" +
+            "                            nng-class=\"{active: levelThreeItem.active}\"\n" +
+            "                            ng-hide=\"levelThreeItem.visible === false\">\n" +
             "                            <a ng-click=\'select(levelThreeItem)\'>\n" +
             "                                <i class=\"{{ levelThreeItem.icon }}\"><\/i>\n" +
             "                                <span class=\"menu-text\">{{ levelThreeItem._title }}<\/span>\n" +
