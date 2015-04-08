@@ -34,19 +34,24 @@
             scope: {
                 date: '=',
                 iconPosition: '@',
-                dateOptions: '@'
+                dateOptions: '@',
+                minDate: '=?',
+                maxDate: '=?',
+                required: '=?',
+                showButtonBar: '=?'
             },
             template:
                 '<p class="input-group">' +
                 '    <span ng-show="iconPosition==\'left\'" class="input-group-addon" ng-click="toggle($event)">' +
                 '        <i class="icon-calendar bigger-110"></i>' +
                 '    </span>' +
-                '    <input type="text" class="form-control" datepicker-popup="dd-MM-yyyy" ng-model="date" is-open="opened" datepicker-options="dateOptions" ng-required="true" ng-click="open($event)" close-text="Close" show-button-bar="false" />' +
+                '    <input type="text" class="form-control" datepicker-popup="dd-MM-yyyy" ng-model="date" min-date="minDate" max-date="maxDate" is-open="opened" datepicker-options="dateOptions" ng-click="open($event)" close-text="{{ \'gnap.datepicker.close\' | translate }}" current-text="{{ \'gnap.datepicker.current\' | translate }}" clear-text="{{ \'gnap.datepicker.clear\' | translate }}" show-button-bar="showButtonBar" ng-required="required" />' +
                 '    <span ng-show="iconPosition==\'right\'" class="input-group-addon" ng-click="toggle($event)">' +
                 '        <i class="icon-calendar bigger-110"></i>' +
                 '    </span>' +
                 '</p>',
-            link: link
+            link: link,
+            controller: ['$scope', controller]
         };
 
         function link(scope, element, attrs) {
@@ -63,6 +68,11 @@
                 $event.stopPropagation();
                 scope.opened = !scope.opened;
             };
+        }
+
+        function controller(scope) {
+            // check if it was defined.  If not - set a default
+            scope.showButtonBar = scope.showButtonBar || true;
         }
     }
 
@@ -86,7 +96,8 @@
             "    <tbody>\n" +
             "      <tr ng-repeat=\"row in rows track by $index\">\n" +
             "        <td ng-show=\"showWeeks\" class=\"text-center h6\"><em>{{ weekNumbers[$index] }}</em></td>\n" +
-            "        <td ng-repeat=\"dt in row track by dt.date\" class=\"text-center day\" role=\"gridcell\" id=\"{{dt.uid}}\" aria-disabled=\"{{!!dt.disabled}}\" ng-class=\"{'active': dt.selected, 'btn-default': isActive(dt), 'text-muted': dt.secondary}\" ng-click=\"select(dt.date)\" ng-disabled=\"dt.disabled\" tabindex=\"-1\">\n" +
+            "        <td ng-repeat=\"dt in row track by dt.date\" class=\"text-center day\" role=\"gridcell\" id=\"{{dt.uid}}\" aria-disabled=\"{{!!dt.disabled}}\"" +
+            "            ng-class=\"{'active': dt.selected, 'btn-default': isActive(dt), 'text-muted': dt.secondary}\" ng-click=\"dt.disabled || select(dt.date)\" ng-disabled=\"dt.disabled\" tabindex=\"-1\">\n" +
             "          {{dt.label}}\n" +
             "        </td>\n" +
             "      </tr>\n" +
@@ -111,7 +122,7 @@
             "    </thead>\n" +
             "    <tbody>\n" +
             "      <tr ng-repeat=\"row in rows track by $index\">\n" +
-            "        <td ng-repeat=\"dt in row track by dt.date\" class=\"text-center month\" role=\"gridcell\" id=\"{{dt.uid}}\" aria-disabled=\"{{!!dt.disabled}}\" ng-class=\"{'active': dt.selected, 'btn-default': isActive(dt)}\" ng-click=\"select(dt.date)\" ng-disabled=\"dt.disabled\" tabindex=\"-1\">\n" +
+            "        <td ng-repeat=\"dt in row track by dt.date\" class=\"text-center month\" role=\"gridcell\" id=\"{{dt.uid}}\" aria-disabled=\"{{!!dt.disabled}}\" ng-class=\"{'active': dt.selected, 'btn-default': isActive(dt)}\" ng-click=\"dt.disabled || select(dt.date)\" ng-disabled=\"dt.disabled\" tabindex=\"-1\">\n" +
             "          {{dt.label}}\n" +
             "        </td>\n" +
             "      </tr>\n" +
@@ -136,7 +147,7 @@
             "    </thead>\n" +
             "    <tbody>\n" +
             "      <tr ng-repeat=\"row in rows track by $index\">\n" +
-            "        <td ng-repeat=\"dt in row track by dt.date\" class=\"text-center year\" role=\"gridcell\" id=\"{{dt.uid}}\" aria-disabled=\"{{!!dt.disabled}}\" ng-class=\"{'active': dt.selected, 'btn-default': isActive(dt)}\" ng-click=\"select(dt.date)\" ng-disabled=\"dt.disabled\" tabindex=\"-1\">\n" +
+            "        <td ng-repeat=\"dt in row track by dt.date\" class=\"text-center year\" role=\"gridcell\" id=\"{{dt.uid}}\" aria-disabled=\"{{!!dt.disabled}}\" ng-class=\"{'active': dt.selected, 'btn-default': isActive(dt)}\" ng-click=\"dt.disabled || select(dt.date)\" ng-disabled=\"dt.disabled\" tabindex=\"-1\">\n" +
             "          {{dt.label}}\n" +
             "        </td>\n" +
             "      </tr>\n" +
