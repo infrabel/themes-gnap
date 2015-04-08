@@ -88,7 +88,7 @@
         $templateCache.put("template/gnap/sidebar/sidebar.html",
             "<div id=\"sidebar\" class=\"sidebar\" ng-class=\"{\'menu-min\': settings.collapsed, display: settings.visible}\">\n" +
             "\n" +
-            "    <div id=\"sidebar-shortcuts\" class=\"sidebar-shortcuts\">\n" +
+            "    <div id=\"sidebar-shortcuts\" class=\"sidebar-shortcuts\" ng-show=\"settings.shortcuts.length > 0\">\n" +
             "        <div class=\"sidebar-shortcuts-large\" id=\"sidebar-shortcuts-large\">\n" +
             "            <button ng-repeat=\"shortcut in settings.shortcuts\"\n" +
             "                    ng-click=\"shortcut.click()\" \n" +
