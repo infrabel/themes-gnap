@@ -1,11 +1,11 @@
-'use strict';
-
 /**
  * @desc displays a sidebar
  * @file sidebar.directive.js
  * @example <div gnap-sidebar></div>
  */
 (function () {
+    'use strict';
+
     angular
         .module('gnap')
         .directive('gnapSidebar', gnapSidebar)
@@ -88,7 +88,7 @@
         $templateCache.put("template/gnap/sidebar/sidebar.html",
             "<div id=\"sidebar\" class=\"sidebar\" ng-class=\"{\'menu-min\': settings.collapsed, display: settings.visible}\">\n" +
             "\n" +
-            "    <div id=\"sidebar-shortcuts\" class=\"sidebar-shortcuts\">\n" +
+            "    <div id=\"sidebar-shortcuts\" class=\"sidebar-shortcuts\" ng-show=\"settings.shortcuts.length > 0\">\n" +
             "        <div class=\"sidebar-shortcuts-large\" id=\"sidebar-shortcuts-large\">\n" +
             "            <button ng-repeat=\"shortcut in settings.shortcuts\"\n" +
             "                    ng-click=\"shortcut.click()\" \n" +
@@ -106,25 +106,28 @@
             "\n" +
             "    <ul class=\"nav nav-list\">\n" +
             "        <li ng-repeat=\'levelOneItem in settings.items\'\n" +
-            "            ng-class=\"{open: levelOneItem.open, active: levelOneItem.active}\">\n" +
+            "            ng-class=\"{open: levelOneItem.open, active: levelOneItem.active}\"\n" +
+            "            ng-hide=\"levelOneItem.visible === false\">\n" +
             "            <a ng-click=\'select(levelOneItem)\'\n" +
             "               ng-class=\"{\'dropdown-toggle\': levelOneItem.items}\">\n" +
             "                <i class=\"{{ levelOneItem.icon }}\"><\/i>\n" +
             "                <span class=\"menu-text\">{{ levelOneItem._title }}<\/span>\n" +
-            "                <b class=\"arrow icon-angle-down\" ng-show=\"levelOneItem.items\"><\/b>\n" +
+            "                <b class=\"arrow icon-angle-down\" ng-if=\"levelOneItem.items\"><\/b>\n" +
             "            <\/a>\n" +
-            "            <ul class=\"submenu\" ng-show=\"levelOneItem.open\">\n" +
+            "            <ul class=\"submenu\" ng-if=\"levelOneItem.open\">\n" +
             "                <li ng-repeat=\'levelTwoItem in levelOneItem.items\'\n" +
-            "                    ng-class=\'{open: levelTwoItem.open, active: levelTwoItem.active}\'>\n" +
+            "                    ng-class=\'{open: levelTwoItem.open, active: levelTwoItem.active}\'\n" +
+            "                    ng-hide=\"levelTwoItem.visible === false\">\n" +
             "                    <a ng-click=\'select(levelTwoItem)\'\n" +
             "                       ng-class=\"{\'dropdown-toggle\': levelTwoItem.items}\">\n" +
             "                        <i class=\"{{ levelTwoItem.icon }}\"><\/i>\n" +
             "                        <span class=\"menu-text\">{{ levelTwoItem._title }}<\/span>\n" +
-            "                        <b class=\"arrow icon-angle-down\" ng-show=\"levelTwoItem.items\"><\/b>\n" +
+            "                        <b class=\"arrow icon-angle-down\" ng-if=\"levelTwoItem.items\"><\/b>\n" +
             "                    <\/a>\n" +
-            "                    <ul class=\"submenu\" ng-show=\"levelTwoItem.open\">\n" +
+            "                    <ul class=\"submenu\" ng-if=\"levelTwoItem.open\">\n" +
             "                        <li ng-repeat=\'levelThreeItem in levelTwoItem.items\'\n" +
-            "                            ng-class=\"{active: levelThreeItem.active}\">\n" +
+            "                            nng-class=\"{active: levelThreeItem.active}\"\n" +
+            "                            ng-hide=\"levelThreeItem.visible === false\">\n" +
             "                            <a ng-click=\'select(levelThreeItem)\'>\n" +
             "                                <i class=\"{{ levelThreeItem.icon }}\"><\/i>\n" +
             "                                <span class=\"menu-text\">{{ levelThreeItem._title }}<\/span>\n" +
