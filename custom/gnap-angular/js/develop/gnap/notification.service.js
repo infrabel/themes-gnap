@@ -1,10 +1,10 @@
-'use strict';
-
 /**
  * @desc displays a notification
  * @file notification.service.js
  */
 (function () {
+    'use strict';
+
     angular
         .module('gnap')
         .factory('notification', notification);
@@ -21,7 +21,8 @@
             $.gritter.add({
                 title: options.title,
                 text: options.text,
-                class_name: 'gritter-' + (options.type || 'default')
+                class_name: 'gritter-' + (options.type || 'default'),
+                sticky: options.sticky || false
             });
         }
 
