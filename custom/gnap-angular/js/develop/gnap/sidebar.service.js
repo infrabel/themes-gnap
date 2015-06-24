@@ -136,9 +136,7 @@
             clearSelected();
 
             // parse the path into an array
-            /* jshint laxbreak:true */
             var parsedPath = dotSeparatedPathToArray(path);
-            /* jshint laxbreak:false */
 
             // Find the item to set as active.
             // Start at 1, because we always skip 'main'.
