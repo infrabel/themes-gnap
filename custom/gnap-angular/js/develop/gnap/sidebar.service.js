@@ -132,46 +132,60 @@
         }
 
         function setSelected(path) {
+            // Upon selecting a new path, clear the previous one
+            clearSelected();
+
             // parse the path into an array
-            /* jshint laxbreak:true */
-            var parsedPath = path === null
-                                ? []
-                                : ((path instanceof Array)
-                                    ? path
-                                    : path.split('/'));
-            /* jshint laxbreak:false */
+            var parsedPath = dotSeparatedPathToArray(path);
 
-            // find the item to set as active
-            updateActiveState(settings.items, parsedPath);
+            // Find the item to set as active.
+            // Start at 1, because we always skip 'main'.
+            updateActiveState(settings.items, 1);
 
-            function updateActiveState(itemList, pathSegments) {
+            function updateActiveState(menuEntries, level) {
+                for (var itemIndex = 0; itemIndex < menuEntries.length; itemIndex++) {
+                    var menuEntry = menuEntries[itemIndex];
+                    var menuPath = dotSeparatedPathToArray(menuEntry.key);
 
-                for (var itemIndex = 0; itemIndex < itemList.length; itemIndex++) {
-                    var item = itemList[itemIndex];
+                    if (menuPath[level] === parsedPath[level]) {
+                        if (parsedPath.length > level + 1 && menuEntry.items) {
+                            // We're on the correct path, but the active path is deeper and we got child items
+                            menuEntry.open = true;
 
-                    item.active = false;
-                    item.open = false;
-
-                    if (item.key === pathSegments[0]) {
-
-                        if (pathSegments.length === 1) {
-                            // last item in the path segments
-                            item.active = true;
-                        } else if (item.items) {
-                            item.open = true;
+                            // Keep looking a level deeper
+                            updateActiveState(menuEntry.items, level + 1);
+                        } else {
+                            // This is actually the active item in the path
+                            menuEntry.active = true;
+                            return;
                         }
-                    }
-
-                    if (item.items) {
-                        // item has subitems
-                        updateActiveState(item.items, pathSegments.splice(1));
                     }
                 }
             }
         }
 
-        function clearSelected() {
-            setSelected(null);
+        function dotSeparatedPathToArray(path) {
+            return path == null ? [] : ((path instanceof Array) ? path : path.split('.'));
+        }
+
+        function clearSelected(items) {
+            if (!items && settings.items) {
+                // Top-level
+                clearSelected(settings.items);
+            } else {
+                // Iterate over the passed items, and set them as both inactive and closed
+                for (var itemIndex = 0; itemIndex < items.length; itemIndex++) {
+                    var menuEntry = items[itemIndex];
+
+                    menuEntry.active = false;
+                    menuEntry.open = false;
+
+                    // In case the menu item has sub items, do the same for them recursively
+                    if (menuEntry.items) {
+                        clearSelected(menuEntry.items);
+                    }
+                }
+            }
         }
 
         function resolveTranslations(items) {
