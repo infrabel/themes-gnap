@@ -54,8 +54,8 @@
             "    <ul class=\"breadcrumb\">\n" +
             "        <li ng-repeat=\"crumb in breadcrumbs.crumbs\" ng-class=\"{ active: $last }\">\n" +
             "            <i class=\"icon-home home-icon\" ng-show=\"$first\"><\/i>\n" +
-            "            <a ng-click=\"select(crumb)\" ng-hide=\"$last\">{{ crumb._title }}<\/a>\n" +
-            "            <span ng-show=\"$last\">{{ crumb._title }}<\/span>\n" +
+            "            <a ng-click=\"select(crumb)\" ng-hide=\"$last || (!crumb.click && !crumb.url && !crumb.state)\">{{ crumb._title }}<\/a>\n" +
+            "            <span ng-show=\"$last || (!crumb.click && !crumb.url && !crumb.state)\">{{ crumb._title }}<\/span>\n" +
             "        <\/li>\n" +
             "    <\/ul>\n" +
             "<\/div>\n" +
