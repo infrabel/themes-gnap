@@ -24,7 +24,8 @@
             restrict: 'A',
             replace: true,
             templateUrl: 'template/gnap/sidebar/sidebar.html',
-            link: link
+            link: link,
+            transclude: true
         };
 
         function link(scope) {
@@ -142,6 +143,7 @@
             "    <div class=\"sidebar-collapse\" id=\"sidebar-collapse\" ng-click=\"toggleCollapsed()\">\n" +
             "        <i ng-class=\"{\'icon-double-angle-left\': !settings.collapsed, \'icon-double-angle-right\': settings.collapsed}\"><\/i>\n" +
             "    <\/div>\n" +
+            "    <div ng-transclude><\/div>\n" +
             "<\/div>\n" +
             "");
         /* jshint ignore:end */
