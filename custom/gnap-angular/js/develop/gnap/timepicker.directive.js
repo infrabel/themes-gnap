@@ -46,16 +46,28 @@
 
         function link(scope) {
             scope.getDisplayTime = function (time) {
-                if(time) {
-                    var hh = time.getHours();
-                    var mm = time.getMinutes();
-    
-                    if (hh < 10) { hh = '0' + hh; }
-                    if (mm < 10) { mm = '0' + mm; }
-    
-                    return hh + ':' + mm;
+                if (typeof time === 'string') {
+                    time = new Date(time);
                 }
-                else {
+
+                if (time && Object.prototype.toString.call(time) === "[object Date]") {
+                    // it is a date
+                    if (!isNaN(time.getTime())) {
+                        var hh = time.getHours();
+                        var mm = time.getMinutes();
+
+                        if (hh < 10) {
+                            hh = '0' + hh;
+                        }
+                        if (mm < 10) {
+                            mm = '0' + mm;
+                        }
+
+                        return hh + ':' + mm;
+                    } else {
+                        return '';
+                    }
+                } else {
                     return '';
                 }
             };
