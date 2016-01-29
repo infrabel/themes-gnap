@@ -9,9 +9,9 @@
         .module('gnap')
         .factory('localeService', localeService);
 
-    localeService.$inject = ['$window', '$translate', 'languageNegotiationService', 'tmhDynamicLocale', 'localStorageService'];
+    localeService.$inject = ['$window', '$translate', 'languageNegotiationService', 'tmhDynamicLocale', 'localStorageService', '$ngBootbox'];
 
-    function localeService($window, $translate, languageNegotiationService, tmhDynamicLocale, localStorageService) {
+    function localeService($window, $translate, languageNegotiationService, tmhDynamicLocale, localStorageService, $ngBootbox) {
 
         var locales = [
             { name: 'nl', title: 'Nederlands' },
@@ -40,6 +40,8 @@
 
             // set current locale (ngLocale)
             tmhDynamicLocale.set(currentLocale.name);
+
+            $ngBootbox(currentLocale.name);
         }
 
         function getLocales() {
