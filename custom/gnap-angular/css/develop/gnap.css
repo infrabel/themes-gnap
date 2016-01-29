@@ -14,6 +14,17 @@ ul.breadcrumb>li:first-child  {
     margin-left: 0px;
 }
 
+ul.breadcrumb>li.breadcrumb-back {
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    z-index: 2;
+}
+
+ul.breadcrumb>li.breadcrumb-back + li:before {
+    content: initial !important;
+}
+
 .nav-list>li .submenu, .nav-list>li>.submenu li>.submenu {
     display: block;
 }

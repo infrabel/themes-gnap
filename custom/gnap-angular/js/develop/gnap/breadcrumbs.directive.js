@@ -14,14 +14,16 @@
         .module('template/gnap/breadcrumbs/breadcrumbs.html', [])
         .run(gnapBreadcrumbsTemplate);
 
-    gnapBreadcrumbs.$inject = ['$location', '$state', 'breadcrumbsService'];
+    gnapBreadcrumbs.$inject = ['$window', '$location', '$state', 'breadcrumbsService'];
     gnapBreadcrumbsTemplate.$inject = ['$templateCache'];
 
-    function gnapBreadcrumbs($location, $state, breadcrumbsService) {
+    function gnapBreadcrumbs($window, $location, $state, breadcrumbsService) {
 
         return {
             restrict: 'A',
-            scope: {},
+            scope: {
+                showBackButton: '='
+            },
             templateUrl: 'template/gnap/breadcrumbs/breadcrumbs.html',
             link: link
         };
@@ -29,6 +31,10 @@
         function link(scope) {
             // get the current breadcrumbs and link them to the scope
             scope.breadcrumbs = breadcrumbsService.breadcrumbs;
+
+            scope.back = function () {
+                $window.history.back();
+            };
 
             scope.select = function (breadcrumb) {
                 if (breadcrumb.click) {
@@ -52,6 +58,9 @@
         $templateCache.put("template/gnap/breadcrumbs/breadcrumbs.html",
             "<div class=\"breadcrumbs\" id=\"breadcrumbs\">\n" +
             "    <ul class=\"breadcrumb\">\n" +
+            "        <li ng-if=\"showBackButton\" class=\"breadcrumb-back\">\n" +
+            "            <a ng-click=\"back()\"><i class=\"icon-circle-arrow-left\"><\/i><\/a>\n" +
+            "        <\/li>\n" +
             "        <li ng-repeat=\"crumb in breadcrumbs.crumbs\" ng-class=\"{ active: $last }\">\n" +
             "            <i class=\"icon-home home-icon\" ng-show=\"$first\"><\/i>\n" +
             "            <a ng-click=\"select(crumb)\" ng-hide=\"$last || (!crumb.click && !crumb.url && !crumb.state)\">{{ crumb._title }}<\/a>\n" +
