@@ -19,17 +19,18 @@
         return {
             restrict: 'AE',
             scope: {
+                disabled:'=',
                 time: '=',
                 iconPosition: '@'
             },
             template:
             '<span>' +
-              '<div class="input-group bootstrap-timepicker">' +
-                '<span ng-show="iconPosition==\'left\'" class="input-group-addon" ng-click="toggle($event)">' +
+              '<div class="input-group bootstrap-timepicker col-xs-12 no-padding-left no-padding-right" ng-disabled="disableTime">' +
+                '<span ng-show="iconPosition==\'left\'" class="input-group-addon" ng-click="!disableTime && toggle($event)" ng-style="!disableTime ? {\'cursor\': \'default\'} : {\'cursor\': \'not-allowed\'}">' +
                   '<i class="icon-time bigger-110"></i>' +
                 '</span>' +
-                '<input id="timepicker1" type="text" class="form-control input-mask-time" ng-model="displayTime" ng-change="inputChanged(this)" ng-click="open($event)" />' +
-                '<span ng-show="iconPosition==\'right\'" class="input-group-addon" ng-click="toggle($event)">' +
+                '<input id="timepicker1" type="text" class="form-control input-mask-time" ng-model="displayTime" ng-disabled="disableTime" ng-change="inputChanged(this)" ng-click="open($event)" />' +
+                '<span ng-show="iconPosition==\'right\'" class="input-group-addon" ng-click="!disableTime && toggle($event)" ng-style="!disableTime ? {\'cursor\': \'default\'} : {\'cursor\': \'not-allowed\'}">' +
                   '<i class="icon-time bigger-110"></i>' +
                 '</span>' +
               '</div>' +
@@ -61,6 +62,7 @@
             };
 
             scope.$watch('time', function (time) { scope.displayTime = scope.getDisplayTime(time); });
+            scope.$watch('disabled', function (isDisabled) { scope.disableTime = isDisabled; });
 
             scope.inputChanged = function () {
                 var parseableTime = 'Thu, 01 Jan 1970 ' + scope.displayTime + ':00';
