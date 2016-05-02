@@ -45,15 +45,20 @@
             link: link
         };
 
-        function link(scope, attrs) {
+        function link(scope) {
             scope.getDisplayTime = function (time) {
-                var hh = time.getHours();
-                var mm = time.getMinutes();
-
-                if (hh < 10) { hh = '0' + hh; }
-                if (mm < 10) { mm = '0' + mm; }
-
-                return hh + ':' + mm;
+                if(time) {
+                    var hh = time.getHours();
+                    var mm = time.getMinutes();
+    
+                    if (hh < 10) { hh = '0' + hh; }
+                    if (mm < 10) { mm = '0' + mm; }
+    
+                    return hh + ':' + mm;
+                }
+                else {
+                    return '';
+                }
             };
 
             scope.$watch('time', function (time) { scope.displayTime = scope.getDisplayTime(time); });
