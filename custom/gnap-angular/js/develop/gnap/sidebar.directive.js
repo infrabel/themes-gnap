@@ -36,9 +36,9 @@
                 if (item.items) {
                     sidebarService.toggleSubmenu(item);
                 }
-
-                if (item.click) {
-                    item.click();
+                else{
+                    // slide up menu when navigationable page is clicked
+                    sidebarService.toggleMenu();
                 }
 
                 if (item.state) {
